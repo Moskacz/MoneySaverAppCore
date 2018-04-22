@@ -11,6 +11,10 @@
 		356668BD208CE62C0052E724 /* MoneySaverAppCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 356668B4208CE62C0052E724 /* MoneySaverAppCore.framework */; };
 		356668D0208CE99D0052E724 /* MoneySaverAppCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 356668CF208CE99D0052E724 /* MoneySaverAppCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		356668D1208CE99D0052E724 /* MoneySaverAppCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 356668CF208CE99D0052E724 /* MoneySaverAppCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		356668D3208CEA270052E724 /* TestClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356668D2208CEA270052E724 /* TestClass.swift */; };
+		356668D4208CEA270052E724 /* TestClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356668D2208CEA270052E724 /* TestClass.swift */; };
+		356668D9208CEB910052E724 /* TestClassUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356668D8208CEB910052E724 /* TestClassUnitTests.swift */; };
+		356668DA208CEB910052E724 /* TestClassUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356668D8208CEB910052E724 /* TestClassUnitTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,13 +37,15 @@
 /* Begin PBXFileReference section */
 		35666897208CE5CB0052E724 /* MoneySaverAppCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MoneySaverAppCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		356668A0208CE5CB0052E724 /* MoneySaverAppCore-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MoneySaverAppCore-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		356668A7208CE5CB0052E724 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		356668B4208CE62C0052E724 /* MoneySaverAppCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MoneySaverAppCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		356668BC208CE62C0052E724 /* MoneySaverAppCore-macOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MoneySaverAppCore-macOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		356668C3208CE62C0052E724 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		356668CD208CE8AD0052E724 /* Info-macOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-macOS.plist"; sourceTree = "<group>"; };
 		356668CE208CE8AD0052E724 /* Info-iOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-iOS.plist"; sourceTree = "<group>"; };
 		356668CF208CE99D0052E724 /* MoneySaverAppCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoneySaverAppCore.h; sourceTree = "<group>"; };
+		356668D2208CEA270052E724 /* TestClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestClass.swift; sourceTree = "<group>"; };
+		356668D5208CEB040052E724 /* Info-macOS-unittests.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-macOS-unittests.plist"; sourceTree = "<group>"; };
+		356668D6208CEB040052E724 /* Info-iOS-unittests.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-iOS-unittests.plist"; sourceTree = "<group>"; };
+		356668D8208CEB910052E724 /* TestClassUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestClassUnitTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,8 +86,7 @@
 			isa = PBXGroup;
 			children = (
 				356668CB208CE66C0052E724 /* Sources */,
-				356668A4208CE5CB0052E724 /* MoneySaverAppCore-iOSTests */,
-				356668C0208CE62C0052E724 /* MoneySaverAppCore-macOSTests */,
+				356668D7208CEB0E0052E724 /* UnitTests */,
 				35666898208CE5CB0052E724 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -97,27 +102,12 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		356668A4208CE5CB0052E724 /* MoneySaverAppCore-iOSTests */ = {
-			isa = PBXGroup;
-			children = (
-				356668A7208CE5CB0052E724 /* Info.plist */,
-			);
-			path = "MoneySaverAppCore-iOSTests";
-			sourceTree = "<group>";
-		};
-		356668C0208CE62C0052E724 /* MoneySaverAppCore-macOSTests */ = {
-			isa = PBXGroup;
-			children = (
-				356668C3208CE62C0052E724 /* Info.plist */,
-			);
-			path = "MoneySaverAppCore-macOSTests";
-			sourceTree = "<group>";
-		};
 		356668CB208CE66C0052E724 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
 				356668CF208CE99D0052E724 /* MoneySaverAppCore.h */,
 				356668CC208CE6DD0052E724 /* Configuration */,
+				356668D2208CEA270052E724 /* TestClass.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -125,10 +115,20 @@
 		356668CC208CE6DD0052E724 /* Configuration */ = {
 			isa = PBXGroup;
 			children = (
+				356668D6208CEB040052E724 /* Info-iOS-unittests.plist */,
+				356668D5208CEB040052E724 /* Info-macOS-unittests.plist */,
 				356668CE208CE8AD0052E724 /* Info-iOS.plist */,
 				356668CD208CE8AD0052E724 /* Info-macOS.plist */,
 			);
 			path = Configuration;
+			sourceTree = "<group>";
+		};
+		356668D7208CEB0E0052E724 /* UnitTests */ = {
+			isa = PBXGroup;
+			children = (
+				356668D8208CEB910052E724 /* TestClassUnitTests.swift */,
+			);
+			path = UnitTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -236,15 +236,19 @@
 				TargetAttributes = {
 					35666896208CE5CB0052E724 = {
 						CreatedOnToolsVersion = 9.3;
+						LastSwiftMigration = 0930;
 					};
 					3566689F208CE5CB0052E724 = {
 						CreatedOnToolsVersion = 9.3;
+						LastSwiftMigration = 0930;
 					};
 					356668B3208CE62C0052E724 = {
 						CreatedOnToolsVersion = 9.3;
+						LastSwiftMigration = 0930;
 					};
 					356668BB208CE62C0052E724 = {
 						CreatedOnToolsVersion = 9.3;
+						LastSwiftMigration = 0930;
 					};
 				};
 			};
@@ -304,6 +308,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				356668D3208CEA270052E724 /* TestClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -311,6 +316,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				356668D9208CEB910052E724 /* TestClassUnitTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -318,6 +324,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				356668D4208CEA270052E724 /* TestClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -325,6 +332,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				356668DA208CEB910052E724 /* TestClassUnitTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -515,6 +523,7 @@
 		356668AD208CE5CB0052E724 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -565,7 +574,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "MoneySaverAppCore-iOSTests/Info.plist";
+				INFOPLIST_FILE = "Sources/Configuration/Info-iOS-unittests.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -587,6 +596,7 @@
 		356668AE208CE5CB0052E724 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -631,7 +641,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "MoneySaverAppCore-iOSTests/Info.plist";
+				INFOPLIST_FILE = "Sources/Configuration/Info-iOS-unittests.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -808,6 +818,7 @@
 		356668C9208CE62C0052E724 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -859,7 +870,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "MoneySaverAppCore-macOSTests/Info.plist";
+				INFOPLIST_FILE = "Sources/Configuration/Info-macOS-unittests.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -880,6 +891,7 @@
 		356668CA208CE62C0052E724 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -925,7 +937,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "MoneySaverAppCore-macOSTests/Info.plist";
+				INFOPLIST_FILE = "Sources/Configuration/Info-macOS-unittests.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
