@@ -7,12 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		356668A1208CE5CB0052E724 /* MoneySaverAppCore_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35666897208CE5CB0052E724 /* MoneySaverAppCore_iOS.framework */; };
-		356668A6208CE5CB0052E724 /* MoneySaverAppCore_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356668A5208CE5CB0052E724 /* MoneySaverAppCore_iOSTests.swift */; };
-		356668A8208CE5CB0052E724 /* MoneySaverAppCore_iOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 3566689A208CE5CB0052E724 /* MoneySaverAppCore_iOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		356668BD208CE62C0052E724 /* MoneySaverAppCore_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 356668B4208CE62C0052E724 /* MoneySaverAppCore_macOS.framework */; };
-		356668C2208CE62C0052E724 /* MoneySaverAppCore_macOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356668C1208CE62C0052E724 /* MoneySaverAppCore_macOSTests.swift */; };
-		356668C4208CE62C0052E724 /* MoneySaverAppCore_macOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 356668B6208CE62C0052E724 /* MoneySaverAppCore_macOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		356668A1208CE5CB0052E724 /* MoneySaverAppCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35666897208CE5CB0052E724 /* MoneySaverAppCore.framework */; };
+		356668BD208CE62C0052E724 /* MoneySaverAppCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 356668B4208CE62C0052E724 /* MoneySaverAppCore.framework */; };
+		356668D0208CE99D0052E724 /* MoneySaverAppCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 356668CF208CE99D0052E724 /* MoneySaverAppCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		356668D1208CE99D0052E724 /* MoneySaverAppCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 356668CF208CE99D0052E724 /* MoneySaverAppCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,18 +31,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		35666897208CE5CB0052E724 /* MoneySaverAppCore_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MoneySaverAppCore_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3566689A208CE5CB0052E724 /* MoneySaverAppCore_iOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MoneySaverAppCore_iOS.h; sourceTree = "<group>"; };
-		3566689B208CE5CB0052E724 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		35666897208CE5CB0052E724 /* MoneySaverAppCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MoneySaverAppCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		356668A0208CE5CB0052E724 /* MoneySaverAppCore-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MoneySaverAppCore-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		356668A5208CE5CB0052E724 /* MoneySaverAppCore_iOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneySaverAppCore_iOSTests.swift; sourceTree = "<group>"; };
 		356668A7208CE5CB0052E724 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		356668B4208CE62C0052E724 /* MoneySaverAppCore_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MoneySaverAppCore_macOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		356668B6208CE62C0052E724 /* MoneySaverAppCore_macOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MoneySaverAppCore_macOS.h; sourceTree = "<group>"; };
-		356668B7208CE62C0052E724 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		356668B4208CE62C0052E724 /* MoneySaverAppCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MoneySaverAppCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		356668BC208CE62C0052E724 /* MoneySaverAppCore-macOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MoneySaverAppCore-macOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		356668C1208CE62C0052E724 /* MoneySaverAppCore_macOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneySaverAppCore_macOSTests.swift; sourceTree = "<group>"; };
 		356668C3208CE62C0052E724 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		356668CD208CE8AD0052E724 /* Info-macOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-macOS.plist"; sourceTree = "<group>"; };
+		356668CE208CE8AD0052E724 /* Info-iOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-iOS.plist"; sourceTree = "<group>"; };
+		356668CF208CE99D0052E724 /* MoneySaverAppCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoneySaverAppCore.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,7 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				356668A1208CE5CB0052E724 /* MoneySaverAppCore_iOS.framework in Frameworks */,
+				356668A1208CE5CB0052E724 /* MoneySaverAppCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,7 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				356668BD208CE62C0052E724 /* MoneySaverAppCore_macOS.framework in Frameworks */,
+				356668BD208CE62C0052E724 /* MoneySaverAppCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,9 +79,8 @@
 		3566688B208CE4A40052E724 = {
 			isa = PBXGroup;
 			children = (
-				35666899208CE5CB0052E724 /* MoneySaverAppCore-iOS */,
+				356668CB208CE66C0052E724 /* Sources */,
 				356668A4208CE5CB0052E724 /* MoneySaverAppCore-iOSTests */,
-				356668B5208CE62C0052E724 /* MoneySaverAppCore-macOS */,
 				356668C0208CE62C0052E724 /* MoneySaverAppCore-macOSTests */,
 				35666898208CE5CB0052E724 /* Products */,
 			);
@@ -95,48 +89,46 @@
 		35666898208CE5CB0052E724 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				35666897208CE5CB0052E724 /* MoneySaverAppCore_iOS.framework */,
+				35666897208CE5CB0052E724 /* MoneySaverAppCore.framework */,
 				356668A0208CE5CB0052E724 /* MoneySaverAppCore-iOSTests.xctest */,
-				356668B4208CE62C0052E724 /* MoneySaverAppCore_macOS.framework */,
+				356668B4208CE62C0052E724 /* MoneySaverAppCore.framework */,
 				356668BC208CE62C0052E724 /* MoneySaverAppCore-macOSTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		35666899208CE5CB0052E724 /* MoneySaverAppCore-iOS */ = {
-			isa = PBXGroup;
-			children = (
-				3566689A208CE5CB0052E724 /* MoneySaverAppCore_iOS.h */,
-				3566689B208CE5CB0052E724 /* Info.plist */,
-			);
-			path = "MoneySaverAppCore-iOS";
-			sourceTree = "<group>";
-		};
 		356668A4208CE5CB0052E724 /* MoneySaverAppCore-iOSTests */ = {
 			isa = PBXGroup;
 			children = (
-				356668A5208CE5CB0052E724 /* MoneySaverAppCore_iOSTests.swift */,
 				356668A7208CE5CB0052E724 /* Info.plist */,
 			);
 			path = "MoneySaverAppCore-iOSTests";
 			sourceTree = "<group>";
 		};
-		356668B5208CE62C0052E724 /* MoneySaverAppCore-macOS */ = {
-			isa = PBXGroup;
-			children = (
-				356668B6208CE62C0052E724 /* MoneySaverAppCore_macOS.h */,
-				356668B7208CE62C0052E724 /* Info.plist */,
-			);
-			path = "MoneySaverAppCore-macOS";
-			sourceTree = "<group>";
-		};
 		356668C0208CE62C0052E724 /* MoneySaverAppCore-macOSTests */ = {
 			isa = PBXGroup;
 			children = (
-				356668C1208CE62C0052E724 /* MoneySaverAppCore_macOSTests.swift */,
 				356668C3208CE62C0052E724 /* Info.plist */,
 			);
 			path = "MoneySaverAppCore-macOSTests";
+			sourceTree = "<group>";
+		};
+		356668CB208CE66C0052E724 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				356668CF208CE99D0052E724 /* MoneySaverAppCore.h */,
+				356668CC208CE6DD0052E724 /* Configuration */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		356668CC208CE6DD0052E724 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				356668CE208CE8AD0052E724 /* Info-iOS.plist */,
+				356668CD208CE8AD0052E724 /* Info-macOS.plist */,
+			);
+			path = Configuration;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -146,7 +138,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				356668A8208CE5CB0052E724 /* MoneySaverAppCore_iOS.h in Headers */,
+				356668D0208CE99D0052E724 /* MoneySaverAppCore.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -154,7 +146,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				356668C4208CE62C0052E724 /* MoneySaverAppCore_macOS.h in Headers */,
+				356668D1208CE99D0052E724 /* MoneySaverAppCore.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -176,7 +168,7 @@
 			);
 			name = "MoneySaverAppCore-iOS";
 			productName = "MoneySaverAppCore-iOS";
-			productReference = 35666897208CE5CB0052E724 /* MoneySaverAppCore_iOS.framework */;
+			productReference = 35666897208CE5CB0052E724 /* MoneySaverAppCore.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		3566689F208CE5CB0052E724 /* MoneySaverAppCore-iOSTests */ = {
@@ -212,7 +204,7 @@
 			);
 			name = "MoneySaverAppCore-macOS";
 			productName = "MoneySaverAppCore-macOS";
-			productReference = 356668B4208CE62C0052E724 /* MoneySaverAppCore_macOS.framework */;
+			productReference = 356668B4208CE62C0052E724 /* MoneySaverAppCore.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		356668BB208CE62C0052E724 /* MoneySaverAppCore-macOSTests */ = {
@@ -319,7 +311,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				356668A6208CE5CB0052E724 /* MoneySaverAppCore_iOSTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -334,7 +325,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				356668C2208CE62C0052E724 /* MoneySaverAppCore_macOSTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -357,12 +347,14 @@
 		35666890208CE4A40052E724 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				PRODUCT_NAME = "$(PROJECT_NAME)";
 			};
 			name = Debug;
 		};
 		35666891208CE4A40052E724 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				PRODUCT_NAME = "$(PROJECT_NAME)";
 			};
 			name = Release;
 		};
@@ -424,9 +416,9 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "MoneySaverAppCore-iOS/Info.plist";
+				INFOPLIST_FILE = "Sources/Configuration/Info-iOS.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -434,8 +426,7 @@
 				);
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "michal.moskala.MoneySaverAppCore-iOS";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = "michal.moskala.$(PROJECT_NAME)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
@@ -499,17 +490,16 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "MoneySaverAppCore-iOS/Info.plist";
+				INFOPLIST_FILE = "Sources/Configuration/Info-iOS.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = "michal.moskala.MoneySaverAppCore-iOS";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = "michal.moskala.$(PROJECT_NAME)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -720,7 +710,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "MoneySaverAppCore-macOS/Info.plist";
+				INFOPLIST_FILE = "Sources/Configuration/Info-macOS.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -730,8 +720,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "michal.moskala.MoneySaverAppCore-macOS";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = "michal.moskala.$(PROJECT_NAME)";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
@@ -796,7 +785,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "MoneySaverAppCore-macOS/Info.plist";
+				INFOPLIST_FILE = "Sources/Configuration/Info-macOS.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -805,8 +794,7 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = "michal.moskala.MoneySaverAppCore-macOS";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = "michal.moskala.$(PROJECT_NAME)";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
