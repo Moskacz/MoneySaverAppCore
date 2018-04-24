@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		35162C89208FC0A100547126 /* TransactionsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35162C88208FC0A100547126 /* TransactionsRepository.swift */; };
+		35162C8A208FC0A100547126 /* TransactionsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35162C88208FC0A100547126 /* TransactionsRepository.swift */; };
 		353817D1208E642C00EA967F /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 353817CF208E642C00EA967F /* DataModel.xcdatamodeld */; };
 		353817D2208E643600EA967F /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 353817CF208E642C00EA967F /* DataModel.xcdatamodeld */; };
 		353817D5208E647600EA967F /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353817D4208E647600EA967F /* CoreDataStack.swift */; };
@@ -55,6 +57,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		35162C88208FC0A100547126 /* TransactionsRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionsRepository.swift; sourceTree = "<group>"; };
 		353817D0208E642C00EA967F /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		353817D4208E647600EA967F /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		353817D7208E65DC00EA967F /* CalendarDateManagedObject+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CalendarDateManagedObject+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -112,9 +115,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		35162C87208FC07D00547126 /* repositories */ = {
+			isa = PBXGroup;
+			children = (
+				35162C88208FC0A100547126 /* TransactionsRepository.swift */,
+			);
+			path = repositories;
+			sourceTree = "<group>";
+		};
 		353817CE208E640800EA967F /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				35162C87208FC07D00547126 /* repositories */,
 				353817D7208E65DC00EA967F /* CalendarDateManagedObject+CoreDataClass.swift */,
 				353817D8208E65DC00EA967F /* CalendarDateManagedObject+CoreDataProperties.swift */,
 				353817D9208E65DC00EA967F /* BudgetManagedObject+CoreDataClass.swift */,
@@ -360,6 +372,7 @@
 				353817E3208E65DC00EA967F /* BudgetManagedObject+CoreDataClass.swift in Sources */,
 				353817E5208E65DC00EA967F /* BudgetManagedObject+CoreDataProperties.swift in Sources */,
 				353817DF208E65DC00EA967F /* CalendarDateManagedObject+CoreDataClass.swift in Sources */,
+				35162C89208FC0A100547126 /* TransactionsRepository.swift in Sources */,
 				353817ED208E65DC00EA967F /* TransactionCategoryManagedObject+CoreDataProperties.swift in Sources */,
 				353817D5208E647600EA967F /* CoreDataStack.swift in Sources */,
 				353817E7208E65DC00EA967F /* TransactionManagedObject+CoreDataClass.swift in Sources */,
@@ -386,6 +399,7 @@
 				353817E4208E65DC00EA967F /* BudgetManagedObject+CoreDataClass.swift in Sources */,
 				353817E6208E65DC00EA967F /* BudgetManagedObject+CoreDataProperties.swift in Sources */,
 				353817E0208E65DC00EA967F /* CalendarDateManagedObject+CoreDataClass.swift in Sources */,
+				35162C8A208FC0A100547126 /* TransactionsRepository.swift in Sources */,
 				353817EE208E65DC00EA967F /* TransactionCategoryManagedObject+CoreDataProperties.swift in Sources */,
 				353817D6208E647600EA967F /* CoreDataStack.swift in Sources */,
 				353817E8208E65DC00EA967F /* TransactionManagedObject+CoreDataClass.swift in Sources */,
