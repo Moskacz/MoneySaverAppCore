@@ -29,6 +29,8 @@
 		35162CAA208FC32500547126 /* Calendar+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35162CA8208FC32500547126 /* Calendar+Extensions.swift */; };
 		35162CAD208FC39E00547126 /* TransactionsGrouping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35162CAC208FC39E00547126 /* TransactionsGrouping.swift */; };
 		35162CAE208FC39E00547126 /* TransactionsGrouping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35162CAC208FC39E00547126 /* TransactionsGrouping.swift */; };
+		35162CB1208FC58500547126 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35162CB0208FC58500547126 /* Image.swift */; };
+		35162CB2208FC58500547126 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35162CB0208FC58500547126 /* Image.swift */; };
 		353817D1208E642C00EA967F /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 353817CF208E642C00EA967F /* DataModel.xcdatamodeld */; };
 		353817D2208E643600EA967F /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 353817CF208E642C00EA967F /* DataModel.xcdatamodeld */; };
 		353817D5208E647600EA967F /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353817D4208E647600EA967F /* CoreDataStack.swift */; };
@@ -88,6 +90,7 @@
 		35162CA5208FC30600547126 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		35162CA8208FC32500547126 /* Calendar+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Calendar+Extensions.swift"; sourceTree = "<group>"; };
 		35162CAC208FC39E00547126 /* TransactionsGrouping.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionsGrouping.swift; sourceTree = "<group>"; };
+		35162CB0208FC58500547126 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		353817D0208E642C00EA967F /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		353817D4208E647600EA967F /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		353817D7208E65DC00EA967F /* CalendarDateManagedObject+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CalendarDateManagedObject+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -198,6 +201,14 @@
 			path = grouping;
 			sourceTree = "<group>";
 		};
+		35162CAF208FC57800547126 /* Typealiases */ = {
+			isa = PBXGroup;
+			children = (
+				35162CB0208FC58500547126 /* Image.swift */,
+			);
+			path = Typealiases;
+			sourceTree = "<group>";
+		};
 		353817CE208E640800EA967F /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
@@ -240,6 +251,7 @@
 		356668CB208CE66C0052E724 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				35162CAF208FC57800547126 /* Typealiases */,
 				35162CA1208FC28300547126 /* Extensions */,
 				35162C9C208FC1B300547126 /* Logging */,
 				35162C92208FC12400547126 /* DomainProtocols */,
@@ -450,6 +462,7 @@
 			files = (
 				35162CA6208FC30600547126 /* String+Extensions.swift in Sources */,
 				353817E1208E65DC00EA967F /* CalendarDateManagedObject+CoreDataProperties.swift in Sources */,
+				35162CB1208FC58500547126 /* Image.swift in Sources */,
 				35162CA9208FC32500547126 /* Calendar+Extensions.swift in Sources */,
 				35162C90208FC10A00547126 /* DateRange.swift in Sources */,
 				35162C96208FC14900547126 /* TransactionCategoryProtocol.swift in Sources */,
@@ -487,6 +500,7 @@
 			files = (
 				35162CA7208FC30600547126 /* String+Extensions.swift in Sources */,
 				353817E2208E65DC00EA967F /* CalendarDateManagedObject+CoreDataProperties.swift in Sources */,
+				35162CB2208FC58500547126 /* Image.swift in Sources */,
 				35162CAA208FC32500547126 /* Calendar+Extensions.swift in Sources */,
 				35162C91208FC10A00547126 /* DateRange.swift in Sources */,
 				35162C97208FC14900547126 /* TransactionCategoryProtocol.swift in Sources */,

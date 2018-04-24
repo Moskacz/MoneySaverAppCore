@@ -18,7 +18,6 @@ extension TransactionCategoryManagedObject {
     @NSManaged public var icon: NSData?
     @NSManaged public var name: String?
     @NSManaged public var transactions: NSSet?
-    
 }
 
 // MARK: Generated accessors for transactions

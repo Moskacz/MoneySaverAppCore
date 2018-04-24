@@ -10,5 +10,5 @@ import Foundation
 
 protocol TransactionCategoryProtocol {
     var name: String? { get }
-//    var image: UIImage? { get }
+    var image: Image? { get }
 }
