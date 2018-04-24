@@ -9,6 +9,17 @@
 import Foundation
 import CoreData
 
+public struct DatedValue: Equatable {
+    public let date: Int
+    public let value: Decimal
+}
+
+public struct TransactionData {
+    public let title: String
+    public let value: Decimal
+    public let creationDate: Date
+}
+
 protocol TransactionsRepository {
     var allTransactionsFRC: NSFetchedResultsController<TransactionManagedObject> { get }
     var context: NSManagedObjectContext { get }

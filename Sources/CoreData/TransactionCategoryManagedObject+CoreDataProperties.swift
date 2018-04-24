@@ -9,7 +9,6 @@
 import Foundation
 import CoreData
 
-
 extension TransactionCategoryManagedObject {
 
     @nonobjc public class func fetchRequest() -> NSFetchRequest<TransactionCategoryManagedObject> {
@@ -19,7 +18,7 @@ extension TransactionCategoryManagedObject {
     @NSManaged public var icon: NSData?
     @NSManaged public var name: String?
     @NSManaged public var transactions: NSSet?
-
+    
 }
 
 // MARK: Generated accessors for transactions
