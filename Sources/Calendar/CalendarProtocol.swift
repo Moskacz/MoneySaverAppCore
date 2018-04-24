@@ -21,7 +21,7 @@ protocol CalendarProtocol {
     func beginEndDaysOfWeek(forDate date: Date) -> (start: Date, end: Date)
 }
 
-struct CalendarDate: CalendarDateProtocol {
+public struct CalendarDate: CalendarDateProtocol {
     let calendarIdentifier: String?
     let dayOfEra: Int32
     let dayOfMonth: Int32

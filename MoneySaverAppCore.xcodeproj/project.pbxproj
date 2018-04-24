@@ -19,6 +19,14 @@
 		35162C99208FC14900547126 /* CalendarDateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35162C94208FC14900547126 /* CalendarDateProtocol.swift */; };
 		35162C9A208FC14900547126 /* TransactionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35162C95208FC14900547126 /* TransactionProtocol.swift */; };
 		35162C9B208FC14900547126 /* TransactionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35162C95208FC14900547126 /* TransactionProtocol.swift */; };
+		35162C9E208FC1D000547126 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35162C9D208FC1D000547126 /* Logger.swift */; };
+		35162C9F208FC1D000547126 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35162C9D208FC1D000547126 /* Logger.swift */; };
+		35162CA3208FC2D200547126 /* NSManagedObject+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35162CA2208FC2D200547126 /* NSManagedObject+Extensions.swift */; };
+		35162CA4208FC2D200547126 /* NSManagedObject+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35162CA2208FC2D200547126 /* NSManagedObject+Extensions.swift */; };
+		35162CA6208FC30600547126 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35162CA5208FC30600547126 /* String+Extensions.swift */; };
+		35162CA7208FC30600547126 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35162CA5208FC30600547126 /* String+Extensions.swift */; };
+		35162CA9208FC32500547126 /* Calendar+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35162CA8208FC32500547126 /* Calendar+Extensions.swift */; };
+		35162CAA208FC32500547126 /* Calendar+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35162CA8208FC32500547126 /* Calendar+Extensions.swift */; };
 		353817D1208E642C00EA967F /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 353817CF208E642C00EA967F /* DataModel.xcdatamodeld */; };
 		353817D2208E643600EA967F /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 353817CF208E642C00EA967F /* DataModel.xcdatamodeld */; };
 		353817D5208E647600EA967F /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353817D4208E647600EA967F /* CoreDataStack.swift */; };
@@ -73,6 +81,10 @@
 		35162C93208FC14900547126 /* TransactionCategoryProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionCategoryProtocol.swift; sourceTree = "<group>"; };
 		35162C94208FC14900547126 /* CalendarDateProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarDateProtocol.swift; sourceTree = "<group>"; };
 		35162C95208FC14900547126 /* TransactionProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionProtocol.swift; sourceTree = "<group>"; };
+		35162C9D208FC1D000547126 /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		35162CA2208FC2D200547126 /* NSManagedObject+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSManagedObject+Extensions.swift"; sourceTree = "<group>"; };
+		35162CA5208FC30600547126 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		35162CA8208FC32500547126 /* Calendar+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Calendar+Extensions.swift"; sourceTree = "<group>"; };
 		353817D0208E642C00EA967F /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		353817D4208E647600EA967F /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		353817D7208E65DC00EA967F /* CalendarDateManagedObject+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CalendarDateManagedObject+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -157,6 +169,24 @@
 			path = DomainProtocols;
 			sourceTree = "<group>";
 		};
+		35162C9C208FC1B300547126 /* Logging */ = {
+			isa = PBXGroup;
+			children = (
+				35162C9D208FC1D000547126 /* Logger.swift */,
+			);
+			path = Logging;
+			sourceTree = "<group>";
+		};
+		35162CA1208FC28300547126 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				35162CA2208FC2D200547126 /* NSManagedObject+Extensions.swift */,
+				35162CA5208FC30600547126 /* String+Extensions.swift */,
+				35162CA8208FC32500547126 /* Calendar+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		353817CE208E640800EA967F /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
@@ -198,6 +228,8 @@
 		356668CB208CE66C0052E724 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				35162CA1208FC28300547126 /* Extensions */,
+				35162C9C208FC1B300547126 /* Logging */,
 				35162C92208FC12400547126 /* DomainProtocols */,
 				35162C8B208FC0E000547126 /* Calendar */,
 				353817CE208E640800EA967F /* CoreData */,
@@ -404,7 +436,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				35162CA6208FC30600547126 /* String+Extensions.swift in Sources */,
 				353817E1208E65DC00EA967F /* CalendarDateManagedObject+CoreDataProperties.swift in Sources */,
+				35162CA9208FC32500547126 /* Calendar+Extensions.swift in Sources */,
 				35162C90208FC10A00547126 /* DateRange.swift in Sources */,
 				35162C96208FC14900547126 /* TransactionCategoryProtocol.swift in Sources */,
 				353817E3208E65DC00EA967F /* BudgetManagedObject+CoreDataClass.swift in Sources */,
@@ -417,9 +451,11 @@
 				353817E7208E65DC00EA967F /* TransactionManagedObject+CoreDataClass.swift in Sources */,
 				356668D3208CEA270052E724 /* TestClass.swift in Sources */,
 				35162C8E208FC10A00547126 /* CalendarProtocol.swift in Sources */,
+				35162C9E208FC1D000547126 /* Logger.swift in Sources */,
 				353817EB208E65DC00EA967F /* TransactionCategoryManagedObject+CoreDataClass.swift in Sources */,
 				353817D1208E642C00EA967F /* DataModel.xcdatamodeld in Sources */,
 				353817E9208E65DC00EA967F /* TransactionManagedObject+CoreDataProperties.swift in Sources */,
+				35162CA3208FC2D200547126 /* NSManagedObject+Extensions.swift in Sources */,
 				35162C98208FC14900547126 /* CalendarDateProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -436,7 +472,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				35162CA7208FC30600547126 /* String+Extensions.swift in Sources */,
 				353817E2208E65DC00EA967F /* CalendarDateManagedObject+CoreDataProperties.swift in Sources */,
+				35162CAA208FC32500547126 /* Calendar+Extensions.swift in Sources */,
 				35162C91208FC10A00547126 /* DateRange.swift in Sources */,
 				35162C97208FC14900547126 /* TransactionCategoryProtocol.swift in Sources */,
 				353817E4208E65DC00EA967F /* BudgetManagedObject+CoreDataClass.swift in Sources */,
@@ -449,9 +487,11 @@
 				353817E8208E65DC00EA967F /* TransactionManagedObject+CoreDataClass.swift in Sources */,
 				356668D4208CEA270052E724 /* TestClass.swift in Sources */,
 				35162C8F208FC10A00547126 /* CalendarProtocol.swift in Sources */,
+				35162C9F208FC1D000547126 /* Logger.swift in Sources */,
 				353817EC208E65DC00EA967F /* TransactionCategoryManagedObject+CoreDataClass.swift in Sources */,
 				353817D2208E643600EA967F /* DataModel.xcdatamodeld in Sources */,
 				353817EA208E65DC00EA967F /* TransactionManagedObject+CoreDataProperties.swift in Sources */,
+				35162CA4208FC2D200547126 /* NSManagedObject+Extensions.swift in Sources */,
 				35162C99208FC14900547126 /* CalendarDateProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

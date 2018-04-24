@@ -20,5 +20,4 @@ extension TransactionManagedObject {
     @NSManaged public var value: NSDecimalNumber?
     @NSManaged public var category: TransactionCategoryManagedObject?
     @NSManaged public var date: CalendarDateManagedObject?
-
 }
