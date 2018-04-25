@@ -48,13 +48,13 @@ class TransactionCategoryRepositoryImpl: TransactionCategoryRepository {
         context.perform {
             for categoryData in self.initialCategoriesData {
                 let entity = TransactionCategoryManagedObject.createEntity(inContext: self.context)
-                entity.icon = UIImagePNGRepresentation(categoryData.image) as NSData?
+                entity.icon = categoryData.image.pngRepresentation as NSData?
                 entity.name = categoryData.name
             }
         }
     }
     
-    private var initialCategoriesData: [(name: String, image: UIImage)] {
+    private var initialCategoriesData: [(name: String, image: Image)] {
         return [("Groceries", #imageLiteral(resourceName: "groceries")), ("Gifts", #imageLiteral(resourceName: "gift")), ("Parties", #imageLiteral(resourceName: "party")),
                 ("Travels", #imageLiteral(resourceName: "travel")),  ("Car", #imageLiteral(resourceName: "car")),  ("Bills", #imageLiteral(resourceName: "bill")),
                 ("Education", #imageLiteral(resourceName: "education")), ("Health", #imageLiteral(resourceName: "health")), ("Clothes", #imageLiteral(resourceName: "clothes")),

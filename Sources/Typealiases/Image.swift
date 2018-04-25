@@ -14,3 +14,15 @@ public typealias Image = NSImage
 import UIKit
 public typealias Image = UIImage
 #endif
+
+extension Image {
+    
+    public var pngRepresentation: Data? {
+        #if os(OSX)
+        guard let data = tiffRepresentation else { return nil }
+        return NSBitmapImageRep(data: data)?.representation(using: .png, properties: [:])
+        #elseif os(iOS)
+            return UIImagePNGRepresentation(self)
+        #endif
+    }
+}
