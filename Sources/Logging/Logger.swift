@@ -17,9 +17,9 @@ public enum LogLevel {
 }
 
 public protocol Logger {
-    func log(withLevel level: LogLevel, message: String)
+    func log(withLevel level: LogLevel, message: @autoclosure () -> String)
 }
 
 public class NullLogger: Logger {
-    public func log(withLevel level: LogLevel, message: String) {}
+    public func log(withLevel level: LogLevel, message: @autoclosure () -> String) {}
 }
