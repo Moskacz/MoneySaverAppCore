@@ -33,6 +33,8 @@
 		35162CB2208FC58500547126 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35162CB0208FC58500547126 /* Image.swift */; };
 		35162CB42090D96600547126 /* TransactionCategoryRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35162CB32090D96600547126 /* TransactionCategoryRepository.swift */; };
 		35162CB52090D96600547126 /* TransactionCategoryRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35162CB32090D96600547126 /* TransactionCategoryRepository.swift */; };
+		35162CB72090DD0100547126 /* BudgetRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35162CB62090DD0100547126 /* BudgetRepository.swift */; };
+		35162CB82090DD0100547126 /* BudgetRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35162CB62090DD0100547126 /* BudgetRepository.swift */; };
 		353817D1208E642C00EA967F /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 353817CF208E642C00EA967F /* DataModel.xcdatamodeld */; };
 		353817D2208E643600EA967F /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 353817CF208E642C00EA967F /* DataModel.xcdatamodeld */; };
 		353817D5208E647600EA967F /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353817D4208E647600EA967F /* CoreDataStack.swift */; };
@@ -94,6 +96,7 @@
 		35162CAC208FC39E00547126 /* TransactionsGrouping.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionsGrouping.swift; sourceTree = "<group>"; };
 		35162CB0208FC58500547126 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		35162CB32090D96600547126 /* TransactionCategoryRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionCategoryRepository.swift; sourceTree = "<group>"; };
+		35162CB62090DD0100547126 /* BudgetRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BudgetRepository.swift; sourceTree = "<group>"; };
 		353817D0208E642C00EA967F /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		353817D4208E647600EA967F /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		353817D7208E65DC00EA967F /* CalendarDateManagedObject+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CalendarDateManagedObject+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -154,6 +157,7 @@
 		35162C87208FC07D00547126 /* repositories */ = {
 			isa = PBXGroup;
 			children = (
+				35162CB62090DD0100547126 /* BudgetRepository.swift */,
 				35162CB32090D96600547126 /* TransactionCategoryRepository.swift */,
 				35162C88208FC0A100547126 /* TransactionsRepository.swift */,
 			);
@@ -468,6 +472,7 @@
 				353817E1208E65DC00EA967F /* CalendarDateManagedObject+CoreDataProperties.swift in Sources */,
 				35162CB1208FC58500547126 /* Image.swift in Sources */,
 				35162CA9208FC32500547126 /* Calendar+Extensions.swift in Sources */,
+				35162CB72090DD0100547126 /* BudgetRepository.swift in Sources */,
 				35162C90208FC10A00547126 /* DateRange.swift in Sources */,
 				35162C96208FC14900547126 /* TransactionCategoryProtocol.swift in Sources */,
 				353817E3208E65DC00EA967F /* BudgetManagedObject+CoreDataClass.swift in Sources */,
@@ -507,6 +512,7 @@
 				353817E2208E65DC00EA967F /* CalendarDateManagedObject+CoreDataProperties.swift in Sources */,
 				35162CB2208FC58500547126 /* Image.swift in Sources */,
 				35162CAA208FC32500547126 /* Calendar+Extensions.swift in Sources */,
+				35162CB82090DD0100547126 /* BudgetRepository.swift in Sources */,
 				35162C91208FC10A00547126 /* DateRange.swift in Sources */,
 				35162C97208FC14900547126 /* TransactionCategoryProtocol.swift in Sources */,
 				353817E4208E65DC00EA967F /* BudgetManagedObject+CoreDataClass.swift in Sources */,

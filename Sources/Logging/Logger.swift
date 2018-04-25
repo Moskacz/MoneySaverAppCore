@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum LogLevel {
+public enum LogLevel {
     case verbose
     case debug
     case info
@@ -16,10 +16,10 @@ enum LogLevel {
     case error
 }
 
-protocol Logger {
+public protocol Logger {
     func log(withLevel level: LogLevel, message: String)
 }
 
-class NullLogger: Logger {
-    func log(withLevel level: LogLevel, message: String) {}
+public class NullLogger: Logger {
+    public func log(withLevel level: LogLevel, message: String) {}
 }
