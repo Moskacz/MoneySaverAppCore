@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum DateRange: String {
+public enum DateRange: String {
     case today
     case thisWeek
     case thisMonth
@@ -18,7 +18,7 @@ enum DateRange: String {
 
 extension DateRange: CustomStringConvertible {
     
-    var description: String {
+    public var description: String {
         switch self {
         case .today: return "Today"
         case .thisWeek: return "Weekly"

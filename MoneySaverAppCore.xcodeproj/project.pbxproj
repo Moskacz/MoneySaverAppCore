@@ -35,6 +35,10 @@
 		35162CB52090D96600547126 /* TransactionCategoryRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35162CB32090D96600547126 /* TransactionCategoryRepository.swift */; };
 		35162CB72090DD0100547126 /* BudgetRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35162CB62090DD0100547126 /* BudgetRepository.swift */; };
 		35162CB82090DD0100547126 /* BudgetRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35162CB62090DD0100547126 /* BudgetRepository.swift */; };
+		35162CBB2090DE6D00547126 /* UserPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35162CBA2090DE6D00547126 /* UserPreferences.swift */; };
+		35162CBC2090DE6D00547126 /* UserPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35162CBA2090DE6D00547126 /* UserPreferences.swift */; };
+		35162CBE2090DEB200547126 /* UserPreferencesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35162CBD2090DEB200547126 /* UserPreferencesTests.swift */; };
+		35162CBF2090DEB200547126 /* UserPreferencesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35162CBD2090DEB200547126 /* UserPreferencesTests.swift */; };
 		353817D1208E642C00EA967F /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 353817CF208E642C00EA967F /* DataModel.xcdatamodeld */; };
 		353817D2208E643600EA967F /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 353817CF208E642C00EA967F /* DataModel.xcdatamodeld */; };
 		353817D5208E647600EA967F /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353817D4208E647600EA967F /* CoreDataStack.swift */; };
@@ -97,6 +101,8 @@
 		35162CB0208FC58500547126 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		35162CB32090D96600547126 /* TransactionCategoryRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionCategoryRepository.swift; sourceTree = "<group>"; };
 		35162CB62090DD0100547126 /* BudgetRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BudgetRepository.swift; sourceTree = "<group>"; };
+		35162CBA2090DE6D00547126 /* UserPreferences.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserPreferences.swift; sourceTree = "<group>"; };
+		35162CBD2090DEB200547126 /* UserPreferencesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserPreferencesTests.swift; sourceTree = "<group>"; };
 		353817D0208E642C00EA967F /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		353817D4208E647600EA967F /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		353817D7208E65DC00EA967F /* CalendarDateManagedObject+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CalendarDateManagedObject+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -217,6 +223,14 @@
 			path = Typealiases;
 			sourceTree = "<group>";
 		};
+		35162CB92090DE4F00547126 /* StatePreservation */ = {
+			isa = PBXGroup;
+			children = (
+				35162CBA2090DE6D00547126 /* UserPreferences.swift */,
+			);
+			path = StatePreservation;
+			sourceTree = "<group>";
+		};
 		353817CE208E640800EA967F /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
@@ -259,6 +273,7 @@
 		356668CB208CE66C0052E724 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				35162CB92090DE4F00547126 /* StatePreservation */,
 				35162CAF208FC57800547126 /* Typealiases */,
 				35162CA1208FC28300547126 /* Extensions */,
 				35162C9C208FC1B300547126 /* Logging */,
@@ -286,6 +301,7 @@
 		356668D7208CEB0E0052E724 /* UnitTests */ = {
 			isa = PBXGroup;
 			children = (
+				35162CBD2090DEB200547126 /* UserPreferencesTests.swift */,
 				356668D8208CEB910052E724 /* TestClassUnitTests.swift */,
 			);
 			path = UnitTests;
@@ -477,6 +493,7 @@
 				35162C96208FC14900547126 /* TransactionCategoryProtocol.swift in Sources */,
 				353817E3208E65DC00EA967F /* BudgetManagedObject+CoreDataClass.swift in Sources */,
 				353817E5208E65DC00EA967F /* BudgetManagedObject+CoreDataProperties.swift in Sources */,
+				35162CBB2090DE6D00547126 /* UserPreferences.swift in Sources */,
 				353817DF208E65DC00EA967F /* CalendarDateManagedObject+CoreDataClass.swift in Sources */,
 				35162C89208FC0A100547126 /* TransactionsRepository.swift in Sources */,
 				35162CB42090D96600547126 /* TransactionCategoryRepository.swift in Sources */,
@@ -501,6 +518,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				356668D9208CEB910052E724 /* TestClassUnitTests.swift in Sources */,
+				35162CBE2090DEB200547126 /* UserPreferencesTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -517,6 +535,7 @@
 				35162C97208FC14900547126 /* TransactionCategoryProtocol.swift in Sources */,
 				353817E4208E65DC00EA967F /* BudgetManagedObject+CoreDataClass.swift in Sources */,
 				353817E6208E65DC00EA967F /* BudgetManagedObject+CoreDataProperties.swift in Sources */,
+				35162CBC2090DE6D00547126 /* UserPreferences.swift in Sources */,
 				353817E0208E65DC00EA967F /* CalendarDateManagedObject+CoreDataClass.swift in Sources */,
 				35162C8A208FC0A100547126 /* TransactionsRepository.swift in Sources */,
 				35162CB52090D96600547126 /* TransactionCategoryRepository.swift in Sources */,
@@ -541,6 +560,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				356668DA208CEB910052E724 /* TestClassUnitTests.swift in Sources */,
+				35162CBF2090DEB200547126 /* UserPreferencesTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
