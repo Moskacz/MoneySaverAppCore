@@ -77,6 +77,8 @@
 		35593C082092305800DEEDB5 /* Sequence+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35593C042092304D00DEEDB5 /* Sequence+Extension.swift */; };
 		35593C0C2092312200DEEDB5 /* FakeTransction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35593C0B2092312100DEEDB5 /* FakeTransction.swift */; };
 		35593C0D2092312200DEEDB5 /* FakeTransction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35593C0B2092312100DEEDB5 /* FakeTransction.swift */; };
+		35593C0F2092322D00DEEDB5 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35593C0E2092322D00DEEDB5 /* Color.swift */; };
+		35593C102092322D00DEEDB5 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35593C0E2092322D00DEEDB5 /* Color.swift */; };
 		356668A1208CE5CB0052E724 /* MoneySaverAppCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35666897208CE5CB0052E724 /* MoneySaverAppCore.framework */; };
 		356668BD208CE62C0052E724 /* MoneySaverAppCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 356668B4208CE62C0052E724 /* MoneySaverAppCore.framework */; };
 		356668D0208CE99D0052E724 /* MoneySaverAppCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 356668CF208CE99D0052E724 /* MoneySaverAppCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -140,6 +142,7 @@
 		35593BFF2092302500DEEDB5 /* CalendarTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarTests.swift; sourceTree = "<group>"; };
 		35593C042092304D00DEEDB5 /* Sequence+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Sequence+Extension.swift"; sourceTree = "<group>"; };
 		35593C0B2092312100DEEDB5 /* FakeTransction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FakeTransction.swift; sourceTree = "<group>"; };
+		35593C0E2092322D00DEEDB5 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		35666897208CE5CB0052E724 /* MoneySaverAppCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MoneySaverAppCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		356668A0208CE5CB0052E724 /* MoneySaverAppCore-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MoneySaverAppCore-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		356668B4208CE62C0052E724 /* MoneySaverAppCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MoneySaverAppCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -247,6 +250,7 @@
 			isa = PBXGroup;
 			children = (
 				35162CB0208FC58500547126 /* Image.swift */,
+				35593C0E2092322D00DEEDB5 /* Color.swift */,
 			);
 			path = Typealiases;
 			sourceTree = "<group>";
@@ -553,6 +557,7 @@
 				35162CB42090D96600547126 /* TransactionCategoryRepository.swift in Sources */,
 				35162CAD208FC39E00547126 /* TransactionsGrouping.swift in Sources */,
 				353817ED208E65DC00EA967F /* TransactionCategoryManagedObject+CoreDataProperties.swift in Sources */,
+				35593C0F2092322D00DEEDB5 /* Color.swift in Sources */,
 				353817D5208E647600EA967F /* CoreDataStack.swift in Sources */,
 				35162C9A208FC14900547126 /* TransactionProtocol.swift in Sources */,
 				353817E7208E65DC00EA967F /* TransactionManagedObject+CoreDataClass.swift in Sources */,
@@ -604,6 +609,7 @@
 				35162CB52090D96600547126 /* TransactionCategoryRepository.swift in Sources */,
 				35162CAE208FC39E00547126 /* TransactionsGrouping.swift in Sources */,
 				353817EE208E65DC00EA967F /* TransactionCategoryManagedObject+CoreDataProperties.swift in Sources */,
+				35593C102092322D00DEEDB5 /* Color.swift in Sources */,
 				353817D6208E647600EA967F /* CoreDataStack.swift in Sources */,
 				35162C9B208FC14900547126 /* TransactionProtocol.swift in Sources */,
 				353817E8208E65DC00EA967F /* TransactionManagedObject+CoreDataClass.swift in Sources */,
