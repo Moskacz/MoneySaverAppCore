@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol CalendarProtocol {
+public protocol CalendarProtocol {
     var now: Date { get }
     var nowCalendarDate: CalendarDate { get }
     func dayOfEraOf(date: Date) -> Int
@@ -38,11 +38,11 @@ public struct CalendarDate: CalendarDateProtocol {
 
 extension Calendar: CalendarProtocol {
     
-    var now: Date {
+    public var now: Date {
         return Date()
     }
     
-    var nowCalendarDate: CalendarDate {
+    public var nowCalendarDate: CalendarDate {
         let date = now
         return CalendarDate(calendarIdentifier: identifier.stringIdentifier,
                             dayOfEra: Int32(dayOfEraOf(date: date)),
@@ -58,39 +58,39 @@ extension Calendar: CalendarProtocol {
                             monthOfEra: Int32(ordinality(of: .month, in: .era, for: date) ?? -1))
     }
     
-    func dayOfEraOf(date: Date) -> Int {
+    public func dayOfEraOf(date: Date) -> Int {
         return ordinality(of: .day, in: .era, for: date) ?? -1
     }
     
-    func weekOfEraOf(date: Date) -> Int {
+    public func weekOfEraOf(date: Date) -> Int {
         return ordinality(of: .weekOfYear, in: .era, for: date) ?? -1
     }
     
-    func monthOfEraOf(date: Date) -> Int {
+    public func monthOfEraOf(date: Date) -> Int {
         return ordinality(of: .month, in: .era, for: date) ?? -1
     }
     
-    func yearOf(date: Date) -> Int {
+    public func yearOf(date: Date) -> Int {
         return component(.year, from: now)
     }
     
-    func monthName(forDate date: Date) -> String {
+    public func monthName(forDate date: Date) -> String {
         let month = component(.month, from: date) - 1;
         return standaloneMonthSymbols[month].firstUppercased
     }
     
-    func yearName(forDate date: Date) -> String {
+    public func yearName(forDate date: Date) -> String {
         return String(component(.year, from: date))
     }
     
-    func daysInMonthRange(forDate date: Date) -> CountableClosedRange<Int> {
+    public func daysInMonthRange(forDate date: Date) -> CountableClosedRange<Int> {
         guard let range = range(of: .day, in: .month, for: date) else {
             return 0...0
         }
         return CountableClosedRange(range)
     }
     
-    func beginEndDaysOfWeek(forDate date: Date) -> (start: Date, end: Date) {
+    public func beginEndDaysOfWeek(forDate date: Date) -> (start: Date, end: Date) {
         var startDate: Date = Date()
         var interval: TimeInterval = 1
         _ = self.dateInterval(of: .weekOfMonth,
