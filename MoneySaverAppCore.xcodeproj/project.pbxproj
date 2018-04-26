@@ -61,6 +61,14 @@
 		353817EE208E65DC00EA967F /* TransactionCategoryManagedObject+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353817DE208E65DC00EA967F /* TransactionCategoryManagedObject+CoreDataProperties.swift */; };
 		35593BEE20922DFD00DEEDB5 /* ChartsDataProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35593BED20922DFD00DEEDB5 /* ChartsDataProcessor.swift */; };
 		35593BEF20922E1D00DEEDB5 /* ChartsDataProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35593BED20922DFD00DEEDB5 /* ChartsDataProcessor.swift */; };
+		35593BF220922E8200DEEDB5 /* ChartsDataProcessorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35593BF020922E7500DEEDB5 /* ChartsDataProcessorTests.swift */; };
+		35593BF320922E8300DEEDB5 /* ChartsDataProcessorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35593BF020922E7500DEEDB5 /* ChartsDataProcessorTests.swift */; };
+		35593BF820922F0700DEEDB5 /* FakeCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35593BF520922F0700DEEDB5 /* FakeCalendar.swift */; };
+		35593BF920922F0700DEEDB5 /* FakeCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35593BF520922F0700DEEDB5 /* FakeCalendar.swift */; };
+		35593BFA20922F0700DEEDB5 /* FakeCalendarDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35593BF620922F0700DEEDB5 /* FakeCalendarDate.swift */; };
+		35593BFB20922F0700DEEDB5 /* FakeCalendarDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35593BF620922F0700DEEDB5 /* FakeCalendarDate.swift */; };
+		35593BFC20922F0700DEEDB5 /* FakeChartsDataProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35593BF720922F0700DEEDB5 /* FakeChartsDataProcessor.swift */; };
+		35593BFD20922F0700DEEDB5 /* FakeChartsDataProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35593BF720922F0700DEEDB5 /* FakeChartsDataProcessor.swift */; };
 		356668A1208CE5CB0052E724 /* MoneySaverAppCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35666897208CE5CB0052E724 /* MoneySaverAppCore.framework */; };
 		356668BD208CE62C0052E724 /* MoneySaverAppCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 356668B4208CE62C0052E724 /* MoneySaverAppCore.framework */; };
 		356668D0208CE99D0052E724 /* MoneySaverAppCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 356668CF208CE99D0052E724 /* MoneySaverAppCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -116,6 +124,10 @@
 		353817DD208E65DC00EA967F /* TransactionCategoryManagedObject+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TransactionCategoryManagedObject+CoreDataClass.swift"; sourceTree = "<group>"; };
 		353817DE208E65DC00EA967F /* TransactionCategoryManagedObject+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TransactionCategoryManagedObject+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		35593BED20922DFD00DEEDB5 /* ChartsDataProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartsDataProcessor.swift; sourceTree = "<group>"; };
+		35593BF020922E7500DEEDB5 /* ChartsDataProcessorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartsDataProcessorTests.swift; sourceTree = "<group>"; };
+		35593BF520922F0700DEEDB5 /* FakeCalendar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FakeCalendar.swift; sourceTree = "<group>"; };
+		35593BF620922F0700DEEDB5 /* FakeCalendarDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FakeCalendarDate.swift; sourceTree = "<group>"; };
+		35593BF720922F0700DEEDB5 /* FakeChartsDataProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FakeChartsDataProcessor.swift; sourceTree = "<group>"; };
 		35666897208CE5CB0052E724 /* MoneySaverAppCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MoneySaverAppCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		356668A0208CE5CB0052E724 /* MoneySaverAppCore-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MoneySaverAppCore-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		356668B4208CE62C0052E724 /* MoneySaverAppCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MoneySaverAppCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -261,6 +273,16 @@
 			path = Charts;
 			sourceTree = "<group>";
 		};
+		35593BF420922EE600DEEDB5 /* Fakes */ = {
+			isa = PBXGroup;
+			children = (
+				35593BF520922F0700DEEDB5 /* FakeCalendar.swift */,
+				35593BF620922F0700DEEDB5 /* FakeCalendarDate.swift */,
+				35593BF720922F0700DEEDB5 /* FakeChartsDataProcessor.swift */,
+			);
+			path = Fakes;
+			sourceTree = "<group>";
+		};
 		3566688B208CE4A40052E724 = {
 			isa = PBXGroup;
 			children = (
@@ -313,6 +335,8 @@
 		356668D7208CEB0E0052E724 /* UnitTests */ = {
 			isa = PBXGroup;
 			children = (
+				35593BF420922EE600DEEDB5 /* Fakes */,
+				35593BF020922E7500DEEDB5 /* ChartsDataProcessorTests.swift */,
 				35162CBD2090DEB200547126 /* UserPreferencesTests.swift */,
 				356668D8208CEB910052E724 /* TestClassUnitTests.swift */,
 			);
@@ -530,8 +554,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				35593BFC20922F0700DEEDB5 /* FakeChartsDataProcessor.swift in Sources */,
+				35593BF220922E8200DEEDB5 /* ChartsDataProcessorTests.swift in Sources */,
 				356668D9208CEB910052E724 /* TestClassUnitTests.swift in Sources */,
+				35593BF820922F0700DEEDB5 /* FakeCalendar.swift in Sources */,
 				35162CBE2090DEB200547126 /* UserPreferencesTests.swift in Sources */,
+				35593BFA20922F0700DEEDB5 /* FakeCalendarDate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -573,8 +601,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				35593BFD20922F0700DEEDB5 /* FakeChartsDataProcessor.swift in Sources */,
+				35593BF320922E8300DEEDB5 /* ChartsDataProcessorTests.swift in Sources */,
 				356668DA208CEB910052E724 /* TestClassUnitTests.swift in Sources */,
+				35593BF920922F0700DEEDB5 /* FakeCalendar.swift in Sources */,
 				35162CBF2090DEB200547126 /* UserPreferencesTests.swift in Sources */,
+				35593BFB20922F0700DEEDB5 /* FakeCalendarDate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
