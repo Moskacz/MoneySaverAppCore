@@ -31,7 +31,7 @@ public struct TransactionsCompoundSum {
 
 extension Sequence {
     
-    func grouped<U>(by key: (Element) -> U) -> [U: [Element]] {
+    public func grouped<U>(by key: (Element) -> U) -> [U: [Element]] {
         var dict = [U: [Element]]()
         for element in self {
             let key = key(element)
@@ -46,7 +46,7 @@ extension Sequence {
 
 extension Sequence where Element: TransactionProtocol {
     
-    func compoundSum(date: CalendarDateProtocol) -> TransactionsCompoundSum {
+    public func compoundSum(date: CalendarDateProtocol) -> TransactionsCompoundSum {
         var day = [Element]()
         var week = [Element]()
         var month = [Element]()
@@ -74,7 +74,7 @@ extension Sequence where Element: TransactionProtocol {
                                        era: self.transactionsSum)
     }
     
-    var transactionsSum: TransactionsSum {
+    public var transactionsSum: TransactionsSum {
         let incomes = map { $0.value?.doubleValue ?? 0 }.filter { $0 > 0 }.reduce(0, +)
         let expenses = map { $0.value?.doubleValue ?? 0 }.filter { $0 < 0 }.reduce(0, +)
         

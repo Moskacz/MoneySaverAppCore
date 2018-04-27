@@ -8,7 +8,7 @@
 
 import CoreData
 
-protocol CollectionUpdater {
+public protocol CollectionUpdater {
     func beginUpdates()
     func endUpdates()
     

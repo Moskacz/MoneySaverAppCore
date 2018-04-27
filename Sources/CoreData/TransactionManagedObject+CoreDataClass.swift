@@ -32,10 +32,10 @@ public class TransactionManagedObject: NSManagedObject {
 }
 
 extension TransactionManagedObject: TransactionProtocol {
-    var transactionCategory: TransactionCategoryProtocol? {
+    public var transactionCategory: TransactionCategoryProtocol? {
         return category
     }
-    var transactionDate: CalendarDateProtocol? {
+    public var transactionDate: CalendarDateProtocol? {
         return date
     }
 }

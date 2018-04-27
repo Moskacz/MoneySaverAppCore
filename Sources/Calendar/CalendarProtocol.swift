@@ -22,18 +22,18 @@ public protocol CalendarProtocol {
 }
 
 public struct CalendarDate: CalendarDateProtocol {
-    let calendarIdentifier: String?
-    let dayOfEra: Int32
-    let dayOfMonth: Int32
-    let dayOfYear: Int32
-    let era: Int32
-    let weekOfEra: Int32
-    let weekOfMonth: Int32
-    let weekOfYear: Int32
-    let year: Int32
-    let timeInterval: Double
-    let monthOfYear: Int32
-    let monthOfEra: Int32
+    public let calendarIdentifier: String?
+    public let dayOfEra: Int32
+    public let dayOfMonth: Int32
+    public let dayOfYear: Int32
+    public let era: Int32
+    public let weekOfEra: Int32
+    public let weekOfMonth: Int32
+    public let weekOfYear: Int32
+    public let year: Int32
+    public let timeInterval: Double
+    public let monthOfYear: Int32
+    public let monthOfEra: Int32
 }
 
 extension Calendar: CalendarProtocol {

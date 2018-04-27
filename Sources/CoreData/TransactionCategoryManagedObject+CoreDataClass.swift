@@ -29,7 +29,7 @@ public class TransactionCategoryManagedObject: NSManagedObject {
         }
     }
     
-    lazy var image: Image? = {
+    public lazy var image: Image? = {
         guard let data = icon else { return nil }
         return Image(data: data as Data)
     }()

@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol TransactionCategoryProtocol {
+public protocol TransactionCategoryProtocol {
     var name: String? { get }
     var image: Image? { get }
 }

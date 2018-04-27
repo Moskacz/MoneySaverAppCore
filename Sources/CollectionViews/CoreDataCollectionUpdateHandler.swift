@@ -9,19 +9,19 @@
 import Foundation
 import CoreData
 
-class CoreDataCollectionUpdateHandler: NSObject, NSFetchedResultsControllerDelegate {
+public class CoreDataCollectionUpdateHandler: NSObject, NSFetchedResultsControllerDelegate {
     
     private let collectionUpdater: CollectionUpdater
     
-    init(collectionUpdater: CollectionUpdater) {
+    public init(collectionUpdater: CollectionUpdater) {
         self.collectionUpdater = collectionUpdater
     }
     
-    func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+    public func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         collectionUpdater.beginUpdates()
     }
     
-    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>,
+    public func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>,
                     didChange sectionInfo: NSFetchedResultsSectionInfo,
                     atSectionIndex sectionIndex: Int,
                     for type: NSFetchedResultsChangeType) {
@@ -35,7 +35,7 @@ class CoreDataCollectionUpdateHandler: NSObject, NSFetchedResultsControllerDeleg
         }
     }
     
-    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>,
+    public func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>,
                     didChange anObject: Any,
                     at indexPath: IndexPath?,
                     for type: NSFetchedResultsChangeType,
@@ -52,7 +52,7 @@ class CoreDataCollectionUpdateHandler: NSObject, NSFetchedResultsControllerDeleg
         }
     }
     
-    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+    public func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         collectionUpdater.endUpdates()
     }
 }

@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol CalendarDateProtocol {
+public protocol CalendarDateProtocol {
     var calendarIdentifier: String? { get }
     var dayOfEra: Int32 { get }
     var dayOfMonth: Int32 { get }
