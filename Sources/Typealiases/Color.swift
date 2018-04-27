@@ -16,5 +16,12 @@ public typealias Color = UIColor
 #endif
 
 extension Color {
+
+    func encode() -> Data {
+        return NSKeyedArchiver.archivedData(withRootObject:self)
+    }
     
+    class func color(fromData data: Data) -> Color? {
+        return NSKeyedUnarchiver.unarchiveObject(with: data) as? Color
+    }
 }
