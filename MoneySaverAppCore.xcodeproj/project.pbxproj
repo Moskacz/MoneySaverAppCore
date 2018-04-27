@@ -87,6 +87,10 @@
 		356668D4208CEA270052E724 /* TestClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356668D2208CEA270052E724 /* TestClass.swift */; };
 		356668D9208CEB910052E724 /* TestClassUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356668D8208CEB910052E724 /* TestClassUnitTests.swift */; };
 		356668DA208CEB910052E724 /* TestClassUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356668D8208CEB910052E724 /* TestClassUnitTests.swift */; };
+		35AEB1192093A79F00DCE038 /* CollectionUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35AEB1172093A79F00DCE038 /* CollectionUpdater.swift */; };
+		35AEB11A2093A79F00DCE038 /* CollectionUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35AEB1172093A79F00DCE038 /* CollectionUpdater.swift */; };
+		35AEB11B2093A79F00DCE038 /* CoreDataCollectionUpdateHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35AEB1182093A79F00DCE038 /* CoreDataCollectionUpdateHandler.swift */; };
+		35AEB11C2093A79F00DCE038 /* CoreDataCollectionUpdateHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35AEB1182093A79F00DCE038 /* CoreDataCollectionUpdateHandler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -154,6 +158,8 @@
 		356668D5208CEB040052E724 /* Info-macOS-unittests.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-macOS-unittests.plist"; sourceTree = "<group>"; };
 		356668D6208CEB040052E724 /* Info-iOS-unittests.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-iOS-unittests.plist"; sourceTree = "<group>"; };
 		356668D8208CEB910052E724 /* TestClassUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestClassUnitTests.swift; sourceTree = "<group>"; };
+		35AEB1172093A79F00DCE038 /* CollectionUpdater.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionUpdater.swift; sourceTree = "<group>"; };
+		35AEB1182093A79F00DCE038 /* CoreDataCollectionUpdateHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataCollectionUpdateHandler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -324,6 +330,7 @@
 		356668CB208CE66C0052E724 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				35AEB1162093A77400DCE038 /* CollectionViews */,
 				35593BEC20922DEF00DEEDB5 /* Charts */,
 				35162CB92090DE4F00547126 /* StatePreservation */,
 				35162CAF208FC57800547126 /* Typealiases */,
@@ -361,6 +368,15 @@
 				356668D8208CEB910052E724 /* TestClassUnitTests.swift */,
 			);
 			path = UnitTests;
+			sourceTree = "<group>";
+		};
+		35AEB1162093A77400DCE038 /* CollectionViews */ = {
+			isa = PBXGroup;
+			children = (
+				35AEB1172093A79F00DCE038 /* CollectionUpdater.swift */,
+				35AEB1182093A79F00DCE038 /* CoreDataCollectionUpdateHandler.swift */,
+			);
+			path = CollectionViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -561,6 +577,7 @@
 				353817D5208E647600EA967F /* CoreDataStack.swift in Sources */,
 				35162C9A208FC14900547126 /* TransactionProtocol.swift in Sources */,
 				353817E7208E65DC00EA967F /* TransactionManagedObject+CoreDataClass.swift in Sources */,
+				35AEB1192093A79F00DCE038 /* CollectionUpdater.swift in Sources */,
 				356668D3208CEA270052E724 /* TestClass.swift in Sources */,
 				35162C8E208FC10A00547126 /* CalendarProtocol.swift in Sources */,
 				35162C9E208FC1D000547126 /* Logger.swift in Sources */,
@@ -568,6 +585,7 @@
 				353817D1208E642C00EA967F /* DataModel.xcdatamodeld in Sources */,
 				353817E9208E65DC00EA967F /* TransactionManagedObject+CoreDataProperties.swift in Sources */,
 				35162CA3208FC2D200547126 /* NSManagedObject+Extensions.swift in Sources */,
+				35AEB11B2093A79F00DCE038 /* CoreDataCollectionUpdateHandler.swift in Sources */,
 				35162C98208FC14900547126 /* CalendarDateProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -613,6 +631,7 @@
 				353817D6208E647600EA967F /* CoreDataStack.swift in Sources */,
 				35162C9B208FC14900547126 /* TransactionProtocol.swift in Sources */,
 				353817E8208E65DC00EA967F /* TransactionManagedObject+CoreDataClass.swift in Sources */,
+				35AEB11A2093A79F00DCE038 /* CollectionUpdater.swift in Sources */,
 				356668D4208CEA270052E724 /* TestClass.swift in Sources */,
 				35162C8F208FC10A00547126 /* CalendarProtocol.swift in Sources */,
 				35162C9F208FC1D000547126 /* Logger.swift in Sources */,
@@ -620,6 +639,7 @@
 				353817D2208E643600EA967F /* DataModel.xcdatamodeld in Sources */,
 				353817EA208E65DC00EA967F /* TransactionManagedObject+CoreDataProperties.swift in Sources */,
 				35162CA4208FC2D200547126 /* NSManagedObject+Extensions.swift in Sources */,
+				35AEB11C2093A79F00DCE038 /* CoreDataCollectionUpdateHandler.swift in Sources */,
 				35162C99208FC14900547126 /* CalendarDateProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
