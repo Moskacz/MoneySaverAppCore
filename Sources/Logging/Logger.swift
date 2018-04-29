@@ -21,5 +21,6 @@ public protocol Logger {
 }
 
 public class NullLogger: Logger {
+    public init() {}
     public func log(withLevel level: LogLevel, message: @autoclosure () -> String) {}
 }

@@ -9,25 +9,25 @@
 import Foundation
 import CoreData
 
-protocol CoreDataStack: class {
+public protocol CoreDataStack: class {
     func getViewContext() -> NSManagedObjectContext
     func save() throws
 }
 
-class CoreDataStackImplementation: CoreDataStack {
+public class CoreDataStackImplementation: CoreDataStack {
     
     private let persistentContainer: NSPersistentContainer
     
-    init() {
+    public init() {
         self.persistentContainer = NSPersistentContainer(name: "DataModel")
         self.persistentContainer.loadPersistentStores(completionHandler: { (_, _) in })
     }
     
-    func getViewContext() -> NSManagedObjectContext {
+    public func getViewContext() -> NSManagedObjectContext {
         return persistentContainer.viewContext
     }
     
-    func save() throws {
+    public func save() throws {
         let context = persistentContainer.viewContext
         guard context.hasChanges else { return }
         try context.save()

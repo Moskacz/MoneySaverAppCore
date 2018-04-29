@@ -9,9 +9,9 @@
 import Foundation
 import CoreData
 
-public class TransactionManagedObject: NSManagedObject {
+public class TransactionManagedObject: NSManagedObject, TransactionProtocol {
     
-    enum KeyPath: String {
+    public enum KeyPath: String {
         case value = "value"
         case title = "title"
         case date = "date"
@@ -29,12 +29,11 @@ public class TransactionManagedObject: NSManagedObject {
         case .month: return KeyPath.monthOfEra
         }
     }
-}
-
-extension TransactionManagedObject: TransactionProtocol {
+    
     public var transactionCategory: TransactionCategoryProtocol? {
         return category
     }
+    
     public var transactionDate: CalendarDateProtocol? {
         return date
     }

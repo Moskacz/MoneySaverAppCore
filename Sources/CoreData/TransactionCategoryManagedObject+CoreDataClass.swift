@@ -15,13 +15,13 @@ import AppKit
 import UIKit
 #endif
 
-public class TransactionCategoryManagedObject: NSManagedObject {
+public class TransactionCategoryManagedObject: NSManagedObject, TransactionCategoryProtocol {
 
-    enum AttributesNames: String {
+    public enum AttributesNames: String {
         case name
     }
     
-    enum SortDescriptors {
+    public enum SortDescriptors {
         case name
         
         var descriptor: NSSortDescriptor {
@@ -34,5 +34,3 @@ public class TransactionCategoryManagedObject: NSManagedObject {
         return Image(data: data as Data)
     }()
 }
-
-extension TransactionCategoryManagedObject: TransactionCategoryProtocol {}

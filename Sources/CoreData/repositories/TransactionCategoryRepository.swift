@@ -9,23 +9,23 @@
 import Foundation
 import CoreData
 
-protocol TransactionCategoryRepository {
+public protocol TransactionCategoryRepository {
     func countOfEntities() -> Int
     func allEntitiesFRC() -> NSFetchedResultsController<TransactionCategoryManagedObject>
     func createInitialCategories()
 }
 
-class TransactionCategoryRepositoryImpl: TransactionCategoryRepository {
+public class TransactionCategoryRepositoryImpl: TransactionCategoryRepository {
     
     private let context: NSManagedObjectContext
     private let logger: Logger
     
-    init(context: NSManagedObjectContext, logger: Logger) {
+    public init(context: NSManagedObjectContext, logger: Logger) {
         self.context = context
         self.logger = logger
     }
     
-    func countOfEntities() -> Int {
+    public func countOfEntities() -> Int {
         let fetchRequest: NSFetchRequest<TransactionCategoryManagedObject> = TransactionCategoryManagedObject.fetchRequest()
         do {
             return try context.count(for: fetchRequest)
@@ -35,7 +35,7 @@ class TransactionCategoryRepositoryImpl: TransactionCategoryRepository {
         }
     }
     
-    func allEntitiesFRC() -> NSFetchedResultsController<TransactionCategoryManagedObject> {
+    public func allEntitiesFRC() -> NSFetchedResultsController<TransactionCategoryManagedObject> {
         let fetchRequest: NSFetchRequest<TransactionCategoryManagedObject> = TransactionCategoryManagedObject.fetchRequest()
         fetchRequest.sortDescriptors = [TransactionCategoryManagedObject.SortDescriptors.name.descriptor]
         return NSFetchedResultsController(fetchRequest: fetchRequest,
@@ -44,7 +44,7 @@ class TransactionCategoryRepositoryImpl: TransactionCategoryRepository {
                                           cacheName: nil)
     }
     
-    func createInitialCategories() {
+    public func createInitialCategories() {
         context.perform {
             for categoryData in self.initialCategoriesData {
                 let entity = TransactionCategoryManagedObject.createEntity(inContext: self.context)

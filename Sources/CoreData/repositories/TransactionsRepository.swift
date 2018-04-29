@@ -12,15 +12,26 @@ import CoreData
 public struct DatedValue: Equatable {
     public let date: Int
     public let value: Decimal
+    
+    public init(date: Int, value: Decimal) {
+        self.date = date
+        self.value = value
+    }
 }
 
 public struct TransactionData {
     public let title: String
     public let value: Decimal
     public let creationDate: Date
+    
+    public init(title: String, value: Decimal, creationDate: Date) {
+        self.title = title
+        self.value = value
+        self.creationDate = creationDate
+    }
 }
 
-protocol TransactionsRepository {
+public protocol TransactionsRepository {
     var allTransactionsFRC: NSFetchedResultsController<TransactionManagedObject> { get }
     var context: NSManagedObjectContext { get }
     var fetchRequest: NSFetchRequest<TransactionManagedObject> { get }
@@ -34,13 +45,13 @@ protocol TransactionsRepository {
     func groupedTransactions(grouping: TransactionsGrouping) throws -> [DatedValue]
 }
 
-class TransactionsRepositoryImplementation: TransactionsRepository {
+public class TransactionsRepositoryImplementation: TransactionsRepository {
     
-    let context: NSManagedObjectContext
+    public let context: NSManagedObjectContext
     private let calendar: CalendarProtocol
     private let logger: Logger
     
-    init(context: NSManagedObjectContext,
+    public init(context: NSManagedObjectContext,
          logger: Logger,
          calendar: CalendarProtocol) {
         self.context = context
@@ -48,7 +59,7 @@ class TransactionsRepositoryImplementation: TransactionsRepository {
         self.calendar = calendar
     }
     
-    var allTransactionsFRC: NSFetchedResultsController<TransactionManagedObject> {
+    public var allTransactionsFRC: NSFetchedResultsController<TransactionManagedObject> {
         let request = fetchRequest
         request.includesPropertyValues = true
         request.fetchBatchSize = 20
@@ -62,19 +73,19 @@ class TransactionsRepositoryImplementation: TransactionsRepository {
                                           cacheName: nil)
     }
     
-    var fetchRequest: NSFetchRequest<TransactionManagedObject> {
+    public var fetchRequest: NSFetchRequest<TransactionManagedObject> {
         get {
             return TransactionManagedObject.fetchRequest()
         }
     }
     
-    var expensesOnlyPredicate: NSPredicate {
+    public var expensesOnlyPredicate: NSPredicate {
         get {
             return NSPredicate(format: "value < 0")
         }
     }
     
-    func predicate(forDateRange range: DateRange) -> NSPredicate? {
+    public func predicate(forDateRange range: DateRange) -> NSPredicate? {
         let date = calendar.now
         switch range {
         case .today:
@@ -90,7 +101,7 @@ class TransactionsRepositoryImplementation: TransactionsRepository {
         }
     }
     
-    func addTransaction(data: TransactionData, category: TransactionCategoryManagedObject) {
+    public func addTransaction(data: TransactionData, category: TransactionCategoryManagedObject) {
         context.perform {
             let transaction = TransactionManagedObject.createEntity(inContext: self.context)
             transaction.title = data.title
@@ -102,17 +113,17 @@ class TransactionsRepositoryImplementation: TransactionsRepository {
         }
     }
     
-    func remove(transaction: TransactionManagedObject) {
+    public func remove(transaction: TransactionManagedObject) {
         context.delete(transaction)
     }
     
-    func allTransactions() throws -> [TransactionManagedObject] {
+    public func allTransactions() throws -> [TransactionManagedObject] {
         let request = fetchRequest
         request.includesPropertyValues = true
         return try context.fetch(request)
     }
     
-    func groupedTransactions(grouping: TransactionsGrouping) throws -> [DatedValue] {
+    public func groupedTransactions(grouping: TransactionsGrouping) throws -> [DatedValue] {
         let request = NSFetchRequest<NSDictionary>.init(entityName: TransactionManagedObject.entityName)
         
         let valueExpression = NSExpression(forKeyPath: TransactionManagedObject.KeyPath.value.rawValue)
