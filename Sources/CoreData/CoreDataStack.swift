@@ -18,9 +18,11 @@ public class CoreDataStackImplementation: CoreDataStack {
     
     private let persistentContainer: NSPersistentContainer
     
-    public init() {
-        self.persistentContainer = NSPersistentContainer(name: "DataModel")
-        self.persistentContainer.loadPersistentStores(completionHandler: { (_, _) in })
+    public init(storeURL url: URL) {
+        self.persistentContainer = NSPersistentContainer(name: NSManagedObjectModel.defaultName,
+                                                         managedObjectModel: NSManagedObjectModel.makeDefault())
+        self.persistentContainer.persistentStoreDescriptions = [NSPersistentStoreDescription(url: url)]
+        self.persistentContainer.loadPersistentStores { (_,_) in }
     }
     
     public func getViewContext() -> NSManagedObjectContext {

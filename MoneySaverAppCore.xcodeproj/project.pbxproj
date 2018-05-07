@@ -59,6 +59,10 @@
 		353817EC208E65DC00EA967F /* TransactionCategoryManagedObject+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353817DD208E65DC00EA967F /* TransactionCategoryManagedObject+CoreDataClass.swift */; };
 		353817ED208E65DC00EA967F /* TransactionCategoryManagedObject+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353817DE208E65DC00EA967F /* TransactionCategoryManagedObject+CoreDataProperties.swift */; };
 		353817EE208E65DC00EA967F /* TransactionCategoryManagedObject+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353817DE208E65DC00EA967F /* TransactionCategoryManagedObject+CoreDataProperties.swift */; };
+		353A944620A0D89100B94A72 /* Bundle+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353A944520A0D89100B94A72 /* Bundle+Extension.swift */; };
+		353A944820A0D9E100B94A72 /* ManagedObjectModel+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353A944720A0D9E100B94A72 /* ManagedObjectModel+Extensions.swift */; };
+		353A944920A0D9E100B94A72 /* ManagedObjectModel+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353A944720A0D9E100B94A72 /* ManagedObjectModel+Extensions.swift */; };
+		353A944A20A0D9E600B94A72 /* Bundle+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353A944520A0D89100B94A72 /* Bundle+Extension.swift */; };
 		35593BEE20922DFD00DEEDB5 /* ChartsDataProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35593BED20922DFD00DEEDB5 /* ChartsDataProcessor.swift */; };
 		35593BEF20922E1D00DEEDB5 /* ChartsDataProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35593BED20922DFD00DEEDB5 /* ChartsDataProcessor.swift */; };
 		35593BF220922E8200DEEDB5 /* ChartsDataProcessorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35593BF020922E7500DEEDB5 /* ChartsDataProcessorTests.swift */; };
@@ -137,6 +141,8 @@
 		353817DC208E65DC00EA967F /* TransactionManagedObject+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TransactionManagedObject+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		353817DD208E65DC00EA967F /* TransactionCategoryManagedObject+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TransactionCategoryManagedObject+CoreDataClass.swift"; sourceTree = "<group>"; };
 		353817DE208E65DC00EA967F /* TransactionCategoryManagedObject+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TransactionCategoryManagedObject+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		353A944520A0D89100B94A72 /* Bundle+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Extension.swift"; sourceTree = "<group>"; };
+		353A944720A0D9E100B94A72 /* ManagedObjectModel+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ManagedObjectModel+Extensions.swift"; sourceTree = "<group>"; };
 		35593BED20922DFD00DEEDB5 /* ChartsDataProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartsDataProcessor.swift; sourceTree = "<group>"; };
 		35593BF020922E7500DEEDB5 /* ChartsDataProcessorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartsDataProcessorTests.swift; sourceTree = "<group>"; };
 		35593BF520922F0700DEEDB5 /* FakeCalendar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FakeCalendar.swift; sourceTree = "<group>"; };
@@ -240,6 +246,8 @@
 				35162CA2208FC2D200547126 /* NSManagedObject+Extensions.swift */,
 				35162CA5208FC30600547126 /* String+Extensions.swift */,
 				35162CA8208FC32500547126 /* Calendar+Extensions.swift */,
+				353A944520A0D89100B94A72 /* Bundle+Extension.swift */,
+				353A944720A0D9E100B94A72 /* ManagedObjectModel+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -575,6 +583,7 @@
 				353817ED208E65DC00EA967F /* TransactionCategoryManagedObject+CoreDataProperties.swift in Sources */,
 				35593C0F2092322D00DEEDB5 /* Color.swift in Sources */,
 				353817D5208E647600EA967F /* CoreDataStack.swift in Sources */,
+				353A944620A0D89100B94A72 /* Bundle+Extension.swift in Sources */,
 				35162C9A208FC14900547126 /* TransactionProtocol.swift in Sources */,
 				353817E7208E65DC00EA967F /* TransactionManagedObject+CoreDataClass.swift in Sources */,
 				35AEB1192093A79F00DCE038 /* CollectionUpdater.swift in Sources */,
@@ -582,6 +591,7 @@
 				35162C8E208FC10A00547126 /* CalendarProtocol.swift in Sources */,
 				35162C9E208FC1D000547126 /* Logger.swift in Sources */,
 				353817EB208E65DC00EA967F /* TransactionCategoryManagedObject+CoreDataClass.swift in Sources */,
+				353A944820A0D9E100B94A72 /* ManagedObjectModel+Extensions.swift in Sources */,
 				353817D1208E642C00EA967F /* DataModel.xcdatamodeld in Sources */,
 				353817E9208E65DC00EA967F /* TransactionManagedObject+CoreDataProperties.swift in Sources */,
 				35162CA3208FC2D200547126 /* NSManagedObject+Extensions.swift in Sources */,
@@ -635,11 +645,13 @@
 				356668D4208CEA270052E724 /* TestClass.swift in Sources */,
 				35162C8F208FC10A00547126 /* CalendarProtocol.swift in Sources */,
 				35162C9F208FC1D000547126 /* Logger.swift in Sources */,
+				353A944A20A0D9E600B94A72 /* Bundle+Extension.swift in Sources */,
 				353817EC208E65DC00EA967F /* TransactionCategoryManagedObject+CoreDataClass.swift in Sources */,
 				353817D2208E643600EA967F /* DataModel.xcdatamodeld in Sources */,
 				353817EA208E65DC00EA967F /* TransactionManagedObject+CoreDataProperties.swift in Sources */,
 				35162CA4208FC2D200547126 /* NSManagedObject+Extensions.swift in Sources */,
 				35AEB11C2093A79F00DCE038 /* CoreDataCollectionUpdateHandler.swift in Sources */,
+				353A944920A0D9E100B94A72 /* ManagedObjectModel+Extensions.swift in Sources */,
 				35162C99208FC14900547126 /* CalendarDateProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
