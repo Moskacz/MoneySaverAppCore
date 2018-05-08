@@ -34,6 +34,32 @@ public struct CalendarDate: CalendarDateProtocol {
     public let timeInterval: Double
     public let monthOfYear: Int32
     public let monthOfEra: Int32
+    
+    public init(calendarIdentifier: String?,
+                dayOfEra: Int32,
+                dayOfMonth: Int32,
+                dayOfYear: Int32,
+                era: Int32,
+                weekOfEra: Int32,
+                weekOfMonth: Int32,
+                weekOfYear: Int32,
+                year: Int32,
+                timeInterval: Double,
+                monthOfYear: Int32,
+                monthOfEra: Int32) {
+        self.calendarIdentifier = calendarIdentifier
+        self.dayOfEra = dayOfEra
+        self.dayOfMonth = dayOfMonth
+        self.dayOfYear = dayOfYear
+        self.era = era
+        self.weekOfEra = weekOfEra
+        self.weekOfMonth = weekOfMonth
+        self.weekOfYear = weekOfYear
+        self.year = year
+        self.timeInterval = timeInterval
+        self.monthOfYear = monthOfYear
+        self.monthOfEra = monthOfEra
+    }
 }
 
 extension Calendar: CalendarProtocol {

@@ -7,17 +7,16 @@
 //
 
 import Foundation
-@testable import MoneySaverAppCore
 
-class FakeChartsDataProcessor: ChartsDataProcessor {
+public class FakeChartsDataProcessor: ChartsDataProcessor {
     
-    func spendings(fromMonthlyExpenses expenses: [DatedValue]) -> [PlotValue] {
+    public init() {}
+    
+    public func spendings(fromMonthlyExpenses expenses: [DatedValue]) -> [PlotValue] {
         fatalError()
     }
     
-    func estimatedSpendings(budgetValue: Double) -> [PlotValue] {
+    public func estimatedSpendings(budgetValue: Double) -> [PlotValue] {
         fatalError()
     }
-    
-    
 }
