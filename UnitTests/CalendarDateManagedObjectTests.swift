@@ -11,6 +11,21 @@ import CoreData
 
 class CalendarDateManagedObjectTests: XCTestCase {
     
+    var stack: CoreDataStack!
+    var context: NSManagedObjectContext!
+    
+    override func setUp() {
+        super.setUp()
+        stack = InMemoryCoreDataStack()
+        context = stack.getViewContext()
+    }
+    
+    override func tearDown() {
+        context = nil
+        stack = nil
+        super.tearDown()
+    }
+    
     func test_updateProperties() {
         let date = CalendarDate(calendarIdentifier: "test",
                                 dayOfEra: 1,
@@ -25,8 +40,7 @@ class CalendarDateManagedObjectTests: XCTestCase {
                                 monthOfYear: 10,
                                 monthOfEra: 11)
         
-        let context = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
-        let managedObject = CalendarDateManagedObject(context: context)
+        let managedObject = CalendarDateManagedObject.createEntity(inContext: context)
         managedObject.update(with: date)
         
         XCTAssertEqual(managedObject.calendarIdentifier, "test")

@@ -13,17 +13,12 @@ public class InMemoryCoreDataStack: CoreDataStack {
     private let container: NSPersistentContainer
     
     public init() {
-        let container = NSPersistentContainer(name: "DataModel")
+        let container = NSPersistentContainer(name: NSManagedObjectModel.defaultName,
+                                                         managedObjectModel: NSManagedObjectModel.makeDefault())
         let storeDescription = NSPersistentStoreDescription()
         storeDescription.type = NSInMemoryStoreType
         container.persistentStoreDescriptions = [storeDescription]
-        container.loadPersistentStores { (storeDescription, error) in
-            print(storeDescription)
-            if let loadingError = error {
-                print(loadingError.localizedDescription)
-            }
-        }
-        
+        container.loadPersistentStores { (_, _) in }
         self.container = container
     }
     
