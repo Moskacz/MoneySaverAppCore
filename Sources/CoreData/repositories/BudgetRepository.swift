@@ -10,14 +10,13 @@ import Foundation
 import CoreData
 
 public protocol BudgetRepository {
-    var fetchRequest: NSFetchRequest<BudgetManagedObject> { get }
-    var context: NSManagedObjectContext { get }
+    func makeEntitiesFRC() -> NSFetchedResultsController<BudgetManagedObject>
     func saveBudget(withValue value: Decimal)
 }
 
 public class BudgetRepositoryImpl: BudgetRepository {
     
-    public let context: NSManagedObjectContext
+    private let context: NSManagedObjectContext
     private let logger: Logger
     
     public init(context: NSManagedObjectContext, logger: Logger) {
@@ -25,8 +24,18 @@ public class BudgetRepositoryImpl: BudgetRepository {
         self.logger = logger
     }
     
+    public func makeEntitiesFRC() -> NSFetchedResultsController<BudgetManagedObject> {
+        let request = allEntitiesFetchRequest
+        request.sortDescriptors = [BudgetManagedObject.SortDescriptors.value.descriptor]
+        
+        return NSFetchedResultsController(fetchRequest: request,
+                                          managedObjectContext: context,
+                                          sectionNameKeyPath: nil,
+                                          cacheName: nil)
+    }
+    
     public func saveBudget(withValue value: Decimal) {
-        let request = fetchRequest
+        let request = allEntitiesFetchRequest
         do {
             let entities = try context.fetch(request)
             if entities.isEmpty {
@@ -55,7 +64,7 @@ public class BudgetRepositoryImpl: BudgetRepository {
         }
     }
     
-    public var fetchRequest: NSFetchRequest<BudgetManagedObject> {
+    private var allEntitiesFetchRequest: NSFetchRequest<BudgetManagedObject> {
         return BudgetManagedObject.fetchRequest()
     }
 }
