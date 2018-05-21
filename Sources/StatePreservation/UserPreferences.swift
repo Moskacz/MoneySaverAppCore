@@ -10,12 +10,14 @@ import Foundation
 
 public protocol UserPreferences: class {
     var dateRange: DateRange { get set }
+    var statsGrouping: TransactionsGrouping { get set }
 }
 
 extension UserDefaults: UserPreferences {
     
     private enum PreferenceKey: String {
         case dateRange = "userPreferences_dateRange"
+        case statsGrouping = "userPreferences_statsGrouping"
     }
     
     public var dateRange: DateRange {
@@ -31,4 +33,19 @@ extension UserDefaults: UserPreferences {
             synchronize()
         }
     }
+    
+    public var statsGrouping: TransactionsGrouping {
+        get {
+            let defaultValue = TransactionsGrouping.month
+            guard let rawValue = string(forKey: PreferenceKey.statsGrouping.rawValue) else {
+                return defaultValue
+            }
+            return TransactionsGrouping(rawValue: rawValue) ?? defaultValue
+        }
+        set {
+            set(newValue.rawValue, forKey: PreferenceKey.statsGrouping.rawValue)
+            synchronize()
+        }
+    }
+    
 }

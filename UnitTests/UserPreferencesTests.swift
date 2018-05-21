@@ -33,4 +33,13 @@ class UserPreferencesTests: XCTestCase {
         XCTAssertEqual(sut.dateRange, DateRange.allTime)
     }
     
+    func test_whenThereIsNoSavedStatsGrouping_thenMonthShouldBeReturned() {
+        XCTAssertEqual(sut.statsGrouping, TransactionsGrouping.month)
+    }
+    
+    func test_whenUserSavedStatsGrouping_itShouldBeStored() {
+        sut.statsGrouping = .week
+        XCTAssertEqual(sut.statsGrouping, TransactionsGrouping.week)
+    }
+    
 }

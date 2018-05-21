@@ -8,7 +8,7 @@
 
 import Foundation
 
-public enum TransactionsGrouping {
+public enum TransactionsGrouping: String {
     case day
     case week
     case month
