@@ -124,27 +124,27 @@ public class TransactionsRepositoryImplementation: TransactionsRepository {
     }
     
     public func groupedTransactions(grouping: TransactionsGrouping) throws -> [DatedValue] {
-        let request = NSFetchRequest<NSDictionary>.init(entityName: TransactionManagedObject.entityName)
+        let request = NSFetchRequest<NSDictionary>(entityName: TransactionManagedObject.entityName)
         
-        let valueExpression = NSExpression(forKeyPath: TransactionManagedObject.KeyPath.value.rawValue)
         let sumExpressionDesc = NSExpressionDescription()
-        sumExpressionDesc.expression = NSExpression(forFunction: "sum:", arguments: [valueExpression])
-        sumExpressionDesc.name = "sum"
+        sumExpressionDesc.expression = NSExpression(forFunction: "sum:",
+                                                    arguments: [NSExpression(forKeyPath: "value")])
+        sumExpressionDesc.name = "valueSum"
         sumExpressionDesc.expressionResultType = .doubleAttributeType
         
-        request.propertiesToFetch = [TransactionManagedObject.KeyPath.dayOfEra.rawValue,
-                                     sumExpressionDesc]
-        request.propertiesToGroupBy = [TransactionManagedObject.KeyPath.dayOfEra.rawValue]
+        request.propertiesToFetch = [sumExpressionDesc, "date.dayOfEra"]
+        request.returnsObjectsAsFaults = false
+        request.propertiesToGroupBy = ["date.dayOfEra"]
         request.resultType = .dictionaryResultType
         
         let objects = try context.fetch(request)
         return objects.compactMap { dict -> DatedValue? in
             guard
-                let sum = dict["sum"] as? Double,
+                let sum = dict[sumExpressionDesc.name] as? Double,
                 let date = dict[TransactionManagedObject.KeyPath.dayOfEra.rawValue] as? Int else {
                 return nil
             }
-            
+
             return DatedValue(date: date, value: Decimal(sum))
         }
     }

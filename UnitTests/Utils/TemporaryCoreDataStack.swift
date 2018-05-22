@@ -19,7 +19,7 @@ final class TemporaryCoreDataStack: CoreDataStackImplementation {
     
     func cleanUp() {
         do {
-            try FileManager.default.removeItem(at: temporaryURL)
+//            try FileManager.default.removeItem(at: temporaryURL)
         } catch {
             print(error.localizedDescription)
         }
