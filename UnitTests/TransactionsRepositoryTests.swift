@@ -10,13 +10,14 @@ import XCTest
 
 class TransactionsRepositoryTests: XCTestCase {
     
-    var coreDataStack: InMemoryCoreDataStack!
+    var coreDataStack: TemporaryCoreDataStack!
     var fakeCaledar: FakeCalendar!
     var sut: TransactionsRepositoryImplementation!
     
     override func setUp() {
         super.setUp()
-        coreDataStack = InMemoryCoreDataStack()
+        
+        coreDataStack = TemporaryCoreDataStack()
         fakeCaledar = FakeCalendar()
         sut = TransactionsRepositoryImplementation(context: coreDataStack.getViewContext(),
                                                    logger: NullLogger(),
@@ -26,6 +27,7 @@ class TransactionsRepositoryTests: XCTestCase {
     override func tearDown() {
         sut = nil
         fakeCaledar = nil
+        coreDataStack = nil
         super.tearDown()
     }
     
@@ -68,25 +70,23 @@ class TransactionsRepositoryTests: XCTestCase {
     }
     
     func test_groupedTransactions_dayGrouping() {
-        // commented out for now, it cannot be tested with in memory core data store
+        let context = coreDataStack.getViewContext()
         
-        //        let context = coreDataStack.getViewContext()
-        //
-        //        let day1Transaction1 = TransactionManagedObject.createEntity(inContext: context)
-        //        day1Transaction1.value = NSDecimalNumber(value: 20)
-        //        day1Transaction1.date = calendarDate(dayOfEra: 1)
-        //
-        //        let day1Transaction2 = TransactionManagedObject.createEntity(inContext: context)
-        //        day1Transaction2.value = NSDecimalNumber(value: 10)
-        //        day1Transaction2.date = calendarDate(dayOfEra: 1)
-        //
-        //        let day2Transaction = TransactionManagedObject.createEntity(inContext: context)
-        //        day2Transaction.value = NSDecimalNumber(value: 123)
-        //        day2Transaction.date = calendarDate(dayOfEra: 2)
-        //
-        //        let grouped = try! sut.groupedTransactions(grouping: .day)
-        //        XCTAssertEqual(grouped[0], DatedValue(date: 1, value: 30)) // 20 + 10
-        //        XCTAssertEqual(grouped[1], DatedValue(date: 2, value: 123))
+        let day1Transaction1 = TransactionManagedObject.createEntity(inContext: context)
+        day1Transaction1.value = NSDecimalNumber(value: 20)
+        day1Transaction1.date = calendarDate(dayOfEra: 1)
+        
+        let day1Transaction2 = TransactionManagedObject.createEntity(inContext: context)
+        day1Transaction2.value = NSDecimalNumber(value: 10)
+        day1Transaction2.date = calendarDate(dayOfEra: 1)
+        
+        let day2Transaction = TransactionManagedObject.createEntity(inContext: context)
+        day2Transaction.value = NSDecimalNumber(value: 123)
+        day2Transaction.date = calendarDate(dayOfEra: 2)
+        
+        let grouped = try! sut.groupedTransactions(grouping: .day)
+        XCTAssertEqual(grouped[0], DatedValue(date: 1, value: 30)) // 20 + 10
+        XCTAssertEqual(grouped[1], DatedValue(date: 2, value: 123))
     }
     
     // MARK: Helpers

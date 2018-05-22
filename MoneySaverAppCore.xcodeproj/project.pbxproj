@@ -105,6 +105,8 @@
 		35AEB11A2093A79F00DCE038 /* CollectionUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35AEB1172093A79F00DCE038 /* CollectionUpdater.swift */; };
 		35AEB11B2093A79F00DCE038 /* CoreDataCollectionUpdateHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35AEB1182093A79F00DCE038 /* CoreDataCollectionUpdateHandler.swift */; };
 		35AEB11C2093A79F00DCE038 /* CoreDataCollectionUpdateHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35AEB1182093A79F00DCE038 /* CoreDataCollectionUpdateHandler.swift */; };
+		35DC9A2420B4815F00FD19BA /* TemporaryCoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DC9A2320B4815F00FD19BA /* TemporaryCoreDataStack.swift */; };
+		35DC9A2520B4815F00FD19BA /* TemporaryCoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DC9A2320B4815F00FD19BA /* TemporaryCoreDataStack.swift */; };
 		35DD654620B09F9000909AA4 /* FakeBudgetRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DD654520B09F9000909AA4 /* FakeBudgetRepository.swift */; };
 		35DD654720B09F9000909AA4 /* FakeBudgetRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DD654520B09F9000909AA4 /* FakeBudgetRepository.swift */; };
 /* End PBXBuildFile section */
@@ -183,6 +185,7 @@
 		356668D8208CEB910052E724 /* TestClassUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestClassUnitTests.swift; sourceTree = "<group>"; };
 		35AEB1172093A79F00DCE038 /* CollectionUpdater.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionUpdater.swift; sourceTree = "<group>"; };
 		35AEB1182093A79F00DCE038 /* CoreDataCollectionUpdateHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataCollectionUpdateHandler.swift; sourceTree = "<group>"; };
+		35DC9A2320B4815F00FD19BA /* TemporaryCoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemporaryCoreDataStack.swift; sourceTree = "<group>"; };
 		35DD654520B09F9000909AA4 /* FakeBudgetRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeBudgetRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -318,6 +321,7 @@
 			isa = PBXGroup;
 			children = (
 				354E4B9420A231F6009A8311 /* InMemoryCoreDataStack.swift */,
+				35DC9A2320B4815F00FD19BA /* TemporaryCoreDataStack.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -646,6 +650,7 @@
 				354E4B8E20A23153009A8311 /* StringTests.swift in Sources */,
 				356668D9208CEB910052E724 /* TestClassUnitTests.swift in Sources */,
 				35593BF820922F0700DEEDB5 /* FakeCalendar.swift in Sources */,
+				35DC9A2420B4815F00FD19BA /* TemporaryCoreDataStack.swift in Sources */,
 				35593C0C2092312200DEEDB5 /* FakeTransction.swift in Sources */,
 				354E4B9120A231B3009A8311 /* TransactionsRepositoryTests.swift in Sources */,
 				354E4B8B20A23115009A8311 /* TransactionManagedObjectTests.swift in Sources */,
@@ -708,6 +713,7 @@
 				354E4B8F20A23153009A8311 /* StringTests.swift in Sources */,
 				356668DA208CEB910052E724 /* TestClassUnitTests.swift in Sources */,
 				35593BF920922F0700DEEDB5 /* FakeCalendar.swift in Sources */,
+				35DC9A2520B4815F00FD19BA /* TemporaryCoreDataStack.swift in Sources */,
 				35593C0D2092312200DEEDB5 /* FakeTransction.swift in Sources */,
 				354E4B9220A231B3009A8311 /* TransactionsRepositoryTests.swift in Sources */,
 				354E4B8C20A23115009A8311 /* TransactionManagedObjectTests.swift in Sources */,
