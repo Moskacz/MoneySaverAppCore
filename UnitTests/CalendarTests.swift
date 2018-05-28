@@ -82,6 +82,21 @@ class CalendarTests: XCTestCase {
         XCTAssertEqual(dates.end, expectedEnd)
     }
     
+    func test_calendarDateFromDate() {
+        let calendarDate = calendar.calendarDate(from: testedDate)
+        XCTAssertEqual(calendarDate.dayOfEra, 736703)
+        XCTAssertEqual(calendarDate.dayOfMonth, 9)
+        XCTAssertEqual(calendarDate.dayOfYear, 9)
+        XCTAssertEqual(calendarDate.era, 1)
+        XCTAssertEqual(calendarDate.weekOfEra, 105244)
+        XCTAssertEqual(calendarDate.weekOfMonth, 2)
+        XCTAssertEqual(calendarDate.weekOfYear, 2)
+        XCTAssertEqual(calendarDate.year, 2018)
+        XCTAssertEqual(calendarDate.timeInterval, 1515504813)
+        XCTAssertEqual(calendarDate.monthOfYear, 1)
+        XCTAssertEqual(calendarDate.monthOfEra, 24205)
+    }
+    
     private var testedDate: Date {
         // 09/01/2018 @ 1:33pm (UTC)
         return Date(timeIntervalSince1970: 1515504813)
