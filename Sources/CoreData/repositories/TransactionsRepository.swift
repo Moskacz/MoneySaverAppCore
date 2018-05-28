@@ -114,7 +114,9 @@ public class TransactionsRepositoryImplementation: TransactionsRepository {
     }
     
     public func remove(transaction: TransactionManagedObject) {
-        context.delete(transaction)
+        context.performAndWait {
+            self.context.delete(transaction)
+        }
     }
     
     public func allTransactions() throws -> [TransactionManagedObject] {

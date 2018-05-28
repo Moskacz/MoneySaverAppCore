@@ -105,6 +105,14 @@ class TransactionsRepositoryTests: XCTestCase {
         XCTAssertEqual(transaction.category!.name, "category_name")
     }
     
+    func test_deleteTransaction_shouldRemoveItFromContext() {
+        let context = coreDataStack.getViewContext()
+        let transaction = TransactionManagedObject.createEntity(inContext: context)
+        XCTAssertTrue(context.deletedObjects.isEmpty)
+        sut.remove(transaction: transaction)
+        XCTAssertEqual(context.deletedObjects.count, 1)
+    }
+    
     // MARK: Helpers
     
     private func calendarDate(dayOfEra: Int32 = 0, weekOfEra: Int32 = 0, monthOfEra: Int32 = 0) -> CalendarDateManagedObject {
@@ -115,5 +123,4 @@ class TransactionsRepositoryTests: XCTestCase {
         date.monthOfEra = monthOfEra
         return date
     }
-    
 }
