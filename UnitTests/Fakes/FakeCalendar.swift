@@ -11,6 +11,8 @@ import Foundation
 
 class FakeCalendar: CalendarProtocol {
     
+    var calendar = Calendar.current
+    
     var nowToReturn: Date!
     var daysInMonthRangeToReturn: CountableClosedRange<Int>!
     var dayOfEraOfDateToReturn: Int!
@@ -27,6 +29,10 @@ class FakeCalendar: CalendarProtocol {
     
     var nowCalendarDate: CalendarDate {
         fatalError()
+    }
+    
+    func calendarDate(from date: Date) -> CalendarDate {
+        return calendar.calendarDate(from: date)
     }
     
     func dayOfEraOf(date: Date) -> Int {

@@ -102,12 +102,12 @@ public class TransactionsRepositoryImplementation: TransactionsRepository {
     }
     
     public func addTransaction(data: TransactionData, category: TransactionCategoryManagedObject) {
-        context.perform {
+        context.performAndWait {
             let transaction = TransactionManagedObject.createEntity(inContext: self.context)
             transaction.title = data.title
             transaction.value = data.value as NSDecimalNumber
             let date = CalendarDateManagedObject.createEntity(inContext: self.context)
-            date.update(with: self.calendar.nowCalendarDate)
+            date.update(with: calendar.calendarDate(from: data.creationDate))
             transaction.date = date
             transaction.category = category
         }
@@ -126,13 +126,14 @@ public class TransactionsRepositoryImplementation: TransactionsRepository {
     public func groupedTransactions(grouping: TransactionsGrouping) throws -> [DatedValue] {
         let request = NSFetchRequest<NSDictionary>(entityName: TransactionManagedObject.entityName)
         
+        let valueExpression = NSExpression(forKeyPath: "value")
         let sumExpressionDesc = NSExpressionDescription()
         sumExpressionDesc.expression = NSExpression(forFunction: "sum:",
-                                                    arguments: [NSExpression(forKeyPath: "value")])
+                                                    arguments: [valueExpression])
         sumExpressionDesc.name = "valueSum"
         sumExpressionDesc.expressionResultType = .doubleAttributeType
         
-        request.propertiesToFetch = [sumExpressionDesc, "date.dayOfEra"]
+        request.propertiesToFetch = ["date.dayOfEra", sumExpressionDesc]
         request.returnsObjectsAsFaults = false
         request.propertiesToGroupBy = ["date.dayOfEra"]
         request.resultType = .dictionaryResultType

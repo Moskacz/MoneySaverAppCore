@@ -11,6 +11,7 @@ import Foundation
 public protocol CalendarProtocol {
     var now: Date { get }
     var nowCalendarDate: CalendarDate { get }
+    func calendarDate(from date: Date) -> CalendarDate
     func dayOfEraOf(date: Date) -> Int
     func weekOfEraOf(date: Date) -> Int
     func monthOfEraOf(date: Date) -> Int
@@ -69,7 +70,10 @@ extension Calendar: CalendarProtocol {
     }
     
     public var nowCalendarDate: CalendarDate {
-        let date = now
+        return calendarDate(from: now)
+    }
+    
+    public func calendarDate(from date: Date) -> CalendarDate {
         return CalendarDate(calendarIdentifier: identifier.stringIdentifier,
                             dayOfEra: Int32(dayOfEraOf(date: date)),
                             dayOfMonth: Int32(component(.day, from: date)),
