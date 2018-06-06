@@ -25,6 +25,14 @@ class SequenceTests: XCTestCase {
         XCTAssertEqual(grouped[25]!, [person3, person4])
     }
     
+    func test_valueRepresenting_sum() {
+        let value1 = NSDecimalNumber(value: 2)
+        let value2 = NSDecimalNumber(value: 4)
+        let value3 = NSDecimalNumber(value: -10)
+        let sum = [value1, value2, value3].sum
+        XCTAssertEqual(sum.floatValue, -4, accuracy: 0.00001)
+    }
+    
     func test_compoundSum_shouldComputeSumForGivenDate() {
         let today = FakeCalendarDate()
         today.dayOfEra = 1

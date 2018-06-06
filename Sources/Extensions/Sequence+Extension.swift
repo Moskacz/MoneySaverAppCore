@@ -81,3 +81,12 @@ extension Sequence where Element: TransactionProtocol {
         return TransactionsSum(incomes: Decimal(incomes), expenses: Decimal(expenses))
     }
 }
+
+extension Sequence where Element: ValueRepresenting {
+    
+    var sum: NSDecimalNumber {
+        return reduce(NSDecimalNumber.zero, { (result, nextElement) -> NSDecimalNumber in
+            return result.adding(nextElement.valueRepresentation)
+        })
+    }
+}

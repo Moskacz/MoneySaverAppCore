@@ -38,3 +38,9 @@ public class TransactionManagedObject: NSManagedObject, TransactionProtocol {
         return date
     }
 }
+
+extension TransactionManagedObject: ValueRepresenting {
+    var valueRepresentation: NSDecimalNumber {
+        return value ?? .zero
+    }
+}
