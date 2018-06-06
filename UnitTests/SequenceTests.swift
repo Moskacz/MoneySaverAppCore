@@ -25,6 +25,15 @@ class SequenceTests: XCTestCase {
         XCTAssertEqual(grouped[25]!, [person3, person4])
     }
     
+    func test_grouped_nilKey() {
+        let person1 = Person(name: "Jan", age: 30)
+        let person2 = Person(name: "Pawel", age: 30)
+        let person3 = Person(name: "Michal", age: nil)
+        
+        let grouped = [person1, person2, person3].grouped { $0.age}
+        XCTAssertEqual(grouped.keys.count, 1) // there is only one group for age 30
+    }
+    
     func test_valueRepresenting_sum() {
         let value1 = NSDecimalNumber(value: 2)
         let value2 = NSDecimalNumber(value: 4)
@@ -82,7 +91,7 @@ class SequenceTests: XCTestCase {
 
 private struct Person {
     let name: String
-    let age: Int
+    let age: Int?
 }
 
 extension Person: Equatable {

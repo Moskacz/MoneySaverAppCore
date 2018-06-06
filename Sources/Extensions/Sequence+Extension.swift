@@ -31,17 +31,16 @@ public struct TransactionsCompoundSum {
 
 extension Sequence {
     
-    public func grouped<U>(by key: (Element) -> U) -> [U: [Element]] {
+    public func grouped<U>(by key: (Element) -> U?) -> [U: [Element]] {
         var dict = [U: [Element]]()
         for element in self {
-            let key = key(element)
+            guard let key = key(element) else { continue }
             var array = dict[key] ?? []
             array.append(element)
             dict[key] = array
         }
         return dict
     }
-    
 }
 
 extension Sequence where Element: TransactionProtocol {
