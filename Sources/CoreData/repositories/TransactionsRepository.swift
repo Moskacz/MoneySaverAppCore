@@ -128,6 +128,11 @@ public class TransactionsRepositoryImplementation: TransactionsRepository {
     public func groupedTransactions(grouping: TransactionsGrouping) throws -> [DatedValue] {
         let request: NSFetchRequest<TransactionManagedObject> = TransactionManagedObject.fetchRequest()
         let groupedObjects = try context.fetch(request).grouped { $0.date!.dayOfEra }
-        return []
+        let datedValues = groupedObjects.map { arg -> DatedValue in
+            let dayOfEra = Int(arg.key)
+            let transactionsSum = arg.value.sum.decimalValue
+            return DatedValue(date: dayOfEra, value: transactionsSum)
+        }
+        return datedValues.sorted { $0.date < $1.date }
     }
 }
