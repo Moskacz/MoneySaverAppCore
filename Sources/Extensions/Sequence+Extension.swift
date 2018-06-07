@@ -84,8 +84,16 @@ extension Sequence where Element: TransactionProtocol {
 extension Sequence where Element: ValueRepresenting {
     
     var sum: NSDecimalNumber {
-        return reduce(NSDecimalNumber.zero, { (result, nextElement) -> NSDecimalNumber in
+        return self.reduce(NSDecimalNumber.zero, { (result, nextElement) -> NSDecimalNumber in
             return result.adding(nextElement.valueRepresentation)
         })
+    }
+    
+    var positives: [Element] {
+        return self.filter { $0.valueRepresentation.doubleValue >= 0 }
+    }
+    
+    var negatives: [Element] {
+        return self.filter { $0.valueRepresentation.doubleValue < 0 }
     }
 }

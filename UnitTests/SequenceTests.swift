@@ -87,6 +87,23 @@ class SequenceTests: XCTestCase {
         XCTAssertEqual(sum.total(), Decimal(-20))
     }
     
+    func test_negatives_shouldReturnSequenceOfNegativeValues() {
+        let values = [NSDecimalNumber(value: -2),
+                      NSDecimalNumber(value: 2),
+                      NSDecimalNumber(value: -3)]
+        let expectedNegatives = [NSDecimalNumber(value: -2),
+                                 NSDecimalNumber(value: -3)]
+        XCTAssertEqual(values.negatives, expectedNegatives)
+    }
+    
+    func test_positives_shouldReturnSequenceOfPositiveValues() {
+        let values = [NSDecimalNumber(value: 2),
+                      NSDecimalNumber(value: -22),
+                      NSDecimalNumber(value: 333)]
+        let expectedPositives = [NSDecimalNumber(value: 2),
+                                 NSDecimalNumber(value: 333)]
+        XCTAssertEqual(expectedPositives, values.positives)
+    }
 }
 
 private struct Person {
