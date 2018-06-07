@@ -12,13 +12,13 @@ import XCTest
 class ChartsDataProcessorTests: XCTestCase {
     
     var fakeCalendar: FakeCalendar!
-    var sut: ChartsDataProcessorImpl!
+    var sut: ChartsDataProcessor!
     
     
     override func setUp() {
         super.setUp()
         fakeCalendar = FakeCalendar()
-        sut = ChartsDataProcessorImpl(calendar: fakeCalendar)
+        sut = ChartsDataProcessor(calendar: fakeCalendar)
     }
     
     override func tearDown() {

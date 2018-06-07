@@ -8,23 +8,12 @@
 
 import Foundation
 
-public struct PlotValue {
-    public let x: Int
-    public let y: Decimal
-}
-
 public protocol BudgetChartsDataProcessor {
     func spendings(fromMonthlyExpenses expenses: [DatedValue]) -> [PlotValue]
     func estimatedSpendings(budgetValue: Double) -> [PlotValue]
 }
 
-public class ChartsDataProcessorImpl: BudgetChartsDataProcessor {
-    
-    private let calendar: CalendarProtocol
-    
-    public init(calendar: CalendarProtocol) {
-        self.calendar = calendar
-    }
+extension ChartsDataProcessor: BudgetChartsDataProcessor {
     
     public func spendings(fromMonthlyExpenses expenses: [DatedValue]) -> [PlotValue] {
         let sortedExpeneses = expenses.sorted { (lhs, rhs) -> Bool in
@@ -48,5 +37,4 @@ public class ChartsDataProcessorImpl: BudgetChartsDataProcessor {
             return PlotValue(x: day, y: Decimal(floatLiteral: dailySpending))
         }
     }
-    
 }
