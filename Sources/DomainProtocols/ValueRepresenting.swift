@@ -7,12 +7,12 @@
 
 import Foundation
 
-protocol ValueRepresenting {
+public protocol ValueRepresenting {
     var valueRepresentation: NSDecimalNumber { get }
 }
 
 extension NSDecimalNumber: ValueRepresenting {
-    var valueRepresentation: NSDecimalNumber {
+    public var valueRepresentation: NSDecimalNumber {
         return self
     }
 }

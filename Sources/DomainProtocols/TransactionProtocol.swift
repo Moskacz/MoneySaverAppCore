@@ -8,9 +8,15 @@
 
 import Foundation
 
-public protocol TransactionProtocol {
+public protocol TransactionProtocol: ValueRepresenting {
     var title: String? { get }
     var value: NSDecimalNumber? { get }
     var transactionCategory: TransactionCategoryProtocol? { get }
     var transactionDate: CalendarDateProtocol? { get }
+}
+
+extension TransactionProtocol {
+    public var valueRepresentation: NSDecimalNumber {
+        return value ?? NSDecimalNumber.zero
+    }
 }
