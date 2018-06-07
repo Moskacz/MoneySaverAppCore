@@ -13,12 +13,12 @@ public struct PlotValue {
     public let y: Decimal
 }
 
-public protocol ChartsDataProcessor {
+public protocol BudgetChartsDataProcessor {
     func spendings(fromMonthlyExpenses expenses: [DatedValue]) -> [PlotValue]
     func estimatedSpendings(budgetValue: Double) -> [PlotValue]
 }
 
-public class ChartsDataProcessorImpl: ChartsDataProcessor {
+public class ChartsDataProcessorImpl: BudgetChartsDataProcessor {
     
     private let calendar: CalendarProtocol
     

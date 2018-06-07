@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class FakeChartsDataProcessor: ChartsDataProcessor {
+public class FakeChartsDataProcessor: BudgetChartsDataProcessor {
     
     public init() {}
     
