@@ -105,6 +105,8 @@
 		358BEC0120C9AD25003A3800 /* GroupedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358BEBFF20C9AD25003A3800 /* GroupedData.swift */; };
 		358BEC0320C9B0E6003A3800 /* ChartsDataProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358BEC0220C9B0E6003A3800 /* ChartsDataProcessor.swift */; };
 		358BEC0420C9B0E6003A3800 /* ChartsDataProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358BEC0220C9B0E6003A3800 /* ChartsDataProcessor.swift */; };
+		358BEC0620C9B15D003A3800 /* StatsChartsDataProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358BEC0520C9B15D003A3800 /* StatsChartsDataProcessor.swift */; };
+		358BEC0720C9B15D003A3800 /* StatsChartsDataProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358BEC0520C9B15D003A3800 /* StatsChartsDataProcessor.swift */; };
 		35AEB1192093A79F00DCE038 /* CollectionUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35AEB1172093A79F00DCE038 /* CollectionUpdater.swift */; };
 		35AEB11A2093A79F00DCE038 /* CollectionUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35AEB1172093A79F00DCE038 /* CollectionUpdater.swift */; };
 		35AEB11B2093A79F00DCE038 /* CoreDataCollectionUpdateHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35AEB1182093A79F00DCE038 /* CoreDataCollectionUpdateHandler.swift */; };
@@ -191,6 +193,7 @@
 		356668D8208CEB910052E724 /* TestClassUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestClassUnitTests.swift; sourceTree = "<group>"; };
 		358BEBFF20C9AD25003A3800 /* GroupedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupedData.swift; sourceTree = "<group>"; };
 		358BEC0220C9B0E6003A3800 /* ChartsDataProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsDataProcessor.swift; sourceTree = "<group>"; };
+		358BEC0520C9B15D003A3800 /* StatsChartsDataProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsChartsDataProcessor.swift; sourceTree = "<group>"; };
 		35AEB1172093A79F00DCE038 /* CollectionUpdater.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionUpdater.swift; sourceTree = "<group>"; };
 		35AEB1182093A79F00DCE038 /* CoreDataCollectionUpdateHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataCollectionUpdateHandler.swift; sourceTree = "<group>"; };
 		35CD206820C83D7900EC4091 /* ValueRepresenting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueRepresenting.swift; sourceTree = "<group>"; };
@@ -342,6 +345,7 @@
 			children = (
 				358BEC0220C9B0E6003A3800 /* ChartsDataProcessor.swift */,
 				35593BED20922DFD00DEEDB5 /* BudgetChartsDataProcessor.swift */,
+				358BEC0520C9B15D003A3800 /* StatsChartsDataProcessor.swift */,
 			);
 			path = Charts;
 			sourceTree = "<group>";
@@ -627,6 +631,7 @@
 				35162CBB2090DE6D00547126 /* UserPreferences.swift in Sources */,
 				353817DF208E65DC00EA967F /* CalendarDateManagedObject+CoreDataClass.swift in Sources */,
 				35162C89208FC0A100547126 /* TransactionsRepository.swift in Sources */,
+				358BEC0620C9B15D003A3800 /* StatsChartsDataProcessor.swift in Sources */,
 				35162CB42090D96600547126 /* TransactionCategoryRepository.swift in Sources */,
 				35162CAD208FC39E00547126 /* TransactionsGrouping.swift in Sources */,
 				353817ED208E65DC00EA967F /* TransactionCategoryManagedObject+CoreDataProperties.swift in Sources */,
@@ -693,6 +698,7 @@
 				35162CBC2090DE6D00547126 /* UserPreferences.swift in Sources */,
 				353817E0208E65DC00EA967F /* CalendarDateManagedObject+CoreDataClass.swift in Sources */,
 				35162C8A208FC0A100547126 /* TransactionsRepository.swift in Sources */,
+				358BEC0720C9B15D003A3800 /* StatsChartsDataProcessor.swift in Sources */,
 				35162CB52090D96600547126 /* TransactionCategoryRepository.swift in Sources */,
 				35162CAE208FC39E00547126 /* TransactionsGrouping.swift in Sources */,
 				353817EE208E65DC00EA967F /* TransactionCategoryManagedObject+CoreDataProperties.swift in Sources */,
