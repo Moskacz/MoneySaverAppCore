@@ -8,22 +8,32 @@
 import Foundation
 
 protocol StatsChartsDataProcessor {
-    func expensesGroupedBy(grouping: TransactionsGrouping, transactions: [TransactionProtocol]) -> [PlotValue]
-    func incomesGroupedBy(grouping: TransactionsGrouping, transactions: [TransactionProtocol]) -> [PlotValue]
-    func expensesGroupedByCategories(_ transactions: [TransactionProtocol]) -> [PlotValue]
+    func expensesGroupedBy<T:TransactionProtocol>(grouping: TransactionsGrouping, transactions: [T]) -> [PlotValue]
+    func incomesGroupedBy<T:TransactionProtocol>(grouping: TransactionsGrouping, transactions: [T]) -> [PlotValue]
+    func expensesGroupedByCategories<T:TransactionProtocol>(_ transactions: [T]) -> [PlotValue]
 }
 
 extension ChartsDataProcessor: StatsChartsDataProcessor {
     
-    func expensesGroupedBy(grouping: TransactionsGrouping, transactions: [TransactionProtocol]) -> [PlotValue] {
+    func expensesGroupedBy<T: TransactionProtocol>(grouping: TransactionsGrouping, transactions: [T]) -> [PlotValue] {
         return []
     }
     
-    func incomesGroupedBy(grouping: TransactionsGrouping, transactions: [TransactionProtocol]) -> [PlotValue] {
+    func incomesGroupedBy<T: TransactionProtocol>(grouping: TransactionsGrouping, transactions: [T]) -> [PlotValue] {
         return []
     }
     
-    func expensesGroupedByCategories(_ transactions: [TransactionProtocol]) -> [PlotValue] {
+    func expensesGroupedByCategories<T: TransactionProtocol>(_ transactions: [T]) -> [PlotValue] {
         return []
+    }
+    
+    private func group<T: TransactionProtocol>(transactions: [T], by grouping: TransactionsGrouping) -> [Int32: [T]] {
+        let groupingKey: ((T) -> Int32?)
+        switch grouping {
+        case .day: groupingKey = { $0.transactionDate?.dayOfEra }
+        case .week: groupingKey = { $0.transactionDate?.weekOfEra }
+        case .month: groupingKey = { $0.transactionDate?.monthOfEra }
+        }
+        return transactions.grouped(by: groupingKey)
     }
 }
