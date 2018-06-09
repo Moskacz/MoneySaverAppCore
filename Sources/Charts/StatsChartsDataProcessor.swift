@@ -16,11 +16,13 @@ protocol StatsChartsDataProcessor {
 extension ChartsDataProcessor: StatsChartsDataProcessor {
     
     func expensesGroupedBy<T: TransactionProtocol>(grouping: TransactionsGrouping, transactions: [T]) -> [PlotValue] {
-        return []
+        let groupedExpenses = group(transactions: transactions.negatives, by: grouping)
+        return sortedPlotValues(from: groupedExpenses)
     }
     
     func incomesGroupedBy<T: TransactionProtocol>(grouping: TransactionsGrouping, transactions: [T]) -> [PlotValue] {
-        return []
+        let groupesIncomes = group(transactions: transactions.positives, by: grouping)
+        return sortedPlotValues(from: groupesIncomes)
     }
     
     func expensesGroupedByCategories<T: TransactionProtocol>(_ transactions: [T]) -> [PlotValue] {
@@ -35,5 +37,14 @@ extension ChartsDataProcessor: StatsChartsDataProcessor {
         case .month: groupingKey = { $0.transactionDate?.monthOfEra }
         }
         return transactions.grouped(by: groupingKey)
+    }
+    
+    private func sortedPlotValues<T: TransactionProtocol>(from groupedTransactions: [Int32: [T]]) -> [PlotValue] {
+        let values = groupedTransactions.map { keyValueTuple -> PlotValue in
+            let date = Int(keyValueTuple.key)
+            let value = keyValueTuple.value.sum.decimalValue
+            return PlotValue(x: date, y: value)
+        }
+        return values.sorted { $0.x < $1.x }
     }
 }
