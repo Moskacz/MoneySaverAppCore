@@ -9,18 +9,8 @@
 import Foundation
 
 public enum TransactionsGrouping: String {
-    case day
-    case week
-    case month
-}
-
-extension TransactionsGrouping: CustomStringConvertible {
-    
-    public var description: String {
-        switch self {
-        case .day: return "Day"
-        case .week: return "Week"
-        case .month: return "Month"
-        }
-    }
+    case dayOfEra
+    case weekOfEra
+    case monthOfEra
+    case category
 }

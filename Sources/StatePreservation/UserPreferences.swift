@@ -36,7 +36,7 @@ extension UserDefaults: UserPreferences {
     
     public var statsGrouping: TransactionsGrouping {
         get {
-            let defaultValue = TransactionsGrouping.month
+            let defaultValue = TransactionsGrouping.monthOfEra
             guard let rawValue = string(forKey: PreferenceKey.statsGrouping.rawValue) else {
                 return defaultValue
             }

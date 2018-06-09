@@ -20,13 +20,15 @@ public class TransactionManagedObject: NSManagedObject, TransactionProtocol {
         case monthOfEra = "date.monthOfEra"
         case year = "date.year"
         case timeInterval = "date.timeInterval"
+        case category = "category"
     }
     
     static func groupByKeypathFor(grouping: TransactionsGrouping) -> KeyPath {
         switch grouping {
-        case .day: return KeyPath.dayOfEra
-        case .week: return KeyPath.weekOfEra
-        case .month: return KeyPath.monthOfEra
+        case .dayOfEra: return KeyPath.dayOfEra
+        case .weekOfEra: return KeyPath.weekOfEra
+        case .monthOfEra: return KeyPath.monthOfEra
+        case .category: return KeyPath.category
         }
     }
     

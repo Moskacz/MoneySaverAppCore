@@ -84,7 +84,7 @@ class TransactionsRepositoryTests: XCTestCase {
         day2Transaction.value = NSDecimalNumber(value: 123)
         day2Transaction.date = calendarDate(dayOfEra: 2)
         
-        let grouped = try sut.groupedTransactions(grouping: .day)
+        let grouped = try sut.groupedTransactions(grouping: .dayOfEra)
         XCTAssertEqual(grouped[0].value, Decimal(30))
         XCTAssertEqual(grouped[0].date, 1)
         XCTAssertEqual(grouped[1].value, Decimal(123))

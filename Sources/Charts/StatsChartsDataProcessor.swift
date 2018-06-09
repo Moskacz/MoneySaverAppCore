@@ -32,9 +32,10 @@ extension ChartsDataProcessor: StatsChartsDataProcessor {
     private func group<T: TransactionProtocol>(transactions: [T], by grouping: TransactionsGrouping) -> [Int32: [T]] {
         let groupingKey: ((T) -> Int32?)
         switch grouping {
-        case .day: groupingKey = { $0.transactionDate?.dayOfEra }
-        case .week: groupingKey = { $0.transactionDate?.weekOfEra }
-        case .month: groupingKey = { $0.transactionDate?.monthOfEra }
+        case .dayOfEra: groupingKey = { $0.transactionDate?.dayOfEra }
+        case .weekOfEra: groupingKey = { $0.transactionDate?.weekOfEra }
+        case .monthOfEra: groupingKey = { $0.transactionDate?.monthOfEra }
+        case .category: fatalError()
         }
         return transactions.grouped(by: groupingKey)
     }
