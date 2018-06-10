@@ -42,7 +42,6 @@ public protocol TransactionsRepository {
     func remove(transaction: TransactionManagedObject)
     
     func allTransactions() throws -> [TransactionManagedObject]
-    func groupedTransactions(grouping: TransactionsGrouping) throws -> [DatedValue]
 }
 
 public class TransactionsRepositoryImplementation: TransactionsRepository {
@@ -123,16 +122,5 @@ public class TransactionsRepositoryImplementation: TransactionsRepository {
         let request = fetchRequest
         request.includesPropertyValues = true
         return try context.fetch(request)
-    }
-    
-    public func groupedTransactions(grouping: TransactionsGrouping) throws -> [DatedValue] {
-        let request: NSFetchRequest<TransactionManagedObject> = TransactionManagedObject.fetchRequest()
-        let groupedObjects = try context.fetch(request).grouped { $0.date?.dayOfEra }
-        let datedValues = groupedObjects.map { arg -> DatedValue in
-            let dayOfEra = Int(arg.key)
-            let transactionsSum = arg.value.sum.decimalValue
-            return DatedValue(date: dayOfEra, value: transactionsSum)
-        }
-        return datedValues.sorted { $0.date < $1.date }
     }
 }

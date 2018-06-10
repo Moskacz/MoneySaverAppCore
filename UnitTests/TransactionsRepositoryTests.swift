@@ -69,28 +69,6 @@ class TransactionsRepositoryTests: XCTestCase {
         XCTAssertEqual(predicate?.predicateFormat, "date.year == 2018")
     }
     
-    func test_groupedTransactions_dayGrouping() throws {
-        let context = coreDataStack.getViewContext()
-        
-        let day1Transaction1 = TransactionManagedObject.createEntity(inContext: context)
-        day1Transaction1.value = NSDecimalNumber(value: 20)
-        day1Transaction1.date = calendarDate(dayOfEra: 1)
-        
-        let day1Transaction2 = TransactionManagedObject.createEntity(inContext: context)
-        day1Transaction2.value = NSDecimalNumber(value: 10)
-        day1Transaction2.date = calendarDate(dayOfEra: 1)
-        
-        let day2Transaction = TransactionManagedObject.createEntity(inContext: context)
-        day2Transaction.value = NSDecimalNumber(value: 123)
-        day2Transaction.date = calendarDate(dayOfEra: 2)
-        
-        let grouped = try sut.groupedTransactions(grouping: .dayOfEra)
-        XCTAssertEqual(grouped[0].value, Decimal(30))
-        XCTAssertEqual(grouped[0].date, 1)
-        XCTAssertEqual(grouped[1].value, Decimal(123))
-        XCTAssertEqual(grouped[1].date, 2)
-    }
-    
     func test_addTransaction_shouldCreateNewEntityInContextWithGivenData() {
         let context = coreDataStack.getViewContext()
         // 28/05/2018 @ 3:30pm (UTC)
