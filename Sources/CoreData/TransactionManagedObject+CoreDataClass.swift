@@ -28,7 +28,6 @@ public class TransactionManagedObject: NSManagedObject, TransactionProtocol {
         case .dayOfEra: return KeyPath.dayOfEra
         case .weekOfEra: return KeyPath.weekOfEra
         case .monthOfEra: return KeyPath.monthOfEra
-        case .category: return KeyPath.category
         }
     }
     

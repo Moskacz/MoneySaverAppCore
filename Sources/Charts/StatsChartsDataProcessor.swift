@@ -10,7 +10,12 @@ import Foundation
 protocol StatsChartsDataProcessor {
     func expensesGroupedBy<T:TransactionProtocol>(grouping: TransactionsGrouping, transactions: [T]) -> [PlotValue]
     func incomesGroupedBy<T:TransactionProtocol>(grouping: TransactionsGrouping, transactions: [T]) -> [PlotValue]
-    func expensesGroupedByCategories<T:TransactionProtocol>(_ transactions: [T]) -> [PlotValue]
+    func expensesGroupedByCategories<T:TransactionProtocol>(_ transactions: [T]) -> [CategorySum]
+}
+
+public struct CategorySum {
+    public let categoryName: String
+    public let sum: Decimal
 }
 
 extension ChartsDataProcessor: StatsChartsDataProcessor {
@@ -25,8 +30,18 @@ extension ChartsDataProcessor: StatsChartsDataProcessor {
         return sortedPlotValues(from: groupesIncomes)
     }
     
-    func expensesGroupedByCategories<T: TransactionProtocol>(_ transactions: [T]) -> [PlotValue] {
-        return []
+    func expensesGroupedByCategories<T: TransactionProtocol>(_ transactions: [T]) -> [CategorySum] {
+        let groupesExpenses = transactions.negatives.grouped {
+            return $0.transactionCategory?.name
+        }
+        
+        let sums = groupesExpenses.map { keyValueTuple -> CategorySum in
+            let categoryName = keyValueTuple.key
+            let categoryExpenses = keyValueTuple.value.sum.decimalValue
+            return CategorySum(categoryName: categoryName, sum: categoryExpenses)
+        }
+        
+        return sums.sorted { $0.categoryName < $1.categoryName }
     }
     
     private func group<T: TransactionProtocol>(transactions: [T], by grouping: TransactionsGrouping) -> [Int32: [T]] {
@@ -35,7 +50,6 @@ extension ChartsDataProcessor: StatsChartsDataProcessor {
         case .dayOfEra: groupingKey = { $0.transactionDate?.dayOfEra }
         case .weekOfEra: groupingKey = { $0.transactionDate?.weekOfEra }
         case .monthOfEra: groupingKey = { $0.transactionDate?.monthOfEra }
-        case .category: fatalError()
         }
         return transactions.grouped(by: groupingKey)
     }

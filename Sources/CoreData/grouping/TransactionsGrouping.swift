@@ -12,5 +12,15 @@ public enum TransactionsGrouping: String {
     case dayOfEra
     case weekOfEra
     case monthOfEra
-    case category
+}
+
+extension TransactionsGrouping: CustomStringConvertible {
+    
+    public var description: String {
+        switch self {
+        case .dayOfEra: return "Day"
+        case .weekOfEra: return "Week"
+        case .monthOfEra: return "Month"
+        }
+    }
 }
