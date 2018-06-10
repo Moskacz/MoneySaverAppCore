@@ -32,7 +32,7 @@ extension ChartsDataProcessor: StatsChartsDataProcessor {
     
     func expensesGroupedByCategories<T: TransactionProtocol>(_ transactions: [T]) -> [CategorySum] {
         let groupesExpenses = transactions.negatives.grouped {
-            return $0.transactionCategory?.name
+            return $0.transactionCategory?.name ?? "Unknown"
         }
         
         let sums = groupesExpenses.map { keyValueTuple -> CategorySum in
