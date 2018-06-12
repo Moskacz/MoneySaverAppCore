@@ -122,4 +122,12 @@ class ChartsDataProcessorTests: XCTestCase {
         XCTAssertEqual(values[1].categoryName, "categoryB")
         XCTAssertEqual(values[1].sum, Decimal(-900))
     }
+    
+    func test_grouping_shouldCreateZeroValuesForNotExistingBetweenDates() {
+        let transaction1 = FakeTransactionBuilder().set(dayOfEra: 1).set(value: Decimal(-10)).build()
+        let transaction2 = FakeTransactionBuilder().set(dayOfEra: 10).set(value: Decimal(-10)).build()
+        
+        let groupedValues = sut.expensesGroupedBy(grouping: .dayOfEra, transactions: [transaction1, transaction2])
+        XCTAssertEqual(groupedValues.count, 10) // from 1 to 10
+    }
 }
