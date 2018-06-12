@@ -81,5 +81,57 @@ class ChartsDataProcessorTests: XCTestCase {
         XCTAssertTrue(firstDaySpending != 0)
         XCTAssertEqual(firstDaySpending, Decimal(100))
     }
+ 
+    func test_groupedExpenses_byDayOfEra_shouldSumByDayOfEra() {
+        let transaction1 = FakeTransaction()
+        transaction1.transactionDate = calendarDate(dayOfEra: 3)
+        transaction1.value = NSDecimalNumber(value: -10)
+        
+        let transaction2 = FakeTransaction()
+        transaction2.transactionDate = calendarDate(dayOfEra: 3)
+        transaction2.value = NSDecimalNumber(value: -20)
+        
+        let transaction3 = FakeTransaction()
+        transaction3.transactionDate = calendarDate(dayOfEra: 2)
+        transaction3.value = NSDecimalNumber(value: -100)
+        
+        let transactions = [transaction1, transaction2, transaction3]
+        
+        let values = sut.expensesGroupedBy(grouping: .dayOfEra, transactions: transactions)
+        XCTAssertEqual(values.count, 2)
+        XCTAssertEqual(values[0].y, Decimal(-100))
+        XCTAssertEqual(values[1].y, Decimal(-30)) // -10 - 20
+    }
     
+    func test_groupedIncomes_byWeekOfEra_shouldSumIncomesByWeekOfEra() {
+        let transaction1 = FakeTransaction()
+        transaction1.transactionDate = calendarDate(weekOfEra: 1)
+        transaction1.value = NSDecimalNumber(value: 50)
+        
+        let transaction2 = FakeTransaction()
+        transaction2.transactionDate = calendarDate(weekOfEra: 1)
+        transaction2.value = NSDecimalNumber(value: 60)
+        
+        let transaction3 = FakeTransaction()
+        transaction3.transactionDate = calendarDate(weekOfEra: 2)
+        transaction3.value = NSDecimalNumber(value: 1000)
+        
+        let transactions = [transaction1, transaction2, transaction3]
+        
+        let values = sut.incomesGroupedBy(grouping: .weekOfEra, transactions: transactions)
+        XCTAssertEqual(values.count, 2)
+        XCTAssertEqual(values[0].y, Decimal(110)) // 50 + 60
+        XCTAssertEqual(values[1].y, Decimal(1000))
+    }
+    
+    // MARK: Helpers
+    
+    private func calendarDate(dayOfEra: Int32 = 0,
+                              weekOfEra: Int32 = 0,
+                              monthOfEra: Int32 = 0) -> CalendarDateProtocol {
+        let date = FakeCalendarDate()
+        date.dayOfEra = dayOfEra
+        date.weekOfEra = weekOfEra
+        return date
+    }
 }
