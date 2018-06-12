@@ -83,17 +83,9 @@ class ChartsDataProcessorTests: XCTestCase {
     }
  
     func test_groupedExpenses_byDayOfEra_shouldSumByDayOfEra() {
-        let transaction1 = FakeTransaction()
-        transaction1.transactionDate = calendarDate(dayOfEra: 3)
-        transaction1.value = NSDecimalNumber(value: -10)
-        
-        let transaction2 = FakeTransaction()
-        transaction2.transactionDate = calendarDate(dayOfEra: 3)
-        transaction2.value = NSDecimalNumber(value: -20)
-        
-        let transaction3 = FakeTransaction()
-        transaction3.transactionDate = calendarDate(dayOfEra: 2)
-        transaction3.value = NSDecimalNumber(value: -100)
+        let transaction1 = FakeTransactionBuilder().set(dayOfEra: 3).set(value: Decimal(-10)).build()
+        let transaction2 = FakeTransactionBuilder().set(dayOfEra: 3).set(value: Decimal(-20)).build()
+        let transaction3 = FakeTransactionBuilder().set(dayOfEra: 2).set(value: Decimal(-100)).build()
         
         let transactions = [transaction1, transaction2, transaction3]
         
@@ -104,17 +96,9 @@ class ChartsDataProcessorTests: XCTestCase {
     }
     
     func test_groupedIncomes_byWeekOfEra_shouldSumIncomesByWeekOfEra() {
-        let transaction1 = FakeTransaction()
-        transaction1.transactionDate = calendarDate(weekOfEra: 1)
-        transaction1.value = NSDecimalNumber(value: 50)
-        
-        let transaction2 = FakeTransaction()
-        transaction2.transactionDate = calendarDate(weekOfEra: 1)
-        transaction2.value = NSDecimalNumber(value: 60)
-        
-        let transaction3 = FakeTransaction()
-        transaction3.transactionDate = calendarDate(weekOfEra: 2)
-        transaction3.value = NSDecimalNumber(value: 1000)
+        let transaction1 = FakeTransactionBuilder().set(weekOfEra: 1).set(value: Decimal(50)).build()
+        let transaction2 = FakeTransactionBuilder().set(weekOfEra: 1).set(value: Decimal(60)).build()
+        let transaction3 = FakeTransactionBuilder().set(weekOfEra: 2).set(value: Decimal(1000)).build()
         
         let transactions = [transaction1, transaction2, transaction3]
         
@@ -123,15 +107,5 @@ class ChartsDataProcessorTests: XCTestCase {
         XCTAssertEqual(values[0].y, Decimal(110)) // 50 + 60
         XCTAssertEqual(values[1].y, Decimal(1000))
     }
-    
-    // MARK: Helpers
-    
-    private func calendarDate(dayOfEra: Int32 = 0,
-                              weekOfEra: Int32 = 0,
-                              monthOfEra: Int32 = 0) -> CalendarDateProtocol {
-        let date = FakeCalendarDate()
-        date.dayOfEra = dayOfEra
-        date.weekOfEra = weekOfEra
-        return date
-    }
+
 }
