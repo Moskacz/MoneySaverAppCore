@@ -108,4 +108,18 @@ class ChartsDataProcessorTests: XCTestCase {
         XCTAssertEqual(values[1].y, Decimal(1000))
     }
 
+    func test_groupedExpenses_byCategories() {
+        let transaction1 = FakeTransactionBuilder().set(categoryName: "categoryA").set(value: Decimal(-100)).build()
+        let transaction2 = FakeTransactionBuilder().set(categoryName: "categoryA").set(value: Decimal(-200)).build()
+        let transaction3 = FakeTransactionBuilder().set(categoryName: "categoryB").set(value: Decimal(-900)).build()
+        
+        let transactions = [transaction1, transaction2, transaction3]
+        
+        let values = sut.expensesGroupedByCategories(transactions)
+        XCTAssertEqual(values.count, 2)
+        XCTAssertEqual(values[0].categoryName, "categoryA")
+        XCTAssertEqual(values[0].sum, Decimal(-300)) // -100 - 200
+        XCTAssertEqual(values[1].categoryName, "categoryB")
+        XCTAssertEqual(values[1].sum, Decimal(-900))
+    }
 }
