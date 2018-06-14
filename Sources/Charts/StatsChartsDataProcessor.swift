@@ -28,7 +28,8 @@ extension ChartsDataProcessor: StatsChartsDataProcessor {
     
     func incomesGroupedBy<T: TransactionProtocol>(grouping: TransactionsGrouping, transactions: [T]) -> [PlotValue] {
         let groupesIncomes = group(transactions: transactions.positives, by: grouping)
-        return sortedPlotValues(from: groupesIncomes)
+        let sortedValues = sortedPlotValues(from: groupesIncomes)
+        return insertMissingValues(into: sortedValues)
     }
     
     func expensesGroupedByCategories<T: TransactionProtocol>(_ transactions: [T]) -> [CategorySum] {
