@@ -23,5 +23,4 @@ class SequenceIntExtensions: XCTestCase {
         let expectedRanges = [1...8, 10...12]
         XCTAssertEqual(values.rangesOfMissingValues, expectedRanges)
     }
-    
 }

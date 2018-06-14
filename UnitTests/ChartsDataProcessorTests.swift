@@ -125,9 +125,39 @@ class ChartsDataProcessorTests: XCTestCase {
     
     func test_grouping_shouldCreateZeroValuesForNotExistingBetweenDates() {
         let transaction1 = FakeTransactionBuilder().set(dayOfEra: 1).set(value: Decimal(-10)).build()
-        let transaction2 = FakeTransactionBuilder().set(dayOfEra: 10).set(value: Decimal(-10)).build()
+        let transaction2 = FakeTransactionBuilder().set(dayOfEra: 10).set(value: Decimal(-100)).build()
         
         let groupedValues = sut.expensesGroupedBy(grouping: .dayOfEra, transactions: [transaction1, transaction2])
-        XCTAssertEqual(groupedValues.count, 10) // from 1 to 10
+        XCTAssertEqual(groupedValues.count, 10)
+        
+        XCTAssertEqual(groupedValues[0].x, 1)
+        XCTAssertEqual(groupedValues[0].y, -10)
+        
+        XCTAssertEqual(groupedValues[1].x, 2)
+        XCTAssertEqual(groupedValues[1].y, 0)
+        
+        XCTAssertEqual(groupedValues[2].x, 3)
+        XCTAssertEqual(groupedValues[2].y, 0)
+        
+        XCTAssertEqual(groupedValues[3].x, 4)
+        XCTAssertEqual(groupedValues[3].y, 0)
+        
+        XCTAssertEqual(groupedValues[4].x, 5)
+        XCTAssertEqual(groupedValues[4].y, 0)
+        
+        XCTAssertEqual(groupedValues[5].x, 6)
+        XCTAssertEqual(groupedValues[5].y, 0)
+        
+        XCTAssertEqual(groupedValues[6].x, 7)
+        XCTAssertEqual(groupedValues[6].y, 0)
+        
+        XCTAssertEqual(groupedValues[7].x, 8)
+        XCTAssertEqual(groupedValues[7].y, 0)
+        
+        XCTAssertEqual(groupedValues[8].x, 9)
+        XCTAssertEqual(groupedValues[8].y, 0)
+        
+        XCTAssertEqual(groupedValues[9].x, 10)
+        XCTAssertEqual(groupedValues[9].y, -100)
     }
 }

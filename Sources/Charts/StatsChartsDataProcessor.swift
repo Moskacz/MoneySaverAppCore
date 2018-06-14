@@ -22,7 +22,8 @@ extension ChartsDataProcessor: StatsChartsDataProcessor {
     
     func expensesGroupedBy<T: TransactionProtocol>(grouping: TransactionsGrouping, transactions: [T]) -> [PlotValue] {
         let groupedExpenses = group(transactions: transactions.negatives, by: grouping)
-        return sortedPlotValues(from: groupedExpenses)
+        let sortedValues = sortedPlotValues(from: groupedExpenses)
+        return insertMissingValues(into: sortedValues)
     }
     
     func incomesGroupedBy<T: TransactionProtocol>(grouping: TransactionsGrouping, transactions: [T]) -> [PlotValue] {
@@ -61,5 +62,26 @@ extension ChartsDataProcessor: StatsChartsDataProcessor {
             return PlotValue(x: date, y: value)
         }
         return values.sorted { $0.x < $1.x }
+    }
+    
+    private func insertMissingValues(into plotValues: [PlotValue]) -> [PlotValue] {
+        guard !plotValues.isEmpty else { return [] }
+        
+        var allValues = [PlotValue]()
+        
+        let minValue = plotValues.first!.x
+        let maxValue = plotValues.last!.x
+        
+        var index = 0
+        for i in minValue...maxValue {
+            if plotValues[index].x == i {
+                allValues.append(plotValues[index])
+                index += 1
+            } else {
+                allValues.append(PlotValue(x: i, y: 0))
+            }
+        }
+        
+        return allValues
     }
 }
