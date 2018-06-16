@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol StatsChartsDataProcessor {
+public protocol StatsChartsDataProcessor {
     func expensesGroupedBy<T:TransactionProtocol>(grouping: TransactionsGrouping, transactions: [T]) -> [PlotValue]
     func incomesGroupedBy<T:TransactionProtocol>(grouping: TransactionsGrouping, transactions: [T]) -> [PlotValue]
     func expensesGroupedByCategories<T:TransactionProtocol>(_ transactions: [T]) -> [CategorySum]
@@ -20,19 +20,19 @@ public struct CategorySum {
 
 extension ChartsDataProcessor: StatsChartsDataProcessor {
     
-    func expensesGroupedBy<T: TransactionProtocol>(grouping: TransactionsGrouping, transactions: [T]) -> [PlotValue] {
+    public func expensesGroupedBy<T: TransactionProtocol>(grouping: TransactionsGrouping, transactions: [T]) -> [PlotValue] {
         let groupedExpenses = group(transactions: transactions.negatives, by: grouping)
         let sortedValues = sortedPlotValues(from: groupedExpenses)
         return insertMissingValues(into: sortedValues)
     }
     
-    func incomesGroupedBy<T: TransactionProtocol>(grouping: TransactionsGrouping, transactions: [T]) -> [PlotValue] {
+    public func incomesGroupedBy<T: TransactionProtocol>(grouping: TransactionsGrouping, transactions: [T]) -> [PlotValue] {
         let groupesIncomes = group(transactions: transactions.positives, by: grouping)
         let sortedValues = sortedPlotValues(from: groupesIncomes)
         return insertMissingValues(into: sortedValues)
     }
     
-    func expensesGroupedByCategories<T: TransactionProtocol>(_ transactions: [T]) -> [CategorySum] {
+    public func expensesGroupedByCategories<T: TransactionProtocol>(_ transactions: [T]) -> [CategorySum] {
         let groupesExpenses = transactions.negatives.grouped {
             return $0.transactionCategory?.name ?? "Unknown"
         }
