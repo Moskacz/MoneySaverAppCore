@@ -30,9 +30,7 @@ extension UISegmentedControl: SegmentedControlAdditions {
     public var items: [SegmentedControlItem] {
         set {
             removeAllSegments()
-            for (index, item) in newValue.enumerated() {
-                insert(item: item, at: index)
-            }
+            newValue.enumerated().forEach { insert(item: $0.element, at: $0.offset) }
         }
         get {
             let range = 0..<numberOfSegments
@@ -59,4 +57,39 @@ extension UISegmentedControl: SegmentedControlAdditions {
         }
     }
 }
+#elseif os(OSX)
+import AppKit
+extension NSSegmentedControl: SegmentedControlAdditions {
+    public var items: [SegmentedControlItem] {
+        set {
+            segmentCount = items.count
+            newValue.enumerated().forEach { set(item: $0.element, at: $0.offset) }
+        }
+        get {
+            let range = 0..<segmentCount
+            return range.compactMap { item(at: $0) }
+        }
+    }
+    
+    private func set(item: SegmentedControlItem, at index: Int) {
+        switch item {
+        case .text(let value):
+            setLabel(value, forSegment: index)
+        case .image(let value):
+            setImage(value, forSegment: index)
+        }
+    }
+    
+    private func item(at index: Int) -> SegmentedControlItem? {
+        if let title = label(forSegment: index) {
+            return SegmentedControlItem.text(title)
+        } else if let image = image(forSegment: index) {
+            return SegmentedControlItem.image(image)
+        } else {
+            return nil
+        }
+    }
+}
 #endif
+
+
