@@ -115,6 +115,8 @@
 		35AEB11A2093A79F00DCE038 /* CollectionUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35AEB1172093A79F00DCE038 /* CollectionUpdater.swift */; };
 		35AEB11B2093A79F00DCE038 /* CoreDataCollectionUpdateHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35AEB1182093A79F00DCE038 /* CoreDataCollectionUpdateHandler.swift */; };
 		35AEB11C2093A79F00DCE038 /* CoreDataCollectionUpdateHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35AEB1182093A79F00DCE038 /* CoreDataCollectionUpdateHandler.swift */; };
+		35B7FFD620D5220500AA0BC6 /* SegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B7FFD520D5220500AA0BC6 /* SegmentedControl.swift */; };
+		35B7FFD720D5220500AA0BC6 /* SegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B7FFD520D5220500AA0BC6 /* SegmentedControl.swift */; };
 		35B914A820D0508B008BD7A2 /* FakeTransactionCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B914A720D0508B008BD7A2 /* FakeTransactionCategory.swift */; };
 		35B914A920D0508B008BD7A2 /* FakeTransactionCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B914A720D0508B008BD7A2 /* FakeTransactionCategory.swift */; };
 		35B914AB20D050C0008BD7A2 /* FakeTransactionBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B914AA20D050C0008BD7A2 /* FakeTransactionBuilder.swift */; };
@@ -206,6 +208,7 @@
 		358BEC0520C9B15D003A3800 /* StatsChartsDataProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsChartsDataProcessor.swift; sourceTree = "<group>"; };
 		35AEB1172093A79F00DCE038 /* CollectionUpdater.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionUpdater.swift; sourceTree = "<group>"; };
 		35AEB1182093A79F00DCE038 /* CoreDataCollectionUpdateHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataCollectionUpdateHandler.swift; sourceTree = "<group>"; };
+		35B7FFD520D5220500AA0BC6 /* SegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedControl.swift; sourceTree = "<group>"; };
 		35B914A720D0508B008BD7A2 /* FakeTransactionCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeTransactionCategory.swift; sourceTree = "<group>"; };
 		35B914AA20D050C0008BD7A2 /* FakeTransactionBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeTransactionBuilder.swift; sourceTree = "<group>"; };
 		35CD206820C83D7900EC4091 /* ValueRepresenting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueRepresenting.swift; sourceTree = "<group>"; };
@@ -313,6 +316,7 @@
 			children = (
 				35162CB0208FC58500547126 /* Image.swift */,
 				35593C0E2092322D00DEEDB5 /* Color.swift */,
+				35B7FFD520D5220500AA0BC6 /* SegmentedControl.swift */,
 			);
 			path = Typealiases;
 			sourceTree = "<group>";
@@ -648,6 +652,7 @@
 				353817DF208E65DC00EA967F /* CalendarDateManagedObject+CoreDataClass.swift in Sources */,
 				357B860B20D1AF54001E5D25 /* Sequence+Int.swift in Sources */,
 				35162C89208FC0A100547126 /* TransactionsRepository.swift in Sources */,
+				35B7FFD620D5220500AA0BC6 /* SegmentedControl.swift in Sources */,
 				358BEC0620C9B15D003A3800 /* StatsChartsDataProcessor.swift in Sources */,
 				35162CB42090D96600547126 /* TransactionCategoryRepository.swift in Sources */,
 				35162CAD208FC39E00547126 /* TransactionsGrouping.swift in Sources */,
@@ -719,6 +724,7 @@
 				353817E0208E65DC00EA967F /* CalendarDateManagedObject+CoreDataClass.swift in Sources */,
 				357B860C20D1AF54001E5D25 /* Sequence+Int.swift in Sources */,
 				35162C8A208FC0A100547126 /* TransactionsRepository.swift in Sources */,
+				35B7FFD720D5220500AA0BC6 /* SegmentedControl.swift in Sources */,
 				358BEC0720C9B15D003A3800 /* StatsChartsDataProcessor.swift in Sources */,
 				35162CB52090D96600547126 /* TransactionCategoryRepository.swift in Sources */,
 				35162CAE208FC39E00547126 /* TransactionsGrouping.swift in Sources */,
