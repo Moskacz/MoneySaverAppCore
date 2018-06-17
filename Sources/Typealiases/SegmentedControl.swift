@@ -62,7 +62,7 @@ import AppKit
 extension NSSegmentedControl: SegmentedControlAdditions {
     public var items: [SegmentedControlItem] {
         set {
-            segmentCount = items.count
+            segmentCount = newValue.count
             newValue.enumerated().forEach { set(item: $0.element, at: $0.offset) }
         }
         get {

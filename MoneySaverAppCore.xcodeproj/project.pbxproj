@@ -39,6 +39,7 @@
 		35162CBC2090DE6D00547126 /* UserPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35162CBA2090DE6D00547126 /* UserPreferences.swift */; };
 		35162CBE2090DEB200547126 /* UserPreferencesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35162CBD2090DEB200547126 /* UserPreferencesTests.swift */; };
 		35162CBF2090DEB200547126 /* UserPreferencesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35162CBD2090DEB200547126 /* UserPreferencesTests.swift */; };
+		3527046A20D6EED9002E32ED /* SegmentedControlTests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3527046820D6EED9002E32ED /* SegmentedControlTests_macOS.swift */; };
 		353817D1208E642C00EA967F /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 353817CF208E642C00EA967F /* DataModel.xcdatamodeld */; };
 		353817D2208E643600EA967F /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 353817CF208E642C00EA967F /* DataModel.xcdatamodeld */; };
 		353817D5208E647600EA967F /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353817D4208E647600EA967F /* CoreDataStack.swift */; };
@@ -163,6 +164,7 @@
 		35162CB62090DD0100547126 /* BudgetRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BudgetRepository.swift; sourceTree = "<group>"; };
 		35162CBA2090DE6D00547126 /* UserPreferences.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserPreferences.swift; sourceTree = "<group>"; };
 		35162CBD2090DEB200547126 /* UserPreferencesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserPreferencesTests.swift; sourceTree = "<group>"; };
+		3527046820D6EED9002E32ED /* SegmentedControlTests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedControlTests_macOS.swift; sourceTree = "<group>"; };
 		353817D0208E642C00EA967F /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		353817D4208E647600EA967F /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		353817D7208E65DC00EA967F /* CalendarDateManagedObject+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CalendarDateManagedObject+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -446,6 +448,7 @@
 				354E4B8D20A23153009A8311 /* StringTests.swift */,
 				354E4B9020A231B3009A8311 /* TransactionsRepositoryTests.swift */,
 				357B860D20D1AFD7001E5D25 /* SequenceIntExtensions.swift */,
+				3527046820D6EED9002E32ED /* SegmentedControlTests_macOS.swift */,
 			);
 			path = UnitTests;
 			sourceTree = "<group>";
@@ -759,6 +762,7 @@
 			files = (
 				35593BF320922E8300DEEDB5 /* ChartsDataProcessorTests.swift in Sources */,
 				354E4B8920A2301C009A8311 /* CalendarDateManagedObjectTests.swift in Sources */,
+				3527046A20D6EED9002E32ED /* SegmentedControlTests_macOS.swift in Sources */,
 				35593C012092302600DEEDB5 /* SequenceTests.swift in Sources */,
 				35B914A920D0508B008BD7A2 /* FakeTransactionCategory.swift in Sources */,
 				35593C032092302600DEEDB5 /* CalendarTests.swift in Sources */,
