@@ -10,14 +10,14 @@ import XCTest
 
 class TransactionsRepositoryTests: XCTestCase {
     
-    var coreDataStack: TemporaryCoreDataStack!
+    var coreDataStack: InMemoryCoreDataStack!
     var fakeCaledar: FakeCalendar!
     var sut: TransactionsRepositoryImplementation!
     
     override func setUp() {
         super.setUp()
         
-        coreDataStack = TemporaryCoreDataStack()
+        coreDataStack = InMemoryCoreDataStack()
         fakeCaledar = FakeCalendar()
         sut = TransactionsRepositoryImplementation(context: coreDataStack.getViewContext(),
                                                    logger: NullLogger(),
