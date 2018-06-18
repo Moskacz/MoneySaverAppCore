@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Charts
 
 public protocol StatsViewModelDelegate: class {
     func dataUpdated()
