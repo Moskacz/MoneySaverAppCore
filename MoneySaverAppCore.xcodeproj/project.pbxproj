@@ -127,6 +127,8 @@
 		35CD206A20C83D7900EC4091 /* ValueRepresenting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CD206820C83D7900EC4091 /* ValueRepresenting.swift */; };
 		35DD654620B09F9000909AA4 /* FakeBudgetRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DD654520B09F9000909AA4 /* FakeBudgetRepository.swift */; };
 		35DD654720B09F9000909AA4 /* FakeBudgetRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DD654520B09F9000909AA4 /* FakeBudgetRepository.swift */; };
+		35E5C63420D817A500D42E84 /* StatsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E5C63320D817A500D42E84 /* StatsViewModel.swift */; };
+		35E5C63520D817A500D42E84 /* StatsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E5C63320D817A500D42E84 /* StatsViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -215,6 +217,7 @@
 		35B914AA20D050C0008BD7A2 /* FakeTransactionBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeTransactionBuilder.swift; sourceTree = "<group>"; };
 		35CD206820C83D7900EC4091 /* ValueRepresenting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueRepresenting.swift; sourceTree = "<group>"; };
 		35DD654520B09F9000909AA4 /* FakeBudgetRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeBudgetRepository.swift; sourceTree = "<group>"; };
+		35E5C63320D817A500D42E84 /* StatsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -361,6 +364,7 @@
 		35593BEC20922DEF00DEEDB5 /* Charts */ = {
 			isa = PBXGroup;
 			children = (
+				35E5C63220D8178C00D42E84 /* Stats */,
 				358BEC0220C9B0E6003A3800 /* ChartsDataProcessor.swift */,
 				35593BED20922DFD00DEEDB5 /* BudgetChartsDataProcessor.swift */,
 				358BEC0520C9B15D003A3800 /* StatsChartsDataProcessor.swift */,
@@ -459,6 +463,14 @@
 				35AEB1182093A79F00DCE038 /* CoreDataCollectionUpdateHandler.swift */,
 			);
 			path = CollectionViews;
+			sourceTree = "<group>";
+		};
+		35E5C63220D8178C00D42E84 /* Stats */ = {
+			isa = PBXGroup;
+			children = (
+				35E5C63320D817A500D42E84 /* StatsViewModel.swift */,
+			);
+			path = Stats;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -678,6 +690,7 @@
 				353817E9208E65DC00EA967F /* TransactionManagedObject+CoreDataProperties.swift in Sources */,
 				35DD654620B09F9000909AA4 /* FakeBudgetRepository.swift in Sources */,
 				35162CA3208FC2D200547126 /* NSManagedObject+Extensions.swift in Sources */,
+				35E5C63420D817A500D42E84 /* StatsViewModel.swift in Sources */,
 				35AEB11B2093A79F00DCE038 /* CoreDataCollectionUpdateHandler.swift in Sources */,
 				35162C98208FC14900547126 /* CalendarDateProtocol.swift in Sources */,
 			);
@@ -750,6 +763,7 @@
 				35162CA4208FC2D200547126 /* NSManagedObject+Extensions.swift in Sources */,
 				35DD654720B09F9000909AA4 /* FakeBudgetRepository.swift in Sources */,
 				35AEB11C2093A79F00DCE038 /* CoreDataCollectionUpdateHandler.swift in Sources */,
+				35E5C63520D817A500D42E84 /* StatsViewModel.swift in Sources */,
 				353A944920A0D9E100B94A72 /* ManagedObjectModel+Extensions.swift in Sources */,
 				35162C99208FC14900547126 /* CalendarDateProtocol.swift in Sources */,
 			);
