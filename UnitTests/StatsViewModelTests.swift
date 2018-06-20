@@ -11,28 +11,42 @@ import XCTest
 class StatsViewModelTests: XCTestCase {
     
     var sut: StatsViewModelImpl!
-    
+    var repository: FakeTransactionsRepository!
+    var chartsDataProcessor: FakeChartsDataProcessor!
+    var userPreferences: FakeUserPreferences!
     
     override func setUp() {
         super.setUp()
-        
+        repository = FakeTransactionsRepository()
+        chartsDataProcessor = FakeChartsDataProcessor()
+        userPreferences = FakeUserPreferences()
+        userPreferences.statsGrouping = .weekOfEra
+        sut = StatsViewModelImpl(repository: repository,
+                                 chartsDataProcessor: chartsDataProcessor,
+                                 userPreferences: userPreferences)
     }
     
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        sut = nil
+        repository = nil
+        chartsDataProcessor = nil
+        userPreferences = nil
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func test_groupingItems() {
+        let items = sut.groupingItems
+        XCTAssertEqual(items[0], SegmentedControlItem.text(TransactionsGrouping.dayOfEra.description))
+        XCTAssertEqual(items[1], SegmentedControlItem.text(TransactionsGrouping.weekOfEra.description))
+        XCTAssertEqual(items[2], SegmentedControlItem.text(TransactionsGrouping.monthOfEra.description))
     }
     
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    func test_selecedGroupingIndex_get() {
+        XCTAssertEqual(sut.selectedGroupingIntex, 1)
     }
     
+    func test_selectedGroupingIndex_set_userPreferencesShouldBeUpdated() {
+        sut.selectedGroupingIntex = 2
+        XCTAssertEqual(userPreferences.statsGrouping, .monthOfEra)
+    }
 }
