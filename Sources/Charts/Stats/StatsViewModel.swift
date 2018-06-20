@@ -9,7 +9,9 @@ import Foundation
 import Charts
 
 public protocol StatsViewModelDelegate: class {
-    
+    func stats(viewModel: StatsViewModel, didUpdateExpenses data: BarChartData)
+    func stats(viewModel: StatsViewModel, didUpdateIncomes data: BarChartData)
+    func stats(viewModel: StatsViewModel, didUpdateCategoryExpenses data: PieChartData)
 }
 
 public protocol StatsViewModel {
