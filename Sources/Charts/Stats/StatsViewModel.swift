@@ -9,15 +9,40 @@ import Foundation
 import Charts
 
 public protocol StatsViewModelDelegate: class {
-    func dataUpdated()
+    
 }
 
-public class StatsViewModel {
+public protocol StatsViewModel {
+    var delegate: StatsViewModelDelegate? { get set }
+    var groupingItems: [SegmentedControlItem] { get }
+    var selectedGroupingIntex: Int { get set }
+}
+
+class StatsViewModelImpl: StatsViewModel {
     
-    private let repository: TransactionsRepository
     public weak var delegate: StatsViewModelDelegate?
     
-    public init(repository: TransactionsRepository) {
+    private let repository: TransactionsRepository
+    private let chartsDataProcessor: StatsChartsDataProcessor
+    private let userPreferences: UserPreferences
+    private let availableGroupings: [TransactionsGrouping] = [.dayOfEra, .weekOfEra, .monthOfEra]
+    
+    public init(repository: TransactionsRepository,
+                chartsDataProcessor: StatsChartsDataProcessor,
+                userPreferences: UserPreferences) {
         self.repository = repository
+        self.chartsDataProcessor = chartsDataProcessor
+        self.userPreferences = userPreferences
+        self.selectedGroupingIntex = availableGroupings.index(of: userPreferences.statsGrouping) ?? 0
+    }
+    
+    var groupingItems: [SegmentedControlItem] {
+        return availableGroupings.map { SegmentedControlItem.text($0.description) }
+    }
+    
+    var selectedGroupingIntex: Int {
+        didSet {
+            userPreferences.statsGrouping = availableGroupings[selectedGroupingIntex]
+        }
     }
 }
