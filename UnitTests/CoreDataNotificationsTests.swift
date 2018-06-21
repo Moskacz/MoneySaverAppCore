@@ -17,7 +17,7 @@ class CoreDataNotificationsTests: XCTestCase {
         let transaction = TransactionManagedObject(context: stack.getViewContext())
         transaction.value = NSDecimalNumber(value: 30)
         
-        NotificationCenter.default.observeObjectsDidChange(context: stack.getViewContext()) { (note) in
+        _ = NotificationCenter.default.observeObjectsDidChange(context: stack.getViewContext()) { (note) in
             exp.fulfill()
         }
         
