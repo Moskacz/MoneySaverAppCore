@@ -21,7 +21,8 @@ class TransactionsRepositoryTests: XCTestCase {
         fakeCaledar = FakeCalendar()
         sut = TransactionsRepositoryImplementation(context: coreDataStack.getViewContext(),
                                                    logger: NullLogger(),
-                                                   calendar: fakeCaledar)
+                                                   calendar: fakeCaledar,
+                                                   notificationCenter: NotificationCenter.default)
     }
     
     override func tearDown() {

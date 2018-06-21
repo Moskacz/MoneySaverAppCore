@@ -42,4 +42,8 @@ class FakeTransactionsRepository: TransactionsRepository {
     func allTransactions() throws -> [TransactionManagedObject] {
         fatalError()
     }
+    
+    func observeTransactionsChanged(callback: @escaping ([TransactionProtocol]) -> Void) -> NSObjectProtocol {
+        fatalError()
+    }
 }
