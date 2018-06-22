@@ -42,7 +42,7 @@ public protocol TransactionsRepository {
     func addTransaction(data: TransactionData, category: TransactionCategoryManagedObject)
     func remove(transaction: TransactionManagedObject)
     func allTransactions() throws -> [TransactionManagedObject]
-    func observeTransactionsChanged(callback: @escaping ([TransactionProtocol]) -> Void) -> NSObjectProtocol
+    func observeTransactionsChanged(callback: @escaping ([TransactionProtocol]) -> Void) -> ObservationToken
 }
 
 public class TransactionsRepositoryImplementation: TransactionsRepository {
@@ -50,16 +50,16 @@ public class TransactionsRepositoryImplementation: TransactionsRepository {
     public let context: NSManagedObjectContext
     private let calendar: CalendarProtocol
     private let logger: Logger
-    private let notificationCenter: NotificationCenter
+    private let coreDataNotifications: CoreDataNotifications
     
     public init(context: NSManagedObjectContext,
-         logger: Logger,
-         calendar: CalendarProtocol,
-         notificationCenter: NotificationCenter) {
+                logger: Logger,
+                calendar: CalendarProtocol,
+                coreDataNotifications: CoreDataNotifications) {
         self.context = context
         self.logger = logger
         self.calendar = calendar
-        self.notificationCenter = notificationCenter
+        self.coreDataNotifications = coreDataNotifications
     }
     
     public var allTransactionsFRC: NSFetchedResultsController<TransactionManagedObject> {
@@ -124,15 +124,13 @@ public class TransactionsRepositoryImplementation: TransactionsRepository {
     
     public func allTransactions() throws -> [TransactionManagedObject] {
         let request = fetchRequest
-        request.includesPropertyValues = true
         request.returnsObjectsAsFaults = false
         return try context.fetch(request)
     }
     
-    public func observeTransactionsChanged(callback: @escaping ([TransactionProtocol]) -> Void) -> NSObjectProtocol {
-        let notification = Notification.Name.NSManagedObjectContextObjectsDidChange
-        return notificationCenter.addObserver(forName: notification, object: context, queue: .main) { (notification) in
-            callback([])
+    public func observeTransactionsChanged(callback: @escaping ([TransactionProtocol]) -> Void) -> ObservationToken {
+        return coreDataNotifications.observeObjectsDidChange(context: context) { (notification) in
+            
         }
     }
 }

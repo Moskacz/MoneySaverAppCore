@@ -8,18 +8,19 @@
 import Foundation
 import CoreData
 
-protocol CoreDataNotifications {
+public protocol CoreDataNotifications {
     func observeObjectsDidChange(context: NSManagedObjectContext,
-                                 callback: @escaping (Notification) -> Void) -> NSObjectProtocol
+                                 callback: @escaping (Notification) -> Void) -> ObservationToken
 }
 
 extension NotificationCenter: CoreDataNotifications {
     
-    func observeObjectsDidChange(context: NSManagedObjectContext,
-                                 callback: @escaping (Notification) -> Void) -> NSObjectProtocol {
+    public func observeObjectsDidChange(context: NSManagedObjectContext,
+                                        callback: @escaping (Notification) -> Void) -> ObservationToken {
         let notificationName = Notification.Name.NSManagedObjectContextObjectsDidChange
-        return addObserver(forName: notificationName, object: context, queue: OperationQueue.main, using: { notification in
+        let token = addObserver(forName: notificationName, object: context, queue: OperationQueue.main, using: { notification in
             callback(notification)
         })
+        return ObservationToken(notificationCenter: self, token: token, notificationName: notificationName)
     }
 }

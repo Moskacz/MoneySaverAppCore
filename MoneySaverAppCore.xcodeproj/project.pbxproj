@@ -127,6 +127,8 @@
 		359E40B520DC3C0400801E20 /* NotificationCenter+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359E40B320DC3C0400801E20 /* NotificationCenter+Extensions.swift */; };
 		359E40B720DC3FA800801E20 /* CoreDataNotificationsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359E40B620DC3FA800801E20 /* CoreDataNotificationsTests.swift */; };
 		359E40B820DC3FA800801E20 /* CoreDataNotificationsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359E40B620DC3FA800801E20 /* CoreDataNotificationsTests.swift */; };
+		359E40BB20DD854000801E20 /* ObservationToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359E40BA20DD854000801E20 /* ObservationToken.swift */; };
+		359E40BC20DD854000801E20 /* ObservationToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359E40BA20DD854000801E20 /* ObservationToken.swift */; };
 		35AEB1192093A79F00DCE038 /* CollectionUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35AEB1172093A79F00DCE038 /* CollectionUpdater.swift */; };
 		35AEB11A2093A79F00DCE038 /* CollectionUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35AEB1172093A79F00DCE038 /* CollectionUpdater.swift */; };
 		35AEB11B2093A79F00DCE038 /* CoreDataCollectionUpdateHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35AEB1182093A79F00DCE038 /* CoreDataCollectionUpdateHandler.swift */; };
@@ -254,6 +256,7 @@
 		359E40B020DADF4F00801E20 /* FakeUserPreferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeUserPreferences.swift; sourceTree = "<group>"; };
 		359E40B320DC3C0400801E20 /* NotificationCenter+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NotificationCenter+Extensions.swift"; sourceTree = "<group>"; };
 		359E40B620DC3FA800801E20 /* CoreDataNotificationsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataNotificationsTests.swift; sourceTree = "<group>"; };
+		359E40BA20DD854000801E20 /* ObservationToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservationToken.swift; sourceTree = "<group>"; };
 		35AEB1172093A79F00DCE038 /* CollectionUpdater.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionUpdater.swift; sourceTree = "<group>"; };
 		35AEB1182093A79F00DCE038 /* CoreDataCollectionUpdateHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataCollectionUpdateHandler.swift; sourceTree = "<group>"; };
 		35B7FFD520D5220500AA0BC6 /* SegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedControl.swift; sourceTree = "<group>"; };
@@ -467,6 +470,7 @@
 		356668CB208CE66C0052E724 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				359E40B920DD851E00801E20 /* Utils */,
 				35AEB1162093A77400DCE038 /* CollectionViews */,
 				35593BEC20922DEF00DEEDB5 /* Charts */,
 				35162CB92090DE4F00547126 /* StatePreservation */,
@@ -515,6 +519,14 @@
 				359E40B620DC3FA800801E20 /* CoreDataNotificationsTests.swift */,
 			);
 			path = UnitTests;
+			sourceTree = "<group>";
+		};
+		359E40B920DD851E00801E20 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				359E40BA20DD854000801E20 /* ObservationToken.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		35AEB1162093A77400DCE038 /* CollectionViews */ = {
@@ -718,6 +730,7 @@
 				35162CB1208FC58500547126 /* Image.swift in Sources */,
 				35593BEE20922DFD00DEEDB5 /* BudgetChartsDataProcessor.swift in Sources */,
 				35593C072092305800DEEDB5 /* Sequence+Extension.swift in Sources */,
+				359E40BB20DD854000801E20 /* ObservationToken.swift in Sources */,
 				35162CA9208FC32500547126 /* Calendar+Extensions.swift in Sources */,
 				35162CB72090DD0100547126 /* BudgetRepository.swift in Sources */,
 				35162C90208FC10A00547126 /* DateRange.swift in Sources */,
@@ -796,6 +809,7 @@
 				35162CB2208FC58500547126 /* Image.swift in Sources */,
 				35593BEF20922E1D00DEEDB5 /* BudgetChartsDataProcessor.swift in Sources */,
 				35593C082092305800DEEDB5 /* Sequence+Extension.swift in Sources */,
+				359E40BC20DD854000801E20 /* ObservationToken.swift in Sources */,
 				35162CAA208FC32500547126 /* Calendar+Extensions.swift in Sources */,
 				35162CB82090DD0100547126 /* BudgetRepository.swift in Sources */,
 				35162C91208FC10A00547126 /* DateRange.swift in Sources */,
