@@ -50,16 +50,16 @@ public class TransactionsRepositoryImplementation: TransactionsRepository {
     public let context: NSManagedObjectContext
     private let calendar: CalendarProtocol
     private let logger: Logger
-    private let coreDataNotifications: CoreDataNotifications
+    private let notificationCenter: TransactionNotifications
     
     public init(context: NSManagedObjectContext,
                 logger: Logger,
                 calendar: CalendarProtocol,
-                coreDataNotifications: CoreDataNotifications) {
+                notificationCenter: TransactionNotifications) {
         self.context = context
         self.logger = logger
         self.calendar = calendar
-        self.coreDataNotifications = coreDataNotifications
+        self.notificationCenter = notificationCenter
     }
     
     public var allTransactionsFRC: NSFetchedResultsController<TransactionManagedObject> {
@@ -129,8 +129,8 @@ public class TransactionsRepositoryImplementation: TransactionsRepository {
     }
     
     public func observeTransactionsChanged(callback: @escaping ([TransactionProtocol]) -> Void) -> ObservationToken {
-        return coreDataNotifications.observeObjectsDidChange(context: context) { (notification) in
-            
-        }
+        return notificationCenter.observeTransactionsDidChange(callback: { (notification) in
+            callback(notification.transactions)
+        })
     }
 }
