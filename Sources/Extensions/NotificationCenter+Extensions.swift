@@ -31,12 +31,12 @@ public class TransactionNotification {
     
 }
 
-public protocol TransactionNotifications {
+public protocol TransactionNotificationCenter {
     func postTransactionsDidChange(notification: TransactionNotification)
     func observeTransactionsDidChange(callback: @escaping (TransactionNotification) -> Void) -> ObservationToken
 }
 
-extension NotificationCenter: TransactionNotifications {
+extension NotificationCenter: TransactionNotificationCenter {
     
     public func postTransactionsDidChange(notification: TransactionNotification) {
         post(notification.notification)

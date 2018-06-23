@@ -50,12 +50,12 @@ public class TransactionsRepositoryImplementation: TransactionsRepository {
     public let context: NSManagedObjectContext
     private let calendar: CalendarProtocol
     private let logger: Logger
-    private let notificationCenter: TransactionNotifications
+    private let notificationCenter: TransactionNotificationCenter
     
     public init(context: NSManagedObjectContext,
                 logger: Logger,
                 calendar: CalendarProtocol,
-                notificationCenter: TransactionNotifications) {
+                notificationCenter: TransactionNotificationCenter) {
         self.context = context
         self.logger = logger
         self.calendar = calendar
