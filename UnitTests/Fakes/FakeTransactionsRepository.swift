@@ -43,7 +43,7 @@ class FakeTransactionsRepository: TransactionsRepository {
         fatalError()
     }
     
-    func observeTransactionsChanged(callback: @escaping ([TransactionProtocol]) -> Void) -> NSObjectProtocol {
+    func observeTransactionsChanged(callback: @escaping ([TransactionProtocol]) -> Void) -> ObservationToken {
         fatalError()
     }
 }
