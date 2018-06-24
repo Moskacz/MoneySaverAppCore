@@ -8,9 +8,9 @@
 import Foundation
 
 public protocol StatsChartsDataProcessor {
-    func expensesGroupedBy<T:TransactionProtocol>(grouping: TransactionsGrouping, transactions: [T]) -> [PlotValue]
-    func incomesGroupedBy<T:TransactionProtocol>(grouping: TransactionsGrouping, transactions: [T]) -> [PlotValue]
-    func expensesGroupedByCategories<T:TransactionProtocol>(_ transactions: [T]) -> [CategorySum]
+    func expensesGroupedBy(grouping: TransactionsGrouping, transactions: [TransactionProtocol]) -> [PlotValue]
+    func incomesGroupedBy(grouping: TransactionsGrouping, transactions: [TransactionProtocol]) -> [PlotValue]
+    func expensesGroupedByCategories(_ transactions: [TransactionProtocol]) -> [CategorySum]
 }
 
 public struct CategorySum {
@@ -20,34 +20,35 @@ public struct CategorySum {
 
 extension ChartsDataProcessor: StatsChartsDataProcessor {
     
-    public func expensesGroupedBy<T: TransactionProtocol>(grouping: TransactionsGrouping, transactions: [T]) -> [PlotValue] {
-        let groupedExpenses = group(transactions: transactions.negatives, by: grouping)
+    public func expensesGroupedBy(grouping: TransactionsGrouping, transactions: [TransactionProtocol]) -> [PlotValue] {
+        let groupedExpenses = group(transactions: transactions.expenses, by: grouping)
+        
         let sortedValues = sortedPlotValues(from: groupedExpenses)
         return insertMissingValues(into: sortedValues)
     }
     
-    public func incomesGroupedBy<T: TransactionProtocol>(grouping: TransactionsGrouping, transactions: [T]) -> [PlotValue] {
-        let groupesIncomes = group(transactions: transactions.positives, by: grouping)
+    public func incomesGroupedBy(grouping: TransactionsGrouping, transactions: [TransactionProtocol]) -> [PlotValue] {
+        let groupesIncomes = group(transactions: transactions.incomes, by: grouping)
         let sortedValues = sortedPlotValues(from: groupesIncomes)
         return insertMissingValues(into: sortedValues)
     }
     
-    public func expensesGroupedByCategories<T: TransactionProtocol>(_ transactions: [T]) -> [CategorySum] {
-        let groupesExpenses = transactions.negatives.grouped {
+    public func expensesGroupedByCategories(_ transactions: [TransactionProtocol]) -> [CategorySum] {
+        let groupesExpenses = transactions.expenses.grouped {
             return $0.transactionCategory?.name ?? "Unknown"
         }
-        
+
         let sums = groupesExpenses.map { keyValueTuple -> CategorySum in
             let categoryName = keyValueTuple.key
-            let categoryExpenses = keyValueTuple.value.sum.decimalValue
+            let categoryExpenses = keyValueTuple.value.sum
             return CategorySum(categoryName: categoryName, sum: categoryExpenses)
         }
-        
+
         return sums.sorted { $0.categoryName < $1.categoryName }
     }
     
-    private func group<T: TransactionProtocol>(transactions: [T], by grouping: TransactionsGrouping) -> [Int32: [T]] {
-        let groupingKey: ((T) -> Int32?)
+    private func group(transactions: [TransactionProtocol], by grouping: TransactionsGrouping) -> [Int32: [TransactionProtocol]] {
+        let groupingKey: ((TransactionProtocol) -> Int32?)
         switch grouping {
         case .dayOfEra: groupingKey = { $0.transactionDate?.dayOfEra }
         case .weekOfEra: groupingKey = { $0.transactionDate?.weekOfEra }
@@ -56,10 +57,10 @@ extension ChartsDataProcessor: StatsChartsDataProcessor {
         return transactions.grouped(by: groupingKey)
     }
     
-    private func sortedPlotValues<T: TransactionProtocol>(from groupedTransactions: [Int32: [T]]) -> [PlotValue] {
+    private func sortedPlotValues(from groupedTransactions: [Int32: [TransactionProtocol]]) -> [PlotValue] {
         let values = groupedTransactions.map { keyValueTuple -> PlotValue in
             let date = Int(keyValueTuple.key)
-            let value = keyValueTuple.value.sum.decimalValue
+            let value = keyValueTuple.value.sum
             return PlotValue(x: date, y: value)
         }
         return values.sorted { $0.x < $1.x }

@@ -44,6 +44,8 @@ class FakeTransactionsRepository: TransactionsRepository {
     }
     
     func observeTransactionsChanged(callback: @escaping ([TransactionProtocol]) -> Void) -> ObservationToken {
-        fatalError()
+        return ObservationToken(notificationCenter: NotificationCenter.default,
+                                token: NSObject(),
+                                notificationName: Notification.Name("test"))
     }
 }

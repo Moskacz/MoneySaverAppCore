@@ -34,12 +34,13 @@ class SequenceTests: XCTestCase {
         XCTAssertEqual(grouped.keys.count, 1) // there is only one group for age 30
     }
     
-    func test_valueRepresenting_sum() {
-        let value1 = NSDecimalNumber(value: 2)
-        let value2 = NSDecimalNumber(value: 4)
-        let value3 = NSDecimalNumber(value: -10)
-        let sum = [value1, value2, value3].sum
-        XCTAssertEqual(sum.floatValue, -4, accuracy: 0.00001)
+    func test_transactions_sum() {
+        let transaction1 = FakeTransactionBuilder().set(value: Decimal(1)).build()
+        let transaction2 = FakeTransactionBuilder().set(value: Decimal(2)).build()
+        let transaction3 = FakeTransactionBuilder().set(value: Decimal(3)).build()
+        
+        let transactions: [TransactionProtocol] = [transaction1, transaction2, transaction3]
+        XCTAssertEqual(transactions.sum, Decimal(6))
     }
     
     func test_compoundSum_shouldComputeSumForGivenDate() {
@@ -87,22 +88,37 @@ class SequenceTests: XCTestCase {
         XCTAssertEqual(sum.total(), Decimal(-20))
     }
     
-    func test_negatives_shouldReturnSequenceOfNegativeValues() {
-        let values = [NSDecimalNumber(value: -2),
-                      NSDecimalNumber(value: 2),
-                      NSDecimalNumber(value: -3)]
-        let expectedNegatives = [NSDecimalNumber(value: -2),
-                                 NSDecimalNumber(value: -3)]
-        XCTAssertEqual(values.negatives, expectedNegatives)
+    func test_expenses() {
+        let transaction1 = FakeTransactionBuilder().set(value: Decimal(-100)).build()
+        let transaction2 = FakeTransactionBuilder().set(value: Decimal(200)).build()
+        let transaction3 = FakeTransactionBuilder().set(value: Decimal(-50)).build()
+        
+        let transactions: [TransactionProtocol] = [transaction1, transaction2, transaction3]
+        let expenses = transactions.expenses
+        XCTAssertEqual(expenses.count, 2)
+        XCTAssertEqual(expenses[0].value, NSDecimalNumber(value: -100))
+        XCTAssertEqual(expenses[1].value, NSDecimalNumber(value: -50))
     }
     
-    func test_positives_shouldReturnSequenceOfPositiveValues() {
-        let values = [NSDecimalNumber(value: 2),
-                      NSDecimalNumber(value: -22),
-                      NSDecimalNumber(value: 333)]
-        let expectedPositives = [NSDecimalNumber(value: 2),
-                                 NSDecimalNumber(value: 333)]
-        XCTAssertEqual(expectedPositives, values.positives)
+    func test_incomes() {
+        let transaction1 = FakeTransactionBuilder().set(value: Decimal(100)).build()
+        let transaction2 = FakeTransactionBuilder().set(value: Decimal(-200)).build()
+        let transaction3 = FakeTransactionBuilder().set(value: Decimal(50)).build()
+        
+        let transactions: [TransactionProtocol] = [transaction1, transaction2, transaction3]
+        let incomes = transactions.incomes
+        XCTAssertEqual(incomes.count, 2)
+        XCTAssertEqual(incomes[0].value, NSDecimalNumber(value: 100))
+        XCTAssertEqual(incomes[1].value, NSDecimalNumber(value: 50))
+    }
+    
+    func test_sum() {
+        let transaction1 = FakeTransactionBuilder().set(value: Decimal(100)).build()
+        let transaction2 = FakeTransactionBuilder().set(value: Decimal(-200)).build()
+        let transaction3 = FakeTransactionBuilder().set(value: Decimal(50)).build()
+        
+        let transactions: [TransactionProtocol] = [transaction1, transaction2, transaction3]
+        XCTAssertEqual(transactions.sum, Decimal(-50))
     }
 }
 

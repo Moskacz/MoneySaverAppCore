@@ -141,8 +141,6 @@
 		35B914A920D0508B008BD7A2 /* FakeTransactionCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B914A720D0508B008BD7A2 /* FakeTransactionCategory.swift */; };
 		35B914AB20D050C0008BD7A2 /* FakeTransactionBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B914AA20D050C0008BD7A2 /* FakeTransactionBuilder.swift */; };
 		35B914AC20D050C0008BD7A2 /* FakeTransactionBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B914AA20D050C0008BD7A2 /* FakeTransactionBuilder.swift */; };
-		35CD206920C83D7900EC4091 /* ValueRepresenting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CD206820C83D7900EC4091 /* ValueRepresenting.swift */; };
-		35CD206A20C83D7900EC4091 /* ValueRepresenting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CD206820C83D7900EC4091 /* ValueRepresenting.swift */; };
 		35DD654620B09F9000909AA4 /* FakeBudgetRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DD654520B09F9000909AA4 /* FakeBudgetRepository.swift */; };
 		35DD654720B09F9000909AA4 /* FakeBudgetRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DD654520B09F9000909AA4 /* FakeBudgetRepository.swift */; };
 		35E5C63420D817A500D42E84 /* StatsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E5C63320D817A500D42E84 /* StatsViewModel.swift */; };
@@ -265,7 +263,6 @@
 		35B7FFD520D5220500AA0BC6 /* SegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedControl.swift; sourceTree = "<group>"; };
 		35B914A720D0508B008BD7A2 /* FakeTransactionCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeTransactionCategory.swift; sourceTree = "<group>"; };
 		35B914AA20D050C0008BD7A2 /* FakeTransactionBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeTransactionBuilder.swift; sourceTree = "<group>"; };
-		35CD206820C83D7900EC4091 /* ValueRepresenting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueRepresenting.swift; sourceTree = "<group>"; };
 		35DD654520B09F9000909AA4 /* FakeBudgetRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeBudgetRepository.swift; sourceTree = "<group>"; };
 		35E5C63320D817A500D42E84 /* StatsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -340,7 +337,6 @@
 				35162C94208FC14900547126 /* CalendarDateProtocol.swift */,
 				35162C93208FC14900547126 /* TransactionCategoryProtocol.swift */,
 				35162C95208FC14900547126 /* TransactionProtocol.swift */,
-				35CD206820C83D7900EC4091 /* ValueRepresenting.swift */,
 			);
 			path = DomainProtocols;
 			sourceTree = "<group>";
@@ -754,7 +750,6 @@
 				359E40B420DC3C0400801E20 /* NotificationCenter+Extensions.swift in Sources */,
 				358BEC0020C9AD25003A3800 /* GroupedData.swift in Sources */,
 				35593C0F2092322D00DEEDB5 /* Color.swift in Sources */,
-				35CD206920C83D7900EC4091 /* ValueRepresenting.swift in Sources */,
 				353817D5208E647600EA967F /* CoreDataStack.swift in Sources */,
 				353A944620A0D89100B94A72 /* Bundle+Extension.swift in Sources */,
 				35162C9A208FC14900547126 /* TransactionProtocol.swift in Sources */,
@@ -834,7 +829,6 @@
 				359E40B520DC3C0400801E20 /* NotificationCenter+Extensions.swift in Sources */,
 				358BEC0120C9AD25003A3800 /* GroupedData.swift in Sources */,
 				35593C102092322D00DEEDB5 /* Color.swift in Sources */,
-				35CD206A20C83D7900EC4091 /* ValueRepresenting.swift in Sources */,
 				353817D6208E647600EA967F /* CoreDataStack.swift in Sources */,
 				35162C9B208FC14900547126 /* TransactionProtocol.swift in Sources */,
 				353817E8208E65DC00EA967F /* TransactionManagedObject+CoreDataClass.swift in Sources */,

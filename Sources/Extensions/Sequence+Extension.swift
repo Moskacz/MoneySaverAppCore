@@ -43,7 +43,7 @@ extension Sequence {
     }
 }
 
-extension Sequence where Element: TransactionProtocol {
+extension Sequence where Element == TransactionProtocol {
     
     public func compoundSum(date: CalendarDateProtocol) -> TransactionsCompoundSum {
         var day = [Element]()
@@ -74,26 +74,21 @@ extension Sequence where Element: TransactionProtocol {
     }
     
     public var transactionsSum: TransactionsSum {
-        let incomes = map { $0.value?.doubleValue ?? 0 }.filter { $0 > 0 }.reduce(0, +)
-        let expenses = map { $0.value?.doubleValue ?? 0 }.filter { $0 < 0 }.reduce(0, +)
-        
-        return TransactionsSum(incomes: Decimal(incomes), expenses: Decimal(expenses))
-    }
-}
-
-extension Sequence where Element: ValueRepresenting {
-    
-    var sum: NSDecimalNumber {
-        return self.reduce(NSDecimalNumber.zero, { (result, nextElement) -> NSDecimalNumber in
-            return result.adding(nextElement.valueRepresentation)
-        })
+        return TransactionsSum(incomes: incomes.sum, expenses: expenses.sum)
     }
     
-    var positives: [Element] {
-        return self.filter { $0.valueRepresentation.doubleValue >= 0 }
+    var incomes: [Element] {
+        return self.filter { ($0.value ?? 0).doubleValue >= 0 }
     }
     
-    var negatives: [Element] {
-        return self.filter { $0.valueRepresentation.doubleValue < 0 }
+    var expenses: [Element] {
+        return self.filter { ($0.value ?? 0).doubleValue < 0 }
+    }
+    
+    var sum: Decimal {
+        let sum = reduce(0) { (result, element) -> Double in
+            return result + (element.value?.doubleValue ?? 0)
+        }
+        return Decimal(sum)
     }
 }
