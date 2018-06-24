@@ -11,6 +11,8 @@ import CoreData
 
 class FakeTransactionsRepository: TransactionsRepository {
     
+    var transactionChangedCallback: (([TransactionProtocol]) -> Void)?
+    
     var allTransactionsFRC: NSFetchedResultsController<TransactionManagedObject> {
         fatalError()
     }
@@ -44,6 +46,7 @@ class FakeTransactionsRepository: TransactionsRepository {
     }
     
     func observeTransactionsChanged(callback: @escaping ([TransactionProtocol]) -> Void) -> ObservationToken {
+        self.transactionChangedCallback = callback
         return ObservationToken(notificationCenter: NotificationCenter.default,
                                 token: NSObject(),
                                 notificationName: Notification.Name("test"))

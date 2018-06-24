@@ -26,14 +26,14 @@ extension FakeChartsDataProcessor: BudgetChartsDataProcessor {
 
 extension FakeChartsDataProcessor: StatsChartsDataProcessor {
     public func expensesGroupedBy(grouping: TransactionsGrouping, transactions: [TransactionProtocol]) -> [PlotValue] {
-        fatalError()
+        return []
     }
     
     public func incomesGroupedBy(grouping: TransactionsGrouping, transactions: [TransactionProtocol]) -> [PlotValue] {
-        fatalError()
+        return []
     }
     
     public func expensesGroupedByCategories(_ transactions: [TransactionProtocol]) -> [CategorySum] {
-        fatalError()
+        return []
     }
 }

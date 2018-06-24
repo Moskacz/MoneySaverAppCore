@@ -50,7 +50,7 @@ class StatsViewModelImpl: StatsViewModel {
             userPreferences.statsGrouping = selectedGrouping
             if selectedGroupingIntex != oldValue {
                 updateExpensesData()
-                updateExpensesData()
+                updateIncomesData()
             }
         }
     }

@@ -6,6 +6,7 @@
 //
 
 import XCTest
+import Charts
 @testable import MoneySaverAppCore
 
 class StatsViewModelTests: XCTestCase {
@@ -48,5 +49,43 @@ class StatsViewModelTests: XCTestCase {
     func test_selectedGroupingIndex_set_userPreferencesShouldBeUpdated() {
         sut.selectedGroupingIntex = 2
         XCTAssertEqual(userPreferences.statsGrouping, .monthOfEra)
+    }
+    
+    func test_whenNewTransactionsAreAvailable_thenDelegateShouldBeCalledWithNewData() {
+        let delegate = FakeStatsViewModelDelegate()
+        sut.delegate = delegate
+        repository.transactionChangedCallback?([])
+        XCTAssertNotNil(delegate.expensesData)
+        XCTAssertNotNil(delegate.incomesData)
+        XCTAssertNotNil(delegate.categoryExpensesData)
+    }
+    
+    func test_whenGroupingIsChanged_thenDelegateShouldBeCalledWithNewData() {
+        let delegate = FakeStatsViewModelDelegate()
+        sut.delegate = delegate
+        sut.selectedGroupingIntex = 2
+        XCTAssertNotNil(delegate.expensesData)
+        XCTAssertNotNil(delegate.incomesData)
+        XCTAssertNil(delegate.categoryExpensesData)
+    }
+}
+
+class FakeStatsViewModelDelegate: StatsViewModelDelegate {
+    
+    private(set) var expensesData: BarChartData?
+    private(set) var incomesData: BarChartData?
+    private(set) var categoryExpensesData: PieChartData?
+
+    
+    func stats(viewModel: StatsViewModel, didUpdateExpenses data: BarChartData) {
+        expensesData = data
+    }
+    
+    func stats(viewModel: StatsViewModel, didUpdateIncomes data: BarChartData) {
+        incomesData = data
+    }
+    
+    func stats(viewModel: StatsViewModel, didUpdateCategoryExpenses data: PieChartData) {
+        categoryExpensesData = data
     }
 }
