@@ -31,8 +31,8 @@ class ChartsDataProcessorTests: XCTestCase {
         fakeCalendar.nowToReturn = Date()
         fakeCalendar.daysInMonthRangeToReturn = 1...30
         
-        let firstDayExpense = DatedValue(date: 1, value: Decimal(floatLiteral: 50))
-        let secondDayExpense = DatedValue(date: 2, value: Decimal(floatLiteral: 10))
+        let firstDayExpense = DatedValue(date: 1, value: 50)
+        let secondDayExpense = DatedValue(date: 2, value: 10)
         let spendings = sut.spendings(fromMonthlyExpenses: [secondDayExpense, firstDayExpense])
         XCTAssertEqual(spendings[0].y, -50)
     }
@@ -41,8 +41,8 @@ class ChartsDataProcessorTests: XCTestCase {
         fakeCalendar.nowToReturn = Date()
         fakeCalendar.daysInMonthRangeToReturn = 1...30
         
-        let firstDayExpense = DatedValue(date: 1, value: Decimal(floatLiteral: 50))
-        let secondDayExpense = DatedValue(date: 2, value: Decimal(floatLiteral: 10))
+        let firstDayExpense = DatedValue(date: 1, value: 50)
+        let secondDayExpense = DatedValue(date: 2, value: 10)
         let spendings = sut.spendings(fromMonthlyExpenses: [firstDayExpense, secondDayExpense])
         XCTAssertEqual(spendings[1].y, -60)
     }
@@ -70,7 +70,7 @@ class ChartsDataProcessorTests: XCTestCase {
         fakeCalendar.daysInMonthRangeToReturn = 1...10
         let budgetValue = Double(5000)
         let lastDaySpending = sut.estimatedSpendings(budgetValue: budgetValue).last!.y
-        XCTAssertEqual(lastDaySpending, Decimal(budgetValue))
+        XCTAssertEqual(lastDaySpending, budgetValue)
     }
     
     func test_estimatedSpending_firstDaySpendingShouldNotBeZero() {
@@ -79,7 +79,7 @@ class ChartsDataProcessorTests: XCTestCase {
         let budgetValue = Double(1000)
         let firstDaySpending = sut.estimatedSpendings(budgetValue: budgetValue).first!.y
         XCTAssertTrue(firstDaySpending != 0)
-        XCTAssertEqual(firstDaySpending, Decimal(100))
+        XCTAssertEqual(firstDaySpending, 100)
     }
  
     func test_groupedExpenses_byDayOfEra_shouldSumByDayOfEra() {
@@ -91,8 +91,8 @@ class ChartsDataProcessorTests: XCTestCase {
         
         let values = sut.expensesGroupedBy(grouping: .dayOfEra, transactions: transactions)
         XCTAssertEqual(values.count, 2)
-        XCTAssertEqual(values[0].y, Decimal(-100))
-        XCTAssertEqual(values[1].y, Decimal(-30)) // -10 - 20
+        XCTAssertEqual(values[0].y, -100)
+        XCTAssertEqual(values[1].y, -30) // -10 - 20
     }
     
     func test_groupedIncomes_byWeekOfEra_shouldSumIncomesByWeekOfEra() {
@@ -104,8 +104,8 @@ class ChartsDataProcessorTests: XCTestCase {
         
         let values = sut.incomesGroupedBy(grouping: .weekOfEra, transactions: transactions)
         XCTAssertEqual(values.count, 2)
-        XCTAssertEqual(values[0].y, Decimal(110)) // 50 + 60
-        XCTAssertEqual(values[1].y, Decimal(1000))
+        XCTAssertEqual(values[0].y, 110) // 50 + 60
+        XCTAssertEqual(values[1].y, 1000)
     }
 
     func test_groupedExpenses_byCategories() {
@@ -118,9 +118,9 @@ class ChartsDataProcessorTests: XCTestCase {
         let values = sut.expensesGroupedByCategories(transactions)
         XCTAssertEqual(values.count, 2)
         XCTAssertEqual(values[0].categoryName, "categoryA")
-        XCTAssertEqual(values[0].sum, Decimal(-300)) // -100 - 200
+        XCTAssertEqual(values[0].sum, -300) // -100 - 200
         XCTAssertEqual(values[1].categoryName, "categoryB")
-        XCTAssertEqual(values[1].sum, Decimal(-900))
+        XCTAssertEqual(values[1].sum, -900)
     }
     
     func test_grouping_shouldCreateZeroValuesForNotExistingBetweenDates() {

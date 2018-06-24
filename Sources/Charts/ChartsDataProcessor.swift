@@ -18,5 +18,5 @@ public class ChartsDataProcessor {
 
 public struct PlotValue {
     public let x: Int
-    public let y: Decimal
+    public let y: Double
 }

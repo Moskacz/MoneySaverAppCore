@@ -40,7 +40,7 @@ class SequenceTests: XCTestCase {
         let transaction3 = FakeTransactionBuilder().set(value: Decimal(3)).build()
         
         let transactions: [TransactionProtocol] = [transaction1, transaction2, transaction3]
-        XCTAssertEqual(transactions.sum, Decimal(6))
+        XCTAssertEqual(transactions.sum, 6)
     }
     
     func test_compoundSum_shouldComputeSumForGivenDate() {
@@ -65,11 +65,11 @@ class SequenceTests: XCTestCase {
         yesterdayTransaction.value = NSDecimalNumber(value: 10)
         
         let compoundSum = [todayTransaction, yesterdayTransaction].compoundSum(date: today)
-        XCTAssertEqual(compoundSum.daily.incomes, Decimal(20)) // only today
-        XCTAssertEqual(compoundSum.weekly.incomes, Decimal(30)) // both
-        XCTAssertEqual(compoundSum.monthly.incomes, Decimal(30)) // both
-        XCTAssertEqual(compoundSum.yearly.incomes, Decimal(30)) // both
-        XCTAssertEqual(compoundSum.era.incomes, Decimal(30)) // both
+        XCTAssertEqual(compoundSum.daily.incomes, 20) // only today
+        XCTAssertEqual(compoundSum.weekly.incomes, 30) // both
+        XCTAssertEqual(compoundSum.monthly.incomes, 30) // both
+        XCTAssertEqual(compoundSum.yearly.incomes, 30) // both
+        XCTAssertEqual(compoundSum.era.incomes, 30) // both
     }
     
     func test_transactionsSum() {
@@ -83,9 +83,9 @@ class SequenceTests: XCTestCase {
         transaction3.value = NSDecimalNumber(value: -50)
         
         let sum = [transaction1, transaction2, transaction3].transactionsSum
-        XCTAssertEqual(sum.incomes, Decimal(30))
-        XCTAssertEqual(sum.expenses, Decimal(-50))
-        XCTAssertEqual(sum.total(), Decimal(-20))
+        XCTAssertEqual(sum.incomes, 30)
+        XCTAssertEqual(sum.expenses, -50)
+        XCTAssertEqual(sum.total(), -20)
     }
     
     func test_expenses() {
@@ -118,7 +118,7 @@ class SequenceTests: XCTestCase {
         let transaction3 = FakeTransactionBuilder().set(value: Decimal(50)).build()
         
         let transactions: [TransactionProtocol] = [transaction1, transaction2, transaction3]
-        XCTAssertEqual(transactions.sum, Decimal(-50))
+        XCTAssertEqual(transactions.sum, -50)
     }
 }
 

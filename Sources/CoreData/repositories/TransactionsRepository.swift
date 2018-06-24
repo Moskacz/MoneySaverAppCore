@@ -11,9 +11,9 @@ import CoreData
 
 public struct DatedValue: Equatable {
     public let date: Int
-    public let value: Decimal
+    public let value: Double
     
-    public init(date: Int, value: Decimal) {
+    public init(date: Int, value: Double) {
         self.date = date
         self.value = value
     }

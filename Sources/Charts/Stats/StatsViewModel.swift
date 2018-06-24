@@ -49,7 +49,8 @@ class StatsViewModelImpl: StatsViewModel {
         didSet {
             userPreferences.statsGrouping = selectedGrouping
             if selectedGroupingIntex != oldValue {
-                
+                updateExpensesData()
+                updateExpensesData()
             }
         }
     }
@@ -68,17 +69,23 @@ class StatsViewModelImpl: StatsViewModel {
     }
     
     private func updateExpensesData() {
-        
-//        let plotValues = chartsDataProcessor.expensesGroupedBy(grouping: selectedGrouping,
-//                                                               transactions: transactions)
-        
+        let plotValues = chartsDataProcessor.expensesGroupedBy(grouping: selectedGrouping, transactions: transactions)
+        let entries = plotValues.map { BarChartDataEntry(x: Double($0.x), y: $0.y) }
+        let data = BarChartData(dataSet: BarChartDataSet(values: entries, label: nil))
+        delegate?.stats(viewModel: self, didUpdateExpenses: data)
     }
     
     private func updateCategoryExpenseData() {
-        
+        let plotValues = chartsDataProcessor.expensesGroupedByCategories(transactions)
+        let entries = plotValues.map { PieChartDataEntry(value: $0.sum, label: $0.categoryName)}
+        let data = PieChartData(dataSet: PieChartDataSet(values: entries, label: nil))
+        delegate?.stats(viewModel: self, didUpdateCategoryExpenses: data)
     }
     
     private func updateIncomesData() {
-        
+        let plotValues = chartsDataProcessor.incomesGroupedBy(grouping: selectedGrouping, transactions: transactions)
+        let entries = plotValues.map { BarChartDataEntry(x: Double($0.x), y: $0.y) }
+        let data = BarChartData(dataSet: BarChartDataSet(values: entries, label: nil))
+        delegate?.stats(viewModel: self, didUpdateIncomes: data)
     }
 }

@@ -9,10 +9,10 @@
 import Foundation
 
 public struct TransactionsSum {
-    public let incomes: Decimal
-    public let expenses: Decimal
+    public let incomes: Double
+    public let expenses: Double
     
-    public func total() -> Decimal {
+    public func total() -> Double {
         return incomes + expenses
     }
     
@@ -85,10 +85,9 @@ extension Sequence where Element == TransactionProtocol {
         return self.filter { ($0.value ?? 0).doubleValue < 0 }
     }
     
-    var sum: Decimal {
-        let sum = reduce(0) { (result, element) -> Double in
+    var sum: Double {
+        return reduce(0) { (result, element) -> Double in
             return result + (element.value?.doubleValue ?? 0)
         }
-        return Decimal(sum)
     }
 }

@@ -22,7 +22,7 @@ extension ChartsDataProcessor: BudgetChartsDataProcessor {
         
         let daysRange = calendar.daysInMonthRange(forDate: calendar.now)
         return daysRange.map { day in
-            let value = sortedExpeneses.reduce(0, { (sum, dailyValue) -> Decimal in
+            let value = sortedExpeneses.reduce(0, { (sum, dailyValue) -> Double in
                 guard dailyValue.date <= day else { return sum }
                 return sum - dailyValue.value
             })
@@ -34,7 +34,7 @@ extension ChartsDataProcessor: BudgetChartsDataProcessor {
         let daysRange = calendar.daysInMonthRange(forDate: calendar.now)
         return daysRange.map { day in
             let dailySpending = budgetValue * Double(day)  / Double(daysRange.upperBound)
-            return PlotValue(x: day, y: Decimal(floatLiteral: dailySpending))
+            return PlotValue(x: day, y: dailySpending)
         }
     }
 }
