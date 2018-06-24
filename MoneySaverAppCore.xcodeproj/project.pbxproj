@@ -129,6 +129,8 @@
 		359E40BC20DD854000801E20 /* ObservationToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359E40BA20DD854000801E20 /* ObservationToken.swift */; };
 		359E40BE20DF89A400801E20 /* FakeTransactionNotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359E40BD20DF89A400801E20 /* FakeTransactionNotificationCenter.swift */; };
 		359E40BF20DF89A400801E20 /* FakeTransactionNotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359E40BD20DF89A400801E20 /* FakeTransactionNotificationCenter.swift */; };
+		359E40C120DF8D7700801E20 /* NSManagedObjectContext+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359E40C020DF8D7700801E20 /* NSManagedObjectContext+Extensions.swift */; };
+		359E40C220DF8D7700801E20 /* NSManagedObjectContext+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359E40C020DF8D7700801E20 /* NSManagedObjectContext+Extensions.swift */; };
 		35AEB1192093A79F00DCE038 /* CollectionUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35AEB1172093A79F00DCE038 /* CollectionUpdater.swift */; };
 		35AEB11A2093A79F00DCE038 /* CollectionUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35AEB1172093A79F00DCE038 /* CollectionUpdater.swift */; };
 		35AEB11B2093A79F00DCE038 /* CoreDataCollectionUpdateHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35AEB1182093A79F00DCE038 /* CoreDataCollectionUpdateHandler.swift */; };
@@ -257,6 +259,7 @@
 		359E40B320DC3C0400801E20 /* NotificationCenter+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NotificationCenter+Extensions.swift"; sourceTree = "<group>"; };
 		359E40BA20DD854000801E20 /* ObservationToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservationToken.swift; sourceTree = "<group>"; };
 		359E40BD20DF89A400801E20 /* FakeTransactionNotificationCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeTransactionNotificationCenter.swift; sourceTree = "<group>"; };
+		359E40C020DF8D7700801E20 /* NSManagedObjectContext+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSManagedObjectContext+Extensions.swift"; sourceTree = "<group>"; };
 		35AEB1172093A79F00DCE038 /* CollectionUpdater.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionUpdater.swift; sourceTree = "<group>"; };
 		35AEB1182093A79F00DCE038 /* CoreDataCollectionUpdateHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataCollectionUpdateHandler.swift; sourceTree = "<group>"; };
 		35B7FFD520D5220500AA0BC6 /* SegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedControl.swift; sourceTree = "<group>"; };
@@ -361,6 +364,7 @@
 				353A944720A0D9E100B94A72 /* ManagedObjectModel+Extensions.swift */,
 				357B860A20D1AF54001E5D25 /* Sequence+Int.swift */,
 				359E40B320DC3C0400801E20 /* NotificationCenter+Extensions.swift */,
+				359E40C020DF8D7700801E20 /* NSManagedObjectContext+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -760,6 +764,7 @@
 				358BEC0320C9B0E6003A3800 /* ChartsDataProcessor.swift in Sources */,
 				35162C8E208FC10A00547126 /* CalendarProtocol.swift in Sources */,
 				354E4B9520A231F6009A8311 /* InMemoryCoreDataStack.swift in Sources */,
+				359E40C120DF8D7700801E20 /* NSManagedObjectContext+Extensions.swift in Sources */,
 				35162C9E208FC1D000547126 /* Logger.swift in Sources */,
 				353817EB208E65DC00EA967F /* TransactionCategoryManagedObject+CoreDataClass.swift in Sources */,
 				353A944820A0D9E100B94A72 /* ManagedObjectModel+Extensions.swift in Sources */,
@@ -839,6 +844,7 @@
 				358BEC0420C9B0E6003A3800 /* ChartsDataProcessor.swift in Sources */,
 				35162C9F208FC1D000547126 /* Logger.swift in Sources */,
 				354E4B9620A231F6009A8311 /* InMemoryCoreDataStack.swift in Sources */,
+				359E40C220DF8D7700801E20 /* NSManagedObjectContext+Extensions.swift in Sources */,
 				353A944A20A0D9E600B94A72 /* Bundle+Extension.swift in Sources */,
 				353817EC208E65DC00EA967F /* TransactionCategoryManagedObject+CoreDataClass.swift in Sources */,
 				353817D2208E643600EA967F /* DataModel.xcdatamodeld in Sources */,

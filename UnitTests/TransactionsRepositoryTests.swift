@@ -13,16 +13,18 @@ class TransactionsRepositoryTests: XCTestCase {
     var coreDataStack: InMemoryCoreDataStack!
     var fakeCaledar: FakeCalendar!
     var sut: TransactionsRepositoryImplementation!
+    var notificationCenter: FakeTransactionNotificationCenter!
     
     override func setUp() {
         super.setUp()
         
         coreDataStack = InMemoryCoreDataStack()
         fakeCaledar = FakeCalendar()
+        notificationCenter = FakeTransactionNotificationCenter()
         sut = TransactionsRepositoryImplementation(context: coreDataStack.getViewContext(),
                                                    logger: NullLogger(),
                                                    calendar: fakeCaledar,
-                                                   notificationCenter: NotificationCenter.default)
+                                                   notificationCenter: notificationCenter)
     }
     
     override func tearDown() {
@@ -86,12 +88,28 @@ class TransactionsRepositoryTests: XCTestCase {
         XCTAssertEqual(transaction.category!.name, "category_name")
     }
     
-    func test_deleteTransaction_shouldRemoveItFromContext() {
-        let context = coreDataStack.getViewContext()
-        let transaction = TransactionManagedObject.createEntity(inContext: context)
-        XCTAssertTrue(context.deletedObjects.isEmpty)
+    func test_addTransaction_shouldPostNotification() {
+        let category = TransactionCategoryManagedObject(context: coreDataStack.getViewContext())
+        let data = TransactionData(title: "test", value: Decimal(-10), creationDate: Date())
+        sut.addTransaction(data: data, category: category)
+        XCTAssertNotNil(notificationCenter.postedNotification)
+        XCTAssertEqual(notificationCenter.postedNotification?.transactions.count, 1)
+    }
+    
+    func test_deleteTransaction_shouldRemoveItFromContext() throws {
+        let category = TransactionCategoryManagedObject(context: coreDataStack.getViewContext())
+        let data = TransactionData(title: "test", value: Decimal(-10), creationDate: Date())
+        sut.addTransaction(data: data, category: category)
+        let transactions = try sut.allTransactions()
+        XCTAssertEqual(transactions.count, 1)
+        sut.remove(transaction: transactions[0])
+        XCTAssertEqual(try sut.allTransactions().count, 0)
+    }
+    
+    func test_deleteTransaction_shouldPostNotification() {
+        let transaction = TransactionManagedObject(context: coreDataStack.getViewContext())
         sut.remove(transaction: transaction)
-        XCTAssertEqual(context.deletedObjects.count, 1)
+        XCTAssertNotNil(notificationCenter.postedNotification)
     }
     
     // MARK: Helpers

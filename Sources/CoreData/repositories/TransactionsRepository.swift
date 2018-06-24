@@ -113,13 +113,17 @@ public class TransactionsRepositoryImplementation: TransactionsRepository {
             date.update(with: calendar.calendarDate(from: data.creationDate))
             transaction.date = date
             transaction.category = category
+            self.context.save(with: nil)
         }
+        postNotificationWithCurrentTransactions()
     }
     
     public func remove(transaction: TransactionManagedObject) {
         context.performAndWait {
             self.context.delete(transaction)
+            self.context.save(with: nil)
         }
+        postNotificationWithCurrentTransactions()
     }
     
     public func allTransactions() throws -> [TransactionManagedObject] {
@@ -132,5 +136,14 @@ public class TransactionsRepositoryImplementation: TransactionsRepository {
         return notificationCenter.observeTransactionsDidChange(callback: { (notification) in
             callback(notification.transactions)
         })
+    }
+    
+    private func postNotificationWithCurrentTransactions() {
+        do {
+            let notification = TransactionNotification(transactions: try allTransactions())
+            notificationCenter.postTransactionsDidChange(notification: notification)
+        } catch {
+            
+        }
     }
 }
