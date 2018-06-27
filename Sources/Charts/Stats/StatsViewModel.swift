@@ -20,7 +20,7 @@ public protocol StatsViewModel {
     var selectedGroupingIntex: Int { get set }
 }
 
-class StatsViewModelImpl: StatsViewModel {
+public final class StatsViewModelImpl: StatsViewModel {
     
     public weak var delegate: StatsViewModelDelegate?
     
@@ -41,11 +41,11 @@ class StatsViewModelImpl: StatsViewModel {
         registerForNotifications()
     }
     
-    var groupingItems: [SegmentedControlItem] {
+    public var groupingItems: [SegmentedControlItem] {
         return availableGroupings.map { SegmentedControlItem.text($0.description) }
     }
     
-    var selectedGroupingIntex: Int {
+    public var selectedGroupingIntex: Int {
         didSet {
             userPreferences.statsGrouping = selectedGrouping
             if selectedGroupingIntex != oldValue {
