@@ -45,6 +45,8 @@
 		35162CBF2090DEB200547126 /* UserPreferencesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35162CBD2090DEB200547126 /* UserPreferencesTests.swift */; };
 		3527046A20D6EED9002E32ED /* SegmentedControlTests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3527046820D6EED9002E32ED /* SegmentedControlTests_macOS.swift */; };
 		3527046C20D6F0DA002E32ED /* SegmentedControlTests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3527046B20D6F0DA002E32ED /* SegmentedControlTests_iOS.swift */; };
+		3536466920E3F72A00B055B6 /* BudgetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3536466820E3F72A00B055B6 /* BudgetViewModel.swift */; };
+		3536466A20E3F72A00B055B6 /* BudgetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3536466820E3F72A00B055B6 /* BudgetViewModel.swift */; };
 		353817D1208E642C00EA967F /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 353817CF208E642C00EA967F /* DataModel.xcdatamodeld */; };
 		353817D2208E643600EA967F /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 353817CF208E642C00EA967F /* DataModel.xcdatamodeld */; };
 		353817D5208E647600EA967F /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353817D4208E647600EA967F /* CoreDataStack.swift */; };
@@ -230,6 +232,7 @@
 		35162CBD2090DEB200547126 /* UserPreferencesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserPreferencesTests.swift; sourceTree = "<group>"; };
 		3527046820D6EED9002E32ED /* SegmentedControlTests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedControlTests_macOS.swift; sourceTree = "<group>"; };
 		3527046B20D6F0DA002E32ED /* SegmentedControlTests_iOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedControlTests_iOS.swift; sourceTree = "<group>"; };
+		3536466820E3F72A00B055B6 /* BudgetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetViewModel.swift; sourceTree = "<group>"; };
 		353817D0208E642C00EA967F /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		353817D4208E647600EA967F /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		353817D7208E65DC00EA967F /* CalendarDateManagedObject+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CalendarDateManagedObject+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -414,6 +417,14 @@
 			path = StatePreservation;
 			sourceTree = "<group>";
 		};
+		3536466720E3F6FD00B055B6 /* Budget */ = {
+			isa = PBXGroup;
+			children = (
+				3536466820E3F72A00B055B6 /* BudgetViewModel.swift */,
+			);
+			path = Budget;
+			sourceTree = "<group>";
+		};
 		353817CE208E640800EA967F /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
@@ -493,6 +504,7 @@
 		356668CB208CE66C0052E724 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				3536466720E3F6FD00B055B6 /* Budget */,
 				359E40B920DD851E00801E20 /* Utils */,
 				35AEB1162093A77400DCE038 /* CollectionViews */,
 				35593BEC20922DEF00DEEDB5 /* Charts */,
@@ -776,6 +788,7 @@
 				35DD654620B09F9000909AA4 /* FakeBudgetRepository.swift in Sources */,
 				35162CA3208FC2D200547126 /* NSManagedObject+Extensions.swift in Sources */,
 				35E5C63420D817A500D42E84 /* StatsViewModel.swift in Sources */,
+				3536466920E3F72A00B055B6 /* BudgetViewModel.swift in Sources */,
 				35AEB11B2093A79F00DCE038 /* CoreDataCollectionUpdateHandler.swift in Sources */,
 				35162C98208FC14900547126 /* CalendarDateProtocol.swift in Sources */,
 			);
@@ -855,6 +868,7 @@
 				35DD654720B09F9000909AA4 /* FakeBudgetRepository.swift in Sources */,
 				35AEB11C2093A79F00DCE038 /* CoreDataCollectionUpdateHandler.swift in Sources */,
 				35E5C63520D817A500D42E84 /* StatsViewModel.swift in Sources */,
+				3536466A20E3F72A00B055B6 /* BudgetViewModel.swift in Sources */,
 				353A944920A0D9E100B94A72 /* ManagedObjectModel+Extensions.swift in Sources */,
 				35162C99208FC14900547126 /* CalendarDateProtocol.swift in Sources */,
 			);
