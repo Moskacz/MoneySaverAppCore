@@ -9,7 +9,6 @@
 import Foundation
 import CoreData
 
-
 extension BudgetManagedObject {
 
     @nonobjc public class func fetchRequest() -> NSFetchRequest<BudgetManagedObject> {
@@ -18,4 +17,10 @@ extension BudgetManagedObject {
 
     @NSManaged public var value: NSDecimalNumber?
 
+}
+
+extension BudgetManagedObject: BudgetProtocol {
+    public var budgetValue: Double {
+        return value?.doubleValue ?? 0
+    }
 }

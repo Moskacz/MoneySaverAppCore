@@ -149,6 +149,8 @@
 		35E5C63520D817A500D42E84 /* StatsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E5C63320D817A500D42E84 /* StatsViewModel.swift */; };
 		35F5BABC20DFEB2A002C2819 /* Charts.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3515F58420D8256D00C8B549 /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		35F5BABE20DFED1A002C2819 /* Charts.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3515F58620D8258700C8B549 /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		90D1171320E4E7AC008F21D8 /* BudgetProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D1171220E4E7AC008F21D8 /* BudgetProtocol.swift */; };
+		90D1171420E4E7AC008F21D8 /* BudgetProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D1171220E4E7AC008F21D8 /* BudgetProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -290,6 +292,7 @@
 		35B914AA20D050C0008BD7A2 /* FakeTransactionBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeTransactionBuilder.swift; sourceTree = "<group>"; };
 		35DD654520B09F9000909AA4 /* FakeBudgetRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeBudgetRepository.swift; sourceTree = "<group>"; };
 		35E5C63320D817A500D42E84 /* StatsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewModel.swift; sourceTree = "<group>"; };
+		90D1171220E4E7AC008F21D8 /* BudgetProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -362,6 +365,7 @@
 				35162C94208FC14900547126 /* CalendarDateProtocol.swift */,
 				35162C93208FC14900547126 /* TransactionCategoryProtocol.swift */,
 				35162C95208FC14900547126 /* TransactionProtocol.swift */,
+				90D1171220E4E7AC008F21D8 /* BudgetProtocol.swift */,
 			);
 			path = DomainProtocols;
 			sourceTree = "<group>";
@@ -789,6 +793,7 @@
 				35162CA3208FC2D200547126 /* NSManagedObject+Extensions.swift in Sources */,
 				35E5C63420D817A500D42E84 /* StatsViewModel.swift in Sources */,
 				3536466920E3F72A00B055B6 /* BudgetViewModel.swift in Sources */,
+				90D1171320E4E7AC008F21D8 /* BudgetProtocol.swift in Sources */,
 				35AEB11B2093A79F00DCE038 /* CoreDataCollectionUpdateHandler.swift in Sources */,
 				35162C98208FC14900547126 /* CalendarDateProtocol.swift in Sources */,
 			);
@@ -869,6 +874,7 @@
 				35AEB11C2093A79F00DCE038 /* CoreDataCollectionUpdateHandler.swift in Sources */,
 				35E5C63520D817A500D42E84 /* StatsViewModel.swift in Sources */,
 				3536466A20E3F72A00B055B6 /* BudgetViewModel.swift in Sources */,
+				90D1171420E4E7AC008F21D8 /* BudgetProtocol.swift in Sources */,
 				353A944920A0D9E100B94A72 /* ManagedObjectModel+Extensions.swift in Sources */,
 				35162C99208FC14900547126 /* CalendarDateProtocol.swift in Sources */,
 			);
