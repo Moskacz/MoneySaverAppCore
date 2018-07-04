@@ -10,7 +10,6 @@ import Foundation
 import CoreData
 
 public protocol BudgetRepository {
-    func makeEntitiesFRC() -> NSFetchedResultsController<BudgetManagedObject>
     func saveBudget(withValue value: Decimal)
 }
 
@@ -24,7 +23,7 @@ public class BudgetRepositoryImpl: BudgetRepository {
         self.logger = logger
     }
     
-    public func makeEntitiesFRC() -> NSFetchedResultsController<BudgetManagedObject> {
+    private func makeEntitiesFRC() -> NSFetchedResultsController<BudgetManagedObject> {
         let request = allEntitiesFetchRequest
         request.sortDescriptors = [BudgetManagedObject.SortDescriptors.value.descriptor]
         
