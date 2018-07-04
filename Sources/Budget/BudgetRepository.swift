@@ -9,4 +9,5 @@ import Foundation
 
 public protocol BudgetRepository {
     func saveBudget(withValue value: Decimal)
+    func observeBudgetChanged(completion: @escaping ((BudgetProtocol) -> Void)) -> ObservationToken
 }

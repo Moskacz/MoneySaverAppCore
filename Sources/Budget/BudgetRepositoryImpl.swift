@@ -18,6 +18,10 @@ internal class BudgetRepositoryImpl: BudgetRepository {
         self.logger = logger
     }
     
+    func observeBudgetChanged(completion: @escaping ((BudgetProtocol) -> Void)) -> ObservationToken {
+        fatalError()
+    }
+    
     private func makeEntitiesFRC() -> NSFetchedResultsController<BudgetManagedObject> {
         let request = allEntitiesFetchRequest
         request.sortDescriptors = [BudgetManagedObject.SortDescriptors.value.descriptor]
