@@ -1,20 +1,19 @@
 //
-//  BudgetRepository.swift
-//  MoneySaverApp-iOS
+//  BudgetRepositoryImpl.swift
+//  MoneySaverAppCore
 //
-//  Created by Michal Moskala on 25.11.2017.
-//  Copyright © 2017 Michal Moskala. All rights reserved.
+//  Created by Michal Moskala on 04.07.2018.
 //
 
 import Foundation
 import CoreData
 
-public class BudgetRepositoryImpl: BudgetRepository {
+internal class BudgetRepositoryImpl: BudgetRepository {
     
     private let context: NSManagedObjectContext
     private let logger: Logger
     
-    public init(context: NSManagedObjectContext, logger: Logger) {
+    internal init(context: NSManagedObjectContext, logger: Logger) {
         self.context = context
         self.logger = logger
     }
@@ -29,7 +28,7 @@ public class BudgetRepositoryImpl: BudgetRepository {
                                           cacheName: nil)
     }
     
-    public func saveBudget(withValue value: Decimal) {
+    internal func saveBudget(withValue value: Decimal) {
         let request = allEntitiesFetchRequest
         do {
             let entities = try context.fetch(request)

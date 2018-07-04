@@ -37,8 +37,6 @@
 		35162CB2208FC58500547126 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35162CB0208FC58500547126 /* Image.swift */; };
 		35162CB42090D96600547126 /* TransactionCategoryRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35162CB32090D96600547126 /* TransactionCategoryRepository.swift */; };
 		35162CB52090D96600547126 /* TransactionCategoryRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35162CB32090D96600547126 /* TransactionCategoryRepository.swift */; };
-		35162CB72090DD0100547126 /* BudgetRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35162CB62090DD0100547126 /* BudgetRepository.swift */; };
-		35162CB82090DD0100547126 /* BudgetRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35162CB62090DD0100547126 /* BudgetRepository.swift */; };
 		35162CBB2090DE6D00547126 /* UserPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35162CBA2090DE6D00547126 /* UserPreferences.swift */; };
 		35162CBC2090DE6D00547126 /* UserPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35162CBA2090DE6D00547126 /* UserPreferences.swift */; };
 		35162CBE2090DEB200547126 /* UserPreferencesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35162CBD2090DEB200547126 /* UserPreferencesTests.swift */; };
@@ -145,6 +143,8 @@
 		35B914AC20D050C0008BD7A2 /* FakeTransactionBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B914AA20D050C0008BD7A2 /* FakeTransactionBuilder.swift */; };
 		35CB167C20ED56D90037EF94 /* BudgetRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CB167B20ED56D90037EF94 /* BudgetRepository.swift */; };
 		35CB167D20ED56D90037EF94 /* BudgetRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CB167B20ED56D90037EF94 /* BudgetRepository.swift */; };
+		35CB167F20ED572D0037EF94 /* BudgetRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CB167E20ED572D0037EF94 /* BudgetRepositoryImpl.swift */; };
+		35CB168020ED572D0037EF94 /* BudgetRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CB167E20ED572D0037EF94 /* BudgetRepositoryImpl.swift */; };
 		35DD654620B09F9000909AA4 /* FakeBudgetRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DD654520B09F9000909AA4 /* FakeBudgetRepository.swift */; };
 		35DD654720B09F9000909AA4 /* FakeBudgetRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DD654520B09F9000909AA4 /* FakeBudgetRepository.swift */; };
 		35E5C63420D817A500D42E84 /* StatsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E5C63320D817A500D42E84 /* StatsViewModel.swift */; };
@@ -231,7 +231,6 @@
 		35162CAC208FC39E00547126 /* TransactionsGrouping.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionsGrouping.swift; sourceTree = "<group>"; };
 		35162CB0208FC58500547126 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		35162CB32090D96600547126 /* TransactionCategoryRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionCategoryRepository.swift; sourceTree = "<group>"; };
-		35162CB62090DD0100547126 /* BudgetRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BudgetRepository.swift; sourceTree = "<group>"; };
 		35162CBA2090DE6D00547126 /* UserPreferences.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserPreferences.swift; sourceTree = "<group>"; };
 		35162CBD2090DEB200547126 /* UserPreferencesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserPreferencesTests.swift; sourceTree = "<group>"; };
 		3527046820D6EED9002E32ED /* SegmentedControlTests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedControlTests_macOS.swift; sourceTree = "<group>"; };
@@ -293,6 +292,7 @@
 		35B914A720D0508B008BD7A2 /* FakeTransactionCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeTransactionCategory.swift; sourceTree = "<group>"; };
 		35B914AA20D050C0008BD7A2 /* FakeTransactionBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeTransactionBuilder.swift; sourceTree = "<group>"; };
 		35CB167B20ED56D90037EF94 /* BudgetRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetRepository.swift; sourceTree = "<group>"; };
+		35CB167E20ED572D0037EF94 /* BudgetRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetRepositoryImpl.swift; sourceTree = "<group>"; };
 		35DD654520B09F9000909AA4 /* FakeBudgetRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeBudgetRepository.swift; sourceTree = "<group>"; };
 		35E5C63320D817A500D42E84 /* StatsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewModel.swift; sourceTree = "<group>"; };
 		90D1171220E4E7AC008F21D8 /* BudgetProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetProtocol.swift; sourceTree = "<group>"; };
@@ -346,7 +346,6 @@
 		35162C87208FC07D00547126 /* repositories */ = {
 			isa = PBXGroup;
 			children = (
-				35162CB62090DD0100547126 /* BudgetRepository.swift */,
 				35162CB32090D96600547126 /* TransactionCategoryRepository.swift */,
 				35162C88208FC0A100547126 /* TransactionsRepository.swift */,
 			);
@@ -429,6 +428,7 @@
 			children = (
 				3536466820E3F72A00B055B6 /* BudgetViewModel.swift */,
 				35CB167B20ED56D90037EF94 /* BudgetRepository.swift */,
+				35CB167E20ED572D0037EF94 /* BudgetRepositoryImpl.swift */,
 			);
 			path = Budget;
 			sourceTree = "<group>";
@@ -760,9 +760,9 @@
 				35593C072092305800DEEDB5 /* Sequence+Extension.swift in Sources */,
 				359E40BB20DD854000801E20 /* ObservationToken.swift in Sources */,
 				35162CA9208FC32500547126 /* Calendar+Extensions.swift in Sources */,
-				35162CB72090DD0100547126 /* BudgetRepository.swift in Sources */,
 				35162C90208FC10A00547126 /* DateRange.swift in Sources */,
 				35162C96208FC14900547126 /* TransactionCategoryProtocol.swift in Sources */,
+				35CB167F20ED572D0037EF94 /* BudgetRepositoryImpl.swift in Sources */,
 				353817E3208E65DC00EA967F /* BudgetManagedObject+CoreDataClass.swift in Sources */,
 				354E4B8620A22E7D009A8311 /* FakeChartsDataProcessor.swift in Sources */,
 				353817E5208E65DC00EA967F /* BudgetManagedObject+CoreDataProperties.swift in Sources */,
@@ -842,9 +842,9 @@
 				35593C082092305800DEEDB5 /* Sequence+Extension.swift in Sources */,
 				359E40BC20DD854000801E20 /* ObservationToken.swift in Sources */,
 				35162CAA208FC32500547126 /* Calendar+Extensions.swift in Sources */,
-				35162CB82090DD0100547126 /* BudgetRepository.swift in Sources */,
 				35162C91208FC10A00547126 /* DateRange.swift in Sources */,
 				35162C97208FC14900547126 /* TransactionCategoryProtocol.swift in Sources */,
+				35CB168020ED572D0037EF94 /* BudgetRepositoryImpl.swift in Sources */,
 				353817E4208E65DC00EA967F /* BudgetManagedObject+CoreDataClass.swift in Sources */,
 				354E4B8520A22E7C009A8311 /* FakeChartsDataProcessor.swift in Sources */,
 				353817E6208E65DC00EA967F /* BudgetManagedObject+CoreDataProperties.swift in Sources */,
