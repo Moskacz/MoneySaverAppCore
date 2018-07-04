@@ -143,6 +143,8 @@
 		35B914A920D0508B008BD7A2 /* FakeTransactionCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B914A720D0508B008BD7A2 /* FakeTransactionCategory.swift */; };
 		35B914AB20D050C0008BD7A2 /* FakeTransactionBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B914AA20D050C0008BD7A2 /* FakeTransactionBuilder.swift */; };
 		35B914AC20D050C0008BD7A2 /* FakeTransactionBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B914AA20D050C0008BD7A2 /* FakeTransactionBuilder.swift */; };
+		35CB167C20ED56D90037EF94 /* BudgetRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CB167B20ED56D90037EF94 /* BudgetRepository.swift */; };
+		35CB167D20ED56D90037EF94 /* BudgetRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CB167B20ED56D90037EF94 /* BudgetRepository.swift */; };
 		35DD654620B09F9000909AA4 /* FakeBudgetRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DD654520B09F9000909AA4 /* FakeBudgetRepository.swift */; };
 		35DD654720B09F9000909AA4 /* FakeBudgetRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DD654520B09F9000909AA4 /* FakeBudgetRepository.swift */; };
 		35E5C63420D817A500D42E84 /* StatsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E5C63320D817A500D42E84 /* StatsViewModel.swift */; };
@@ -290,6 +292,7 @@
 		35B7FFD520D5220500AA0BC6 /* SegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedControl.swift; sourceTree = "<group>"; };
 		35B914A720D0508B008BD7A2 /* FakeTransactionCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeTransactionCategory.swift; sourceTree = "<group>"; };
 		35B914AA20D050C0008BD7A2 /* FakeTransactionBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeTransactionBuilder.swift; sourceTree = "<group>"; };
+		35CB167B20ED56D90037EF94 /* BudgetRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetRepository.swift; sourceTree = "<group>"; };
 		35DD654520B09F9000909AA4 /* FakeBudgetRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeBudgetRepository.swift; sourceTree = "<group>"; };
 		35E5C63320D817A500D42E84 /* StatsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewModel.swift; sourceTree = "<group>"; };
 		90D1171220E4E7AC008F21D8 /* BudgetProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetProtocol.swift; sourceTree = "<group>"; };
@@ -425,6 +428,7 @@
 			isa = PBXGroup;
 			children = (
 				3536466820E3F72A00B055B6 /* BudgetViewModel.swift */,
+				35CB167B20ED56D90037EF94 /* BudgetRepository.swift */,
 			);
 			path = Budget;
 			sourceTree = "<group>";
@@ -786,6 +790,7 @@
 				359E40C120DF8D7700801E20 /* NSManagedObjectContext+Extensions.swift in Sources */,
 				35162C9E208FC1D000547126 /* Logger.swift in Sources */,
 				353817EB208E65DC00EA967F /* TransactionCategoryManagedObject+CoreDataClass.swift in Sources */,
+				35CB167C20ED56D90037EF94 /* BudgetRepository.swift in Sources */,
 				353A944820A0D9E100B94A72 /* ManagedObjectModel+Extensions.swift in Sources */,
 				353817D1208E642C00EA967F /* DataModel.xcdatamodeld in Sources */,
 				353817E9208E65DC00EA967F /* TransactionManagedObject+CoreDataProperties.swift in Sources */,
@@ -867,6 +872,7 @@
 				359E40C220DF8D7700801E20 /* NSManagedObjectContext+Extensions.swift in Sources */,
 				353A944A20A0D9E600B94A72 /* Bundle+Extension.swift in Sources */,
 				353817EC208E65DC00EA967F /* TransactionCategoryManagedObject+CoreDataClass.swift in Sources */,
+				35CB167D20ED56D90037EF94 /* BudgetRepository.swift in Sources */,
 				353817D2208E643600EA967F /* DataModel.xcdatamodeld in Sources */,
 				353817EA208E65DC00EA967F /* TransactionManagedObject+CoreDataProperties.swift in Sources */,
 				35162CA4208FC2D200547126 /* NSManagedObject+Extensions.swift in Sources */,

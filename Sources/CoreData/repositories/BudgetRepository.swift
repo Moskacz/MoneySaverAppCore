@@ -9,10 +9,6 @@
 import Foundation
 import CoreData
 
-public protocol BudgetRepository {
-    func saveBudget(withValue value: Decimal)
-}
-
 public class BudgetRepositoryImpl: BudgetRepository {
     
     private let context: NSManagedObjectContext
