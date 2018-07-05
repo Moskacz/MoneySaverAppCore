@@ -69,6 +69,8 @@
 		353A944820A0D9E100B94A72 /* ManagedObjectModel+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353A944720A0D9E100B94A72 /* ManagedObjectModel+Extensions.swift */; };
 		353A944920A0D9E100B94A72 /* ManagedObjectModel+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353A944720A0D9E100B94A72 /* ManagedObjectModel+Extensions.swift */; };
 		353A944A20A0D9E600B94A72 /* Bundle+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353A944520A0D89100B94A72 /* Bundle+Extension.swift */; };
+		35423E0520EE9AEF004E006B /* FakeBudgetRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DD654520B09F9000909AA4 /* FakeBudgetRepository.swift */; };
+		35423E0620EE9AF0004E006B /* FakeBudgetRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DD654520B09F9000909AA4 /* FakeBudgetRepository.swift */; };
 		354E4B8520A22E7C009A8311 /* FakeChartsDataProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35593BF720922F0700DEEDB5 /* FakeChartsDataProcessor.swift */; };
 		354E4B8620A22E7D009A8311 /* FakeChartsDataProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35593BF720922F0700DEEDB5 /* FakeChartsDataProcessor.swift */; };
 		354E4B8820A2301C009A8311 /* CalendarDateManagedObjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354E4B8720A2301C009A8311 /* CalendarDateManagedObjectTests.swift */; };
@@ -147,8 +149,6 @@
 		35CB168020ED572D0037EF94 /* BudgetRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CB167E20ED572D0037EF94 /* BudgetRepositoryImpl.swift */; };
 		35CB168220ED5A470037EF94 /* NotificationCenter+BudgetNotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CB168120ED5A470037EF94 /* NotificationCenter+BudgetNotificationCenter.swift */; };
 		35CB168320ED5A470037EF94 /* NotificationCenter+BudgetNotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CB168120ED5A470037EF94 /* NotificationCenter+BudgetNotificationCenter.swift */; };
-		35DD654620B09F9000909AA4 /* FakeBudgetRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DD654520B09F9000909AA4 /* FakeBudgetRepository.swift */; };
-		35DD654720B09F9000909AA4 /* FakeBudgetRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DD654520B09F9000909AA4 /* FakeBudgetRepository.swift */; };
 		35E5C63420D817A500D42E84 /* StatsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E5C63320D817A500D42E84 /* StatsViewModel.swift */; };
 		35E5C63520D817A500D42E84 /* StatsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E5C63320D817A500D42E84 /* StatsViewModel.swift */; };
 		35F5BABC20DFEB2A002C2819 /* Charts.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3515F58420D8256D00C8B549 /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -799,7 +799,6 @@
 				353A944820A0D9E100B94A72 /* ManagedObjectModel+Extensions.swift in Sources */,
 				353817D1208E642C00EA967F /* DataModel.xcdatamodeld in Sources */,
 				353817E9208E65DC00EA967F /* TransactionManagedObject+CoreDataProperties.swift in Sources */,
-				35DD654620B09F9000909AA4 /* FakeBudgetRepository.swift in Sources */,
 				35162CA3208FC2D200547126 /* NSManagedObject+Extensions.swift in Sources */,
 				35E5C63420D817A500D42E84 /* StatsViewModel.swift in Sources */,
 				3536466920E3F72A00B055B6 /* BudgetViewModel.swift in Sources */,
@@ -833,6 +832,7 @@
 				35B914AB20D050C0008BD7A2 /* FakeTransactionBuilder.swift in Sources */,
 				35162CBE2090DEB200547126 /* UserPreferencesTests.swift in Sources */,
 				35593BFA20922F0700DEEDB5 /* FakeCalendarDate.swift in Sources */,
+				35423E0520EE9AEF004E006B /* FakeBudgetRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -882,7 +882,6 @@
 				353817D2208E643600EA967F /* DataModel.xcdatamodeld in Sources */,
 				353817EA208E65DC00EA967F /* TransactionManagedObject+CoreDataProperties.swift in Sources */,
 				35162CA4208FC2D200547126 /* NSManagedObject+Extensions.swift in Sources */,
-				35DD654720B09F9000909AA4 /* FakeBudgetRepository.swift in Sources */,
 				35AEB11C2093A79F00DCE038 /* CoreDataCollectionUpdateHandler.swift in Sources */,
 				35E5C63520D817A500D42E84 /* StatsViewModel.swift in Sources */,
 				3536466A20E3F72A00B055B6 /* BudgetViewModel.swift in Sources */,
@@ -916,6 +915,7 @@
 				35B914AC20D050C0008BD7A2 /* FakeTransactionBuilder.swift in Sources */,
 				35162CBF2090DEB200547126 /* UserPreferencesTests.swift in Sources */,
 				35593BFB20922F0700DEEDB5 /* FakeCalendarDate.swift in Sources */,
+				35423E0620EE9AF0004E006B /* FakeBudgetRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
