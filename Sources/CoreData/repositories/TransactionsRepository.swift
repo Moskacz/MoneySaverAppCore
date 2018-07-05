@@ -9,29 +9,18 @@
 import Foundation
 import CoreData
 
-public struct DatedValue: Equatable {
-    public let date: Int
-    public let value: Double
-    
-    public init(date: Int, value: Double) {
-        self.date = date
-        self.value = value
-    }
+internal struct DatedValue: Equatable {
+    internal let date: Int
+    internal let value: Double
 }
 
-public struct TransactionData {
-    public let title: String
-    public let value: Decimal
-    public let creationDate: Date
-    
-    public init(title: String, value: Decimal, creationDate: Date) {
-        self.title = title
-        self.value = value
-        self.creationDate = creationDate
-    }
+internal struct TransactionData {
+    internal let title: String
+    internal let value: Decimal
+    internal let creationDate: Date
 }
 
-public protocol TransactionsRepository {
+internal protocol TransactionsRepository {
     
     var allTransactionsFRC: NSFetchedResultsController<TransactionManagedObject> { get }
     var context: NSManagedObjectContext { get }
@@ -45,14 +34,14 @@ public protocol TransactionsRepository {
     func observeTransactionsChanged(callback: @escaping ([TransactionProtocol]) -> Void) -> ObservationToken
 }
 
-public class TransactionsRepositoryImplementation: TransactionsRepository {
+internal class TransactionsRepositoryImplementation: TransactionsRepository {
     
-    public let context: NSManagedObjectContext
+    internal let context: NSManagedObjectContext
     private let calendar: CalendarProtocol
     private let logger: Logger
     private let notificationCenter: TransactionNotificationCenter
     
-    public init(context: NSManagedObjectContext,
+    internal init(context: NSManagedObjectContext,
                 logger: Logger,
                 calendar: CalendarProtocol,
                 notificationCenter: TransactionNotificationCenter) {
@@ -62,7 +51,7 @@ public class TransactionsRepositoryImplementation: TransactionsRepository {
         self.notificationCenter = notificationCenter
     }
     
-    public var allTransactionsFRC: NSFetchedResultsController<TransactionManagedObject> {
+    internal var allTransactionsFRC: NSFetchedResultsController<TransactionManagedObject> {
         let request = fetchRequest
         request.includesPropertyValues = true
         request.fetchBatchSize = 20
@@ -76,19 +65,19 @@ public class TransactionsRepositoryImplementation: TransactionsRepository {
                                           cacheName: nil)
     }
     
-    public var fetchRequest: NSFetchRequest<TransactionManagedObject> {
+    internal var fetchRequest: NSFetchRequest<TransactionManagedObject> {
         get {
             return TransactionManagedObject.fetchRequest()
         }
     }
     
-    public var expensesOnlyPredicate: NSPredicate {
+    internal var expensesOnlyPredicate: NSPredicate {
         get {
             return NSPredicate(format: "value < 0")
         }
     }
     
-    public func predicate(forDateRange range: DateRange) -> NSPredicate? {
+    internal func predicate(forDateRange range: DateRange) -> NSPredicate? {
         let date = calendar.now
         switch range {
         case .today:
@@ -104,7 +93,7 @@ public class TransactionsRepositoryImplementation: TransactionsRepository {
         }
     }
     
-    public func addTransaction(data: TransactionData, category: TransactionCategoryManagedObject) {
+    internal func addTransaction(data: TransactionData, category: TransactionCategoryManagedObject) {
         context.performAndWait {
             let transaction = TransactionManagedObject.createEntity(inContext: self.context)
             transaction.title = data.title
@@ -118,7 +107,7 @@ public class TransactionsRepositoryImplementation: TransactionsRepository {
         postNotificationWithCurrentTransactions()
     }
     
-    public func remove(transaction: TransactionManagedObject) {
+    internal func remove(transaction: TransactionManagedObject) {
         context.performAndWait {
             self.context.delete(transaction)
             self.context.save(with: nil)
@@ -126,13 +115,13 @@ public class TransactionsRepositoryImplementation: TransactionsRepository {
         postNotificationWithCurrentTransactions()
     }
     
-    public func allTransactions() throws -> [TransactionManagedObject] {
+    internal func allTransactions() throws -> [TransactionManagedObject] {
         let request = fetchRequest
         request.returnsObjectsAsFaults = false
         return try context.fetch(request)
     }
     
-    public func observeTransactionsChanged(callback: @escaping ([TransactionProtocol]) -> Void) -> ObservationToken {
+    internal func observeTransactionsChanged(callback: @escaping ([TransactionProtocol]) -> Void) -> ObservationToken {
         return notificationCenter.observeTransactionsDidChange(callback: { (notification) in
             callback(notification.transactions)
         })

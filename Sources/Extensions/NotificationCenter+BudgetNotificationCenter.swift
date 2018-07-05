@@ -41,11 +41,11 @@ extension Notification.Name {
 }
 
 extension NotificationCenter: BudgetNotificationCenter {
-    func postBudgetDidChange(notification: BudgetNotification) {
+    internal func postBudgetDidChange(notification: BudgetNotification) {
         post(notification.notification)
     }
     
-    func observeBudgetDidChange(callback: @escaping (BudgetNotification) -> Void) -> ObservationToken {
+    internal func observeBudgetDidChange(callback: @escaping (BudgetNotification) -> Void) -> ObservationToken {
         let notificationName = Notification.Name.budgetDidChange
         let token = addObserver(forName: notificationName, object: nil, queue: nil, using: { notification in
             guard let budgetNotification = BudgetNotification(notification: notification) else { return }

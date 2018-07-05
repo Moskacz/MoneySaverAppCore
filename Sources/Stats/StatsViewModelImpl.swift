@@ -1,28 +1,16 @@
 //
-//  StatsViewModel.swift
+//  StatsViewModelImpl.swift
 //  MoneySaverAppCore
 //
-//  Created by Michal Moskala on 18.06.2018.
+//  Created by Michal Moskala on 05.07.2018.
 //
 
 import Foundation
 import Charts
 
-public protocol StatsViewModelDelegate: class {
-    func stats(viewModel: StatsViewModel, didUpdateExpenses data: BarChartData)
-    func stats(viewModel: StatsViewModel, didUpdateIncomes data: BarChartData)
-    func stats(viewModel: StatsViewModel, didUpdateCategoryExpenses data: PieChartData)
-}
-
-public protocol StatsViewModel {
-    var delegate: StatsViewModelDelegate? { get set }
-    var groupingItems: [SegmentedControlItem] { get }
-    var selectedGroupingIntex: Int { get set }
-}
-
-public final class StatsViewModelImpl: StatsViewModel {
+internal final class StatsViewModelImpl: StatsViewModel {
     
-    public weak var delegate: StatsViewModelDelegate?
+    internal weak var delegate: StatsViewModelDelegate?
     
     private let repository: TransactionsRepository
     private let chartsDataProcessor: StatsChartsDataProcessor
@@ -31,7 +19,7 @@ public final class StatsViewModelImpl: StatsViewModel {
     private var observationToken: ObservationToken?
     private var transactions = [TransactionProtocol]()
     
-    public init(repository: TransactionsRepository,
+    internal init(repository: TransactionsRepository,
                 chartsDataProcessor: StatsChartsDataProcessor,
                 userPreferences: UserPreferences) {
         self.repository = repository
@@ -41,11 +29,11 @@ public final class StatsViewModelImpl: StatsViewModel {
         registerForNotifications()
     }
     
-    public var groupingItems: [SegmentedControlItem] {
+    internal var groupingItems: [SegmentedControlItem] {
         return availableGroupings.map { SegmentedControlItem.text($0.description) }
     }
     
-    public var selectedGroupingIntex: Int {
+    internal var selectedGroupingIntex: Int {
         didSet {
             userPreferences.statsGrouping = selectedGrouping
             if selectedGroupingIntex != oldValue {

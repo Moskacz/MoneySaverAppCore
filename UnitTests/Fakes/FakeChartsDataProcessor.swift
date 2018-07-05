@@ -8,8 +8,7 @@
 
 import Foundation
 
-public class FakeChartsDataProcessor {
-    
+class FakeChartsDataProcessor {
     public init() {}
 }
 

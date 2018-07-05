@@ -8,14 +8,14 @@
 
 import Foundation
 
-public protocol BudgetChartsDataProcessor {
+internal protocol BudgetChartsDataProcessor {
     func spendings(fromMonthlyExpenses expenses: [DatedValue]) -> [PlotValue]
     func estimatedSpendings(budgetValue: Double) -> [PlotValue]
 }
 
 extension ChartsDataProcessor: BudgetChartsDataProcessor {
     
-    public func spendings(fromMonthlyExpenses expenses: [DatedValue]) -> [PlotValue] {
+    internal func spendings(fromMonthlyExpenses expenses: [DatedValue]) -> [PlotValue] {
         let sortedExpeneses = expenses.sorted { (lhs, rhs) -> Bool in
             return lhs.date < rhs.date
         }
@@ -30,7 +30,7 @@ extension ChartsDataProcessor: BudgetChartsDataProcessor {
         }
     }
     
-    public func estimatedSpendings(budgetValue: Double) -> [PlotValue] {
+    internal func estimatedSpendings(budgetValue: Double) -> [PlotValue] {
         let daysRange = calendar.daysInMonthRange(forDate: calendar.now)
         return daysRange.map { day in
             let dailySpending = budgetValue * Double(day)  / Double(daysRange.upperBound)

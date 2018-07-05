@@ -7,33 +7,33 @@
 
 import Foundation
 
-public protocol StatsChartsDataProcessor {
+internal protocol StatsChartsDataProcessor {
     func expensesGroupedBy(grouping: TransactionsGrouping, transactions: [TransactionProtocol]) -> [PlotValue]
     func incomesGroupedBy(grouping: TransactionsGrouping, transactions: [TransactionProtocol]) -> [PlotValue]
     func expensesGroupedByCategories(_ transactions: [TransactionProtocol]) -> [CategorySum]
 }
 
-public struct CategorySum {
+internal struct CategorySum {
     public let categoryName: String
     public let sum: Double
 }
 
 extension ChartsDataProcessor: StatsChartsDataProcessor {
     
-    public func expensesGroupedBy(grouping: TransactionsGrouping, transactions: [TransactionProtocol]) -> [PlotValue] {
+    internal func expensesGroupedBy(grouping: TransactionsGrouping, transactions: [TransactionProtocol]) -> [PlotValue] {
         let groupedExpenses = group(transactions: transactions.expenses, by: grouping)
         
         let sortedValues = sortedPlotValues(from: groupedExpenses)
         return insertMissingValues(into: sortedValues)
     }
     
-    public func incomesGroupedBy(grouping: TransactionsGrouping, transactions: [TransactionProtocol]) -> [PlotValue] {
+    internal func incomesGroupedBy(grouping: TransactionsGrouping, transactions: [TransactionProtocol]) -> [PlotValue] {
         let groupesIncomes = group(transactions: transactions.incomes, by: grouping)
         let sortedValues = sortedPlotValues(from: groupesIncomes)
         return insertMissingValues(into: sortedValues)
     }
     
-    public func expensesGroupedByCategories(_ transactions: [TransactionProtocol]) -> [CategorySum] {
+    internal func expensesGroupedByCategories(_ transactions: [TransactionProtocol]) -> [CategorySum] {
         let groupesExpenses = transactions.expenses.grouped {
             return $0.transactionCategory?.name ?? "Unknown"
         }

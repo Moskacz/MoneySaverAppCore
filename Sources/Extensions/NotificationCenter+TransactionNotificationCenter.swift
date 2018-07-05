@@ -7,42 +7,39 @@
 
 import Foundation
 
-public class TransactionNotification {
+internal struct TransactionNotification {
     
-    public let transactions: [TransactionProtocol]
+    internal let transactions: [TransactionProtocol]
     
-    init(transactions: [TransactionProtocol]) {
+    internal init(transactions: [TransactionProtocol]) {
         self.transactions = transactions
     }
     
-    convenience init?(notification: Notification) {
-        guard let data = notification.userInfo?["transactions"] as? [TransactionProtocol] else {
-            return nil
-        }
+    internal init?(notification: Notification) {
+        guard notification.name == .transactionsDidChange else { return nil }
+        guard let data = notification.userInfo?["transactions"] as? [TransactionProtocol] else { return nil }
         self.init(transactions: data)
     }
     
-    var notification: Notification {
+    internal var notification: Notification {
         return Notification(name: Notification.Name.transactionsDidChange,
                             object: nil,
                             userInfo: ["transactions": transactions])
     }
-    
-    
 }
 
-public protocol TransactionNotificationCenter {
+internal protocol TransactionNotificationCenter {
     func postTransactionsDidChange(notification: TransactionNotification)
     func observeTransactionsDidChange(callback: @escaping (TransactionNotification) -> Void) -> ObservationToken
 }
 
 extension NotificationCenter: TransactionNotificationCenter {
     
-    public func postTransactionsDidChange(notification: TransactionNotification) {
+    internal func postTransactionsDidChange(notification: TransactionNotification) {
         post(notification.notification)
     }
     
-    public func observeTransactionsDidChange(callback: @escaping (TransactionNotification) -> Void) -> ObservationToken {
+    internal func observeTransactionsDidChange(callback: @escaping (TransactionNotification) -> Void) -> ObservationToken {
         let notificationName = Notification.Name.transactionsDidChange
         let token = addObserver(forName: notificationName, object: nil, queue: nil) { (note) in
             guard let transactionNotification = TransactionNotification(notification: note) else { return }
@@ -53,7 +50,6 @@ extension NotificationCenter: TransactionNotificationCenter {
 }
 
 extension Notification.Name {
-    
     static var transactionsDidChange: Notification.Name {
         return Notification.Name("com.money.saver.app.transactionsDidChange")
     }
