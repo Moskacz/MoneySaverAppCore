@@ -7,18 +7,17 @@
 
 import Foundation
 import CoreData
+@testable import MoneySaverAppCore
 
-public class FakeBudgetRepository: BudgetRepository {
+class FakeBudgetRepository: BudgetRepository {
     
     var saveBudgetPassedValue: Decimal?
     
-    public init() {}
-    
-    public func makeEntitiesFRC() -> NSFetchedResultsController<BudgetManagedObject> {
-        fatalError()
+    func saveBudget(withValue value: Decimal) {
+        saveBudgetPassedValue = value
     }
     
-    public func saveBudget(withValue value: Decimal) {
-        saveBudgetPassedValue = value
+    func observeBudgetChanged(completion: @escaping ((BudgetProtocol) -> Void)) -> ObservationToken {
+        fatalError()
     }
 }
