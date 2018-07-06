@@ -28,15 +28,20 @@ internal struct BudgetNotification {
     }
     
     internal var notification: Notification {
+        var userInfo = [String: Any]()
+        if let existingBudget = budget {
+            userInfo[BudgetNotification.budgetStorageKey] = existingBudget
+        }
+        
         return Notification(name: .budgetDidChange,
                             object: nil,
-                            userInfo: [BudgetNotification.budgetStorageKey: budget as Any])
+                            userInfo: userInfo)
     }
 }
 
 extension Notification.Name {
     static var budgetDidChange: Notification.Name {
-        return Notification.Name("com.money.savery.app.budgetDidChange")
+        return Notification.Name("com.money.saver.app.budgetDidChange")
     }
 }
 

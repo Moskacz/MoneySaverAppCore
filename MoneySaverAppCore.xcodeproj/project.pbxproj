@@ -79,6 +79,10 @@
 		35423E1020EE9E44004E006B /* StatsViewModelImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35423E0E20EE9E44004E006B /* StatsViewModelImpl.swift */; };
 		35423E1120EE9EE0004E006B /* FakeChartsDataProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35593BF720922F0700DEEDB5 /* FakeChartsDataProcessor.swift */; };
 		35423E1220EE9EE2004E006B /* FakeChartsDataProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35593BF720922F0700DEEDB5 /* FakeChartsDataProcessor.swift */; };
+		35423E1420EEA293004E006B /* BudgetNotificationCenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35423E1320EEA293004E006B /* BudgetNotificationCenterTests.swift */; };
+		35423E1520EEA293004E006B /* BudgetNotificationCenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35423E1320EEA293004E006B /* BudgetNotificationCenterTests.swift */; };
+		35423E1720EEA364004E006B /* FakeBudget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35423E1620EEA364004E006B /* FakeBudget.swift */; };
+		35423E1820EEA364004E006B /* FakeBudget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35423E1620EEA364004E006B /* FakeBudget.swift */; };
 		354E4B8820A2301C009A8311 /* CalendarDateManagedObjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354E4B8720A2301C009A8311 /* CalendarDateManagedObjectTests.swift */; };
 		354E4B8920A2301C009A8311 /* CalendarDateManagedObjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354E4B8720A2301C009A8311 /* CalendarDateManagedObjectTests.swift */; };
 		354E4B8B20A23115009A8311 /* TransactionManagedObjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354E4B8A20A23115009A8311 /* TransactionManagedObjectTests.swift */; };
@@ -257,6 +261,8 @@
 		35423E0720EE9DB2004E006B /* BudgetViewModelImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetViewModelImpl.swift; sourceTree = "<group>"; };
 		35423E0B20EE9E33004E006B /* StatsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewModel.swift; sourceTree = "<group>"; };
 		35423E0E20EE9E44004E006B /* StatsViewModelImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewModelImpl.swift; sourceTree = "<group>"; };
+		35423E1320EEA293004E006B /* BudgetNotificationCenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetNotificationCenterTests.swift; sourceTree = "<group>"; };
+		35423E1620EEA364004E006B /* FakeBudget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeBudget.swift; sourceTree = "<group>"; };
 		354E4B8720A2301C009A8311 /* CalendarDateManagedObjectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDateManagedObjectTests.swift; sourceTree = "<group>"; };
 		354E4B8A20A23115009A8311 /* TransactionManagedObjectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionManagedObjectTests.swift; sourceTree = "<group>"; };
 		354E4B8D20A23153009A8311 /* StringTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringTests.swift; sourceTree = "<group>"; };
@@ -503,6 +509,7 @@
 				359E40AD20DADE8400801E20 /* FakeTransactionsRepository.swift */,
 				359E40B020DADF4F00801E20 /* FakeUserPreferences.swift */,
 				359E40BD20DF89A400801E20 /* FakeTransactionNotificationCenter.swift */,
+				35423E1620EEA364004E006B /* FakeBudget.swift */,
 			);
 			path = Fakes;
 			sourceTree = "<group>";
@@ -579,6 +586,7 @@
 				3527046820D6EED9002E32ED /* SegmentedControlTests_macOS.swift */,
 				3527046B20D6F0DA002E32ED /* SegmentedControlTests_iOS.swift */,
 				359E40A720DADDBF00801E20 /* StatsViewModelTests.swift */,
+				35423E1320EEA293004E006B /* BudgetNotificationCenterTests.swift */,
 			);
 			path = UnitTests;
 			sourceTree = "<group>";
@@ -828,11 +836,13 @@
 				359E40BE20DF89A400801E20 /* FakeTransactionNotificationCenter.swift in Sources */,
 				35B914A820D0508B008BD7A2 /* FakeTransactionCategory.swift in Sources */,
 				35593C022092302600DEEDB5 /* CalendarTests.swift in Sources */,
+				35423E1420EEA293004E006B /* BudgetNotificationCenterTests.swift in Sources */,
 				359E40AE20DADE8400801E20 /* FakeTransactionsRepository.swift in Sources */,
 				354E4B8E20A23153009A8311 /* StringTests.swift in Sources */,
 				356668D9208CEB910052E724 /* TestClassUnitTests.swift in Sources */,
 				35593BF820922F0700DEEDB5 /* FakeCalendar.swift in Sources */,
 				35593C0C2092312200DEEDB5 /* FakeTransction.swift in Sources */,
+				35423E1720EEA364004E006B /* FakeBudget.swift in Sources */,
 				357B860E20D1AFD7001E5D25 /* SequenceIntExtensions.swift in Sources */,
 				354E4B9120A231B3009A8311 /* TransactionsRepositoryTests.swift in Sources */,
 				359E40A820DADDBF00801E20 /* StatsViewModelTests.swift in Sources */,
@@ -913,11 +923,13 @@
 				359E40BF20DF89A400801E20 /* FakeTransactionNotificationCenter.swift in Sources */,
 				35B914A920D0508B008BD7A2 /* FakeTransactionCategory.swift in Sources */,
 				35593C032092302600DEEDB5 /* CalendarTests.swift in Sources */,
+				35423E1520EEA293004E006B /* BudgetNotificationCenterTests.swift in Sources */,
 				359E40AF20DADE8400801E20 /* FakeTransactionsRepository.swift in Sources */,
 				354E4B8F20A23153009A8311 /* StringTests.swift in Sources */,
 				356668DA208CEB910052E724 /* TestClassUnitTests.swift in Sources */,
 				35593BF920922F0700DEEDB5 /* FakeCalendar.swift in Sources */,
 				35593C0D2092312200DEEDB5 /* FakeTransction.swift in Sources */,
+				35423E1820EEA364004E006B /* FakeBudget.swift in Sources */,
 				357B860F20D1AFD7001E5D25 /* SequenceIntExtensions.swift in Sources */,
 				354E4B9220A231B3009A8311 /* TransactionsRepositoryTests.swift in Sources */,
 				359E40A920DADDBF00801E20 /* StatsViewModelTests.swift in Sources */,
