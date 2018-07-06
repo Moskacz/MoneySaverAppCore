@@ -10,6 +10,13 @@ import XCTest
 
 class BudgetNotificationCenterTests: XCTestCase {
 
+    private var token: ObservationToken?
+    
+    override func tearDown() {
+        token = nil
+        super.tearDown()
+    }
+    
     func test_notificationName() {
         XCTAssertEqual(Notification.Name.budgetDidChange.rawValue, "com.money.saver.app.budgetDidChange")
     }
@@ -35,4 +42,17 @@ class BudgetNotificationCenterTests: XCTestCase {
         XCTAssertEqual(sut?.budget?.budgetValue, postedBudget.budgetValue)
     }
 
+    func test_whenNotificationIsPosted_thenObserverShouldReceiveIt() {
+        let exp = expectation(description: "notification_received")
+        let budget = FakeBudget(budgetValue: 123)
+        
+        token = NotificationCenter.default.observeBudgetDidChange { budgetNotification in
+            if budgetNotification.budget?.budgetValue == budget.budgetValue {
+                exp.fulfill()
+            }
+        }
+        
+        NotificationCenter.default.postBudgetDidChange(notification: BudgetNotification(budget: budget))
+        waitForExpectations(timeout: 0.1, handler: nil)
+    }
 }
