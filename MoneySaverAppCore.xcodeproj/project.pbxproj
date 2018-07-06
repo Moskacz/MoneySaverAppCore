@@ -83,6 +83,8 @@
 		35423E1520EEA293004E006B /* BudgetNotificationCenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35423E1320EEA293004E006B /* BudgetNotificationCenterTests.swift */; };
 		35423E1720EEA364004E006B /* FakeBudget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35423E1620EEA364004E006B /* FakeBudget.swift */; };
 		35423E1820EEA364004E006B /* FakeBudget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35423E1620EEA364004E006B /* FakeBudget.swift */; };
+		35423E1A20F004FE004E006B /* TransactionNotificationCenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35423E1920F004FE004E006B /* TransactionNotificationCenterTests.swift */; };
+		35423E1B20F004FE004E006B /* TransactionNotificationCenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35423E1920F004FE004E006B /* TransactionNotificationCenterTests.swift */; };
 		354E4B8820A2301C009A8311 /* CalendarDateManagedObjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354E4B8720A2301C009A8311 /* CalendarDateManagedObjectTests.swift */; };
 		354E4B8920A2301C009A8311 /* CalendarDateManagedObjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354E4B8720A2301C009A8311 /* CalendarDateManagedObjectTests.swift */; };
 		354E4B8B20A23115009A8311 /* TransactionManagedObjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354E4B8A20A23115009A8311 /* TransactionManagedObjectTests.swift */; };
@@ -263,6 +265,7 @@
 		35423E0E20EE9E44004E006B /* StatsViewModelImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewModelImpl.swift; sourceTree = "<group>"; };
 		35423E1320EEA293004E006B /* BudgetNotificationCenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetNotificationCenterTests.swift; sourceTree = "<group>"; };
 		35423E1620EEA364004E006B /* FakeBudget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeBudget.swift; sourceTree = "<group>"; };
+		35423E1920F004FE004E006B /* TransactionNotificationCenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionNotificationCenterTests.swift; sourceTree = "<group>"; };
 		354E4B8720A2301C009A8311 /* CalendarDateManagedObjectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDateManagedObjectTests.swift; sourceTree = "<group>"; };
 		354E4B8A20A23115009A8311 /* TransactionManagedObjectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionManagedObjectTests.swift; sourceTree = "<group>"; };
 		354E4B8D20A23153009A8311 /* StringTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringTests.swift; sourceTree = "<group>"; };
@@ -587,6 +590,7 @@
 				3527046B20D6F0DA002E32ED /* SegmentedControlTests_iOS.swift */,
 				359E40A720DADDBF00801E20 /* StatsViewModelTests.swift */,
 				35423E1320EEA293004E006B /* BudgetNotificationCenterTests.swift */,
+				35423E1920F004FE004E006B /* TransactionNotificationCenterTests.swift */,
 			);
 			path = UnitTests;
 			sourceTree = "<group>";
@@ -852,6 +856,7 @@
 				35162CBE2090DEB200547126 /* UserPreferencesTests.swift in Sources */,
 				35593BFA20922F0700DEEDB5 /* FakeCalendarDate.swift in Sources */,
 				35423E1120EE9EE0004E006B /* FakeChartsDataProcessor.swift in Sources */,
+				35423E1A20F004FE004E006B /* TransactionNotificationCenterTests.swift in Sources */,
 				35423E0520EE9AEF004E006B /* FakeBudgetRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -939,6 +944,7 @@
 				35162CBF2090DEB200547126 /* UserPreferencesTests.swift in Sources */,
 				35593BFB20922F0700DEEDB5 /* FakeCalendarDate.swift in Sources */,
 				35423E1220EE9EE2004E006B /* FakeChartsDataProcessor.swift in Sources */,
+				35423E1B20F004FE004E006B /* TransactionNotificationCenterTests.swift in Sources */,
 				35423E0620EE9AF0004E006B /* FakeBudgetRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
