@@ -120,6 +120,16 @@ class SequenceTests: XCTestCase {
         let transactions: [TransactionProtocol] = [transaction1, transaction2, transaction3]
         XCTAssertEqual(transactions.sum, -50)
     }
+    
+    func test_withMonthOfEra() {
+        let transaction1 = FakeTransactionBuilder().set(monthOfEra: 3).build()
+        let transaction2 = FakeTransactionBuilder().set(monthOfEra: 1).build()
+        let transaction3 = FakeTransactionBuilder().set(monthOfEra: 3).build()
+        
+        let transactions: [TransactionProtocol] = [transaction1, transaction2, transaction3]
+        let filtered = transactions.with(monthOfEra: 3)
+        XCTAssertEqual(filtered.count, 2)
+    }
 }
 
 private struct Person {

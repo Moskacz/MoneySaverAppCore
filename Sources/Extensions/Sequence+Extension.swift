@@ -90,4 +90,11 @@ extension Sequence where Element == TransactionProtocol {
             return result + (element.value?.doubleValue ?? 0)
         }
     }
+    
+    func with(monthOfEra: Int32) -> [Element] {
+        return filter {
+            guard let transactionMonthOfEra = $0.transactionDate?.monthOfEra else { return false }
+            return transactionMonthOfEra == monthOfEra
+        }
+    }
 }
