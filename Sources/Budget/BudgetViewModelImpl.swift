@@ -14,7 +14,7 @@ internal final class BudgetViewModelImpl: BudgetViewModel {
     private let budgetRepository: BudgetRepository
     private let transactionsRepository: TransactionsRepository
     private let chartsDataProcessor: BudgetChartsDataProcessor
-    private var observationToken: ObservationToken?
+    private var observationTokens = [ObservationToken]()
     
     public init(budgetRepository: BudgetRepository,
                 transactionsRepository: TransactionsRepository,
@@ -26,12 +26,19 @@ internal final class BudgetViewModelImpl: BudgetViewModel {
     }
     
     private func registerForNotifications() {
-        observationToken = transactionsRepository.observeTransactionsChanged(callback: { (transactions) in
+        let transactionsToken = transactionsRepository.observeTransactionsChanged { transactions in
             
-        })
+        }
+        
+        let budgetToken = budgetRepository.observeBudgetChanged { budget in
+            
+        }
+        
+        observationTokens = [transactionsToken, budgetToken]
     }
     
-    private func updateBudgetData(transactions: [TransactionProtocol], budget: Decimal) {
+    private func updateBudgetData(transactions: [TransactionProtocol], budget: Double) {
+        
         
     }
 }
