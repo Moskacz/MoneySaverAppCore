@@ -9,24 +9,25 @@
 import Foundation
 
 internal protocol BudgetChartsDataProcessor {
-    func spendings(fromMonthlyExpenses expenses: [DatedValue]) -> [PlotValue]
+    func incrementalDailyExpenses(transactions: [TransactionProtocol]) -> [PlotValue]
     func estimatedSpendings(budgetValue: Double) -> [PlotValue]
 }
 
 extension ChartsDataProcessor: BudgetChartsDataProcessor {
     
-    internal func spendings(fromMonthlyExpenses expenses: [DatedValue]) -> [PlotValue] {
-        let sortedExpeneses = expenses.sorted { (lhs, rhs) -> Bool in
-            return lhs.date < rhs.date
-        }
+    func incrementalDailyExpenses(transactions: [TransactionProtocol]) -> [PlotValue] {
+        let dailyExpenses = transactions.expenses.grouped { $0.transactionDate?.dayOfEra }.map { (day, expenses) -> PlotValue in
+            return PlotValue(x: Int(day), y: expenses.sum)
+        }.sorted { $0.x < $1.x }
         
         let daysRange = calendar.daysInMonthRange(forDate: calendar.now)
         return daysRange.map { day in
-            let value = sortedExpeneses.reduce(0, { (sum, dailyValue) -> Double in
-                guard dailyValue.date <= day else { return sum }
-                return sum - dailyValue.value
-            })
-            return PlotValue(x: day, y: value)
+            var expensesToDay = Double(0)
+            for expense in dailyExpenses {
+                guard expense.x <= day else { break }
+                expensesToDay += expense.y
+            }
+            return PlotValue(x: day, y: expensesToDay)
         }
     }
     
