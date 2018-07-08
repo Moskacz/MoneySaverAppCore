@@ -27,33 +27,42 @@ class ChartsDataProcessorTests: XCTestCase {
         super.tearDown()
     }
     
-    func test_spendingFromMonthlyExpenses_shouldSortPassedData() {
+    func test_incrementalDailyExpenses_shouldBeSorted() {
         fakeCalendar.nowToReturn = Date()
         fakeCalendar.daysInMonthRangeToReturn = 1...30
         
-        let firstDayExpense = DatedValue(date: 1, value: 50)
-        let secondDayExpense = DatedValue(date: 2, value: 10)
-        let spendings = sut.spendings(fromMonthlyExpenses: [secondDayExpense, firstDayExpense])
-        XCTAssertEqual(spendings[0].y, -50)
+        let transaction1 = FakeTransactionBuilder().set(dayOfEra: 10).set(value: Decimal(-10)).build()
+        let transaction2 = FakeTransactionBuilder().set(dayOfEra: 1).set(value: Decimal(-30)).build()
+        let transaction3 = FakeTransactionBuilder().set(dayOfEra: 5).set(value: Decimal(-100)).build()
+        
+        let transactions: [TransactionProtocol] = [transaction1, transaction2, transaction3]
+        
+        let expenses = sut.incrementalDailyExpenses(transactions: transactions)
+        XCTAssertEqual(expenses[0].y, -30)
     }
     
-    func test_monthlySpendings_dailyExpensesShouldBeSumOfEarlierDays() {
+    func test_incrementalDailyExpenses_values() {
         fakeCalendar.nowToReturn = Date()
         fakeCalendar.daysInMonthRangeToReturn = 1...30
         
-        let firstDayExpense = DatedValue(date: 1, value: 50)
-        let secondDayExpense = DatedValue(date: 2, value: 10)
-        let spendings = sut.spendings(fromMonthlyExpenses: [firstDayExpense, secondDayExpense])
-        XCTAssertEqual(spendings[1].y, -60)
+        let transaction1 = FakeTransactionBuilder().set(dayOfEra: 10).set(value: Decimal(-10)).build()
+        let transaction2 = FakeTransactionBuilder().set(dayOfEra: 1).set(value: Decimal(-30)).build()
+        let transaction3 = FakeTransactionBuilder().set(dayOfEra: 5).set(value: Decimal(-100)).build()
+        
+        let transactions: [TransactionProtocol] = [transaction1, transaction2, transaction3]
+        
+        let expenses = sut.incrementalDailyExpenses(transactions: transactions)
+        XCTAssertEqual(expenses[0].y, -30)
+        XCTAssertEqual(expenses[4].y, -130)
+        XCTAssertEqual(expenses[9].y, -140)
     }
     
-    func test_monthlySpendings_spendingsCountShouldEqualDaysOfMonth() {
+    func test_incrementalDailyExpenses_spendingsCountShouldEqualDaysOfMonth() {
         let daysCount = 28
         fakeCalendar.nowToReturn = Date()
         fakeCalendar.daysInMonthRangeToReturn = 1...daysCount
         
-        let spendings = sut.spendings(fromMonthlyExpenses: [])
-        XCTAssertEqual(spendings.count, daysCount)
+        XCTAssertEqual(sut.incrementalDailyExpenses(transactions: []).count, daysCount)
     }
     
     func test_estimatedSpending_spendingCountShouldEqualDaysOfMonth() {

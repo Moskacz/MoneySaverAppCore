@@ -15,25 +15,25 @@ class FakeChartsDataProcessor {
 
 extension FakeChartsDataProcessor: BudgetChartsDataProcessor {
     
-    public func spendings(fromMonthlyExpenses expenses: [DatedValue]) -> [PlotValue] {
+    func incrementalDailyExpenses(transactions: [TransactionProtocol]) -> [PlotValue] {
         fatalError()
     }
     
-    public func estimatedSpendings(budgetValue: Double) -> [PlotValue] {
+    func estimatedSpendings(budgetValue: Double) -> [PlotValue] {
         fatalError()
     }
 }
 
 extension FakeChartsDataProcessor: StatsChartsDataProcessor {
-    public func expensesGroupedBy(grouping: TransactionsGrouping, transactions: [TransactionProtocol]) -> [PlotValue] {
+    func expensesGroupedBy(grouping: TransactionsGrouping, transactions: [TransactionProtocol]) -> [PlotValue] {
         return []
     }
     
-    public func incomesGroupedBy(grouping: TransactionsGrouping, transactions: [TransactionProtocol]) -> [PlotValue] {
+    func incomesGroupedBy(grouping: TransactionsGrouping, transactions: [TransactionProtocol]) -> [PlotValue] {
         return []
     }
     
-    public func expensesGroupedByCategories(_ transactions: [TransactionProtocol]) -> [CategorySum] {
+    func expensesGroupedByCategories(_ transactions: [TransactionProtocol]) -> [CategorySum] {
         return []
     }
 }
