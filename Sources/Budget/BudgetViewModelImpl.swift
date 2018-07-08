@@ -16,7 +16,10 @@ internal final class BudgetViewModelImpl: BudgetViewModel {
     private let transactionsRepository: TransactionsRepository
     private let chartsDataProcessor: BudgetChartsDataProcessor
     private let calendar: CalendarProtocol
+    
     private var observationTokens = [ObservationToken]()
+    private var budget: BudgetProtocol?
+    private var expenses: [TransactionProtocol]?
     
     public init(budgetRepository: BudgetRepository,
                 transactionsRepository: TransactionsRepository,
@@ -30,21 +33,24 @@ internal final class BudgetViewModelImpl: BudgetViewModel {
     }
     
     private func registerForNotifications() {
-        let transactionsToken = transactionsRepository.observeTransactionsChanged { transactions in
-            
+        let transactionsToken = transactionsRepository.observeTransactionsChanged { [unowned self] transactions in
+            let monthOfEra = self.calendar.nowCalendarDate.monthOfEra
+            self.expenses = transactions.with(monthOfEra: monthOfEra).expenses
+            self.updateBudgetData()
         }
         
-        let budgetToken = budgetRepository.observeBudgetChanged { budget in
-            
+        let budgetToken = budgetRepository.observeBudgetChanged { [unowned self] budget in
+            self.budget = budget
+            self.updateBudgetData()
         }
         
         observationTokens = [transactionsToken, budgetToken]
     }
     
-    private func updateBudgetData(transactions: [TransactionProtocol], budget: Double) {
-        let thisMonthExpenses = transactions.expenses.with(monthOfEra: calendar.nowCalendarDate.monthOfEra)
-        delegate?.budget(viewModel: self, didUpdateBudget: budgetPieChartData(budget: budget, expenses: thisMonthExpenses.sum))
-        delegate?.budget(viewModel: self, didUpdateSpendings: spendingsChartData(budget: budget, transactions: thisMonthExpenses))
+    private func updateBudgetData() {
+        guard let expenses = expenses, let budget = budget else { return }
+        delegate?.budget(viewModel: self, didUpdateBudget: budgetPieChartData(budget: budget.budgetValue, expenses: expenses.sum))
+        delegate?.budget(viewModel: self, didUpdateSpendings: spendingsChartData(budget: budget.budgetValue, transactions: expenses))
     }
     
     // MARK: Chart data
