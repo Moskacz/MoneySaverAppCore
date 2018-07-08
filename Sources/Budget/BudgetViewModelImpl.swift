@@ -42,9 +42,9 @@ internal final class BudgetViewModelImpl: BudgetViewModel {
     }
     
     private func updateBudgetData(transactions: [TransactionProtocol], budget: Double) {
-        let expenses = transactions.with(monthOfEra: calendar.nowCalendarDate.monthOfEra).expenses.sum
-        delegate?.budget(viewModel: self, didUpdateBudget: budgetPieChartData(budget: budget, expenses: expenses))
-        delegate?.budget(viewModel: self, didUpdateSpendings: spendingsChartData(budget: budget, transactions: transactions))
+        let thisMonthExpenses = transactions.expenses.with(monthOfEra: calendar.nowCalendarDate.monthOfEra)
+        delegate?.budget(viewModel: self, didUpdateBudget: budgetPieChartData(budget: budget, expenses: thisMonthExpenses.sum))
+        delegate?.budget(viewModel: self, didUpdateSpendings: spendingsChartData(budget: budget, transactions: thisMonthExpenses))
     }
     
     // MARK: Chart data
@@ -78,7 +78,16 @@ internal final class BudgetViewModelImpl: BudgetViewModel {
     }
     
     private func actualSpendingsChartData(transactions: [TransactionProtocol]) -> LineChartData {
+        let entries = chartsDataProcessor.incrementalDailyExpenses(transactions: transactions).map {
+            ChartDataEntry(x: Double($0.x), y: $0.y)
+        }
         
-        fatalError()
+        let dataSet = LineChartDataSet(values: entries, label: "Actual spendings")
+//        dataSet.colors = [AppColor.red.value]
+        dataSet.mode = .linear
+        dataSet.lineWidth = 5
+        dataSet.drawCirclesEnabled = false
+        dataSet.drawValuesEnabled = false
+        return LineChartData(dataSet: dataSet)
     }
 }
