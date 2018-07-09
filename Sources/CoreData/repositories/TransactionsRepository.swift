@@ -9,11 +9,6 @@
 import Foundation
 import CoreData
 
-internal struct DatedValue: Equatable {
-    internal let date: Int
-    internal let value: Double
-}
-
 internal struct TransactionData {
     internal let title: String
     internal let value: Decimal
