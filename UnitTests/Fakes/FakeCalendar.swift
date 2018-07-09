@@ -14,6 +14,7 @@ class FakeCalendar: CalendarProtocol {
     var calendar = Calendar.current
     
     var nowToReturn: Date!
+    var nowCalendarDateToReturn: CalendarDateProtocol!
     var daysInMonthRangeToReturn: CountableClosedRange<Int>!
     var dayOfEraOfDateToReturn: Int!
     var weekOfEraOfDateToReturn: Int!
@@ -27,8 +28,8 @@ class FakeCalendar: CalendarProtocol {
         return nowToReturn
     }
     
-    var nowCalendarDate: CalendarDate {
-        fatalError()
+    var nowCalendarDate: CalendarDateProtocol {
+        return nowCalendarDateToReturn
     }
     
     func calendarDate(from date: Date) -> CalendarDate {

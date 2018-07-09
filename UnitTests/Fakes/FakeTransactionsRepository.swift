@@ -49,6 +49,6 @@ class FakeTransactionsRepository: TransactionsRepository {
         self.transactionChangedCallback = callback
         return ObservationToken(notificationCenter: NotificationCenter.default,
                                 token: NSObject(),
-                                notificationName: Notification.Name("test"))
+                                notificationName: .transactionsDidChange)
     }
 }

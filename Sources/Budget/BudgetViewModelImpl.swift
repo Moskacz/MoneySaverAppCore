@@ -49,8 +49,10 @@ internal final class BudgetViewModelImpl: BudgetViewModel {
     
     private func updateBudgetData() {
         guard let expenses = expenses, let budget = budget else { return }
-        delegate?.budget(viewModel: self, didUpdateBudget: budgetPieChartData(budget: budget.budgetValue, expenses: expenses.sum))
-        delegate?.budget(viewModel: self, didUpdateSpendings: spendingsChartData(budget: budget.budgetValue, transactions: expenses))
+        let budgetData = budgetPieChartData(budget: budget.budgetValue, expenses: expenses.sum)
+        delegate?.budget(viewModel: self, didUpdateBudget: budgetData)
+        let spendingsData = spendingsChartData(budget: budget.budgetValue, transactions: expenses)
+        delegate?.budget(viewModel: self, didUpdateSpendings: spendingsData)
     }
     
     // MARK: Chart data

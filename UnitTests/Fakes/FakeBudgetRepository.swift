@@ -12,12 +12,16 @@ import CoreData
 class FakeBudgetRepository: BudgetRepository {
     
     var saveBudgetPassedValue: Decimal?
+    var passedBudgetChangedBlock: ((BudgetProtocol) -> Void)?
     
     func saveBudget(withValue value: Decimal) {
         saveBudgetPassedValue = value
     }
     
     func observeBudgetChanged(completion: @escaping ((BudgetProtocol) -> Void)) -> ObservationToken {
-        fatalError()
+        passedBudgetChangedBlock = completion
+        return ObservationToken(notificationCenter: .default,
+                                token: NSObject(),
+                                notificationName: .budgetDidChange)
     }
 }

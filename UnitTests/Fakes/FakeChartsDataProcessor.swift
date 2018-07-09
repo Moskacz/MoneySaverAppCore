@@ -10,17 +10,21 @@ import Foundation
 @testable import MoneySaverAppCore
 
 class FakeChartsDataProcessor {
-    public init() {}
+    var passedTransactions: [TransactionProtocol]?
+    var passedBudget: Double?
+    init() {}
 }
 
 extension FakeChartsDataProcessor: BudgetChartsDataProcessor {
     
     func incrementalDailyExpenses(transactions: [TransactionProtocol]) -> [PlotValue] {
-        fatalError()
+        passedTransactions = transactions
+        return []
     }
     
     func estimatedSpendings(budgetValue: Double) -> [PlotValue] {
-        fatalError()
+        passedBudget = budgetValue
+        return []
     }
 }
 
