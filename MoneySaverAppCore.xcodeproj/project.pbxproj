@@ -47,6 +47,8 @@
 		352D625D20F3D21400CBE0BD /* BudgetViewModelImplTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352D625B20F3D21400CBE0BD /* BudgetViewModelImplTests.swift */; };
 		352D625F20F3D30400CBE0BD /* FakeBudgetViewModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352D625E20F3D30400CBE0BD /* FakeBudgetViewModelDelegate.swift */; };
 		352D626020F3D30400CBE0BD /* FakeBudgetViewModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352D625E20F3D30400CBE0BD /* FakeBudgetViewModelDelegate.swift */; };
+		352D626520F5297500CBE0BD /* TransactionsSummaryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352D626420F5297500CBE0BD /* TransactionsSummaryViewModel.swift */; };
+		352D626620F5297500CBE0BD /* TransactionsSummaryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352D626420F5297500CBE0BD /* TransactionsSummaryViewModel.swift */; };
 		3536466920E3F72A00B055B6 /* BudgetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3536466820E3F72A00B055B6 /* BudgetViewModel.swift */; };
 		3536466A20E3F72A00B055B6 /* BudgetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3536466820E3F72A00B055B6 /* BudgetViewModel.swift */; };
 		353817D1208E642C00EA967F /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 353817CF208E642C00EA967F /* DataModel.xcdatamodeld */; };
@@ -253,6 +255,7 @@
 		3527046B20D6F0DA002E32ED /* SegmentedControlTests_iOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedControlTests_iOS.swift; sourceTree = "<group>"; };
 		352D625B20F3D21400CBE0BD /* BudgetViewModelImplTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetViewModelImplTests.swift; sourceTree = "<group>"; };
 		352D625E20F3D30400CBE0BD /* FakeBudgetViewModelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeBudgetViewModelDelegate.swift; sourceTree = "<group>"; };
+		352D626420F5297500CBE0BD /* TransactionsSummaryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsSummaryViewModel.swift; sourceTree = "<group>"; };
 		3536466820E3F72A00B055B6 /* BudgetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetViewModel.swift; sourceTree = "<group>"; };
 		353817D0208E642C00EA967F /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		353817D4208E647600EA967F /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
@@ -448,6 +451,14 @@
 			path = StatePreservation;
 			sourceTree = "<group>";
 		};
+		352D626320F5296100CBE0BD /* Summary */ = {
+			isa = PBXGroup;
+			children = (
+				352D626420F5297500CBE0BD /* TransactionsSummaryViewModel.swift */,
+			);
+			path = Summary;
+			sourceTree = "<group>";
+		};
 		3536466720E3F6FD00B055B6 /* Budget */ = {
 			isa = PBXGroup;
 			children = (
@@ -548,6 +559,7 @@
 		356668CB208CE66C0052E724 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				352D626320F5296100CBE0BD /* Summary */,
 				35423E0A20EE9E26004E006B /* Stats */,
 				3536466720E3F6FD00B055B6 /* Budget */,
 				359E40B920DD851E00801E20 /* Utils */,
@@ -829,6 +841,7 @@
 				353817E9208E65DC00EA967F /* TransactionManagedObject+CoreDataProperties.swift in Sources */,
 				35162CA3208FC2D200547126 /* NSManagedObject+Extensions.swift in Sources */,
 				35423E0F20EE9E44004E006B /* StatsViewModelImpl.swift in Sources */,
+				352D626520F5297500CBE0BD /* TransactionsSummaryViewModel.swift in Sources */,
 				35423E0820EE9DB2004E006B /* BudgetViewModelImpl.swift in Sources */,
 				3536466920E3F72A00B055B6 /* BudgetViewModel.swift in Sources */,
 				90D1171320E4E7AC008F21D8 /* BudgetProtocol.swift in Sources */,
@@ -919,6 +932,7 @@
 				35162CA4208FC2D200547126 /* NSManagedObject+Extensions.swift in Sources */,
 				35AEB11C2093A79F00DCE038 /* CoreDataCollectionUpdateHandler.swift in Sources */,
 				35423E1020EE9E44004E006B /* StatsViewModelImpl.swift in Sources */,
+				352D626620F5297500CBE0BD /* TransactionsSummaryViewModel.swift in Sources */,
 				35423E0920EE9DB2004E006B /* BudgetViewModelImpl.swift in Sources */,
 				3536466A20E3F72A00B055B6 /* BudgetViewModel.swift in Sources */,
 				90D1171420E4E7AC008F21D8 /* BudgetProtocol.swift in Sources */,
