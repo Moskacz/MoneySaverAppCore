@@ -12,7 +12,7 @@ public protocol TransactionsSummaryViewModelDelegate: class {
 }
 
 public protocol TransactionsSummaryViewModel {
-    var delegate: TransactionsSummaryViewModelDelegate? { get }
+    var delegate: TransactionsSummaryViewModelDelegate? { get set }
     var totalAmountText: String { get }
     var expensesAmountText: String { get }
     var incomesAmountText: String { get }
