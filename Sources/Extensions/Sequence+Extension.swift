@@ -8,27 +8,6 @@
 
 import Foundation
 
-public struct TransactionsSum {
-    public let incomes: Double
-    public let expenses: Double
-    
-    public func total() -> Double {
-        return incomes + expenses
-    }
-    
-    public static var zero: TransactionsSum {
-        return TransactionsSum(incomes: 0, expenses: 0)
-    }
-}
-
-public struct TransactionsCompoundSum {
-    public let daily: TransactionsSum
-    public let weekly: TransactionsSum
-    public let monthly: TransactionsSum
-    public let yearly: TransactionsSum
-    public let era: TransactionsSum
-}
-
 extension Sequence {
     
     public func grouped<U: Hashable>(by key: (Element) -> U?) -> [U: [Element]] {
@@ -45,7 +24,7 @@ extension Sequence {
 
 extension Sequence where Element == TransactionProtocol {
     
-    public func compoundSum(date: CalendarDateProtocol) -> TransactionsCompoundSum {
+    internal func compoundSum(date: CalendarDateProtocol) -> TransactionsCompoundSum {
         var day = [Element]()
         var week = [Element]()
         var month = [Element]()
@@ -73,25 +52,25 @@ extension Sequence where Element == TransactionProtocol {
                                        era: self.transactionsSum)
     }
     
-    public var transactionsSum: TransactionsSum {
+    internal var transactionsSum: TransactionsSum {
         return TransactionsSum(incomes: incomes.sum, expenses: expenses.sum)
     }
     
-    var incomes: [Element] {
+    internal var incomes: [Element] {
         return self.filter { ($0.value ?? 0).doubleValue >= 0 }
     }
     
-    var expenses: [Element] {
+    internal var expenses: [Element] {
         return self.filter { ($0.value ?? 0).doubleValue < 0 }
     }
     
-    var sum: Double {
+    internal var sum: Double {
         return reduce(0) { (result, element) -> Double in
             return result + (element.value?.doubleValue ?? 0)
         }
     }
     
-    func with(monthOfEra: Int32) -> [Element] {
+    internal func with(monthOfEra: Int32) -> [Element] {
         return filter {
             guard let transactionMonthOfEra = $0.transactionDate?.monthOfEra else { return false }
             return transactionMonthOfEra == monthOfEra

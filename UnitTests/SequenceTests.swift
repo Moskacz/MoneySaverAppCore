@@ -85,7 +85,6 @@ class SequenceTests: XCTestCase {
         let sum = [transaction1, transaction2, transaction3].transactionsSum
         XCTAssertEqual(sum.incomes, 30)
         XCTAssertEqual(sum.expenses, -50)
-        XCTAssertEqual(sum.total(), -20)
     }
     
     func test_expenses() {

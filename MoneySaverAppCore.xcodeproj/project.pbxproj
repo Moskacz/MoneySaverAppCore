@@ -49,6 +49,8 @@
 		352D626020F3D30400CBE0BD /* FakeBudgetViewModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352D625E20F3D30400CBE0BD /* FakeBudgetViewModelDelegate.swift */; };
 		352D626520F5297500CBE0BD /* TransactionsSummaryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352D626420F5297500CBE0BD /* TransactionsSummaryViewModel.swift */; };
 		352D626620F5297500CBE0BD /* TransactionsSummaryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352D626420F5297500CBE0BD /* TransactionsSummaryViewModel.swift */; };
+		352D626820F52C3A00CBE0BD /* TransactionsSummaryViewModelImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352D626720F52C3A00CBE0BD /* TransactionsSummaryViewModelImpl.swift */; };
+		352D626920F52C3A00CBE0BD /* TransactionsSummaryViewModelImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352D626720F52C3A00CBE0BD /* TransactionsSummaryViewModelImpl.swift */; };
 		3536466920E3F72A00B055B6 /* BudgetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3536466820E3F72A00B055B6 /* BudgetViewModel.swift */; };
 		3536466A20E3F72A00B055B6 /* BudgetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3536466820E3F72A00B055B6 /* BudgetViewModel.swift */; };
 		353817D1208E642C00EA967F /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 353817CF208E642C00EA967F /* DataModel.xcdatamodeld */; };
@@ -256,6 +258,7 @@
 		352D625B20F3D21400CBE0BD /* BudgetViewModelImplTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetViewModelImplTests.swift; sourceTree = "<group>"; };
 		352D625E20F3D30400CBE0BD /* FakeBudgetViewModelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeBudgetViewModelDelegate.swift; sourceTree = "<group>"; };
 		352D626420F5297500CBE0BD /* TransactionsSummaryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsSummaryViewModel.swift; sourceTree = "<group>"; };
+		352D626720F52C3A00CBE0BD /* TransactionsSummaryViewModelImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsSummaryViewModelImpl.swift; sourceTree = "<group>"; };
 		3536466820E3F72A00B055B6 /* BudgetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetViewModel.swift; sourceTree = "<group>"; };
 		353817D0208E642C00EA967F /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		353817D4208E647600EA967F /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
@@ -455,6 +458,7 @@
 			isa = PBXGroup;
 			children = (
 				352D626420F5297500CBE0BD /* TransactionsSummaryViewModel.swift */,
+				352D626720F52C3A00CBE0BD /* TransactionsSummaryViewModelImpl.swift */,
 			);
 			path = Summary;
 			sourceTree = "<group>";
@@ -847,6 +851,7 @@
 				90D1171320E4E7AC008F21D8 /* BudgetProtocol.swift in Sources */,
 				35AEB11B2093A79F00DCE038 /* CoreDataCollectionUpdateHandler.swift in Sources */,
 				35162C98208FC14900547126 /* CalendarDateProtocol.swift in Sources */,
+				352D626820F52C3A00CBE0BD /* TransactionsSummaryViewModelImpl.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -938,6 +943,7 @@
 				90D1171420E4E7AC008F21D8 /* BudgetProtocol.swift in Sources */,
 				353A944920A0D9E100B94A72 /* ManagedObjectModel+Extensions.swift in Sources */,
 				35162C99208FC14900547126 /* CalendarDateProtocol.swift in Sources */,
+				352D626920F52C3A00CBE0BD /* TransactionsSummaryViewModelImpl.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

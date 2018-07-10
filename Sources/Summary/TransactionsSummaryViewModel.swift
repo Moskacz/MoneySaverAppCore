@@ -12,9 +12,10 @@ public protocol TransactionsSummaryViewModelDelegate: class {
 }
 
 public protocol TransactionsSummaryViewModel {
+    var delegate: TransactionsSummaryViewModelDelegate? { get }
     var totalAmountText: String { get }
     var expensesAmountText: String { get }
     var incomesAmountText: String { get }
     var dateRangeButtonText: String { get }
-    func set(dateRange: DateRange)
+    var dateRange: DateRange { set get }
 }
