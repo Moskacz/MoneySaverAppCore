@@ -192,6 +192,34 @@
 			remoteGlobalIDString = 356668B3208CE62C0052E724;
 			remoteInfo = "MoneySaverAppCore-macOS";
 		};
+		35F4C79B20FA2FF90095C21D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 35F4C79420FA2FF90095C21D /* MMFoundation.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 35F3119720F9337D0062AD82;
+			remoteInfo = "MMFoundation-iOS";
+		};
+		35F4C79D20FA2FF90095C21D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 35F4C79420FA2FF90095C21D /* MMFoundation.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 35F3119F20F9337D0062AD82;
+			remoteInfo = "MMFoundation-iOSTests";
+		};
+		35F4C79F20FA2FF90095C21D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 35F4C79420FA2FF90095C21D /* MMFoundation.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 35F311B320F933A90062AD82;
+			remoteInfo = "MMFoundation-macOS";
+		};
+		35F4C7A120FA2FF90095C21D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 35F4C79420FA2FF90095C21D /* MMFoundation.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 35F311BB20F933A90062AD82;
+			remoteInfo = "MMFoundation-macOSTests";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -328,6 +356,7 @@
 		35CB167E20ED572D0037EF94 /* BudgetRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetRepositoryImpl.swift; sourceTree = "<group>"; };
 		35CB168120ED5A470037EF94 /* NotificationCenter+BudgetNotificationCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NotificationCenter+BudgetNotificationCenter.swift"; sourceTree = "<group>"; };
 		35DD654520B09F9000909AA4 /* FakeBudgetRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeBudgetRepository.swift; sourceTree = "<group>"; };
+		35F4C79420FA2FF90095C21D /* MMFoundation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MMFoundation.xcodeproj; path = Submodules/MMFoundation/MMFoundation.xcodeproj; sourceTree = "<group>"; };
 		90D1171220E4E7AC008F21D8 /* BudgetProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -545,6 +574,7 @@
 		3566688B208CE4A40052E724 = {
 			isa = PBXGroup;
 			children = (
+				35F4C79420FA2FF90095C21D /* MMFoundation.xcodeproj */,
 				356668CB208CE66C0052E724 /* Sources */,
 				356668D7208CEB0E0052E724 /* UnitTests */,
 				35666898208CE5CB0052E724 /* Products */,
@@ -638,6 +668,17 @@
 				35AEB1182093A79F00DCE038 /* CoreDataCollectionUpdateHandler.swift */,
 			);
 			path = CollectionViews;
+			sourceTree = "<group>";
+		};
+		35F4C79520FA2FF90095C21D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				35F4C79C20FA2FF90095C21D /* MMFoundation.framework */,
+				35F4C79E20FA2FF90095C21D /* MMFoundation-iOSTests.xctest */,
+				35F4C7A020FA2FF90095C21D /* MMFoundation.framework */,
+				35F4C7A220FA2FF90095C21D /* MMFoundation-macOSTests.xctest */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -773,6 +814,12 @@
 			mainGroup = 3566688B208CE4A40052E724;
 			productRefGroup = 35666898208CE5CB0052E724 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 35F4C79520FA2FF90095C21D /* Products */;
+					ProjectRef = 35F4C79420FA2FF90095C21D /* MMFoundation.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				35666896208CE5CB0052E724 /* MoneySaverAppCore-iOS */,
@@ -782,6 +829,37 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		35F4C79C20FA2FF90095C21D /* MMFoundation.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = MMFoundation.framework;
+			remoteRef = 35F4C79B20FA2FF90095C21D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		35F4C79E20FA2FF90095C21D /* MMFoundation-iOSTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "MMFoundation-iOSTests.xctest";
+			remoteRef = 35F4C79D20FA2FF90095C21D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		35F4C7A020FA2FF90095C21D /* MMFoundation.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = MMFoundation.framework;
+			remoteRef = 35F4C79F20FA2FF90095C21D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		35F4C7A220FA2FF90095C21D /* MMFoundation-macOSTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "MMFoundation-macOSTests.xctest";
+			remoteRef = 35F4C7A120FA2FF90095C21D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		35666895208CE5CB0052E724 /* Resources */ = {
