@@ -1,0 +1,3 @@
+[submodule "Submodules/MMFoundation"]
+	path = Submodules/MMFoundation
+	url = https://github.com/Moskacz/MMFoundation
