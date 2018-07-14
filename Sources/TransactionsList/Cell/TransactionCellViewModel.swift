@@ -10,7 +10,7 @@ import MMFoundation
 
 public protocol TransactionCellViewModel {
     var titleText: String? { get }
-    var descriptionText: String { get }
+    var descriptionText: String? { get }
     var categoryIcon: Image? { get }
     var dateText: String? { get }
     var indicatorGradient: Gradient? { get}

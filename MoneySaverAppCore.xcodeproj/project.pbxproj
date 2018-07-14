@@ -121,6 +121,8 @@
 		355A562B20FA38D2003561FE /* TransactionsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355A562920FA38D2003561FE /* TransactionsListViewModel.swift */; };
 		355A563020FA3991003561FE /* TransactionCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355A562F20FA3991003561FE /* TransactionCellViewModel.swift */; };
 		355A563120FA3991003561FE /* TransactionCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355A562F20FA3991003561FE /* TransactionCellViewModel.swift */; };
+		355A563320FA3AEC003561FE /* TransactionCellViewModelImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355A563220FA3AEC003561FE /* TransactionCellViewModelImpl.swift */; };
+		355A563420FA3AEC003561FE /* TransactionCellViewModelImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355A563220FA3AEC003561FE /* TransactionCellViewModelImpl.swift */; };
 		356668A1208CE5CB0052E724 /* MoneySaverAppCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35666897208CE5CB0052E724 /* MoneySaverAppCore.framework */; };
 		356668BD208CE62C0052E724 /* MoneySaverAppCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 356668B4208CE62C0052E724 /* MoneySaverAppCore.framework */; };
 		356668D0208CE99D0052E724 /* MoneySaverAppCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 356668CF208CE99D0052E724 /* MoneySaverAppCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -324,6 +326,7 @@
 		35593C0B2092312100DEEDB5 /* FakeTransction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FakeTransction.swift; sourceTree = "<group>"; };
 		355A562920FA38D2003561FE /* TransactionsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsListViewModel.swift; sourceTree = "<group>"; };
 		355A562F20FA3991003561FE /* TransactionCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCellViewModel.swift; sourceTree = "<group>"; };
+		355A563220FA3AEC003561FE /* TransactionCellViewModelImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCellViewModelImpl.swift; sourceTree = "<group>"; };
 		35666897208CE5CB0052E724 /* MoneySaverAppCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MoneySaverAppCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		356668A0208CE5CB0052E724 /* MoneySaverAppCore-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MoneySaverAppCore-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		356668B4208CE62C0052E724 /* MoneySaverAppCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MoneySaverAppCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -575,6 +578,7 @@
 			isa = PBXGroup;
 			children = (
 				355A562F20FA3991003561FE /* TransactionCellViewModel.swift */,
+				355A563220FA3AEC003561FE /* TransactionCellViewModelImpl.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -906,6 +910,7 @@
 				353817DF208E65DC00EA967F /* CalendarDateManagedObject+CoreDataClass.swift in Sources */,
 				357B860B20D1AF54001E5D25 /* Sequence+Int.swift in Sources */,
 				35162C89208FC0A100547126 /* TransactionsRepository.swift in Sources */,
+				355A563320FA3AEC003561FE /* TransactionCellViewModelImpl.swift in Sources */,
 				358BEC0620C9B15D003A3800 /* StatsChartsDataProcessor.swift in Sources */,
 				35162CB42090D96600547126 /* TransactionCategoryRepository.swift in Sources */,
 				35162CAD208FC39E00547126 /* TransactionsGrouping.swift in Sources */,
@@ -997,6 +1002,7 @@
 				353817E0208E65DC00EA967F /* CalendarDateManagedObject+CoreDataClass.swift in Sources */,
 				357B860C20D1AF54001E5D25 /* Sequence+Int.swift in Sources */,
 				35162C8A208FC0A100547126 /* TransactionsRepository.swift in Sources */,
+				355A563420FA3AEC003561FE /* TransactionCellViewModelImpl.swift in Sources */,
 				358BEC0720C9B15D003A3800 /* StatsChartsDataProcessor.swift in Sources */,
 				35162CB52090D96600547126 /* TransactionCategoryRepository.swift in Sources */,
 				35162CAE208FC39E00547126 /* TransactionsGrouping.swift in Sources */,
