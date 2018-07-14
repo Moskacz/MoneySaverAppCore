@@ -38,11 +38,10 @@ internal class TransactionCellViewModelImpl: TransactionCellViewModel {
     
     var indicatorGradient: Gradient? {
         let value = transaction.value?.doubleValue ?? 0
-//        if value >= 0 {
-//            return AppGradient.positiveValueTransaction.value
-//        } else {
-//            return AppGradient.negativeValueTransaction.value
-//        }
-        return nil
+        if value >= 0 {
+            return AppGradient.positiveValueTransaction.value
+        } else {
+            return AppGradient.negativeValueTransaction.value
+        }
     }
 }

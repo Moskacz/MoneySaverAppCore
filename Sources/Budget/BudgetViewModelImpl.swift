@@ -63,7 +63,7 @@ internal final class BudgetViewModelImpl: BudgetViewModel {
         let toSpent = max(budget + expenses, 0)
         let toSpentMoneyEntry = PieChartDataEntry(value: toSpent, label: "Left")
         let dataSet = PieChartDataSet(values: [spentMoneyEntry, toSpentMoneyEntry], label: nil)
-//        dataSet.colors = [AppColor.red.value, AppColor.green.value]
+        dataSet.colors = [AppColor.red.value, AppColor.green.value]
         dataSet.colors = [NSUIColor.red, NSUIColor.green]
         return PieChartData(dataSet: dataSet)
     }
@@ -81,7 +81,7 @@ internal final class BudgetViewModelImpl: BudgetViewModel {
         }
         
         let dataSet = BarChartDataSet(values: entries, label: "Estimated spendings")
-//        barDataSet.colors = [AppColor.green.value]
+        dataSet.colors = [AppColor.green.value]
         dataSet.drawValuesEnabled = false
         return BarChartData(dataSet: dataSet)
     }
@@ -92,7 +92,7 @@ internal final class BudgetViewModelImpl: BudgetViewModel {
         }
         
         let dataSet = LineChartDataSet(values: entries, label: "Actual spendings")
-//        dataSet.colors = [AppColor.red.value]
+        dataSet.colors = [AppColor.red.value]
         dataSet.mode = .linear
         dataSet.lineWidth = 5
         dataSet.drawCirclesEnabled = false
