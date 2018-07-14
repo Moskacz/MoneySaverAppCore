@@ -117,6 +117,10 @@
 		35593C082092305800DEEDB5 /* Sequence+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35593C042092304D00DEEDB5 /* Sequence+Extension.swift */; };
 		35593C0C2092312200DEEDB5 /* FakeTransction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35593C0B2092312100DEEDB5 /* FakeTransction.swift */; };
 		35593C0D2092312200DEEDB5 /* FakeTransction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35593C0B2092312100DEEDB5 /* FakeTransction.swift */; };
+		355A562A20FA38D2003561FE /* TransactionsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355A562920FA38D2003561FE /* TransactionsListViewModel.swift */; };
+		355A562B20FA38D2003561FE /* TransactionsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355A562920FA38D2003561FE /* TransactionsListViewModel.swift */; };
+		355A563020FA3991003561FE /* TransactionCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355A562F20FA3991003561FE /* TransactionCellViewModel.swift */; };
+		355A563120FA3991003561FE /* TransactionCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355A562F20FA3991003561FE /* TransactionCellViewModel.swift */; };
 		356668A1208CE5CB0052E724 /* MoneySaverAppCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35666897208CE5CB0052E724 /* MoneySaverAppCore.framework */; };
 		356668BD208CE62C0052E724 /* MoneySaverAppCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 356668B4208CE62C0052E724 /* MoneySaverAppCore.framework */; };
 		356668D0208CE99D0052E724 /* MoneySaverAppCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 356668CF208CE99D0052E724 /* MoneySaverAppCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -318,6 +322,8 @@
 		35593BFF2092302500DEEDB5 /* CalendarTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarTests.swift; sourceTree = "<group>"; };
 		35593C042092304D00DEEDB5 /* Sequence+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Sequence+Extension.swift"; sourceTree = "<group>"; };
 		35593C0B2092312100DEEDB5 /* FakeTransction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FakeTransction.swift; sourceTree = "<group>"; };
+		355A562920FA38D2003561FE /* TransactionsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsListViewModel.swift; sourceTree = "<group>"; };
+		355A562F20FA3991003561FE /* TransactionCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCellViewModel.swift; sourceTree = "<group>"; };
 		35666897208CE5CB0052E724 /* MoneySaverAppCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MoneySaverAppCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		356668A0208CE5CB0052E724 /* MoneySaverAppCore-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MoneySaverAppCore-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		356668B4208CE62C0052E724 /* MoneySaverAppCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MoneySaverAppCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -556,6 +562,23 @@
 			path = Fakes;
 			sourceTree = "<group>";
 		};
+		355A562420FA38BB003561FE /* TransactionsList */ = {
+			isa = PBXGroup;
+			children = (
+				355A562E20FA3975003561FE /* Cell */,
+				355A562920FA38D2003561FE /* TransactionsListViewModel.swift */,
+			);
+			path = TransactionsList;
+			sourceTree = "<group>";
+		};
+		355A562E20FA3975003561FE /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				355A562F20FA3991003561FE /* TransactionCellViewModel.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		3566688B208CE4A40052E724 = {
 			isa = PBXGroup;
 			children = (
@@ -581,6 +604,7 @@
 		356668CB208CE66C0052E724 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				355A562420FA38BB003561FE /* TransactionsList */,
 				352D626320F5296100CBE0BD /* Summary */,
 				35423E0A20EE9E26004E006B /* Stats */,
 				3536466720E3F6FD00B055B6 /* Budget */,
@@ -873,6 +897,7 @@
 				359E40BB20DD854000801E20 /* ObservationToken.swift in Sources */,
 				35162CA9208FC32500547126 /* Calendar+Extensions.swift in Sources */,
 				35162C90208FC10A00547126 /* DateRange.swift in Sources */,
+				355A562A20FA38D2003561FE /* TransactionsListViewModel.swift in Sources */,
 				35162C96208FC14900547126 /* TransactionCategoryProtocol.swift in Sources */,
 				35CB167F20ED572D0037EF94 /* BudgetRepositoryImpl.swift in Sources */,
 				353817E3208E65DC00EA967F /* BudgetManagedObject+CoreDataClass.swift in Sources */,
@@ -905,6 +930,7 @@
 				353817D1208E642C00EA967F /* DataModel.xcdatamodeld in Sources */,
 				353817E9208E65DC00EA967F /* TransactionManagedObject+CoreDataProperties.swift in Sources */,
 				35162CA3208FC2D200547126 /* NSManagedObject+Extensions.swift in Sources */,
+				355A563020FA3991003561FE /* TransactionCellViewModel.swift in Sources */,
 				35423E0F20EE9E44004E006B /* StatsViewModelImpl.swift in Sources */,
 				352D626520F5297500CBE0BD /* TransactionsSummaryViewModel.swift in Sources */,
 				35423E0820EE9DB2004E006B /* BudgetViewModelImpl.swift in Sources */,
@@ -962,6 +988,7 @@
 				359E40BC20DD854000801E20 /* ObservationToken.swift in Sources */,
 				35162CAA208FC32500547126 /* Calendar+Extensions.swift in Sources */,
 				35162C91208FC10A00547126 /* DateRange.swift in Sources */,
+				355A562B20FA38D2003561FE /* TransactionsListViewModel.swift in Sources */,
 				35162C97208FC14900547126 /* TransactionCategoryProtocol.swift in Sources */,
 				35CB168020ED572D0037EF94 /* BudgetRepositoryImpl.swift in Sources */,
 				353817E4208E65DC00EA967F /* BudgetManagedObject+CoreDataClass.swift in Sources */,
@@ -994,6 +1021,7 @@
 				353817EA208E65DC00EA967F /* TransactionManagedObject+CoreDataProperties.swift in Sources */,
 				35162CA4208FC2D200547126 /* NSManagedObject+Extensions.swift in Sources */,
 				35AEB11C2093A79F00DCE038 /* CoreDataCollectionUpdateHandler.swift in Sources */,
+				355A563120FA3991003561FE /* TransactionCellViewModel.swift in Sources */,
 				35423E1020EE9E44004E006B /* StatsViewModelImpl.swift in Sources */,
 				352D626620F5297500CBE0BD /* TransactionsSummaryViewModel.swift in Sources */,
 				35423E0920EE9DB2004E006B /* BudgetViewModelImpl.swift in Sources */,
