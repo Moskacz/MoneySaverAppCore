@@ -9,5 +9,5 @@ import Foundation
 import MMFoundation
 
 public protocol TransactionsListViewModel {
-    var resultsController: ResultsController<TransactionCellViewModel> { get }
+    func resultsController() -> ResultsController<TransactionCellViewModel>
 }
