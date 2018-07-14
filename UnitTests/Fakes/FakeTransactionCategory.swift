@@ -7,6 +7,7 @@
 
 import Foundation
 import MoneySaverAppCore
+@testable import MMFoundation
 
 class FakeTransactionCategory: TransactionCategoryProtocol {
     var name: String? = nil

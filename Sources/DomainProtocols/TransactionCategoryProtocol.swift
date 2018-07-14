@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import MMFoundation
 
 public protocol TransactionCategoryProtocol {
     var name: String? { get }

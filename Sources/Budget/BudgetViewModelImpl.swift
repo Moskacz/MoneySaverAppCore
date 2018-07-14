@@ -7,6 +7,7 @@
 
 import Foundation
 import Charts
+import MMFoundation
 
 internal final class BudgetViewModelImpl: BudgetViewModel {
     

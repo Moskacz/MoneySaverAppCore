@@ -8,6 +8,7 @@
 import XCTest
 import Charts
 @testable import MoneySaverAppCore
+@testable import MMFoundation
 
 class StatsViewModelTests: XCTestCase {
     

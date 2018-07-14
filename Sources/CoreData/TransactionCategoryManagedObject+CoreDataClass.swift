@@ -8,6 +8,7 @@
 
 import Foundation
 import CoreData
+import MMFoundation
 
 #if os(OSX)
 import AppKit

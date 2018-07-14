@@ -8,6 +8,7 @@
 
 import Foundation
 import CoreData
+import MMFoundation
 
 public protocol TransactionCategoryRepository {
     func countOfEntities() -> Int
