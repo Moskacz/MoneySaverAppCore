@@ -8,30 +8,13 @@
 import Foundation
 import CoreData
 @testable import MoneySaverAppCore
+import MMFoundation
 
 class FakeTransactionsRepository: TransactionsRepository {
     
+    var allTransactionsResultController: ResultsController<TransactionProtocol> { fatalError() }
+    
     var transactionChangedCallback: (([TransactionProtocol]) -> Void)?
-    
-    var allTransactionsFRC: NSFetchedResultsController<TransactionManagedObject> {
-        fatalError()
-    }
-    
-    var context: NSManagedObjectContext {
-        fatalError()
-    }
-    
-    var fetchRequest: NSFetchRequest<TransactionManagedObject> {
-        fatalError()
-    }
-    
-    var expensesOnlyPredicate: NSPredicate {
-        fatalError()
-    }
-    
-    func predicate(forDateRange range: DateRange) -> NSPredicate? {
-        fatalError()
-    }
     
     func addTransaction(data: TransactionData, category: TransactionCategoryManagedObject) {
         fatalError()

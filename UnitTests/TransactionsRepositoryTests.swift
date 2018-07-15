@@ -12,7 +12,7 @@ class TransactionsRepositoryTests: XCTestCase {
     
     var coreDataStack: InMemoryCoreDataStack!
     var fakeCaledar: FakeCalendar!
-    var sut: TransactionsRepositoryImplementation!
+    var sut: CoreDataTransactionsRepository!
     var notificationCenter: FakeTransactionNotificationCenter!
     
     override func setUp() {
@@ -21,10 +21,10 @@ class TransactionsRepositoryTests: XCTestCase {
         coreDataStack = InMemoryCoreDataStack()
         fakeCaledar = FakeCalendar()
         notificationCenter = FakeTransactionNotificationCenter()
-        sut = TransactionsRepositoryImplementation(context: coreDataStack.getViewContext(),
-                                                   logger: NullLogger(),
-                                                   calendar: fakeCaledar,
-                                                   notificationCenter: notificationCenter)
+        sut = CoreDataTransactionsRepository(context: coreDataStack.getViewContext(),
+                                             logger: NullLogger(),
+                                             calendar: fakeCaledar,
+                                             notificationCenter: notificationCenter)
     }
     
     override func tearDown() {
@@ -32,44 +32,6 @@ class TransactionsRepositoryTests: XCTestCase {
         fakeCaledar = nil
         coreDataStack = nil
         super.tearDown()
-    }
-    
-    func test_predicateForDateRange_ifRangeIsAllTime_thenShouldReturnNil() {
-        fakeCaledar.nowToReturn = Date()
-        let predicate = sut.predicate(forDateRange: .allTime)
-        XCTAssertNil(predicate)
-    }
-    
-    func test_predicateForDateRange_todayRange() {
-        fakeCaledar.nowToReturn = Date()
-        fakeCaledar.dayOfEraOfDateToReturn = 5
-        
-        let predicate = sut.predicate(forDateRange: .today)
-        XCTAssertEqual(predicate?.predicateFormat, "date.dayOfEra == 5")
-    }
-    
-    func test_predicateForDateRange_thisWeekRange() {
-        fakeCaledar.nowToReturn = Date()
-        fakeCaledar.weekOfEraOfDateToReturn = 5
-        
-        let predicate = sut.predicate(forDateRange: .thisWeek)
-        XCTAssertEqual(predicate?.predicateFormat, "date.weekOfEra == 5")
-    }
-    
-    func test_predicateForDateRange_thisMonth() {
-        fakeCaledar.nowToReturn = Date()
-        fakeCaledar.monthOfEraOfDateToReturn = 5
-        
-        let predicate = sut.predicate(forDateRange: .thisMonth)
-        XCTAssertEqual(predicate?.predicateFormat, "date.monthOfEra == 5")
-    }
-    
-    func test_predicateForDateRange_thisYear() {
-        fakeCaledar.nowToReturn = Date()
-        fakeCaledar.yearOfDateToReturn = 2018
-        
-        let predicate = sut.predicate(forDateRange: .thisYear)
-        XCTAssertEqual(predicate?.predicateFormat, "date.year == 2018")
     }
     
     func test_addTransaction_shouldCreateNewEntityInContextWithGivenData() {
@@ -97,13 +59,14 @@ class TransactionsRepositoryTests: XCTestCase {
     }
     
     func test_deleteTransaction_shouldRemoveItFromContext() throws {
+        let context = coreDataStack.getViewContext()
         let category = TransactionCategoryManagedObject(context: coreDataStack.getViewContext())
         let data = TransactionData(title: "test", value: Decimal(-10), creationDate: Date())
         sut.addTransaction(data: data, category: category)
-        let transactions = try sut.allTransactions()
-        XCTAssertEqual(transactions.count, 1)
-        sut.remove(transaction: transactions[0])
-        XCTAssertEqual(try sut.allTransactions().count, 0)
+        XCTAssertEqual(context.registeredObjects.filter { $0 is TransactionManagedObject }.count, 1)
+        let createdTransaction = context.registeredObjects.compactMap { $0 as? TransactionManagedObject }.first!
+        sut.remove(transaction: createdTransaction)
+        XCTAssertEqual(context.registeredObjects.filter { $0 is TransactionManagedObject }.count, 0)
     }
     
     func test_deleteTransaction_shouldPostNotification() {
