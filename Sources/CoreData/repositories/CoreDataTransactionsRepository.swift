@@ -9,29 +9,9 @@
 import Foundation
 import CoreData
 
-internal struct TransactionData {
-    internal let title: String
-    internal let value: Decimal
-    internal let creationDate: Date
-}
-
-internal protocol TransactionsRepository {
+internal class CoreDataTransactionsRepository: TransactionsRepository {
     
-    var allTransactionsFRC: NSFetchedResultsController<TransactionManagedObject> { get }
-    var context: NSManagedObjectContext { get }
-    var fetchRequest: NSFetchRequest<TransactionManagedObject> { get }
-    var expensesOnlyPredicate: NSPredicate { get }
-    
-    func predicate(forDateRange range: DateRange) -> NSPredicate?
-    func addTransaction(data: TransactionData, category: TransactionCategoryManagedObject)
-    func remove(transaction: TransactionManagedObject)
-    func allTransactions() throws -> [TransactionManagedObject]
-    func observeTransactionsChanged(callback: @escaping ([TransactionProtocol]) -> Void) -> ObservationToken
-}
-
-internal class TransactionsRepositoryImplementation: TransactionsRepository {
-    
-    internal let context: NSManagedObjectContext
+    private let context: NSManagedObjectContext
     private let calendar: CalendarProtocol
     private let logger: Logger
     private let notificationCenter: TransactionNotificationCenter
@@ -47,7 +27,7 @@ internal class TransactionsRepositoryImplementation: TransactionsRepository {
     }
     
     internal var allTransactionsFRC: NSFetchedResultsController<TransactionManagedObject> {
-        let request = fetchRequest
+        let request: NSFetchRequest<TransactionManagedObject> = TransactionManagedObject.fetchRequest()
         request.includesPropertyValues = true
         request.fetchBatchSize = 20
         
@@ -58,34 +38,6 @@ internal class TransactionsRepositoryImplementation: TransactionsRepository {
                                           managedObjectContext: context,
                                           sectionNameKeyPath: TransactionManagedObject.KeyPath.dayOfEra.rawValue,
                                           cacheName: nil)
-    }
-    
-    internal var fetchRequest: NSFetchRequest<TransactionManagedObject> {
-        get {
-            return TransactionManagedObject.fetchRequest()
-        }
-    }
-    
-    internal var expensesOnlyPredicate: NSPredicate {
-        get {
-            return NSPredicate(format: "value < 0")
-        }
-    }
-    
-    internal func predicate(forDateRange range: DateRange) -> NSPredicate? {
-        let date = calendar.now
-        switch range {
-        case .today:
-            return NSPredicate(format: "\(TransactionManagedObject.KeyPath.dayOfEra.rawValue) == \(calendar.dayOfEraOf(date: date))")
-        case .thisWeek:
-            return NSPredicate(format: "\(TransactionManagedObject.KeyPath.weekOfEra.rawValue) == \(calendar.weekOfEraOf(date: date))")
-        case .thisMonth:
-            return NSPredicate(format: "\(TransactionManagedObject.KeyPath.monthOfEra.rawValue) == \(calendar.monthOfEraOf(date: date))")
-        case .thisYear:
-            return NSPredicate(format: "\(TransactionManagedObject.KeyPath.year.rawValue) == \(calendar.yearOf(date: date))")
-        case .allTime:
-            return nil
-        }
     }
     
     internal func addTransaction(data: TransactionData, category: TransactionCategoryManagedObject) {
@@ -110,8 +62,8 @@ internal class TransactionsRepositoryImplementation: TransactionsRepository {
         postNotificationWithCurrentTransactions()
     }
     
-    internal func allTransactions() throws -> [TransactionManagedObject] {
-        let request = fetchRequest
+    private func allTransactions() throws -> [TransactionManagedObject] {
+        let request: NSFetchRequest<TransactionManagedObject> = TransactionManagedObject.fetchRequest()
         request.returnsObjectsAsFaults = false
         return try context.fetch(request)
     }
