@@ -8,6 +8,7 @@
 
 import Foundation
 import CoreData
+import MMFoundation
 
 internal class CoreDataTransactionsRepository: TransactionsRepository {
     
@@ -26,18 +27,19 @@ internal class CoreDataTransactionsRepository: TransactionsRepository {
         self.notificationCenter = notificationCenter
     }
     
-    internal var allTransactionsFRC: NSFetchedResultsController<TransactionManagedObject> {
-        let request: NSFetchRequest<TransactionManagedObject> = TransactionManagedObject.fetchRequest()
-        request.includesPropertyValues = true
-        request.fetchBatchSize = 20
-        
-        request.sortDescriptors = [NSSortDescriptor(key: TransactionManagedObject.KeyPath.dayOfEra.rawValue, ascending: false),
-                                   NSSortDescriptor(key: TransactionManagedObject.KeyPath.timeInterval.rawValue, ascending: false)]
-        
-        return NSFetchedResultsController(fetchRequest: request,
-                                          managedObjectContext: context,
-                                          sectionNameKeyPath: TransactionManagedObject.KeyPath.dayOfEra.rawValue,
-                                          cacheName: nil)
+    internal var allTransactionsResultController: ResultsController<TransactionProtocol> {
+//        let request: NSFetchRequest<TransactionManagedObject> = TransactionManagedObject.fetchRequest()
+//        request.includesPropertyValues = true
+//        request.fetchBatchSize = 20
+//
+//        request.sortDescriptors = [NSSortDescriptor(key: TransactionManagedObject.KeyPath.dayOfEra.rawValue, ascending: false),
+//                                   NSSortDescriptor(key: TransactionManagedObject.KeyPath.timeInterval.rawValue, ascending: false)]
+//
+//        return NSFetchedResultsController(fetchRequest: request,
+//                                          managedObjectContext: context,
+//                                          sectionNameKeyPath: TransactionManagedObject.KeyPath.dayOfEra.rawValue,
+//                                          cacheName: nil)
+        fatalError()
     }
     
     internal func addTransaction(data: TransactionData, category: TransactionCategoryManagedObject) {

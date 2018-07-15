@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import CoreData
+import MMFoundation
 
 internal struct TransactionData {
     internal let title: String
@@ -15,7 +15,7 @@ internal struct TransactionData {
 }
 
 internal protocol TransactionsRepository {
-    var allTransactionsFRC: NSFetchedResultsController<TransactionManagedObject> { get }
+    var allTransactionsResultController: ResultsController<TransactionProtocol> { get }
     func addTransaction(data: TransactionData, category: TransactionCategoryManagedObject)
     func remove(transaction: TransactionManagedObject)
     func observeTransactionsChanged(callback: @escaping ([TransactionProtocol]) -> Void) -> ObservationToken
