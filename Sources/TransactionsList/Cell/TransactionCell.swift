@@ -10,8 +10,8 @@ import MMFoundation
 
 public protocol TransactionCell {
     func set(icon: Image?)
+    func set(amount: String?)
     func set(title: String?)
-    func set(description: String?)
     func set(date: String?)
     func set(indicator: Gradient?)
 }
