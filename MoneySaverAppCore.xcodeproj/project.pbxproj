@@ -39,6 +39,8 @@
 		35162CBC2090DE6D00547126 /* UserPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35162CBA2090DE6D00547126 /* UserPreferences.swift */; };
 		35162CBE2090DEB200547126 /* UserPreferencesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35162CBD2090DEB200547126 /* UserPreferencesTests.swift */; };
 		35162CBF2090DEB200547126 /* UserPreferencesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35162CBD2090DEB200547126 /* UserPreferencesTests.swift */; };
+		35227EFC2105082100B72F3D /* Factory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35227EFB2105082100B72F3D /* Factory.swift */; };
+		35227EFD2105082100B72F3D /* Factory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35227EFB2105082100B72F3D /* Factory.swift */; };
 		352D625C20F3D21400CBE0BD /* BudgetViewModelImplTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352D625B20F3D21400CBE0BD /* BudgetViewModelImplTests.swift */; };
 		352D625D20F3D21400CBE0BD /* BudgetViewModelImplTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352D625B20F3D21400CBE0BD /* BudgetViewModelImplTests.swift */; };
 		352D625F20F3D30400CBE0BD /* FakeBudgetViewModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352D625E20F3D30400CBE0BD /* FakeBudgetViewModelDelegate.swift */; };
@@ -137,8 +139,6 @@
 		356668BD208CE62C0052E724 /* MoneySaverAppCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 356668B4208CE62C0052E724 /* MoneySaverAppCore.framework */; };
 		356668D0208CE99D0052E724 /* MoneySaverAppCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 356668CF208CE99D0052E724 /* MoneySaverAppCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		356668D1208CE99D0052E724 /* MoneySaverAppCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 356668CF208CE99D0052E724 /* MoneySaverAppCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		356668D3208CEA270052E724 /* TestClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356668D2208CEA270052E724 /* TestClass.swift */; };
-		356668D4208CEA270052E724 /* TestClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356668D2208CEA270052E724 /* TestClass.swift */; };
 		356668D9208CEB910052E724 /* TestClassUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356668D8208CEB910052E724 /* TestClassUnitTests.swift */; };
 		356668DA208CEB910052E724 /* TestClassUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356668D8208CEB910052E724 /* TestClassUnitTests.swift */; };
 		357B860B20D1AF54001E5D25 /* Sequence+Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = 357B860A20D1AF54001E5D25 /* Sequence+Int.swift */; };
@@ -296,6 +296,7 @@
 		35162CB32090D96600547126 /* TransactionCategoryRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionCategoryRepository.swift; sourceTree = "<group>"; };
 		35162CBA2090DE6D00547126 /* UserPreferences.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserPreferences.swift; sourceTree = "<group>"; };
 		35162CBD2090DEB200547126 /* UserPreferencesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserPreferencesTests.swift; sourceTree = "<group>"; };
+		35227EFB2105082100B72F3D /* Factory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Factory.swift; sourceTree = "<group>"; };
 		352D625B20F3D21400CBE0BD /* BudgetViewModelImplTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetViewModelImplTests.swift; sourceTree = "<group>"; };
 		352D625E20F3D30400CBE0BD /* FakeBudgetViewModelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeBudgetViewModelDelegate.swift; sourceTree = "<group>"; };
 		352D626420F5297500CBE0BD /* TransactionsSummaryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsSummaryViewModel.swift; sourceTree = "<group>"; };
@@ -349,7 +350,6 @@
 		356668CD208CE8AD0052E724 /* Info-macOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-macOS.plist"; sourceTree = "<group>"; };
 		356668CE208CE8AD0052E724 /* Info-iOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-iOS.plist"; sourceTree = "<group>"; };
 		356668CF208CE99D0052E724 /* MoneySaverAppCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoneySaverAppCore.h; sourceTree = "<group>"; };
-		356668D2208CEA270052E724 /* TestClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestClass.swift; sourceTree = "<group>"; };
 		356668D5208CEB040052E724 /* Info-macOS-unittests.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-macOS-unittests.plist"; sourceTree = "<group>"; };
 		356668D6208CEB040052E724 /* Info-iOS-unittests.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-iOS-unittests.plist"; sourceTree = "<group>"; };
 		356668D8208CEB910052E724 /* TestClassUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestClassUnitTests.swift; sourceTree = "<group>"; };
@@ -659,7 +659,7 @@
 				353817CE208E640800EA967F /* CoreData */,
 				356668CF208CE99D0052E724 /* MoneySaverAppCore.h */,
 				356668CC208CE6DD0052E724 /* Configuration */,
-				356668D2208CEA270052E724 /* TestClass.swift */,
+				35227EFB2105082100B72F3D /* Factory.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -940,6 +940,7 @@
 				355A562A20FA38D2003561FE /* TransactionsListViewModel.swift in Sources */,
 				35162C96208FC14900547126 /* TransactionCategoryProtocol.swift in Sources */,
 				355A564120FB390C003561FE /* TransactionsRepository.swift in Sources */,
+				35227EFC2105082100B72F3D /* Factory.swift in Sources */,
 				35CB167F20ED572D0037EF94 /* BudgetRepositoryImpl.swift in Sources */,
 				353817E3208E65DC00EA967F /* BudgetManagedObject+CoreDataClass.swift in Sources */,
 				353817E5208E65DC00EA967F /* BudgetManagedObject+CoreDataProperties.swift in Sources */,
@@ -961,7 +962,6 @@
 				353817E7208E65DC00EA967F /* TransactionManagedObject+CoreDataClass.swift in Sources */,
 				35AEB1192093A79F00DCE038 /* CollectionUpdater.swift in Sources */,
 				35CB168220ED5A470037EF94 /* NotificationCenter+BudgetNotificationCenter.swift in Sources */,
-				356668D3208CEA270052E724 /* TestClass.swift in Sources */,
 				358BEC0320C9B0E6003A3800 /* ChartsDataProcessor.swift in Sources */,
 				35162C8E208FC10A00547126 /* CalendarProtocol.swift in Sources */,
 				354E4B9520A231F6009A8311 /* InMemoryCoreDataStack.swift in Sources */,
@@ -1037,6 +1037,7 @@
 				355A562B20FA38D2003561FE /* TransactionsListViewModel.swift in Sources */,
 				35162C97208FC14900547126 /* TransactionCategoryProtocol.swift in Sources */,
 				355A564220FB390C003561FE /* TransactionsRepository.swift in Sources */,
+				35227EFD2105082100B72F3D /* Factory.swift in Sources */,
 				35CB168020ED572D0037EF94 /* BudgetRepositoryImpl.swift in Sources */,
 				353817E4208E65DC00EA967F /* BudgetManagedObject+CoreDataClass.swift in Sources */,
 				353817E6208E65DC00EA967F /* BudgetManagedObject+CoreDataProperties.swift in Sources */,
@@ -1056,7 +1057,6 @@
 				35162C9B208FC14900547126 /* TransactionProtocol.swift in Sources */,
 				353817E8208E65DC00EA967F /* TransactionManagedObject+CoreDataClass.swift in Sources */,
 				35AEB11A2093A79F00DCE038 /* CollectionUpdater.swift in Sources */,
-				356668D4208CEA270052E724 /* TestClass.swift in Sources */,
 				35CB168320ED5A470037EF94 /* NotificationCenter+BudgetNotificationCenter.swift in Sources */,
 				35162C8F208FC10A00547126 /* CalendarProtocol.swift in Sources */,
 				358BEC0420C9B0E6003A3800 /* ChartsDataProcessor.swift in Sources */,
