@@ -17,6 +17,6 @@ internal class TransactionsListViewModelImpl: TransactionsListViewModel {
     }
     
     func resultsController() -> ResultsController<TransactionProtocol> {
-        fatalError()
+        return repository.allTransactionsResultController
     }
 }

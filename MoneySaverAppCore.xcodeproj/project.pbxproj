@@ -91,6 +91,8 @@
 		35423E1820EEA364004E006B /* FakeBudget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35423E1620EEA364004E006B /* FakeBudget.swift */; };
 		35423E1A20F004FE004E006B /* TransactionNotificationCenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35423E1920F004FE004E006B /* TransactionNotificationCenterTests.swift */; };
 		35423E1B20F004FE004E006B /* TransactionNotificationCenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35423E1920F004FE004E006B /* TransactionNotificationCenterTests.swift */; };
+		354C12472104A4AF0001AB19 /* TransactionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354C12462104A4AF0001AB19 /* TransactionCell.swift */; };
+		354C124C2104A5680001AB19 /* TransactionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354C12462104A4AF0001AB19 /* TransactionCell.swift */; };
 		354E4B8820A2301C009A8311 /* CalendarDateManagedObjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354E4B8720A2301C009A8311 /* CalendarDateManagedObjectTests.swift */; };
 		354E4B8920A2301C009A8311 /* CalendarDateManagedObjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354E4B8720A2301C009A8311 /* CalendarDateManagedObjectTests.swift */; };
 		354E4B8B20A23115009A8311 /* TransactionManagedObjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354E4B8A20A23115009A8311 /* TransactionManagedObjectTests.swift */; };
@@ -316,6 +318,7 @@
 		35423E1320EEA293004E006B /* BudgetNotificationCenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetNotificationCenterTests.swift; sourceTree = "<group>"; };
 		35423E1620EEA364004E006B /* FakeBudget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeBudget.swift; sourceTree = "<group>"; };
 		35423E1920F004FE004E006B /* TransactionNotificationCenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionNotificationCenterTests.swift; sourceTree = "<group>"; };
+		354C12462104A4AF0001AB19 /* TransactionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCell.swift; sourceTree = "<group>"; };
 		354E4B8720A2301C009A8311 /* CalendarDateManagedObjectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDateManagedObjectTests.swift; sourceTree = "<group>"; };
 		354E4B8A20A23115009A8311 /* TransactionManagedObjectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionManagedObjectTests.swift; sourceTree = "<group>"; };
 		354E4B8D20A23153009A8311 /* StringTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringTests.swift; sourceTree = "<group>"; };
@@ -589,6 +592,7 @@
 			children = (
 				355A562F20FA3991003561FE /* TransactionCellViewModel.swift */,
 				355A563220FA3AEC003561FE /* TransactionCellViewModelImpl.swift */,
+				354C12462104A4AF0001AB19 /* TransactionCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -944,6 +948,7 @@
 				35162CB42090D96600547126 /* TransactionCategoryRepository.swift in Sources */,
 				35162CAD208FC39E00547126 /* TransactionsGrouping.swift in Sources */,
 				353817ED208E65DC00EA967F /* TransactionCategoryManagedObject+CoreDataProperties.swift in Sources */,
+				354C12472104A4AF0001AB19 /* TransactionCell.swift in Sources */,
 				359E40B420DC3C0400801E20 /* NotificationCenter+TransactionNotificationCenter.swift in Sources */,
 				358BEC0020C9AD25003A3800 /* GroupedData.swift in Sources */,
 				353817D5208E647600EA967F /* CoreDataStack.swift in Sources */,
@@ -1039,6 +1044,7 @@
 				35162CB52090D96600547126 /* TransactionCategoryRepository.swift in Sources */,
 				35162CAE208FC39E00547126 /* TransactionsGrouping.swift in Sources */,
 				353817EE208E65DC00EA967F /* TransactionCategoryManagedObject+CoreDataProperties.swift in Sources */,
+				354C124C2104A5680001AB19 /* TransactionCell.swift in Sources */,
 				359E40B520DC3C0400801E20 /* NotificationCenter+TransactionNotificationCenter.swift in Sources */,
 				358BEC0120C9AD25003A3800 /* GroupedData.swift in Sources */,
 				353817D6208E647600EA967F /* CoreDataStack.swift in Sources */,
