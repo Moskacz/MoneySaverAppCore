@@ -8,10 +8,16 @@
 import Foundation
 import MMFoundation
 
-internal struct TransactionData {
-    internal let title: String
-    internal let value: Decimal
-    internal let creationDate: Date
+public struct TransactionData {
+    public let title: String
+    public let value: Decimal
+    public let creationDate: Date
+    
+    public init(title: String, value: Decimal, creationDate: Date) {
+        self.title = title
+        self.value = value
+        self.creationDate = creationDate
+    }
 }
 
 internal protocol TransactionsRepository {
