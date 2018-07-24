@@ -183,6 +183,8 @@
 		35F4C7A820FA32750095C21D /* MMFoundation.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 35F4C79C20FA2FF90095C21D /* MMFoundation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		35F5BABC20DFEB2A002C2819 /* Charts.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3515F58420D8256D00C8B549 /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		35F5BABE20DFED1A002C2819 /* Charts.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3515F58620D8258700C8B549 /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		35FF6E3F2107C068004FBC87 /* SetupBudgetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35FF6E3E2107C068004FBC87 /* SetupBudgetViewModel.swift */; };
+		35FF6E402107C068004FBC87 /* SetupBudgetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35FF6E3E2107C068004FBC87 /* SetupBudgetViewModel.swift */; };
 		90D1171320E4E7AC008F21D8 /* BudgetProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D1171220E4E7AC008F21D8 /* BudgetProtocol.swift */; };
 		90D1171420E4E7AC008F21D8 /* BudgetProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D1171220E4E7AC008F21D8 /* BudgetProtocol.swift */; };
 /* End PBXBuildFile section */
@@ -371,6 +373,7 @@
 		35CB168120ED5A470037EF94 /* NotificationCenter+BudgetNotificationCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NotificationCenter+BudgetNotificationCenter.swift"; sourceTree = "<group>"; };
 		35DD654520B09F9000909AA4 /* FakeBudgetRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeBudgetRepository.swift; sourceTree = "<group>"; };
 		35F4C79420FA2FF90095C21D /* MMFoundation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MMFoundation.xcodeproj; path = Submodules/MMFoundation/MMFoundation.xcodeproj; sourceTree = "<group>"; };
+		35FF6E3E2107C068004FBC87 /* SetupBudgetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupBudgetViewModel.swift; sourceTree = "<group>"; };
 		90D1171220E4E7AC008F21D8 /* BudgetProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -504,6 +507,7 @@
 		3536466720E3F6FD00B055B6 /* Budget */ = {
 			isa = PBXGroup;
 			children = (
+				35FF6E392107C051004FBC87 /* SetupBudget */,
 				3536466820E3F72A00B055B6 /* BudgetViewModel.swift */,
 				35CB167B20ED56D90037EF94 /* BudgetRepository.swift */,
 				35CB167E20ED572D0037EF94 /* BudgetRepositoryImpl.swift */,
@@ -721,6 +725,14 @@
 				35F4C7A220FA2FF90095C21D /* MMFoundation-macOSTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		35FF6E392107C051004FBC87 /* SetupBudget */ = {
+			isa = PBXGroup;
+			children = (
+				35FF6E3E2107C068004FBC87 /* SetupBudgetViewModel.swift */,
+			);
+			path = SetupBudget;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -974,6 +986,7 @@
 				355A563A20FA7D1D003561FE /* Theme.swift in Sources */,
 				35423E0F20EE9E44004E006B /* StatsViewModelImpl.swift in Sources */,
 				352D626520F5297500CBE0BD /* TransactionsSummaryViewModel.swift in Sources */,
+				35FF6E3F2107C068004FBC87 /* SetupBudgetViewModel.swift in Sources */,
 				35423E0820EE9DB2004E006B /* BudgetViewModelImpl.swift in Sources */,
 				3536466920E3F72A00B055B6 /* BudgetViewModel.swift in Sources */,
 				90D1171320E4E7AC008F21D8 /* BudgetProtocol.swift in Sources */,
@@ -1070,6 +1083,7 @@
 				355A563B20FA7D1D003561FE /* Theme.swift in Sources */,
 				35423E1020EE9E44004E006B /* StatsViewModelImpl.swift in Sources */,
 				352D626620F5297500CBE0BD /* TransactionsSummaryViewModel.swift in Sources */,
+				35FF6E402107C068004FBC87 /* SetupBudgetViewModel.swift in Sources */,
 				35423E0920EE9DB2004E006B /* BudgetViewModelImpl.swift in Sources */,
 				3536466A20E3F72A00B055B6 /* BudgetViewModel.swift in Sources */,
 				90D1171420E4E7AC008F21D8 /* BudgetProtocol.swift in Sources */,
