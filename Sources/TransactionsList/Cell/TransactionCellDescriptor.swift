@@ -8,17 +8,17 @@
 import Foundation
 import MMFoundation
 
-internal class TransactionCellDescriptor: CellDescriptor {
-    typealias Cell = TransactionCell
-    typealias T = TransactionProtocol
+public final class TransactionCellDescriptor<TC: TransactionCell>: CellDescriptor {
+    public typealias Cell = TC
+    public typealias T = TransactionProtocol
     
     private let dateFormatter: DateFormatter
     
-    internal init(dateFormatter: DateFormatter) {
+    public init(dateFormatter: DateFormatter) {
         self.dateFormatter = dateFormatter
     }
     
-    func configure(cell: TransactionCell, with object: TransactionProtocol) {
+    public func configure(cell: TC, with object: TransactionProtocol) {
         let viewModel = TransactionCellViewModelImpl(transaction: object,
                                                      formatter: dateFormatter)
         cell.set(icon: viewModel.categoryIcon)
