@@ -8,5 +8,9 @@
 import Foundation
 
 public protocol SetupBudgetViewModel {
-    func save(budget: Double)
+    func saveBudget(amountText: String?) throws
+}
+
+public enum SetupBudgetError: Error {
+    case incorrectAmount
 }
