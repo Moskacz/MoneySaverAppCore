@@ -8,7 +8,7 @@
 import Foundation
 
 public protocol Factory {
-    func makeTransactionsListViewModel() -> TransactionsListViewModel
+    func makeTransactionsListViewModel() -> TransactionsListCoordinator
     func makeTransactionsSummaryViewModel() -> TransactionsSummaryViewModel
     func makeBudgetViewModel() -> BudgetViewModel
     func makeStatsViewModel() -> StatsViewModel

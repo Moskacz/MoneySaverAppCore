@@ -8,7 +8,7 @@
 import Foundation
 import MMFoundation
 
-internal class TransactionsListViewModelImpl: TransactionsListViewModel {
+internal class TransactionsListCoordinatorImpl: TransactionsListCoordinator {
     
     private let repository: TransactionsRepository
     private let resultsController: ResultsController<TransactionProtocol>
@@ -30,8 +30,8 @@ internal class TransactionsListViewModelImpl: TransactionsListViewModel {
         return resultsController.objectsIn(section: section)?.count ?? 0
     }
     
-    func configure(cell: TransactionCell, at path: IndexPath) {
-        
+    func cellViewModelAt(index: ListItemIndex) -> TransactionCellViewModel {
+        fatalError()
     }
     
     func titleFor(section: Int) -> String {
