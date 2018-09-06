@@ -15,3 +15,14 @@ public protocol TransactionCell {
     func set(date: String?)
     func set(indicator: Gradient?)
 }
+
+extension TransactionCell {
+    
+    func updateWith(viewModel: TransactionCellViewModel) {
+        set(icon: viewModel.categoryIcon)
+        set(amount: viewModel.titleText)
+        set(title: viewModel.descriptionText)
+        set(date: viewModel.dateText)
+        set(indicator: viewModel.indicatorGradient)
+    }
+}

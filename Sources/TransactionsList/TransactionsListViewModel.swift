@@ -9,5 +9,10 @@ import Foundation
 import MMFoundation
 
 public protocol TransactionsListViewModel {
-    func resultsController() -> ResultsController<TransactionProtocol>
+    func set(delegate: ResultsControllerDelegate)
+    var numberOfSections: Int { get }
+    func numberOfRowsIn(section: Int) -> Int
+    func configure(cell: TransactionCell, at path: IndexPath)
+    func titleFor(section: Int) -> String
+    func commitDeletionOfTransactionAt(indexPath: IndexPath)
 }

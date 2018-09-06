@@ -95,8 +95,6 @@
 		35423E1B20F004FE004E006B /* TransactionNotificationCenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35423E1920F004FE004E006B /* TransactionNotificationCenterTests.swift */; };
 		354C12472104A4AF0001AB19 /* TransactionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354C12462104A4AF0001AB19 /* TransactionCell.swift */; };
 		354C124C2104A5680001AB19 /* TransactionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354C12462104A4AF0001AB19 /* TransactionCell.swift */; };
-		354C124E2104A5970001AB19 /* TransactionCellDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354C124D2104A5970001AB19 /* TransactionCellDescriptor.swift */; };
-		354C124F2104A5970001AB19 /* TransactionCellDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354C124D2104A5970001AB19 /* TransactionCellDescriptor.swift */; };
 		354E4B8820A2301C009A8311 /* CalendarDateManagedObjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354E4B8720A2301C009A8311 /* CalendarDateManagedObjectTests.swift */; };
 		354E4B8920A2301C009A8311 /* CalendarDateManagedObjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354E4B8720A2301C009A8311 /* CalendarDateManagedObjectTests.swift */; };
 		354E4B8B20A23115009A8311 /* TransactionManagedObjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354E4B8A20A23115009A8311 /* TransactionManagedObjectTests.swift */; };
@@ -322,7 +320,6 @@
 		35423E1620EEA364004E006B /* FakeBudget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeBudget.swift; sourceTree = "<group>"; };
 		35423E1920F004FE004E006B /* TransactionNotificationCenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionNotificationCenterTests.swift; sourceTree = "<group>"; };
 		354C12462104A4AF0001AB19 /* TransactionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCell.swift; sourceTree = "<group>"; };
-		354C124D2104A5970001AB19 /* TransactionCellDescriptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCellDescriptor.swift; sourceTree = "<group>"; };
 		354E4B8720A2301C009A8311 /* CalendarDateManagedObjectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDateManagedObjectTests.swift; sourceTree = "<group>"; };
 		354E4B8A20A23115009A8311 /* TransactionManagedObjectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionManagedObjectTests.swift; sourceTree = "<group>"; };
 		354E4B8D20A23153009A8311 /* StringTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringTests.swift; sourceTree = "<group>"; };
@@ -597,7 +594,6 @@
 				355A562F20FA3991003561FE /* TransactionCellViewModel.swift */,
 				355A563220FA3AEC003561FE /* TransactionCellViewModelImpl.swift */,
 				354C12462104A4AF0001AB19 /* TransactionCell.swift */,
-				354C124D2104A5970001AB19 /* TransactionCellDescriptor.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -993,7 +989,6 @@
 				35AEB11B2093A79F00DCE038 /* CoreDataCollectionUpdateHandler.swift in Sources */,
 				35162C98208FC14900547126 /* CalendarDateProtocol.swift in Sources */,
 				352D626820F52C3A00CBE0BD /* TransactionsSummaryViewModelImpl.swift in Sources */,
-				354C124E2104A5970001AB19 /* TransactionCellDescriptor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1090,7 +1085,6 @@
 				353A944920A0D9E100B94A72 /* ManagedObjectModel+Extensions.swift in Sources */,
 				35162C99208FC14900547126 /* CalendarDateProtocol.swift in Sources */,
 				352D626920F52C3A00CBE0BD /* TransactionsSummaryViewModelImpl.swift in Sources */,
-				354C124F2104A5970001AB19 /* TransactionCellDescriptor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

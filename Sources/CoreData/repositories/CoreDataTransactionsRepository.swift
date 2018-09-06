@@ -107,8 +107,8 @@ private class TransactionResultsController: ResultsController<TransactionProtoco
         return controller.object(at: indexPath)
     }
     
-    override func objects(in section: Int) -> [TransactionProtocol]? {
-        return controller.objects(in: section)
+    override func objectsIn(section: Int) -> [TransactionProtocol]? {
+        return controller.objectsIn(section: section)
     }
     
     override var sectionsCount: Int {
