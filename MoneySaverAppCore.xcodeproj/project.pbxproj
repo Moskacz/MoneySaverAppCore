@@ -135,6 +135,8 @@
 		355A564220FB390C003561FE /* TransactionsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355A564020FB390B003561FE /* TransactionsRepository.swift */; };
 		355B6FCC2141A9F300E39AF5 /* DateFormatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355B6FCB2141A9F300E39AF5 /* DateFormatters.swift */; };
 		355B6FCD2141A9F300E39AF5 /* DateFormatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355B6FCB2141A9F300E39AF5 /* DateFormatters.swift */; };
+		355B6FCF2141AE5600E39AF5 /* TransactionsSummaryDisplaying.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355B6FCE2141AE5600E39AF5 /* TransactionsSummaryDisplaying.swift */; };
+		355B6FD02141AE5600E39AF5 /* TransactionsSummaryDisplaying.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355B6FCE2141AE5600E39AF5 /* TransactionsSummaryDisplaying.swift */; };
 		356668A1208CE5CB0052E724 /* MoneySaverAppCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35666897208CE5CB0052E724 /* MoneySaverAppCore.framework */; };
 		356668BD208CE62C0052E724 /* MoneySaverAppCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 356668B4208CE62C0052E724 /* MoneySaverAppCore.framework */; };
 		356668D0208CE99D0052E724 /* MoneySaverAppCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 356668CF208CE99D0052E724 /* MoneySaverAppCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -343,6 +345,7 @@
 		355A563920FA7D1D003561FE /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		355A564020FB390B003561FE /* TransactionsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsRepository.swift; sourceTree = "<group>"; };
 		355B6FCB2141A9F300E39AF5 /* DateFormatters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatters.swift; sourceTree = "<group>"; };
+		355B6FCE2141AE5600E39AF5 /* TransactionsSummaryDisplaying.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsSummaryDisplaying.swift; sourceTree = "<group>"; };
 		35666897208CE5CB0052E724 /* MoneySaverAppCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MoneySaverAppCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		356668A0208CE5CB0052E724 /* MoneySaverAppCore-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MoneySaverAppCore-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		356668B4208CE62C0052E724 /* MoneySaverAppCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MoneySaverAppCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -500,6 +503,7 @@
 			children = (
 				352D626420F5297500CBE0BD /* TransactionsSummaryViewModel.swift */,
 				352D626720F52C3A00CBE0BD /* TransactionsSummaryViewModelImpl.swift */,
+				355B6FCE2141AE5600E39AF5 /* TransactionsSummaryDisplaying.swift */,
 			);
 			path = Summary;
 			sourceTree = "<group>";
@@ -964,6 +968,7 @@
 				353817ED208E65DC00EA967F /* TransactionCategoryManagedObject+CoreDataProperties.swift in Sources */,
 				354C12472104A4AF0001AB19 /* TransactionCell.swift in Sources */,
 				359E40B420DC3C0400801E20 /* NotificationCenter+TransactionNotificationCenter.swift in Sources */,
+				355B6FCF2141AE5600E39AF5 /* TransactionsSummaryDisplaying.swift in Sources */,
 				358BEC0020C9AD25003A3800 /* GroupedData.swift in Sources */,
 				353817D5208E647600EA967F /* CoreDataStack.swift in Sources */,
 				353A944620A0D89100B94A72 /* Bundle+Extension.swift in Sources */,
@@ -1061,6 +1066,7 @@
 				353817EE208E65DC00EA967F /* TransactionCategoryManagedObject+CoreDataProperties.swift in Sources */,
 				354C124C2104A5680001AB19 /* TransactionCell.swift in Sources */,
 				359E40B520DC3C0400801E20 /* NotificationCenter+TransactionNotificationCenter.swift in Sources */,
+				355B6FD02141AE5600E39AF5 /* TransactionsSummaryDisplaying.swift in Sources */,
 				358BEC0120C9AD25003A3800 /* GroupedData.swift in Sources */,
 				353817D6208E647600EA967F /* CoreDataStack.swift in Sources */,
 				35162C9B208FC14900547126 /* TransactionProtocol.swift in Sources */,
