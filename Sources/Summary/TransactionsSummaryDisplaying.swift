@@ -8,8 +8,10 @@
 import Foundation
 
 public protocol TransactionsSummaryDisplaying {
-    func set(expenseText: String?)
     func set(incomesText: String?)
+    func set(expenseText: String?)
     func set(totalAmountString: String?)
     func set(dateRangeTitle: String?)
 }
+
+
