@@ -8,9 +8,9 @@
 import XCTest
 @testable import MoneySaverAppCore
 
-class TransactionsSummaryViewModelImplTests: XCTestCase {
+class TransactionsSummaryCoordinatorImplTests: XCTestCase {
 
-    private var sut: TransactionsSummaryViewModel!
+    private var sut: TransactionsSummaryCoordinator!
     private var repository: FakeTransactionsRepository!
     private var calendar: FakeCalendar!
     
@@ -18,9 +18,9 @@ class TransactionsSummaryViewModelImplTests: XCTestCase {
         super.setUp()
         repository = FakeTransactionsRepository()
         calendar = FakeCalendar()
-        sut = TransactionsSummaryViewModelImpl(repository: repository,
-                                               calendar: calendar,
-                                               dateRange: .allTime)
+        sut = TransactionsSummaryCoordinatorImpl(repository: repository,
+                                                 calendar: calendar,
+                                                 dateRange: .allTime)
     }
     
     override func tearDown() {
@@ -36,15 +36,14 @@ class TransactionsSummaryViewModelImplTests: XCTestCase {
         let transaction1 = FakeTransactionBuilder().set(value: Decimal(100)).build()
         let transaction2 = FakeTransactionBuilder().set(value: Decimal(-200)).build()
         
-        let delegate = FakeDelegate()
-        sut.delegate = delegate
+        let display = FakeDisplay()
+        sut.display = display
         repository.transactionChangedCallback?([transaction1, transaction2])
         
-        XCTAssertEqual(sut.incomesAmountText, "100.0")
-        XCTAssertEqual(sut.expensesAmountText, "-200.0")
-        XCTAssertEqual(sut.totalAmountText, "-100.0")
-        XCTAssertEqual(sut.dateRangeButtonText, "All")
-        XCTAssertTrue(delegate.delegateCalled)
+        XCTAssertEqual(display.incomesText, "100.0")
+        XCTAssertEqual(display.expenseText, "-200.0")
+        XCTAssertEqual(display.totalAmountString, "-100.0")
+        XCTAssertEqual(display.dateRangeTitle, "All")
     }
     
     func test_afterSetDateRange_shouldUpdateValues() {
@@ -55,24 +54,39 @@ class TransactionsSummaryViewModelImplTests: XCTestCase {
         let transaction1 = FakeTransactionBuilder().set(value: Decimal(100)).set(dayOfEra: 3).build()
         let transaction2 = FakeTransactionBuilder().set(value: Decimal(-200)).set(dayOfEra: 4).build()
         
-        let delegate = FakeDelegate()
-        sut.delegate = delegate
+        let display = FakeDisplay()
+        sut.display = display
         repository.transactionChangedCallback?([transaction1, transaction2])
-        delegate.delegateCalled = false
         sut.dateRange = .today
         
-        XCTAssertEqual(sut.incomesAmountText, "100.0")
-        XCTAssertEqual(sut.expensesAmountText, "0.0")
-        XCTAssertEqual(sut.totalAmountText, "100.0")
-        XCTAssertEqual(sut.dateRangeButtonText, "Today")
-        XCTAssertTrue(delegate.delegateCalled)
+        XCTAssertEqual(display.incomesText, "100.0")
+        XCTAssertEqual(display.expenseText, "0.0")
+        XCTAssertEqual(display.totalAmountString, "100.0")
+        XCTAssertEqual(display.dateRangeTitle, "Today")
     }
 }
 
-private class FakeDelegate: TransactionsSummaryViewModelDelegate {
-    var delegateCalled = false
+private class FakeDisplay: TransactionsSummaryDisplaying {
     
-    func transactionsSummaryDidUpdateValues(viewModel: TransactionsSummaryViewModel) {
-        delegateCalled = true
+    var dateRangeTitle: String?
+    var incomesText: String?
+    var expenseText: String?
+    var totalAmountString: String?
+    
+    func set(dateRangeTitle: String?) {
+        self.dateRangeTitle = dateRangeTitle
     }
+    
+    func set(incomesText: String?) {
+        self.incomesText = incomesText
+    }
+    
+    func set(expenseText: String?) {
+        self.expenseText = expenseText
+    }
+    
+    func set(totalAmountString: String?) {
+        self.totalAmountString = totalAmountString
+    }
+    
 }

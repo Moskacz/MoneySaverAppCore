@@ -45,8 +45,8 @@
 		352D625D20F3D21400CBE0BD /* BudgetViewModelImplTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352D625B20F3D21400CBE0BD /* BudgetViewModelImplTests.swift */; };
 		352D625F20F3D30400CBE0BD /* FakeBudgetViewModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352D625E20F3D30400CBE0BD /* FakeBudgetViewModelDelegate.swift */; };
 		352D626020F3D30400CBE0BD /* FakeBudgetViewModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352D625E20F3D30400CBE0BD /* FakeBudgetViewModelDelegate.swift */; };
-		352D626B20F5371B00CBE0BD /* TransactionsSummaryViewModelImplTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352D626A20F5371B00CBE0BD /* TransactionsSummaryViewModelImplTests.swift */; };
-		352D626C20F5371B00CBE0BD /* TransactionsSummaryViewModelImplTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352D626A20F5371B00CBE0BD /* TransactionsSummaryViewModelImplTests.swift */; };
+		352D626B20F5371B00CBE0BD /* TransactionsSummaryCoordinatorImplTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352D626A20F5371B00CBE0BD /* TransactionsSummaryCoordinatorImplTests.swift */; };
+		352D626C20F5371B00CBE0BD /* TransactionsSummaryCoordinatorImplTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352D626A20F5371B00CBE0BD /* TransactionsSummaryCoordinatorImplTests.swift */; };
 		3536466920E3F72A00B055B6 /* BudgetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3536466820E3F72A00B055B6 /* BudgetViewModel.swift */; };
 		3536466A20E3F72A00B055B6 /* BudgetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3536466820E3F72A00B055B6 /* BudgetViewModel.swift */; };
 		353817D1208E642C00EA967F /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 353817CF208E642C00EA967F /* DataModel.xcdatamodeld */; };
@@ -301,7 +301,7 @@
 		35227EFB2105082100B72F3D /* Factory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Factory.swift; sourceTree = "<group>"; };
 		352D625B20F3D21400CBE0BD /* BudgetViewModelImplTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetViewModelImplTests.swift; sourceTree = "<group>"; };
 		352D625E20F3D30400CBE0BD /* FakeBudgetViewModelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeBudgetViewModelDelegate.swift; sourceTree = "<group>"; };
-		352D626A20F5371B00CBE0BD /* TransactionsSummaryViewModelImplTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsSummaryViewModelImplTests.swift; sourceTree = "<group>"; };
+		352D626A20F5371B00CBE0BD /* TransactionsSummaryCoordinatorImplTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsSummaryCoordinatorImplTests.swift; sourceTree = "<group>"; };
 		3536466820E3F72A00B055B6 /* BudgetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetViewModel.swift; sourceTree = "<group>"; };
 		353817D0208E642C00EA967F /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		353817D4208E647600EA967F /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
@@ -697,7 +697,7 @@
 				35423E1320EEA293004E006B /* BudgetNotificationCenterTests.swift */,
 				35423E1920F004FE004E006B /* TransactionNotificationCenterTests.swift */,
 				352D625B20F3D21400CBE0BD /* BudgetViewModelImplTests.swift */,
-				352D626A20F5371B00CBE0BD /* TransactionsSummaryViewModelImplTests.swift */,
+				352D626A20F5371B00CBE0BD /* TransactionsSummaryCoordinatorImplTests.swift */,
 			);
 			path = UnitTests;
 			sourceTree = "<group>";
@@ -1022,7 +1022,7 @@
 				35423E1720EEA364004E006B /* FakeBudget.swift in Sources */,
 				357B860E20D1AFD7001E5D25 /* SequenceIntExtensions.swift in Sources */,
 				354E4B9120A231B3009A8311 /* TransactionsRepositoryTests.swift in Sources */,
-				352D626B20F5371B00CBE0BD /* TransactionsSummaryViewModelImplTests.swift in Sources */,
+				352D626B20F5371B00CBE0BD /* TransactionsSummaryCoordinatorImplTests.swift in Sources */,
 				359E40A820DADDBF00801E20 /* StatsViewModelTests.swift in Sources */,
 				359E40B120DADF4F00801E20 /* FakeUserPreferences.swift in Sources */,
 				354E4B8B20A23115009A8311 /* TransactionManagedObjectTests.swift in Sources */,
@@ -1120,7 +1120,7 @@
 				35423E1820EEA364004E006B /* FakeBudget.swift in Sources */,
 				357B860F20D1AFD7001E5D25 /* SequenceIntExtensions.swift in Sources */,
 				354E4B9220A231B3009A8311 /* TransactionsRepositoryTests.swift in Sources */,
-				352D626C20F5371B00CBE0BD /* TransactionsSummaryViewModelImplTests.swift in Sources */,
+				352D626C20F5371B00CBE0BD /* TransactionsSummaryCoordinatorImplTests.swift in Sources */,
 				359E40A920DADDBF00801E20 /* StatsViewModelTests.swift in Sources */,
 				359E40B220DADF4F00801E20 /* FakeUserPreferences.swift in Sources */,
 				354E4B8C20A23115009A8311 /* TransactionManagedObjectTests.swift in Sources */,

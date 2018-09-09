@@ -66,7 +66,10 @@ internal class TransactionsSummaryCoordinatorImpl: TransactionsSummaryCoordinato
 
 private extension TransactionsSummaryDisplaying {
     func updateWith(viewModel: TransactionsSummaryViewModel) {
-        
+        set(incomesText: viewModel.incomesAmountText)
+        set(expenseText: viewModel.expensesAmountText)
+        set(totalAmountString: viewModel.totalAmountText)
+        set(dateRangeTitle: viewModel.dateRangeButtonText)
     }
 }
 
