@@ -109,7 +109,7 @@ extension Sequence where Element == TransactionProtocol {
 
 }
 
-public struct TransactionsSummaryViewModel {
+private struct TransactionsSummaryViewModel {
     let totalAmountText: String
     let expensesAmountText: String
     let incomesAmountText: String
