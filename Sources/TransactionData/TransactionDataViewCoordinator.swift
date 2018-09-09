@@ -12,8 +12,8 @@ public protocol TransactionDataViewCoordinator {
     func set(title: String?, value: String?, date: Date) throws
 }
 
-public struct TransactionDataViewModel {
-    let title: String
-    let amount: String
-    let date: String
+public enum TransactionDataViewError: Error {
+    case invalidTitle
+    case invalidValue
 }
+

@@ -8,5 +8,9 @@
 import Foundation
 
 public protocol TransactionDataDisplaying {
-    
+    func display(error: TransactionDataViewError)
+    func set(title: String?)
+    func set(amount: String?)
+    func set(date: Date)
+    func set(formattedDate: String?)
 }
