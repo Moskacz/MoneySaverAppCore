@@ -73,6 +73,42 @@ private extension TransactionsSummaryDisplaying {
     }
 }
 
+extension Sequence where Element == TransactionProtocol {
+    
+    internal func compoundSum(date: CalendarDateProtocol) -> TransactionsCompoundSum {
+        var day = [Element]()
+        var week = [Element]()
+        var month = [Element]()
+        var year = [Element]()
+        
+        for element in self {
+            if element.transactionDate?.dayOfEra == date.dayOfEra {
+                day.append(element)
+            }
+            if element.transactionDate?.weekOfEra == date.weekOfEra {
+                week.append(element)
+            }
+            if element.transactionDate?.monthOfEra == date.monthOfEra {
+                month.append(element)
+            }
+            if element.transactionDate?.year == date.year {
+                year.append(element)
+            }
+        }
+        
+        return TransactionsCompoundSum(daily: day.transactionsSum,
+                                       weekly: week.transactionsSum,
+                                       monthly: month.transactionsSum,
+                                       yearly: year.transactionsSum,
+                                       era: self.transactionsSum)
+    }
+    
+    internal var transactionsSum: TransactionsSum {
+        return TransactionsSum(incomes: incomes.sum, expenses: expenses.sum)
+    }
+
+}
+
 public struct TransactionsSummaryViewModel {
     let totalAmountText: String
     let expensesAmountText: String
