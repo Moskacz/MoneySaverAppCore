@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3508A8A621459F9E00810D42 /* TransactionDataViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3508A8A521459F9E00810D42 /* TransactionDataViewCoordinator.swift */; };
+		3508A8A721459F9E00810D42 /* TransactionDataViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3508A8A521459F9E00810D42 /* TransactionDataViewCoordinator.swift */; };
+		3508A8A92145A01300810D42 /* TransactionDataDisplaying.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3508A8A82145A01300810D42 /* TransactionDataDisplaying.swift */; };
+		3508A8AA2145A01300810D42 /* TransactionDataDisplaying.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3508A8A82145A01300810D42 /* TransactionDataDisplaying.swift */; };
 		3515F58520D8256D00C8B549 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3515F58420D8256D00C8B549 /* Charts.framework */; };
 		3515F58720D8258700C8B549 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3515F58620D8258700C8B549 /* Charts.framework */; };
 		3515F58B20D8266400C8B549 /* Charts.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3515F58420D8256D00C8B549 /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -282,6 +286,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3508A8A521459F9E00810D42 /* TransactionDataViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDataViewCoordinator.swift; sourceTree = "<group>"; };
+		3508A8A82145A01300810D42 /* TransactionDataDisplaying.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDataDisplaying.swift; sourceTree = "<group>"; };
 		3515F58420D8256D00C8B549 /* Charts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Charts.framework; path = Carthage/Build/Mac/Charts.framework; sourceTree = "<group>"; };
 		3515F58620D8258700C8B549 /* Charts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Charts.framework; path = Carthage/Build/iOS/Charts.framework; sourceTree = "<group>"; };
 		35162C88208FC0A100547126 /* CoreDataTransactionsRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataTransactionsRepository.swift; sourceTree = "<group>"; };
@@ -418,6 +424,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3508A8A421459F8C00810D42 /* TransactionData */ = {
+			isa = PBXGroup;
+			children = (
+				3508A8A521459F9E00810D42 /* TransactionDataViewCoordinator.swift */,
+				3508A8A82145A01300810D42 /* TransactionDataDisplaying.swift */,
+			);
+			path = TransactionData;
+			sourceTree = "<group>";
+		};
 		3515F58320D8256D00C8B549 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -646,6 +661,7 @@
 		356668CB208CE66C0052E724 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				3508A8A421459F8C00810D42 /* TransactionData */,
 				355A563F20FB38F7003561FE /* Repositories */,
 				355A563820FA7D14003561FE /* Theming */,
 				355A562420FA38BB003561FE /* TransactionsList */,
@@ -955,6 +971,7 @@
 				355A564120FB390C003561FE /* TransactionsRepository.swift in Sources */,
 				35227EFC2105082100B72F3D /* Factory.swift in Sources */,
 				35CB167F20ED572D0037EF94 /* BudgetRepositoryImpl.swift in Sources */,
+				3508A8A621459F9E00810D42 /* TransactionDataViewCoordinator.swift in Sources */,
 				353817E3208E65DC00EA967F /* BudgetManagedObject+CoreDataClass.swift in Sources */,
 				355B6FD22141AF7100E39AF5 /* TransactionsSummaryCoordinator.swift in Sources */,
 				353817E5208E65DC00EA967F /* BudgetManagedObject+CoreDataProperties.swift in Sources */,
@@ -982,6 +999,7 @@
 				35162C8E208FC10A00547126 /* CalendarProtocol.swift in Sources */,
 				354E4B9520A231F6009A8311 /* InMemoryCoreDataStack.swift in Sources */,
 				359E40C120DF8D7700801E20 /* NSManagedObjectContext+Extensions.swift in Sources */,
+				3508A8A92145A01300810D42 /* TransactionDataDisplaying.swift in Sources */,
 				35162C9E208FC1D000547126 /* Logger.swift in Sources */,
 				353817EB208E65DC00EA967F /* TransactionCategoryManagedObject+CoreDataClass.swift in Sources */,
 				35CB167C20ED56D90037EF94 /* BudgetRepository.swift in Sources */,
@@ -1053,6 +1071,7 @@
 				355A564220FB390C003561FE /* TransactionsRepository.swift in Sources */,
 				35227EFD2105082100B72F3D /* Factory.swift in Sources */,
 				35CB168020ED572D0037EF94 /* BudgetRepositoryImpl.swift in Sources */,
+				3508A8A721459F9E00810D42 /* TransactionDataViewCoordinator.swift in Sources */,
 				353817E4208E65DC00EA967F /* BudgetManagedObject+CoreDataClass.swift in Sources */,
 				355B6FD32141AF7100E39AF5 /* TransactionsSummaryCoordinator.swift in Sources */,
 				353817E6208E65DC00EA967F /* BudgetManagedObject+CoreDataProperties.swift in Sources */,
@@ -1080,6 +1099,7 @@
 				35162C9F208FC1D000547126 /* Logger.swift in Sources */,
 				354E4B9620A231F6009A8311 /* InMemoryCoreDataStack.swift in Sources */,
 				359E40C220DF8D7700801E20 /* NSManagedObjectContext+Extensions.swift in Sources */,
+				3508A8AA2145A01300810D42 /* TransactionDataDisplaying.swift in Sources */,
 				353A944A20A0D9E600B94A72 /* Bundle+Extension.swift in Sources */,
 				353817EC208E65DC00EA967F /* TransactionCategoryManagedObject+CoreDataClass.swift in Sources */,
 				35CB167D20ED56D90037EF94 /* BudgetRepository.swift in Sources */,
