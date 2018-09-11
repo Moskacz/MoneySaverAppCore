@@ -13,6 +13,8 @@
 		3508A8AA2145A01300810D42 /* TransactionDataDisplaying.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3508A8A82145A01300810D42 /* TransactionDataDisplaying.swift */; };
 		3508A8AC2145A0E300810D42 /* TransactionDataViewCoordinatorImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3508A8AB2145A0E300810D42 /* TransactionDataViewCoordinatorImpl.swift */; };
 		3508A8AD2145A0E300810D42 /* TransactionDataViewCoordinatorImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3508A8AB2145A0E300810D42 /* TransactionDataViewCoordinatorImpl.swift */; };
+		3508A8AF21482B3100810D42 /* TransactionDataViewCoordinatorImplTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3508A8AE21482B3100810D42 /* TransactionDataViewCoordinatorImplTests.swift */; };
+		3508A8B021482B3100810D42 /* TransactionDataViewCoordinatorImplTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3508A8AE21482B3100810D42 /* TransactionDataViewCoordinatorImplTests.swift */; };
 		3515F58520D8256D00C8B549 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3515F58420D8256D00C8B549 /* Charts.framework */; };
 		3515F58720D8258700C8B549 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3515F58620D8258700C8B549 /* Charts.framework */; };
 		3515F58B20D8266400C8B549 /* Charts.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3515F58420D8256D00C8B549 /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -291,6 +293,7 @@
 		3508A8A521459F9E00810D42 /* TransactionDataViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDataViewCoordinator.swift; sourceTree = "<group>"; };
 		3508A8A82145A01300810D42 /* TransactionDataDisplaying.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDataDisplaying.swift; sourceTree = "<group>"; };
 		3508A8AB2145A0E300810D42 /* TransactionDataViewCoordinatorImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDataViewCoordinatorImpl.swift; sourceTree = "<group>"; };
+		3508A8AE21482B3100810D42 /* TransactionDataViewCoordinatorImplTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDataViewCoordinatorImplTests.swift; sourceTree = "<group>"; };
 		3515F58420D8256D00C8B549 /* Charts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Charts.framework; path = Carthage/Build/Mac/Charts.framework; sourceTree = "<group>"; };
 		3515F58620D8258700C8B549 /* Charts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Charts.framework; path = Carthage/Build/iOS/Charts.framework; sourceTree = "<group>"; };
 		35162C88208FC0A100547126 /* CoreDataTransactionsRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataTransactionsRepository.swift; sourceTree = "<group>"; };
@@ -718,6 +721,7 @@
 				35423E1920F004FE004E006B /* TransactionNotificationCenterTests.swift */,
 				352D625B20F3D21400CBE0BD /* BudgetViewModelImplTests.swift */,
 				352D626A20F5371B00CBE0BD /* TransactionsSummaryCoordinatorImplTests.swift */,
+				3508A8AE21482B3100810D42 /* TransactionDataViewCoordinatorImplTests.swift */,
 			);
 			path = UnitTests;
 			sourceTree = "<group>";
@@ -1035,6 +1039,7 @@
 				359E40BE20DF89A400801E20 /* FakeTransactionNotificationCenter.swift in Sources */,
 				352D625F20F3D30400CBE0BD /* FakeBudgetViewModelDelegate.swift in Sources */,
 				35B914A820D0508B008BD7A2 /* FakeTransactionCategory.swift in Sources */,
+				3508A8AF21482B3100810D42 /* TransactionDataViewCoordinatorImplTests.swift in Sources */,
 				35593C022092302600DEEDB5 /* CalendarTests.swift in Sources */,
 				35423E1420EEA293004E006B /* BudgetNotificationCenterTests.swift in Sources */,
 				359E40AE20DADE8400801E20 /* FakeTransactionsRepository.swift in Sources */,
@@ -1136,6 +1141,7 @@
 				359E40BF20DF89A400801E20 /* FakeTransactionNotificationCenter.swift in Sources */,
 				352D626020F3D30400CBE0BD /* FakeBudgetViewModelDelegate.swift in Sources */,
 				35B914A920D0508B008BD7A2 /* FakeTransactionCategory.swift in Sources */,
+				3508A8B021482B3100810D42 /* TransactionDataViewCoordinatorImplTests.swift in Sources */,
 				35593C032092302600DEEDB5 /* CalendarTests.swift in Sources */,
 				35423E1520EEA293004E006B /* BudgetNotificationCenterTests.swift in Sources */,
 				359E40AF20DADE8400801E20 /* FakeTransactionsRepository.swift in Sources */,

@@ -24,3 +24,5 @@ public struct TransactionDataViewError: Error, OptionSet {
     static let missingTitle = TransactionDataViewError(rawValue: 1 << 2)
 }
 
+
+
