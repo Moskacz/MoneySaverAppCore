@@ -21,7 +21,7 @@ internal class TransactionDataViewCoordinatorImpl: TransactionDataViewCoordinato
         }
     }
     
-    func set(title: String?, value: String?, date: Date) throws {
+    func set(title: String?, value: String?, date: Date) {
         
     }
     
