@@ -9,7 +9,7 @@ import Foundation
 
 public protocol TransactionDataViewCoordinator {
     var display: TransactionDataDisplaying? { get set }
-    func set(title: String?, value: String?, date: Date)
+    func set(title: String?, value: String?, date: Date?)
 }
 
 public struct TransactionDataViewError: Error, OptionSet {

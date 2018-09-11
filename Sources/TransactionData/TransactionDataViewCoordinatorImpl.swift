@@ -21,8 +21,18 @@ internal class TransactionDataViewCoordinatorImpl: TransactionDataViewCoordinato
         }
     }
     
-    func set(title: String?, value: String?, date: Date) {
+    func set(title: String?, value: String?, date: Date?) {
+        var error: TransactionDataViewError?
         
+        if title == nil {
+            error = TransactionDataViewError.missingTitle
+        }
+        
+        
+        
+        if let error = error {
+            display?.display(error: error)
+        }
     }
     
     private func updateDisplay() {

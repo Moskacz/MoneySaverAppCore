@@ -11,30 +11,49 @@ import XCTest
 class TransactionDataViewCoordinatorImplTests: XCTestCase {
     
     private var sut: TransactionDataViewCoordinatorImpl!
+    private var displayFake: FakeDisplay!
     private let formatter = DateFormatters.formatter(forType: .dateWithTime)
     
     override func setUp() {
         super.setUp()
         sut = TransactionDataViewCoordinatorImpl(formatter: formatter)
+        displayFake = FakeDisplay()
+        sut.display = displayFake
     }
     
     override func tearDown() {
         sut = nil
+        displayFake = nil
         super.tearDown()
     }
     
     func test_afterSettingDisplay_itShouldBeUpdatedWithCurrentValue() {
-        let display = FakeDisplay()
-        sut.display = display
-        XCTAssertNotNil(display.date)
+        XCTAssertNotNil(displayFake.date)
     }
     
     func test_afterSettingDisplayForFirstTime_itShouldBeUpdatedWithCurrentDate() {
-        let display = FakeDisplay()
-        sut.display = display
-        XCTAssertEqual(display.date, formatter.string(from: Date()))
+        XCTAssertEqual(displayFake.date, formatter.string(from: Date()))
     }
     
+    func test_whenSetIsCalledWithNilTitle_thenErrorShouldBeThrown() {
+        sut.set(title: nil, value: "13", date: Date())
+        XCTAssertEqual(displayFake.error, TransactionDataViewError.missingTitle)
+    }
+    
+    func test_whenSetIsCalledWithNilAmount_thenErrorShouldBeThrown() {
+        sut.set(title: "title", value: nil, date: Date())
+        XCTAssertEqual(displayFake.error, TransactionDataViewError.missingValue)
+    }
+    
+    func test_whenSetIsCalledWithZeroAmount_thenErrorShouldBeThrown() {
+        sut.set(title: "title", value: "0", date: Date())
+        XCTAssertEqual(displayFake.error, TransactionDataViewError.missingValue)
+    }
+    
+    func test_whenSetIsCalledWithInvalidAmount_thenErrorShouldBeThrown() {
+        sut.set(title: "title", value: "non_number", date: Date())
+        XCTAssertEqual(displayFake.error, TransactionDataViewError.missingValue)
+    }
 }
 
 private class FakeDisplay: TransactionDataDisplaying {
