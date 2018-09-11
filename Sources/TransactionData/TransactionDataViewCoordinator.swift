@@ -12,8 +12,15 @@ public protocol TransactionDataViewCoordinator {
     func set(title: String?, value: String?, date: Date) throws
 }
 
-public enum TransactionDataViewError: Error {
-    case invalidTitle
-    case invalidValue
+public struct TransactionDataViewError: Error, OptionSet {
+    public let rawValue: Int
+    
+    public init(rawValue: Int) {
+        self.rawValue = rawValue
+    }
+    
+    static let invalidValue = TransactionDataViewError(rawValue: 1)
+    static let missingValue = TransactionDataViewError(rawValue: 1 << 1)
+    static let missingTitle = TransactionDataViewError(rawValue: 1 << 2)
 }
 
