@@ -173,6 +173,8 @@
 		359E40BF20DF89A400801E20 /* FakeTransactionNotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359E40BD20DF89A400801E20 /* FakeTransactionNotificationCenter.swift */; };
 		359E40C120DF8D7700801E20 /* NSManagedObjectContext+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359E40C020DF8D7700801E20 /* NSManagedObjectContext+Extensions.swift */; };
 		359E40C220DF8D7700801E20 /* NSManagedObjectContext+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359E40C020DF8D7700801E20 /* NSManagedObjectContext+Extensions.swift */; };
+		35A77EA0214AE9C100483426 /* Error+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A77E9F214AE9C100483426 /* Error+Utils.swift */; };
+		35A77EA1214AE9C100483426 /* Error+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A77E9F214AE9C100483426 /* Error+Utils.swift */; };
 		35AEB1192093A79F00DCE038 /* CollectionUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35AEB1172093A79F00DCE038 /* CollectionUpdater.swift */; };
 		35AEB11A2093A79F00DCE038 /* CollectionUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35AEB1172093A79F00DCE038 /* CollectionUpdater.swift */; };
 		35AEB11B2093A79F00DCE038 /* CoreDataCollectionUpdateHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35AEB1182093A79F00DCE038 /* CoreDataCollectionUpdateHandler.swift */; };
@@ -379,6 +381,7 @@
 		359E40BA20DD854000801E20 /* ObservationToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservationToken.swift; sourceTree = "<group>"; };
 		359E40BD20DF89A400801E20 /* FakeTransactionNotificationCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeTransactionNotificationCenter.swift; sourceTree = "<group>"; };
 		359E40C020DF8D7700801E20 /* NSManagedObjectContext+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSManagedObjectContext+Extensions.swift"; sourceTree = "<group>"; };
+		35A77E9F214AE9C100483426 /* Error+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Error+Utils.swift"; sourceTree = "<group>"; };
 		35AEB1172093A79F00DCE038 /* CollectionUpdater.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionUpdater.swift; sourceTree = "<group>"; };
 		35AEB1182093A79F00DCE038 /* CoreDataCollectionUpdateHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataCollectionUpdateHandler.swift; sourceTree = "<group>"; };
 		35B914A720D0508B008BD7A2 /* FakeTransactionCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeTransactionCategory.swift; sourceTree = "<group>"; };
@@ -731,6 +734,7 @@
 			children = (
 				359E40BA20DD854000801E20 /* ObservationToken.swift */,
 				355B6FCB2141A9F300E39AF5 /* DateFormatters.swift */,
+				35A77E9F214AE9C100483426 /* Error+Utils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -987,6 +991,7 @@
 				353817DF208E65DC00EA967F /* CalendarDateManagedObject+CoreDataClass.swift in Sources */,
 				357B860B20D1AF54001E5D25 /* Sequence+Int.swift in Sources */,
 				35162C89208FC0A100547126 /* CoreDataTransactionsRepository.swift in Sources */,
+				35A77EA0214AE9C100483426 /* Error+Utils.swift in Sources */,
 				3508A8AC2145A0E300810D42 /* TransactionDataViewCoordinatorImpl.swift in Sources */,
 				355A563320FA3AEC003561FE /* TransactionCellViewModelImpl.swift in Sources */,
 				358BEC0620C9B15D003A3800 /* StatsChartsDataProcessor.swift in Sources */,
@@ -1089,6 +1094,7 @@
 				353817E0208E65DC00EA967F /* CalendarDateManagedObject+CoreDataClass.swift in Sources */,
 				357B860C20D1AF54001E5D25 /* Sequence+Int.swift in Sources */,
 				35162C8A208FC0A100547126 /* CoreDataTransactionsRepository.swift in Sources */,
+				35A77EA1214AE9C100483426 /* Error+Utils.swift in Sources */,
 				3508A8AD2145A0E300810D42 /* TransactionDataViewCoordinatorImpl.swift in Sources */,
 				355A563420FA3AEC003561FE /* TransactionCellViewModelImpl.swift in Sources */,
 				358BEC0720C9B15D003A3800 /* StatsChartsDataProcessor.swift in Sources */,
