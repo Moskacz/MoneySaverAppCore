@@ -193,6 +193,10 @@
 		35F272A8214E979C002264B4 /* TransactionCategoryCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F272A6214E979C002264B4 /* TransactionCategoryCellViewModel.swift */; };
 		35F272AA214E98C3002264B4 /* TransactionCategoryCellViewModelImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F272A9214E98C3002264B4 /* TransactionCategoryCellViewModelImpl.swift */; };
 		35F272AB214E98C3002264B4 /* TransactionCategoryCellViewModelImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F272A9214E98C3002264B4 /* TransactionCategoryCellViewModelImpl.swift */; };
+		35F272AD214E99DD002264B4 /* TransactionCategoryCollectionCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F272AC214E99DD002264B4 /* TransactionCategoryCollectionCoordinator.swift */; };
+		35F272AE214E99DD002264B4 /* TransactionCategoryCollectionCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F272AC214E99DD002264B4 /* TransactionCategoryCollectionCoordinator.swift */; };
+		35F272B0214E9A77002264B4 /* TransactionCategoryCollectionDisplaying.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F272AF214E9A77002264B4 /* TransactionCategoryCollectionDisplaying.swift */; };
+		35F272B1214E9A77002264B4 /* TransactionCategoryCollectionDisplaying.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F272AF214E9A77002264B4 /* TransactionCategoryCollectionDisplaying.swift */; };
 		35F4C7A320FA308A0095C21D /* MMFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35F4C7A020FA2FF90095C21D /* MMFoundation.framework */; };
 		35F4C7A420FA309C0095C21D /* MMFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35F4C79C20FA2FF90095C21D /* MMFoundation.framework */; };
 		35F4C7A720FA32690095C21D /* MMFoundation.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 35F4C7A020FA2FF90095C21D /* MMFoundation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -396,6 +400,8 @@
 		35DD654520B09F9000909AA4 /* FakeBudgetRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeBudgetRepository.swift; sourceTree = "<group>"; };
 		35F272A6214E979C002264B4 /* TransactionCategoryCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCategoryCellViewModel.swift; sourceTree = "<group>"; };
 		35F272A9214E98C3002264B4 /* TransactionCategoryCellViewModelImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCategoryCellViewModelImpl.swift; sourceTree = "<group>"; };
+		35F272AC214E99DD002264B4 /* TransactionCategoryCollectionCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCategoryCollectionCoordinator.swift; sourceTree = "<group>"; };
+		35F272AF214E9A77002264B4 /* TransactionCategoryCollectionDisplaying.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCategoryCollectionDisplaying.swift; sourceTree = "<group>"; };
 		35F4C79420FA2FF90095C21D /* MMFoundation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MMFoundation.xcodeproj; path = Submodules/MMFoundation/MMFoundation.xcodeproj; sourceTree = "<group>"; };
 		35FF6E3E2107C068004FBC87 /* SetupBudgetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupBudgetViewModel.swift; sourceTree = "<group>"; };
 		90D1171220E4E7AC008F21D8 /* BudgetProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetProtocol.swift; sourceTree = "<group>"; };
@@ -760,6 +766,8 @@
 			children = (
 				35F272A6214E979C002264B4 /* TransactionCategoryCellViewModel.swift */,
 				35F272A9214E98C3002264B4 /* TransactionCategoryCellViewModelImpl.swift */,
+				35F272AC214E99DD002264B4 /* TransactionCategoryCollectionCoordinator.swift */,
+				35F272AF214E9A77002264B4 /* TransactionCategoryCollectionDisplaying.swift */,
 			);
 			path = TransactionCategories;
 			sourceTree = "<group>";
@@ -993,6 +1001,7 @@
 				35593C072092305800DEEDB5 /* Sequence+Extension.swift in Sources */,
 				359E40BB20DD854000801E20 /* ObservationToken.swift in Sources */,
 				35162CA9208FC32500547126 /* Calendar+Extensions.swift in Sources */,
+				35F272B0214E9A77002264B4 /* TransactionCategoryCollectionDisplaying.swift in Sources */,
 				35162C90208FC10A00547126 /* DateRange.swift in Sources */,
 				355A562A20FA38D2003561FE /* TransactionsListCoordinator.swift in Sources */,
 				35162C96208FC14900547126 /* TransactionCategoryProtocol.swift in Sources */,
@@ -1013,6 +1022,7 @@
 				355A563320FA3AEC003561FE /* TransactionCellViewModelImpl.swift in Sources */,
 				358BEC0620C9B15D003A3800 /* StatsChartsDataProcessor.swift in Sources */,
 				35162CB42090D96600547126 /* TransactionCategoryRepository.swift in Sources */,
+				35F272AD214E99DD002264B4 /* TransactionCategoryCollectionCoordinator.swift in Sources */,
 				35162CAD208FC39E00547126 /* TransactionsGrouping.swift in Sources */,
 				353817ED208E65DC00EA967F /* TransactionCategoryManagedObject+CoreDataProperties.swift in Sources */,
 				354C12472104A4AF0001AB19 /* TransactionCell.swift in Sources */,
@@ -1098,6 +1108,7 @@
 				35593C082092305800DEEDB5 /* Sequence+Extension.swift in Sources */,
 				359E40BC20DD854000801E20 /* ObservationToken.swift in Sources */,
 				35162CAA208FC32500547126 /* Calendar+Extensions.swift in Sources */,
+				35F272B1214E9A77002264B4 /* TransactionCategoryCollectionDisplaying.swift in Sources */,
 				35162C91208FC10A00547126 /* DateRange.swift in Sources */,
 				355A562B20FA38D2003561FE /* TransactionsListCoordinator.swift in Sources */,
 				35162C97208FC14900547126 /* TransactionCategoryProtocol.swift in Sources */,
@@ -1118,6 +1129,7 @@
 				355A563420FA3AEC003561FE /* TransactionCellViewModelImpl.swift in Sources */,
 				358BEC0720C9B15D003A3800 /* StatsChartsDataProcessor.swift in Sources */,
 				35162CB52090D96600547126 /* TransactionCategoryRepository.swift in Sources */,
+				35F272AE214E99DD002264B4 /* TransactionCategoryCollectionCoordinator.swift in Sources */,
 				35162CAE208FC39E00547126 /* TransactionsGrouping.swift in Sources */,
 				353817EE208E65DC00EA967F /* TransactionCategoryManagedObject+CoreDataProperties.swift in Sources */,
 				354C124C2104A5680001AB19 /* TransactionCell.swift in Sources */,
