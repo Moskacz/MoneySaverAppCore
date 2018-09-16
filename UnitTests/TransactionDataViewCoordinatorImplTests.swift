@@ -47,12 +47,12 @@ class TransactionDataViewCoordinatorImplTests: XCTestCase {
     
     func test_whenSetIsCalledWithZeroAmount_thenErrorShouldBeThrown() {
         sut.set(title: "title", value: "0", date: Date())
-        XCTAssertEqual(displayFake.error, TransactionDataViewError.missingValue)
+        XCTAssertEqual(displayFake.error, TransactionDataViewError.invalidValue)
     }
     
     func test_whenSetIsCalledWithInvalidAmount_thenErrorShouldBeThrown() {
         sut.set(title: "title", value: "non_number", date: Date())
-        XCTAssertEqual(displayFake.error, TransactionDataViewError.missingValue)
+        XCTAssertEqual(displayFake.error, TransactionDataViewError.invalidValue)
     }
 }
 

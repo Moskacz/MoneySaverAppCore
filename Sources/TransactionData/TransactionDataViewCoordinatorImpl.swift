@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import MMFoundation
 
 internal class TransactionDataViewCoordinatorImpl: TransactionDataViewCoordinator {
     
@@ -22,7 +23,17 @@ internal class TransactionDataViewCoordinatorImpl: TransactionDataViewCoordinato
     }
     
     func set(title: String?, value: String?, date: Date?) {
+        let title = validate(title: title)
+        let amount = validate(amount: value)
+        let date = validate(date: date)
         
+        switch (title, amount, date) {
+        case (.value(_), .value(_), .value(_)):
+            break
+        case (let title, let amount, let date):
+            let errors = [title.error, amount.error, date.error].compactMap { $0 }
+            display?.display(error: TransactionDataViewError(array: errors))
+        }
     }
     
     private func updateDisplay() {
@@ -31,6 +42,25 @@ internal class TransactionDataViewCoordinatorImpl: TransactionDataViewCoordinato
     
     private var currentViewState: ViewState {
         return ViewState(title: nil, amount: nil, date: formatter.string(from: Date()))
+    }
+    
+    // MARK: Validation
+    
+    private func validate(title: String?) -> Result<String, TransactionDataViewError> {
+        guard let title = title, title.count > 0  else { return .error(.missingTitle) }
+        return .value(title)
+    }
+    
+    private func validate(amount: String?) -> Result<Decimal, TransactionDataViewError> {
+        guard let amount = amount, amount.count > 0 else { return .error(.missingValue) }
+        guard let decimal = Decimal(string: amount) else { return .error(.invalidValue) }
+        if decimal.isNaN || decimal.isZero { return .error(.invalidValue) }
+        return .value(decimal)
+    }
+    
+    private func validate(date: Date?) -> Result<Date, TransactionDataViewError> {
+        guard let date = date else { return .error(.missingDate) }
+        return .value(date)
     }
 }
 

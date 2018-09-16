@@ -7,6 +7,12 @@
 
 import Foundation
 
-protocol CollectionOptionSetReducing {
-    func reduce(options: [Self]) -> Self
+extension OptionSet {
+    
+    init(array: [Self.Element]) {
+        self.init()
+        for element in array {
+            insert(element)
+        }
+    }
 }
