@@ -22,6 +22,7 @@ public struct TransactionDataViewError: Error, OptionSet {
     static let invalidValue = TransactionDataViewError(rawValue: 1)
     static let missingValue = TransactionDataViewError(rawValue: 1 << 1)
     static let missingTitle = TransactionDataViewError(rawValue: 1 << 2)
+    static let missingDate = TransactionDataViewError(rawValue: 1 << 3)
 }
 
 
