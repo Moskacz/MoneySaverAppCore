@@ -189,6 +189,10 @@
 		35CB168020ED572D0037EF94 /* BudgetRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CB167E20ED572D0037EF94 /* BudgetRepositoryImpl.swift */; };
 		35CB168220ED5A470037EF94 /* NotificationCenter+BudgetNotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CB168120ED5A470037EF94 /* NotificationCenter+BudgetNotificationCenter.swift */; };
 		35CB168320ED5A470037EF94 /* NotificationCenter+BudgetNotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CB168120ED5A470037EF94 /* NotificationCenter+BudgetNotificationCenter.swift */; };
+		35F272A7214E979C002264B4 /* TransactionCategoryCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F272A6214E979C002264B4 /* TransactionCategoryCellViewModel.swift */; };
+		35F272A8214E979C002264B4 /* TransactionCategoryCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F272A6214E979C002264B4 /* TransactionCategoryCellViewModel.swift */; };
+		35F272AA214E98C3002264B4 /* TransactionCategoryCellViewModelImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F272A9214E98C3002264B4 /* TransactionCategoryCellViewModelImpl.swift */; };
+		35F272AB214E98C3002264B4 /* TransactionCategoryCellViewModelImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F272A9214E98C3002264B4 /* TransactionCategoryCellViewModelImpl.swift */; };
 		35F4C7A320FA308A0095C21D /* MMFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35F4C7A020FA2FF90095C21D /* MMFoundation.framework */; };
 		35F4C7A420FA309C0095C21D /* MMFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35F4C79C20FA2FF90095C21D /* MMFoundation.framework */; };
 		35F4C7A720FA32690095C21D /* MMFoundation.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 35F4C7A020FA2FF90095C21D /* MMFoundation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -390,6 +394,8 @@
 		35CB167E20ED572D0037EF94 /* BudgetRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetRepositoryImpl.swift; sourceTree = "<group>"; };
 		35CB168120ED5A470037EF94 /* NotificationCenter+BudgetNotificationCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NotificationCenter+BudgetNotificationCenter.swift"; sourceTree = "<group>"; };
 		35DD654520B09F9000909AA4 /* FakeBudgetRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeBudgetRepository.swift; sourceTree = "<group>"; };
+		35F272A6214E979C002264B4 /* TransactionCategoryCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCategoryCellViewModel.swift; sourceTree = "<group>"; };
+		35F272A9214E98C3002264B4 /* TransactionCategoryCellViewModelImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCategoryCellViewModelImpl.swift; sourceTree = "<group>"; };
 		35F4C79420FA2FF90095C21D /* MMFoundation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MMFoundation.xcodeproj; path = Submodules/MMFoundation/MMFoundation.xcodeproj; sourceTree = "<group>"; };
 		35FF6E3E2107C068004FBC87 /* SetupBudgetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupBudgetViewModel.swift; sourceTree = "<group>"; };
 		90D1171220E4E7AC008F21D8 /* BudgetProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetProtocol.swift; sourceTree = "<group>"; };
@@ -671,6 +677,7 @@
 		356668CB208CE66C0052E724 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				35F272A1214E976D002264B4 /* TransactionCategories */,
 				3508A8A421459F8C00810D42 /* TransactionData */,
 				355A563F20FB38F7003561FE /* Repositories */,
 				355A563820FA7D14003561FE /* Theming */,
@@ -746,6 +753,15 @@
 				35AEB1182093A79F00DCE038 /* CoreDataCollectionUpdateHandler.swift */,
 			);
 			path = CollectionViews;
+			sourceTree = "<group>";
+		};
+		35F272A1214E976D002264B4 /* TransactionCategories */ = {
+			isa = PBXGroup;
+			children = (
+				35F272A6214E979C002264B4 /* TransactionCategoryCellViewModel.swift */,
+				35F272A9214E98C3002264B4 /* TransactionCategoryCellViewModelImpl.swift */,
+			);
+			path = TransactionCategories;
 			sourceTree = "<group>";
 		};
 		35F4C79520FA2FF90095C21D /* Products */ = {
@@ -985,6 +1001,7 @@
 				35CB167F20ED572D0037EF94 /* BudgetRepositoryImpl.swift in Sources */,
 				3508A8A621459F9E00810D42 /* TransactionDataViewCoordinator.swift in Sources */,
 				353817E3208E65DC00EA967F /* BudgetManagedObject+CoreDataClass.swift in Sources */,
+				35F272A7214E979C002264B4 /* TransactionCategoryCellViewModel.swift in Sources */,
 				355B6FD22141AF7100E39AF5 /* TransactionsSummaryCoordinator.swift in Sources */,
 				353817E5208E65DC00EA967F /* BudgetManagedObject+CoreDataProperties.swift in Sources */,
 				35162CBB2090DE6D00547126 /* UserPreferences.swift in Sources */,
@@ -1007,6 +1024,7 @@
 				355B6FD52141AFE000E39AF5 /* TransactionsSummaryCoordinatorImpl.swift in Sources */,
 				35162C9A208FC14900547126 /* TransactionProtocol.swift in Sources */,
 				353817E7208E65DC00EA967F /* TransactionManagedObject+CoreDataClass.swift in Sources */,
+				35F272AA214E98C3002264B4 /* TransactionCategoryCellViewModelImpl.swift in Sources */,
 				35AEB1192093A79F00DCE038 /* CollectionUpdater.swift in Sources */,
 				35CB168220ED5A470037EF94 /* NotificationCenter+BudgetNotificationCenter.swift in Sources */,
 				358BEC0320C9B0E6003A3800 /* ChartsDataProcessor.swift in Sources */,
@@ -1088,6 +1106,7 @@
 				35CB168020ED572D0037EF94 /* BudgetRepositoryImpl.swift in Sources */,
 				3508A8A721459F9E00810D42 /* TransactionDataViewCoordinator.swift in Sources */,
 				353817E4208E65DC00EA967F /* BudgetManagedObject+CoreDataClass.swift in Sources */,
+				35F272A8214E979C002264B4 /* TransactionCategoryCellViewModel.swift in Sources */,
 				355B6FD32141AF7100E39AF5 /* TransactionsSummaryCoordinator.swift in Sources */,
 				353817E6208E65DC00EA967F /* BudgetManagedObject+CoreDataProperties.swift in Sources */,
 				35162CBC2090DE6D00547126 /* UserPreferences.swift in Sources */,
@@ -1110,6 +1129,7 @@
 				355B6FD62141AFE000E39AF5 /* TransactionsSummaryCoordinatorImpl.swift in Sources */,
 				353817E8208E65DC00EA967F /* TransactionManagedObject+CoreDataClass.swift in Sources */,
 				35AEB11A2093A79F00DCE038 /* CollectionUpdater.swift in Sources */,
+				35F272AB214E98C3002264B4 /* TransactionCategoryCellViewModelImpl.swift in Sources */,
 				35CB168320ED5A470037EF94 /* NotificationCenter+BudgetNotificationCenter.swift in Sources */,
 				35162C8F208FC10A00547126 /* CalendarProtocol.swift in Sources */,
 				358BEC0420C9B0E6003A3800 /* ChartsDataProcessor.swift in Sources */,
