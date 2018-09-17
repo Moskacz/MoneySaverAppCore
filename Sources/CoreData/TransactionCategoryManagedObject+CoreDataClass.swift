@@ -18,16 +18,8 @@ import UIKit
 
 public class TransactionCategoryManagedObject: NSManagedObject, TransactionCategoryProtocol {
 
-    public enum AttributesNames: String {
+    public enum KeyPaths: String {
         case name
-    }
-    
-    public enum SortDescriptors {
-        case name
-        
-        var descriptor: NSSortDescriptor {
-            return NSSortDescriptor(key: AttributesNames.name.rawValue, ascending: true)
-        }
     }
     
     public lazy var image: Image? = {
