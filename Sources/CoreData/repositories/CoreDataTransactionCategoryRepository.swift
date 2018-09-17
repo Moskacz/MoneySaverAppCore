@@ -28,6 +28,14 @@ internal class CoreDataTransactionCategoryRepository: TransactionCategoryReposit
                                              cacheName: nil)
         return TransactionCategoryResultsController(controller: frc)
     }
+    
+    func addCategory(with data: TransactionCategoryData) {
+        context.perform {
+            let category = TransactionCategoryManagedObject.createEntity(inContext: self.context)
+            category.name = data.name
+            category.image = data.image
+        }
+    }
 }
 
 private class TransactionCategoryResultsController: ResultsController<TransactionCategoryProtocol> {
