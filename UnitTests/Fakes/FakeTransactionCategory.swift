@@ -10,6 +10,11 @@ import MoneySaverAppCore
 @testable import MMFoundation
 
 class FakeTransactionCategory: TransactionCategoryProtocol {
-    var name: String? = nil
-    var image: Image? = nil
+    var name: String?
+    var image: Image?
+    
+    init(name: String? = nil, image: Image? = nil) {
+        self.name = name
+        self.image = image
+    }
 }

@@ -51,6 +51,10 @@
 		35224EE821502C2300C2C813 /* TransactionCategoryRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35224EE621502C2300C2C813 /* TransactionCategoryRepository.swift */; };
 		35224EF221517A2700C2C813 /* TransactionCategoryCollectionCoordinatorImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35224EF121517A2700C2C813 /* TransactionCategoryCollectionCoordinatorImpl.swift */; };
 		35224EF321517A2700C2C813 /* TransactionCategoryCollectionCoordinatorImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35224EF121517A2700C2C813 /* TransactionCategoryCollectionCoordinatorImpl.swift */; };
+		35224EFB215180EB00C2C813 /* FakeTransactionCategoryRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35224EF8215180E300C2C813 /* FakeTransactionCategoryRepository.swift */; };
+		35224EFC215180EC00C2C813 /* FakeTransactionCategoryRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35224EF8215180E300C2C813 /* FakeTransactionCategoryRepository.swift */; };
+		35224F002151818A00C2C813 /* TransactionCategoryCollectionCoordinatorImplTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35224EFD2151815D00C2C813 /* TransactionCategoryCollectionCoordinatorImplTests.swift */; };
+		35224F012151818B00C2C813 /* TransactionCategoryCollectionCoordinatorImplTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35224EFD2151815D00C2C813 /* TransactionCategoryCollectionCoordinatorImplTests.swift */; };
 		35227EFC2105082100B72F3D /* Factory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35227EFB2105082100B72F3D /* Factory.swift */; };
 		35227EFD2105082100B72F3D /* Factory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35227EFB2105082100B72F3D /* Factory.swift */; };
 		352D625C20F3D21400CBE0BD /* BudgetViewModelImplTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352D625B20F3D21400CBE0BD /* BudgetViewModelImplTests.swift */; };
@@ -326,6 +330,8 @@
 		35224EDF21502BDC00C2C813 /* CoreDataTransactionCategoryRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataTransactionCategoryRepository.swift; sourceTree = "<group>"; };
 		35224EE621502C2300C2C813 /* TransactionCategoryRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCategoryRepository.swift; sourceTree = "<group>"; };
 		35224EF121517A2700C2C813 /* TransactionCategoryCollectionCoordinatorImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCategoryCollectionCoordinatorImpl.swift; sourceTree = "<group>"; };
+		35224EF8215180E300C2C813 /* FakeTransactionCategoryRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeTransactionCategoryRepository.swift; sourceTree = "<group>"; };
+		35224EFD2151815D00C2C813 /* TransactionCategoryCollectionCoordinatorImplTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCategoryCollectionCoordinatorImplTests.swift; sourceTree = "<group>"; };
 		35227EFB2105082100B72F3D /* Factory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Factory.swift; sourceTree = "<group>"; };
 		352D625B20F3D21400CBE0BD /* BudgetViewModelImplTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetViewModelImplTests.swift; sourceTree = "<group>"; };
 		352D625E20F3D30400CBE0BD /* FakeBudgetViewModelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeBudgetViewModelDelegate.swift; sourceTree = "<group>"; };
@@ -624,6 +630,7 @@
 				359E40BD20DF89A400801E20 /* FakeTransactionNotificationCenter.swift */,
 				35423E1620EEA364004E006B /* FakeBudget.swift */,
 				352D625E20F3D30400CBE0BD /* FakeBudgetViewModelDelegate.swift */,
+				35224EF8215180E300C2C813 /* FakeTransactionCategoryRepository.swift */,
 			);
 			path = Fakes;
 			sourceTree = "<group>";
@@ -745,6 +752,7 @@
 				352D625B20F3D21400CBE0BD /* BudgetViewModelImplTests.swift */,
 				352D626A20F5371B00CBE0BD /* TransactionsSummaryCoordinatorImplTests.swift */,
 				3508A8AE21482B3100810D42 /* TransactionDataViewCoordinatorImplTests.swift */,
+				35224EFD2151815D00C2C813 /* TransactionCategoryCollectionCoordinatorImplTests.swift */,
 			);
 			path = UnitTests;
 			sourceTree = "<group>";
@@ -1087,12 +1095,14 @@
 				35423E1420EEA293004E006B /* BudgetNotificationCenterTests.swift in Sources */,
 				359E40AE20DADE8400801E20 /* FakeTransactionsRepository.swift in Sources */,
 				354E4B8E20A23153009A8311 /* StringTests.swift in Sources */,
+				35224F002151818A00C2C813 /* TransactionCategoryCollectionCoordinatorImplTests.swift in Sources */,
 				35593BF820922F0700DEEDB5 /* FakeCalendar.swift in Sources */,
 				35593C0C2092312200DEEDB5 /* FakeTransction.swift in Sources */,
 				352D625C20F3D21400CBE0BD /* BudgetViewModelImplTests.swift in Sources */,
 				35423E1720EEA364004E006B /* FakeBudget.swift in Sources */,
 				357B860E20D1AFD7001E5D25 /* SequenceIntExtensions.swift in Sources */,
 				354E4B9120A231B3009A8311 /* TransactionsRepositoryTests.swift in Sources */,
+				35224EFB215180EB00C2C813 /* FakeTransactionCategoryRepository.swift in Sources */,
 				352D626B20F5371B00CBE0BD /* TransactionsSummaryCoordinatorImplTests.swift in Sources */,
 				359E40A820DADDBF00801E20 /* StatsViewModelTests.swift in Sources */,
 				359E40B120DADF4F00801E20 /* FakeUserPreferences.swift in Sources */,
@@ -1196,12 +1206,14 @@
 				35423E1520EEA293004E006B /* BudgetNotificationCenterTests.swift in Sources */,
 				359E40AF20DADE8400801E20 /* FakeTransactionsRepository.swift in Sources */,
 				354E4B8F20A23153009A8311 /* StringTests.swift in Sources */,
+				35224F012151818B00C2C813 /* TransactionCategoryCollectionCoordinatorImplTests.swift in Sources */,
 				35593BF920922F0700DEEDB5 /* FakeCalendar.swift in Sources */,
 				35593C0D2092312200DEEDB5 /* FakeTransction.swift in Sources */,
 				352D625D20F3D21400CBE0BD /* BudgetViewModelImplTests.swift in Sources */,
 				35423E1820EEA364004E006B /* FakeBudget.swift in Sources */,
 				357B860F20D1AFD7001E5D25 /* SequenceIntExtensions.swift in Sources */,
 				354E4B9220A231B3009A8311 /* TransactionsRepositoryTests.swift in Sources */,
+				35224EFC215180EC00C2C813 /* FakeTransactionCategoryRepository.swift in Sources */,
 				352D626C20F5371B00CBE0BD /* TransactionsSummaryCoordinatorImplTests.swift in Sources */,
 				359E40A920DADDBF00801E20 /* StatsViewModelTests.swift in Sources */,
 				359E40B220DADF4F00801E20 /* FakeUserPreferences.swift in Sources */,
