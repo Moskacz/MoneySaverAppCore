@@ -9,3 +9,5 @@ import Foundation
 import MMFoundation
 
 public protocol TransactionCategoryCollectionDisplaying: ResultsControllerDelegate {}
+
+

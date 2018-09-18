@@ -9,4 +9,6 @@ import Foundation
 
 public protocol TransactionCategoryCollectionCoordinator {
     var display: TransactionCategoryCollectionDisplaying? { set get }
+    var numberOfCategories: Int { get }
+    func categoryViewModel(at indexPath: IndexPath) -> TransactionCategoryCellViewModel
 }

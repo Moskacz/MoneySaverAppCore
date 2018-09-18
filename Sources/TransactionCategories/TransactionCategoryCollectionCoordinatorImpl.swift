@@ -16,6 +16,7 @@ internal class TransactionCategoryCollectionCoordinatorImpl: TransactionCategory
     var display: TransactionCategoryCollectionDisplaying? {
          didSet {
             loadData()
+            resultsController.delegate = display
         }
     }
     
@@ -27,11 +28,18 @@ internal class TransactionCategoryCollectionCoordinatorImpl: TransactionCategory
     private func loadData() {
         do {
             try resultsController.loadData()
+            display?.resultsControllerDidChangeContent()
         } catch {
             print(error.localizedDescription)
         }
     }
     
+    var numberOfCategories: Int {
+        return resultsController.objectsIn(section: 0)?.count ?? 0
+    }
     
-    
+    func categoryViewModel(at indexPath: IndexPath) -> TransactionCategoryCellViewModel {
+        let category = resultsController.object(at: indexPath)
+        return TransactionCategoryCellViewModelImpl(category: category)
+    }
 }
