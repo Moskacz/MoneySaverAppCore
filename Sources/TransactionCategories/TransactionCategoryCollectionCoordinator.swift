@@ -8,5 +8,5 @@
 import Foundation
 
 public protocol TransactionCategoryCollectionCoordinator {
-    var display: TransactionCategoryCollectionDisplaying { set get }
+    var display: TransactionCategoryCollectionDisplaying? { set get }
 }
