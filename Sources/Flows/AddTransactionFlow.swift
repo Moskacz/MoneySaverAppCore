@@ -7,7 +7,7 @@
 
 import Foundation
 
-public protocol AddTransactionFlow {
+public protocol AddTransactionFlow: class {
     var transactionData: TransactionData? { get set }
     var category: TransactionCategoryProtocol { get set }
 }

@@ -11,9 +11,11 @@ import MMFoundation
 internal class TransactionDataViewCoordinatorImpl: TransactionDataViewCoordinator {
     
     private let formatter: DateFormatter
+    private let flow: AddTransactionFlow
     
-    internal init(formatter: DateFormatter) {
+    internal init(formatter: DateFormatter, flow: AddTransactionFlow) {
         self.formatter = formatter
+        self.flow = flow
     }
     
     var display: TransactionDataDisplaying? {
@@ -28,8 +30,11 @@ internal class TransactionDataViewCoordinatorImpl: TransactionDataViewCoordinato
         let date = validate(date: date)
         
         switch (title, amount, date) {
-        case (.value(_), .value(_), .value(_)):
-            break
+        case (.value(let title), .value(let amount), .value(let date)):
+            let transactionData = TransactionData(title: title,
+                                                  value: amount,
+                                                  creationDate: date)
+            flow.transactionData = transactionData
         case (let title, let amount, let date):
             let errors = [title.error, amount.error, date.error].compactMap { $0 }
             display?.display(error: TransactionDataViewError(array: errors))
