@@ -12,11 +12,13 @@ class TransactionDataViewCoordinatorImplTests: XCTestCase {
     
     private var sut: TransactionDataViewCoordinatorImpl!
     private var displayFake: FakeDisplay!
+    private var flowFake: FakeFlow!
     private let formatter = DateFormatters.formatter(forType: .dateWithTime)
     
     override func setUp() {
         super.setUp()
-        sut = TransactionDataViewCoordinatorImpl(formatter: formatter)
+        flowFake = FakeFlow()
+        sut = TransactionDataViewCoordinatorImpl(formatter: formatter, flow: flowFake)
         displayFake = FakeDisplay()
         sut.display = displayFake
     }
@@ -54,6 +56,22 @@ class TransactionDataViewCoordinatorImplTests: XCTestCase {
         sut.set(title: "title", value: "non_number", date: Date())
         XCTAssertEqual(displayFake.error, TransactionDataViewError.invalidValue)
     }
+    
+    func test_multipleErrors() {
+        sut.set(title: "", value: "not_a_number", date: nil)
+        XCTAssertTrue(displayFake.error!.contains(.missingTitle))
+        XCTAssertTrue(displayFake.error!.contains(.invalidValue))
+        XCTAssertTrue(displayFake.error!.contains(.missingDate))
+    }
+    
+    func test_whenValidDataIsSet_thenTransactionDataShouldBeSetOnFlow() {
+        let creationDate = Date()
+        sut.set(title: "some_title", value: "1234", date: creationDate)
+        XCTAssertNotNil(flowFake.transactionData)
+        XCTAssertEqual(flowFake.transactionData!.title, "some_title")
+        XCTAssertEqual(flowFake.transactionData!.value, Decimal(1234))
+        XCTAssertEqual(flowFake.transactionData!.creationDate, creationDate)
+    }
 }
 
 private class FakeDisplay: TransactionDataDisplaying {
@@ -67,4 +85,10 @@ private class FakeDisplay: TransactionDataDisplaying {
     func set(title: String?) { self.title = title }
     func set(date: String?) { self.date = date }
     func display(error: TransactionDataViewError) { self.error = error }
+}
+
+private class FakeFlow: AddTransactionFlow {
+    
+    var transactionData: TransactionData?
+    var category: TransactionCategoryProtocol?
 }
