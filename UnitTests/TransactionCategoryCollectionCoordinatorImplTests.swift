@@ -49,6 +49,15 @@ class TransactionCategoryCollectionCoordinatorImplTests: XCTestCase {
         sut.display = display
         XCTAssertTrue(display.didChangeContentCalled)
     }
+    
+    func test_chooseCategoryAtIndexPath_shouldSetCategoryAtFlow() {
+        let categories = [FakeTransactionCategory(name: "some_name")]
+        repository.resultsController = ResultsControllerFake(items: categories)
+        let sut = TransactionCategoryCollectionCoordinatorImpl(repository: repository, flow: flow)
+        
+        sut.chooseCategory(at: IndexPath(item: 0, section: 0))
+        XCTAssertEqual(categories.first?.name, flow.category?.name)
+    }
 }
 
 private class DisplayFake: TransactionCategoryCollectionDisplaying {
