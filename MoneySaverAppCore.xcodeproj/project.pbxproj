@@ -55,8 +55,6 @@
 		35224EFC215180EC00C2C813 /* FakeTransactionCategoryRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35224EF8215180E300C2C813 /* FakeTransactionCategoryRepository.swift */; };
 		35224F002151818A00C2C813 /* TransactionCategoryCollectionCoordinatorImplTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35224EFD2151815D00C2C813 /* TransactionCategoryCollectionCoordinatorImplTests.swift */; };
 		35224F012151818B00C2C813 /* TransactionCategoryCollectionCoordinatorImplTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35224EFD2151815D00C2C813 /* TransactionCategoryCollectionCoordinatorImplTests.swift */; };
-		35224F042152B96800C2C813 /* AddTransactionFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35224F032152B96800C2C813 /* AddTransactionFlow.swift */; };
-		35224F052152B96800C2C813 /* AddTransactionFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35224F032152B96800C2C813 /* AddTransactionFlow.swift */; };
 		35227EFC2105082100B72F3D /* Factory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35227EFB2105082100B72F3D /* Factory.swift */; };
 		35227EFD2105082100B72F3D /* Factory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35227EFB2105082100B72F3D /* Factory.swift */; };
 		352D625C20F3D21400CBE0BD /* BudgetViewModelImplTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352D625B20F3D21400CBE0BD /* BudgetViewModelImplTests.swift */; };
@@ -334,7 +332,6 @@
 		35224EF121517A2700C2C813 /* TransactionCategoryCollectionCoordinatorImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCategoryCollectionCoordinatorImpl.swift; sourceTree = "<group>"; };
 		35224EF8215180E300C2C813 /* FakeTransactionCategoryRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeTransactionCategoryRepository.swift; sourceTree = "<group>"; };
 		35224EFD2151815D00C2C813 /* TransactionCategoryCollectionCoordinatorImplTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCategoryCollectionCoordinatorImplTests.swift; sourceTree = "<group>"; };
-		35224F032152B96800C2C813 /* AddTransactionFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransactionFlow.swift; sourceTree = "<group>"; };
 		35227EFB2105082100B72F3D /* Factory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Factory.swift; sourceTree = "<group>"; };
 		352D625B20F3D21400CBE0BD /* BudgetViewModelImplTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetViewModelImplTests.swift; sourceTree = "<group>"; };
 		352D625E20F3D30400CBE0BD /* FakeBudgetViewModelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeBudgetViewModelDelegate.swift; sourceTree = "<group>"; };
@@ -550,14 +547,6 @@
 			path = StatePreservation;
 			sourceTree = "<group>";
 		};
-		35224F022152B95B00C2C813 /* Flows */ = {
-			isa = PBXGroup;
-			children = (
-				35224F032152B96800C2C813 /* AddTransactionFlow.swift */,
-			);
-			path = Flows;
-			sourceTree = "<group>";
-		};
 		352D626320F5296100CBE0BD /* Summary */ = {
 			isa = PBXGroup;
 			children = (
@@ -708,7 +697,6 @@
 		356668CB208CE66C0052E724 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				35224F022152B95B00C2C813 /* Flows */,
 				35F272A1214E976D002264B4 /* TransactionCategories */,
 				3508A8A421459F8C00810D42 /* TransactionData */,
 				355A563F20FB38F7003561FE /* Repositories */,
@@ -1039,7 +1027,6 @@
 				3508A8A621459F9E00810D42 /* TransactionDataViewCoordinator.swift in Sources */,
 				353817E3208E65DC00EA967F /* BudgetManagedObject+CoreDataClass.swift in Sources */,
 				35224EE021502BDC00C2C813 /* CoreDataTransactionCategoryRepository.swift in Sources */,
-				35224F042152B96800C2C813 /* AddTransactionFlow.swift in Sources */,
 				35F272A7214E979C002264B4 /* TransactionCategoryCellViewModel.swift in Sources */,
 				355B6FD22141AF7100E39AF5 /* TransactionsSummaryCoordinator.swift in Sources */,
 				353817E5208E65DC00EA967F /* BudgetManagedObject+CoreDataProperties.swift in Sources */,
@@ -1151,7 +1138,6 @@
 				3508A8A721459F9E00810D42 /* TransactionDataViewCoordinator.swift in Sources */,
 				353817E4208E65DC00EA967F /* BudgetManagedObject+CoreDataClass.swift in Sources */,
 				35224EE121502BDC00C2C813 /* CoreDataTransactionCategoryRepository.swift in Sources */,
-				35224F052152B96800C2C813 /* AddTransactionFlow.swift in Sources */,
 				35F272A8214E979C002264B4 /* TransactionCategoryCellViewModel.swift in Sources */,
 				355B6FD32141AF7100E39AF5 /* TransactionsSummaryCoordinator.swift in Sources */,
 				353817E6208E65DC00EA967F /* BudgetManagedObject+CoreDataProperties.swift in Sources */,

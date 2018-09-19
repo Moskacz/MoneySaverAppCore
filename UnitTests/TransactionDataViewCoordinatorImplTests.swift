@@ -87,8 +87,7 @@ private class FakeDisplay: TransactionDataDisplaying {
     func display(error: TransactionDataViewError) { self.error = error }
 }
 
-private class FakeFlow: AddTransactionFlow {
+private class FakeFlow: TransactionDataFlow {
     
     var transactionData: TransactionData?
-    var category: TransactionCategoryProtocol?
 }

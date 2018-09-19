@@ -8,12 +8,16 @@
 import Foundation
 import MMFoundation
 
+internal protocol TransactionDataFlow: class {
+    var transactionData: TransactionData? { get set }
+}
+
 internal class TransactionDataViewCoordinatorImpl: TransactionDataViewCoordinator {
     
     private let formatter: DateFormatter
-    private let flow: AddTransactionFlow
+    private let flow: TransactionDataFlow
     
-    internal init(formatter: DateFormatter, flow: AddTransactionFlow) {
+    internal init(formatter: DateFormatter, flow: TransactionDataFlow) {
         self.formatter = formatter
         self.flow = flow
     }

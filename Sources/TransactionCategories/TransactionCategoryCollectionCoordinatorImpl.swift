@@ -8,10 +8,15 @@
 import Foundation
 import MMFoundation
 
+internal protocol TransactionCategoryCollectionFlow: class {
+    var category: TransactionCategoryProtocol? { get set }
+}
+
 internal class TransactionCategoryCollectionCoordinatorImpl: TransactionCategoryCollectionCoordinator {
     
     private let repository: TransactionCategoryRepository
     private let resultsController: ResultsController<TransactionCategoryProtocol>
+    private let flow: TransactionCategoryCollectionFlow
     
     var display: TransactionCategoryCollectionDisplaying? {
          didSet {
@@ -20,9 +25,10 @@ internal class TransactionCategoryCollectionCoordinatorImpl: TransactionCategory
         }
     }
     
-    internal init(repository: TransactionCategoryRepository) {
+    internal init(repository: TransactionCategoryRepository, flow: TransactionCategoryCollectionFlow) {
         self.repository = repository
         self.resultsController = repository.allCategoriesResultController
+        self.flow = flow
     }
     
     private func loadData() {
@@ -41,5 +47,9 @@ internal class TransactionCategoryCollectionCoordinatorImpl: TransactionCategory
     func categoryViewModel(at indexPath: IndexPath) -> TransactionCategoryCellViewModel {
         let category = resultsController.object(at: indexPath)
         return TransactionCategoryCellViewModelImpl(category: category)
+    }
+    
+    func chooseCategory(at indexPath: IndexPath) {
+        flow.category = resultsController.object(at: indexPath)
     }
 }
