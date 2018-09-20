@@ -61,6 +61,10 @@
 		35224F0C215419D800C2C813 /* SettingsDisplaying.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35224F0A215419D800C2C813 /* SettingsDisplaying.swift */; };
 		35224F0E21541AA600C2C813 /* SettingsFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35224F0D21541AA600C2C813 /* SettingsFlow.swift */; };
 		35224F0F21541AA600C2C813 /* SettingsFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35224F0D21541AA600C2C813 /* SettingsFlow.swift */; };
+		35224F1121541CC500C2C813 /* SettingsViewCoordinatorImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35224F1021541CC500C2C813 /* SettingsViewCoordinatorImpl.swift */; };
+		35224F1221541CC500C2C813 /* SettingsViewCoordinatorImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35224F1021541CC500C2C813 /* SettingsViewCoordinatorImpl.swift */; };
+		35224F1421541DD600C2C813 /* SettingsViewCoordinatorImplTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35224F1321541DD600C2C813 /* SettingsViewCoordinatorImplTests.swift */; };
+		35224F1521541DD600C2C813 /* SettingsViewCoordinatorImplTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35224F1321541DD600C2C813 /* SettingsViewCoordinatorImplTests.swift */; };
 		35227EFC2105082100B72F3D /* Factory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35227EFB2105082100B72F3D /* Factory.swift */; };
 		35227EFD2105082100B72F3D /* Factory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35227EFB2105082100B72F3D /* Factory.swift */; };
 		352D625C20F3D21400CBE0BD /* BudgetViewModelImplTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352D625B20F3D21400CBE0BD /* BudgetViewModelImplTests.swift */; };
@@ -341,6 +345,8 @@
 		35224F07215419BD00C2C813 /* SettingsViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewCoordinator.swift; sourceTree = "<group>"; };
 		35224F0A215419D800C2C813 /* SettingsDisplaying.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsDisplaying.swift; sourceTree = "<group>"; };
 		35224F0D21541AA600C2C813 /* SettingsFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsFlow.swift; sourceTree = "<group>"; };
+		35224F1021541CC500C2C813 /* SettingsViewCoordinatorImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewCoordinatorImpl.swift; sourceTree = "<group>"; };
+		35224F1321541DD600C2C813 /* SettingsViewCoordinatorImplTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewCoordinatorImplTests.swift; sourceTree = "<group>"; };
 		35227EFB2105082100B72F3D /* Factory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Factory.swift; sourceTree = "<group>"; };
 		352D625B20F3D21400CBE0BD /* BudgetViewModelImplTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetViewModelImplTests.swift; sourceTree = "<group>"; };
 		352D625E20F3D30400CBE0BD /* FakeBudgetViewModelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeBudgetViewModelDelegate.swift; sourceTree = "<group>"; };
@@ -562,6 +568,7 @@
 				35224F07215419BD00C2C813 /* SettingsViewCoordinator.swift */,
 				35224F0A215419D800C2C813 /* SettingsDisplaying.swift */,
 				35224F0D21541AA600C2C813 /* SettingsFlow.swift */,
+				35224F1021541CC500C2C813 /* SettingsViewCoordinatorImpl.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -773,6 +780,7 @@
 				352D626A20F5371B00CBE0BD /* TransactionsSummaryCoordinatorImplTests.swift */,
 				3508A8AE21482B3100810D42 /* TransactionDataViewCoordinatorImplTests.swift */,
 				35224EFD2151815D00C2C813 /* TransactionCategoryCollectionCoordinatorImplTests.swift */,
+				35224F1321541DD600C2C813 /* SettingsViewCoordinatorImplTests.swift */,
 			);
 			path = UnitTests;
 			sourceTree = "<group>";
@@ -1087,6 +1095,7 @@
 				353817EB208E65DC00EA967F /* TransactionCategoryManagedObject+CoreDataClass.swift in Sources */,
 				35CB167C20ED56D90037EF94 /* BudgetRepository.swift in Sources */,
 				353A944820A0D9E100B94A72 /* ManagedObjectModel+Extensions.swift in Sources */,
+				35224F1121541CC500C2C813 /* SettingsViewCoordinatorImpl.swift in Sources */,
 				353817D1208E642C00EA967F /* DataModel.xcdatamodeld in Sources */,
 				353817E9208E65DC00EA967F /* TransactionManagedObject+CoreDataProperties.swift in Sources */,
 				355A563620FA7BA7003561FE /* TransactionsListCoordinatorImpl.swift in Sources */,
@@ -1119,6 +1128,7 @@
 				359E40AE20DADE8400801E20 /* FakeTransactionsRepository.swift in Sources */,
 				354E4B8E20A23153009A8311 /* StringTests.swift in Sources */,
 				35224F002151818A00C2C813 /* TransactionCategoryCollectionCoordinatorImplTests.swift in Sources */,
+				35224F1421541DD600C2C813 /* SettingsViewCoordinatorImplTests.swift in Sources */,
 				35593BF820922F0700DEEDB5 /* FakeCalendar.swift in Sources */,
 				35593C0C2092312200DEEDB5 /* FakeTransction.swift in Sources */,
 				352D625C20F3D21400CBE0BD /* BudgetViewModelImplTests.swift in Sources */,
@@ -1201,6 +1211,7 @@
 				353817EC208E65DC00EA967F /* TransactionCategoryManagedObject+CoreDataClass.swift in Sources */,
 				35CB167D20ED56D90037EF94 /* BudgetRepository.swift in Sources */,
 				353817D2208E643600EA967F /* DataModel.xcdatamodeld in Sources */,
+				35224F1221541CC500C2C813 /* SettingsViewCoordinatorImpl.swift in Sources */,
 				353817EA208E65DC00EA967F /* TransactionManagedObject+CoreDataProperties.swift in Sources */,
 				35162CA4208FC2D200547126 /* NSManagedObject+Extensions.swift in Sources */,
 				355A563720FA7BA7003561FE /* TransactionsListCoordinatorImpl.swift in Sources */,
@@ -1233,6 +1244,7 @@
 				359E40AF20DADE8400801E20 /* FakeTransactionsRepository.swift in Sources */,
 				354E4B8F20A23153009A8311 /* StringTests.swift in Sources */,
 				35224F012151818B00C2C813 /* TransactionCategoryCollectionCoordinatorImplTests.swift in Sources */,
+				35224F1521541DD600C2C813 /* SettingsViewCoordinatorImplTests.swift in Sources */,
 				35593BF920922F0700DEEDB5 /* FakeCalendar.swift in Sources */,
 				35593C0D2092312200DEEDB5 /* FakeTransction.swift in Sources */,
 				352D625D20F3D21400CBE0BD /* BudgetViewModelImplTests.swift in Sources */,

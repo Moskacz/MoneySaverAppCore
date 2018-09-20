@@ -7,6 +7,6 @@
 
 import Foundation
 
-public protocol SettingsDisplaying {
+public protocol SettingsDisplaying: class {
     func reloadItems()
 }

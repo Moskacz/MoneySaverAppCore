@@ -7,9 +7,8 @@
 
 import Foundation
 
-public protocol SettingViewCoordinator {
+public protocol SettingsViewCoordinator {
     var items: [SettingItem] { get }
-    var display: SettingsDisplaying? { get set }
     func choose(item: SettingItem)
 }
 
