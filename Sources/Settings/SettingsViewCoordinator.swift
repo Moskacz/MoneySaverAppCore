@@ -9,6 +9,8 @@ import Foundation
 
 public protocol SettingViewCoordinator {
     var items: [SettingItem] { get }
+    var display: SettingsDisplaying? { get set }
+    func choose(item: SettingItem)
 }
 
 public enum SettingItem {

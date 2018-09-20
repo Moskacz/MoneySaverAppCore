@@ -59,6 +59,8 @@
 		35224F09215419BD00C2C813 /* SettingsViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35224F07215419BD00C2C813 /* SettingsViewCoordinator.swift */; };
 		35224F0B215419D800C2C813 /* SettingsDisplaying.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35224F0A215419D800C2C813 /* SettingsDisplaying.swift */; };
 		35224F0C215419D800C2C813 /* SettingsDisplaying.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35224F0A215419D800C2C813 /* SettingsDisplaying.swift */; };
+		35224F0E21541AA600C2C813 /* SettingsFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35224F0D21541AA600C2C813 /* SettingsFlow.swift */; };
+		35224F0F21541AA600C2C813 /* SettingsFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35224F0D21541AA600C2C813 /* SettingsFlow.swift */; };
 		35227EFC2105082100B72F3D /* Factory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35227EFB2105082100B72F3D /* Factory.swift */; };
 		35227EFD2105082100B72F3D /* Factory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35227EFB2105082100B72F3D /* Factory.swift */; };
 		352D625C20F3D21400CBE0BD /* BudgetViewModelImplTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352D625B20F3D21400CBE0BD /* BudgetViewModelImplTests.swift */; };
@@ -338,6 +340,7 @@
 		35224EFD2151815D00C2C813 /* TransactionCategoryCollectionCoordinatorImplTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCategoryCollectionCoordinatorImplTests.swift; sourceTree = "<group>"; };
 		35224F07215419BD00C2C813 /* SettingsViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewCoordinator.swift; sourceTree = "<group>"; };
 		35224F0A215419D800C2C813 /* SettingsDisplaying.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsDisplaying.swift; sourceTree = "<group>"; };
+		35224F0D21541AA600C2C813 /* SettingsFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsFlow.swift; sourceTree = "<group>"; };
 		35227EFB2105082100B72F3D /* Factory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Factory.swift; sourceTree = "<group>"; };
 		352D625B20F3D21400CBE0BD /* BudgetViewModelImplTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetViewModelImplTests.swift; sourceTree = "<group>"; };
 		352D625E20F3D30400CBE0BD /* FakeBudgetViewModelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeBudgetViewModelDelegate.swift; sourceTree = "<group>"; };
@@ -558,6 +561,7 @@
 			children = (
 				35224F07215419BD00C2C813 /* SettingsViewCoordinator.swift */,
 				35224F0A215419D800C2C813 /* SettingsDisplaying.swift */,
+				35224F0D21541AA600C2C813 /* SettingsFlow.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -1060,6 +1064,7 @@
 				353817ED208E65DC00EA967F /* TransactionCategoryManagedObject+CoreDataProperties.swift in Sources */,
 				354C12472104A4AF0001AB19 /* TransactionCell.swift in Sources */,
 				359E40B420DC3C0400801E20 /* NotificationCenter+TransactionNotificationCenter.swift in Sources */,
+				35224F0E21541AA600C2C813 /* SettingsFlow.swift in Sources */,
 				35224F08215419BD00C2C813 /* SettingsViewCoordinator.swift in Sources */,
 				355B6FCF2141AE5600E39AF5 /* TransactionsSummaryDisplaying.swift in Sources */,
 				358BEC0020C9AD25003A3800 /* GroupedData.swift in Sources */,
@@ -1173,6 +1178,7 @@
 				353817EE208E65DC00EA967F /* TransactionCategoryManagedObject+CoreDataProperties.swift in Sources */,
 				354C124C2104A5680001AB19 /* TransactionCell.swift in Sources */,
 				359E40B520DC3C0400801E20 /* NotificationCenter+TransactionNotificationCenter.swift in Sources */,
+				35224F0F21541AA600C2C813 /* SettingsFlow.swift in Sources */,
 				35224F09215419BD00C2C813 /* SettingsViewCoordinator.swift in Sources */,
 				355B6FD02141AE5600E39AF5 /* TransactionsSummaryDisplaying.swift in Sources */,
 				358BEC0120C9AD25003A3800 /* GroupedData.swift in Sources */,
