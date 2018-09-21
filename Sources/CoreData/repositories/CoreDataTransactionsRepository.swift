@@ -45,8 +45,8 @@ internal class CoreDataTransactionsRepository: TransactionsRepository {
     internal func addTransaction(data: TransactionData, category: TransactionCategoryManagedObject) {
         context.performAndWait {
             let transaction = TransactionManagedObject.createEntity(inContext: self.context)
-            transaction.title = data.title
-            transaction.value = data.value as NSDecimalNumber
+            transaction.cd_title = data.title
+            transaction.cd_value = data.value as NSDecimalNumber
             let date = CalendarDateManagedObject.createEntity(inContext: self.context)
             date.update(with: calendar.calendarDate(from: data.creationDate))
             transaction.date = date

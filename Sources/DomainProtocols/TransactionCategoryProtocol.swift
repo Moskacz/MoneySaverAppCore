@@ -9,7 +9,7 @@
 import Foundation
 import MMFoundation
 
-public protocol TransactionCategoryProtocol {
+public protocol TransactionCategoryProtocol: UniqueIdentifiable {
     var name: String? { get }
     var image: Image? { get }
 }

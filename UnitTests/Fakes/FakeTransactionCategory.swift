@@ -12,6 +12,8 @@ import MoneySaverAppCore
 class FakeTransactionCategory: TransactionCategoryProtocol {
     var name: String?
     var image: Image?
+    var identifier: UUID = UUID()
+    
     
     init(name: String? = nil, image: Image? = nil) {
         self.name = name

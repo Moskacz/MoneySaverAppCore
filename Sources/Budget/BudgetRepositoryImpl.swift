@@ -48,7 +48,7 @@ internal class BudgetRepositoryImpl: BudgetRepository {
     
     private func createNewBudget(value: Decimal) {
         let entity = BudgetManagedObject.createEntity(inContext: context)
-        entity.value = value as NSDecimalNumber
+        entity.cd_value = value as NSDecimalNumber
     }
     
     private func updateBudget(value: Decimal, entities: [BudgetManagedObject]) {
@@ -58,7 +58,7 @@ internal class BudgetRepositoryImpl: BudgetRepository {
             }
         } else {
             let entity = entities[0]
-            entity.value = value as NSDecimalNumber
+            entity.cd_value = value as NSDecimalNumber
         }
     }
     

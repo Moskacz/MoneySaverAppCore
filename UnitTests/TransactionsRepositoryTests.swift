@@ -40,7 +40,7 @@ class TransactionsRepositoryTests: XCTestCase {
         let transactionData = Date(timeIntervalSince1970: 1527521400)
         let data = TransactionData(title: "test", value: Decimal(-20), creationDate: transactionData)
         let category = TransactionCategoryManagedObject.createEntity(inContext: context)
-        category.name = "category_name"
+        category.cd_name = "category_name"
         sut.addTransaction(data: data, category: category)
         
         let transaction = context.registeredObjects.compactMap { $0 as? TransactionManagedObject }[0]
@@ -80,9 +80,9 @@ class TransactionsRepositoryTests: XCTestCase {
     private func calendarDate(dayOfEra: Int32 = 0, weekOfEra: Int32 = 0, monthOfEra: Int32 = 0) -> CalendarDateManagedObject {
         let context = coreDataStack.getViewContext()
         let date = CalendarDateManagedObject.createEntity(inContext: context)
-        date.dayOfEra = dayOfEra
-        date.weekOfEra = weekOfEra
-        date.monthOfEra = monthOfEra
+        date.cd_dayOfEra = dayOfEra
+        date.cd_weekOfEra = weekOfEra
+        date.cd_monthOfEra = monthOfEra
         return date
     }
 }

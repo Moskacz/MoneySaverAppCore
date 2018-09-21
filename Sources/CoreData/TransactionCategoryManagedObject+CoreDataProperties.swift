@@ -2,12 +2,13 @@
 //  TransactionCategoryManagedObject+CoreDataProperties.swift
 //  MoneySaverAppCore
 //
-//  Created by Michal Moskala on 23.04.2018.
+//  Created by Michal Moskala on 21/09/2018.
 //
 //
 
 import Foundation
 import CoreData
+import MMFoundation
 
 extension TransactionCategoryManagedObject {
 
@@ -15,9 +16,11 @@ extension TransactionCategoryManagedObject {
         return NSFetchRequest<TransactionCategoryManagedObject>(entityName: "TransactionCategoryManagedObject")
     }
 
-    @NSManaged public var icon: NSData?
-    @NSManaged public var name: String?
+    @NSManaged public var cd_icon: NSData?
+    @NSManaged public var cd_name: String?
+    @NSManaged public var cd_identifier: UUID?
     @NSManaged public var transactions: NSSet?
+
 }
 
 // MARK: Generated accessors for transactions

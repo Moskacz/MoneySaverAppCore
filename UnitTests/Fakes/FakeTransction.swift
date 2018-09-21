@@ -14,4 +14,5 @@ class FakeTransaction: TransactionProtocol {
     var value: NSDecimalNumber? = nil
     var transactionCategory: TransactionCategoryProtocol? = nil
     var transactionDate: CalendarDateProtocol? = nil
+    var identifier: UUID { return UUID() }
 }

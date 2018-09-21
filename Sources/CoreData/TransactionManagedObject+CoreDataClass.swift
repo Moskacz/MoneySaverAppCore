@@ -9,7 +9,7 @@
 import Foundation
 import CoreData
 
-public class TransactionManagedObject: NSManagedObject, TransactionProtocol {
+public class TransactionManagedObject: NSManagedObject {
     
     public enum KeyPath: String {
         case value = "value"
@@ -38,4 +38,11 @@ public class TransactionManagedObject: NSManagedObject, TransactionProtocol {
     public var transactionDate: CalendarDateProtocol? {
         return date
     }
+}
+
+extension TransactionManagedObject: TransactionProtocol {
+    
+    public var title: String? { return cd_title }
+    public var value: NSDecimalNumber? { return cd_value }
+    public var identifier: UUID { return cd_identifier! }
 }

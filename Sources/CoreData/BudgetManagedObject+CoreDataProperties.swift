@@ -2,12 +2,13 @@
 //  BudgetManagedObject+CoreDataProperties.swift
 //  MoneySaverAppCore
 //
-//  Created by Michal Moskala on 23.04.2018.
+//  Created by Michal Moskala on 21/09/2018.
 //
 //
 
 import Foundation
 import CoreData
+
 
 extension BudgetManagedObject {
 
@@ -15,12 +16,7 @@ extension BudgetManagedObject {
         return NSFetchRequest<BudgetManagedObject>(entityName: "BudgetManagedObject")
     }
 
-    @NSManaged public var value: NSDecimalNumber?
+    @NSManaged public var cd_value: NSDecimalNumber?
+    @NSManaged public var cd_identifier: UUID?
 
-}
-
-extension BudgetManagedObject: BudgetProtocol {
-    public var budgetValue: Double {
-        return value?.doubleValue ?? 0
-    }
 }

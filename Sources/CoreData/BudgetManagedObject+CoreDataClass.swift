@@ -23,3 +23,10 @@ public class BudgetManagedObject: NSManagedObject {
         }
     }
 }
+
+extension BudgetManagedObject: BudgetProtocol {
+    
+    public var budgetValue: Double {
+        return cd_value?.doubleValue ?? 0
+    }
+}

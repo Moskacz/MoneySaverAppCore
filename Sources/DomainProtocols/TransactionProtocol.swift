@@ -8,7 +8,7 @@
 
 import Foundation
 
-public protocol TransactionProtocol {
+public protocol TransactionProtocol: UniqueIdentifiable {
     var title: String? { get }
     var value: NSDecimalNumber? { get }
     var transactionCategory: TransactionCategoryProtocol? { get }

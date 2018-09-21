@@ -32,8 +32,8 @@ internal class CoreDataTransactionCategoryRepository: TransactionCategoryReposit
     func addCategory(with data: TransactionCategoryData) {
         context.perform {
             let category = TransactionCategoryManagedObject.createEntity(inContext: self.context)
-            category.name = data.name
-            category.image = data.image
+            category.cd_name = data.name
+//            category.cd_icon = //
         }
     }
 }

@@ -16,14 +16,20 @@ import AppKit
 import UIKit
 #endif
 
-public class TransactionCategoryManagedObject: NSManagedObject, TransactionCategoryProtocol {
+public class TransactionCategoryManagedObject: NSManagedObject {
 
     public enum KeyPaths: String {
         case name
     }
     
     public lazy var image: Image? = {
-        guard let data = icon else { return nil }
+        guard let data = cd_icon else { return nil }
         return Image(data: data as Data)
     }()
+}
+
+extension TransactionCategoryManagedObject: TransactionCategoryProtocol {
+    
+    public var name: String? { return cd_name }
+    public var identifier: UUID { return cd_identifier! }
 }

@@ -2,7 +2,7 @@
 //  CalendarDateManagedObject+CoreDataProperties.swift
 //  MoneySaverAppCore
 //
-//  Created by Michal Moskala on 23.04.2018.
+//  Created by Michal Moskala on 21/09/2018.
 //
 //
 
@@ -16,19 +16,19 @@ extension CalendarDateManagedObject {
         return NSFetchRequest<CalendarDateManagedObject>(entityName: "CalendarDateManagedObject")
     }
 
-    @NSManaged public var calendarIdentifier: String?
-    @NSManaged public var dayOfEra: Int32
-    @NSManaged public var dayOfMonth: Int32
-    @NSManaged public var dayOfWeek: Int32
-    @NSManaged public var dayOfYear: Int32
-    @NSManaged public var era: Int32
-    @NSManaged public var monthOfEra: Int32
-    @NSManaged public var monthOfYear: Int32
-    @NSManaged public var timeInterval: Double
-    @NSManaged public var weekOfEra: Int32
-    @NSManaged public var weekOfMonth: Int32
-    @NSManaged public var weekOfYear: Int32
-    @NSManaged public var year: Int32
+    @NSManaged public var cd_calendarIdentifier: String?
+    @NSManaged public var cd_dayOfEra: Int32
+    @NSManaged public var cd_dayOfMonth: Int32
+    @NSManaged public var cd_dayOfWeek: Int32
+    @NSManaged public var cd_dayOfYear: Int32
+    @NSManaged public var cd_era: Int32
+    @NSManaged public var cd_monthOfEra: Int32
+    @NSManaged public var cd_monthOfYear: Int32
+    @NSManaged public var cd_timeInterval: Double
+    @NSManaged public var cd_weekOfEra: Int32
+    @NSManaged public var cd_weekOfMonth: Int32
+    @NSManaged public var cd_weekOfYear: Int32
+    @NSManaged public var cd_year: Int32
     @NSManaged public var transaction: TransactionManagedObject?
 
 }
