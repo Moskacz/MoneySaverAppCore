@@ -58,26 +58,26 @@ internal final class BudgetViewModelImpl: BudgetViewModel {
     
     // MARK: Chart data
     
-    private func budgetPieChartData(budget: Double, expenses: Double) -> PieChartData {
-        let spentMoneyEntry = PieChartDataEntry(value: -expenses, label: "Spent")
+    private func budgetPieChartData(budget: Decimal, expenses: Decimal) -> PieChartData {
+        let spentMoneyEntry = PieChartDataEntry(value: -expenses.doubleValue, label: "Spent")
         let toSpent = max(budget + expenses, 0)
-        let toSpentMoneyEntry = PieChartDataEntry(value: toSpent, label: "Left")
+        let toSpentMoneyEntry = PieChartDataEntry(value: toSpent.doubleValue, label: "Left")
         let dataSet = PieChartDataSet(values: [spentMoneyEntry, toSpentMoneyEntry], label: nil)
         dataSet.colors = [AppColor.red.value, AppColor.green.value]
         dataSet.colors = [NSUIColor.red, NSUIColor.green]
         return PieChartData(dataSet: dataSet)
     }
     
-    private func spendingsChartData(budget: Double, transactions: [TransactionProtocol]) -> CombinedChartData {
+    private func spendingsChartData(budget: Decimal, transactions: [TransactionProtocol]) -> CombinedChartData {
         let data = CombinedChartData()
         data.barData = estimatedSpendingsChartData(budget: budget)
         data.lineData = actualSpendingsChartData(transactions: transactions)
         return data
     }
     
-    private func estimatedSpendingsChartData(budget: Double) -> BarChartData {
+    private func estimatedSpendingsChartData(budget: Decimal) -> BarChartData {
         let entries = chartsDataProcessor.estimatedSpendings(budgetValue: budget).map {
-            BarChartDataEntry(x: Double($0.x), y: $0.y)
+            BarChartDataEntry(x: Double($0.x), y: $0.y.doubleValue)
         }
         
         let dataSet = BarChartDataSet(values: entries, label: "Estimated spendings")
@@ -88,7 +88,7 @@ internal final class BudgetViewModelImpl: BudgetViewModel {
     
     private func actualSpendingsChartData(transactions: [TransactionProtocol]) -> LineChartData {
         let entries = chartsDataProcessor.incrementalDailyExpenses(transactions: transactions).map {
-            ChartDataEntry(x: Double($0.x), y: $0.y)
+            ChartDataEntry(x: Double($0.x), y: $0.y.doubleValue)
         }
         
         let dataSet = LineChartDataSet(values: entries, label: "Actual spendings")

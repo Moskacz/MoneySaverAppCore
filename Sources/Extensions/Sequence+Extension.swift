@@ -25,17 +25,15 @@ extension Sequence {
 extension Sequence where Element == TransactionProtocol {
         
     internal var incomes: [Element] {
-        return self.filter { ($0.value ?? 0).doubleValue >= 0 }
+        return self.filter { $0.value >= 0 }
     }
     
     internal var expenses: [Element] {
-        return self.filter { ($0.value ?? 0).doubleValue < 0 }
+        return self.filter { $0.value < 0 }
     }
     
-    internal var sum: Double {
-        return reduce(0) { (result, element) -> Double in
-            return result + (element.value?.doubleValue ?? 0)
-        }
+    internal var sum: Decimal {
+        return reduce(0) { $0 + $1.value }
     }
     
     internal func with(monthOfEra: Int32) -> [Element] {

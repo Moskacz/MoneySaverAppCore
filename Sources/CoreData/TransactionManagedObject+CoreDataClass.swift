@@ -42,7 +42,7 @@ public class TransactionManagedObject: NSManagedObject {
 
 extension TransactionManagedObject: TransactionProtocol {
     
-    public var title: String? { return cd_title }
-    public var value: NSDecimalNumber? { return cd_value }
+    public var title: String { return cd_title! }
+    public var value: Decimal { return cd_value!.decimalValue }
     public var identifier: UUID { return cd_identifier! }
 }

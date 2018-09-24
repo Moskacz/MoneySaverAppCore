@@ -8,5 +8,5 @@
 import Foundation
 
 public protocol BudgetProtocol {
-    var budgetValue: Double { get }
+    var budgetValue: Decimal { get }
 }

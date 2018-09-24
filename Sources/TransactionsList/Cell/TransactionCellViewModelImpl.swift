@@ -19,7 +19,7 @@ internal class TransactionCellViewModelImpl: TransactionCellViewModel {
     }
     
     var titleText: String? {
-        return transaction.value?.stringValue
+        return NSDecimalNumber(decimal: transaction.value).stringValue
     }
     
     var descriptionText: String? {
@@ -37,8 +37,7 @@ internal class TransactionCellViewModelImpl: TransactionCellViewModel {
     }
     
     var indicatorGradient: Gradient? {
-        let value = transaction.value?.doubleValue ?? 0
-        if value >= 0 {
+        if transaction.value >= 0 {
             return AppGradient.positiveValueTransaction.value
         } else {
             return AppGradient.negativeValueTransaction.value

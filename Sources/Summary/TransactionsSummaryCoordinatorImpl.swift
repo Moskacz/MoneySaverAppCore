@@ -53,9 +53,9 @@ internal class TransactionsSummaryCoordinatorImpl: TransactionsSummaryCoordinato
     private func makeViewModel() -> TransactionsSummaryViewModel {
         let currentSum = sum?.sum(for: dateRange)
         
-        let incomes = currentSum.map { String($0.incomes) } ?? ""
-        let expenses = currentSum.map { String($0.expenses) } ?? ""
-        let total = currentSum.map { String($0.expenses + $0.incomes) } ?? ""
+        let incomes = currentSum.map { $0.incomes.description } ?? ""
+        let expenses = currentSum.map { $0.expenses.description } ?? ""
+        let total = currentSum.map { ($0.expenses + $0.incomes).description } ?? ""
         
         return TransactionsSummaryViewModel(totalAmountText: total,
                                             expensesAmountText: expenses,
@@ -117,8 +117,8 @@ private struct TransactionsSummaryViewModel {
 }
 
 internal struct TransactionsSum {
-    internal let incomes: Double
-    internal let expenses: Double
+    internal let incomes: Decimal
+    internal let expenses: Decimal
 }
 
 internal struct TransactionsCompoundSum {

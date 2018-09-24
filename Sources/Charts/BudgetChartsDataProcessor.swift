@@ -10,7 +10,7 @@ import Foundation
 
 internal protocol BudgetChartsDataProcessor {
     func incrementalDailyExpenses(transactions: [TransactionProtocol]) -> [PlotValue]
-    func estimatedSpendings(budgetValue: Double) -> [PlotValue]
+    func estimatedSpendings(budgetValue: Decimal) -> [PlotValue]
 }
 
 extension ChartsDataProcessor: BudgetChartsDataProcessor {
@@ -22,7 +22,7 @@ extension ChartsDataProcessor: BudgetChartsDataProcessor {
         
         let daysRange = calendar.daysInMonthRange(forDate: calendar.now)
         return daysRange.map { day in
-            var expensesToDay = Double(0)
+            var expensesToDay = Decimal(0)
             for expense in dailyExpenses {
                 guard expense.x <= day else { break }
                 expensesToDay += expense.y
@@ -31,10 +31,10 @@ extension ChartsDataProcessor: BudgetChartsDataProcessor {
         }
     }
     
-    internal func estimatedSpendings(budgetValue: Double) -> [PlotValue] {
+    internal func estimatedSpendings(budgetValue: Decimal) -> [PlotValue] {
         let daysRange = calendar.daysInMonthRange(forDate: calendar.now)
         return daysRange.map { day in
-            let dailySpending = budgetValue * Double(day)  / Double(daysRange.upperBound)
+            let dailySpending = budgetValue * Decimal(day) / Decimal(daysRange.upperBound)
             return PlotValue(x: day, y: dailySpending)
         }
     }

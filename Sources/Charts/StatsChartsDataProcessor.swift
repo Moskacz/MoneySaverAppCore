@@ -15,7 +15,7 @@ internal protocol StatsChartsDataProcessor {
 
 internal struct CategorySum {
     public let categoryName: String
-    public let sum: Double
+    public let sum: Decimal
 }
 
 extension ChartsDataProcessor: StatsChartsDataProcessor {
