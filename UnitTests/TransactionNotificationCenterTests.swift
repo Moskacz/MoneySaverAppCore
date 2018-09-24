@@ -30,8 +30,8 @@ class TransactionNotificationCenterTests: XCTestCase {
                                         userInfo: userInfo)
         let sut = TransactionNotification(notification: notification)
         XCTAssertNotNil(sut)
-        XCTAssertEqual(sut?.transactions[0].value, NSDecimalNumber(value: 13))
-        XCTAssertEqual(sut?.transactions[1].value, NSDecimalNumber(value: 31))
+        XCTAssertEqual(sut?.transactions[0].value, Decimal(13))
+        XCTAssertEqual(sut?.transactions[1].value, Decimal(31))
     }
 
     func test_transactionNotification_notification() {
@@ -41,15 +41,15 @@ class TransactionNotificationCenterTests: XCTestCase {
         let notification = sut.notification
         XCTAssertEqual(notification.name, Notification.Name.transactionsDidChange)
         let notificationTransactions = notification.userInfo?["transactions"] as? [TransactionProtocol]
-        XCTAssertEqual(notificationTransactions?[0].value, NSDecimalNumber(value: 13))
-        XCTAssertEqual(notificationTransactions?[1].value, NSDecimalNumber(value: 31))
+        XCTAssertEqual(notificationTransactions?[0].value, Decimal(13))
+        XCTAssertEqual(notificationTransactions?[1].value, Decimal(31))
     }
     
     func test_whenNotificationIsPosted_thenObserverShouldReceiveIt() {
         let exp = expectation(description: "notification_received")
         let transaction = FakeTransactionBuilder().set(value: 111).build()
         observationToken = NotificationCenter.default.observeTransactionsDidChange { transactionNotification in
-            if transactionNotification.transactions.first?.value == NSDecimalNumber(value: 111) {
+            if transactionNotification.transactions.first?.value == Decimal(111) {
                 exp.fulfill()
             }
         }

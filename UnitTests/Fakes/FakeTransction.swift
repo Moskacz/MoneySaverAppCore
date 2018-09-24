@@ -10,8 +10,8 @@ import Foundation
 @testable import MoneySaverAppCore
 
 class FakeTransaction: TransactionProtocol {
-    var title: String? = nil
-    var value: NSDecimalNumber? = nil
+    var title = ""
+    var value = Decimal(0)
     var transactionCategory: TransactionCategoryProtocol? = nil
     var transactionDate: CalendarDateProtocol? = nil
     var identifier: UUID { return UUID() }

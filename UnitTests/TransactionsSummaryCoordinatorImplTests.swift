@@ -40,9 +40,9 @@ class TransactionsSummaryCoordinatorImplTests: XCTestCase {
         sut.display = display
         repository.transactionChangedCallback?([transaction1, transaction2])
         
-        XCTAssertEqual(display.incomesText, "100.0")
-        XCTAssertEqual(display.expenseText, "-200.0")
-        XCTAssertEqual(display.totalAmountString, "-100.0")
+        XCTAssertEqual(display.incomesText, "100")
+        XCTAssertEqual(display.expenseText, "-200")
+        XCTAssertEqual(display.totalAmountString, "-100")
         XCTAssertEqual(display.dateRangeTitle, "All")
     }
     
@@ -59,9 +59,9 @@ class TransactionsSummaryCoordinatorImplTests: XCTestCase {
         repository.transactionChangedCallback?([transaction1, transaction2])
         sut.dateRange = .today
         
-        XCTAssertEqual(display.incomesText, "100.0")
-        XCTAssertEqual(display.expenseText, "0.0")
-        XCTAssertEqual(display.totalAmountString, "100.0")
+        XCTAssertEqual(display.incomesText, "100")
+        XCTAssertEqual(display.expenseText, "0")
+        XCTAssertEqual(display.totalAmountString, "100")
         XCTAssertEqual(display.dateRangeTitle, "Today")
     }
 }

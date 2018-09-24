@@ -104,7 +104,7 @@ class BudgetViewModelImplTests: XCTestCase {
         let passedTransaction = chartsDataProcessor.passedTransactions!
         // there should be only one transactionPassed - with correct month (6), and value < 0
         XCTAssertEqual(passedTransaction.count, 1)
-        XCTAssertEqual(passedTransaction.first?.value?.doubleValue, -10)
+        XCTAssertEqual(passedTransaction.first?.value.doubleValue, -10)
         
         XCTAssertEqual(chartsDataProcessor.passedBudget, 300)
     }

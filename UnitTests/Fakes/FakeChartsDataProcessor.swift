@@ -11,7 +11,7 @@ import Foundation
 
 class FakeChartsDataProcessor {
     var passedTransactions: [TransactionProtocol]?
-    var passedBudget: Double?
+    var passedBudget: Decimal?
     init() {}
 }
 
@@ -22,7 +22,7 @@ extension FakeChartsDataProcessor: BudgetChartsDataProcessor {
         return []
     }
     
-    func estimatedSpendings(budgetValue: Double) -> [PlotValue] {
+    func estimatedSpendings(budgetValue: Decimal) -> [PlotValue] {
         passedBudget = budgetValue
         return []
     }

@@ -12,7 +12,7 @@ class FakeTransactionBuilder {
     private var dayOfEra: Int32 = 0
     private var weekOfEra: Int32 = 0
     private var monthOfEra: Int32 = 0
-    private var value: Decimal?
+    private var value = Decimal(0)
     private var categoryName: String?
     
     func set(dayOfEra: Int32) -> FakeTransactionBuilder {
@@ -30,7 +30,7 @@ class FakeTransactionBuilder {
         return self
     }
     
-    func set(value: Decimal?) -> FakeTransactionBuilder {
+    func set(value: Decimal) -> FakeTransactionBuilder {
         self.value = value
         return self
     }
@@ -42,7 +42,7 @@ class FakeTransactionBuilder {
     
     func build() -> FakeTransaction {
         let transaction = FakeTransaction()
-        transaction.value = value.map { NSDecimalNumber(decimal: $0) }
+        transaction.value = value
         
         let date = FakeCalendarDate()
         date.dayOfEra = dayOfEra

@@ -9,5 +9,5 @@ import Foundation
 @testable import MoneySaverAppCore
 
 struct FakeBudget: BudgetProtocol {
-    var budgetValue: Double
+    var budgetValue: Decimal
 }

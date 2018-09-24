@@ -45,7 +45,7 @@ class TransactionsRepositoryTests: XCTestCase {
         
         let transaction = context.registeredObjects.compactMap { $0 as? TransactionManagedObject }[0]
         XCTAssertEqual(transaction.title, "test")
-        XCTAssertEqual(transaction.value, NSDecimalNumber(value: -20))
+        XCTAssertEqual(transaction.value, Decimal(-20))
         XCTAssertEqual(transaction.date!.timeInterval, transactionData.timeIntervalSince1970, accuracy: 0.1)
         XCTAssertEqual(transaction.category!.name, "category_name")
     }

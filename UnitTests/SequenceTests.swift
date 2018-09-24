@@ -52,7 +52,7 @@ class SequenceTests: XCTestCase {
         
         let todayTransaction = FakeTransaction()
         todayTransaction.transactionDate = today
-        todayTransaction.value = NSDecimalNumber(value: 20)
+        todayTransaction.value = Decimal(20)
         
         let yesterday = FakeCalendarDate()
         yesterday.dayOfEra = 0
@@ -62,7 +62,7 @@ class SequenceTests: XCTestCase {
         
         let yesterdayTransaction = FakeTransaction()
         yesterdayTransaction.transactionDate = yesterday
-        yesterdayTransaction.value = NSDecimalNumber(value: 10)
+        yesterdayTransaction.value = Decimal(10)
         
         let compoundSum = [todayTransaction, yesterdayTransaction].compoundSum(date: today)
         XCTAssertEqual(compoundSum.daily.incomes, 20) // only today
@@ -74,13 +74,13 @@ class SequenceTests: XCTestCase {
     
     func test_transactionsSum() {
         let transaction1 = FakeTransaction()
-        transaction1.value = NSDecimalNumber(value: 10)
+        transaction1.value = Decimal(10)
         
         let transaction2 = FakeTransaction()
-        transaction2.value = NSDecimalNumber(value: 20)
+        transaction2.value = Decimal(20)
         
         let transaction3 = FakeTransaction()
-        transaction3.value = NSDecimalNumber(value: -50)
+        transaction3.value = Decimal(-50)
         
         let sum = [transaction1, transaction2, transaction3].transactionsSum
         XCTAssertEqual(sum.incomes, 30)
@@ -95,8 +95,8 @@ class SequenceTests: XCTestCase {
         let transactions: [TransactionProtocol] = [transaction1, transaction2, transaction3]
         let expenses = transactions.expenses
         XCTAssertEqual(expenses.count, 2)
-        XCTAssertEqual(expenses[0].value, NSDecimalNumber(value: -100))
-        XCTAssertEqual(expenses[1].value, NSDecimalNumber(value: -50))
+        XCTAssertEqual(expenses[0].value, Decimal(-100))
+        XCTAssertEqual(expenses[1].value, Decimal(-50))
     }
     
     func test_incomes() {
@@ -107,8 +107,8 @@ class SequenceTests: XCTestCase {
         let transactions: [TransactionProtocol] = [transaction1, transaction2, transaction3]
         let incomes = transactions.incomes
         XCTAssertEqual(incomes.count, 2)
-        XCTAssertEqual(incomes[0].value, NSDecimalNumber(value: 100))
-        XCTAssertEqual(incomes[1].value, NSDecimalNumber(value: 50))
+        XCTAssertEqual(incomes[0].value, Decimal(100))
+        XCTAssertEqual(incomes[1].value, Decimal(50))
     }
     
     func test_sum() {

@@ -77,7 +77,7 @@ class ChartsDataProcessorTests: XCTestCase {
     func test_estimatedSpending_lastDaySpendingShouldEqualToBudgetValue() {
         fakeCalendar.nowToReturn = Date()
         fakeCalendar.daysInMonthRangeToReturn = 1...10
-        let budgetValue = Double(5000)
+        let budgetValue = Decimal(5000)
         let lastDaySpending = sut.estimatedSpendings(budgetValue: budgetValue).last!.y
         XCTAssertEqual(lastDaySpending, budgetValue)
     }
@@ -85,7 +85,7 @@ class ChartsDataProcessorTests: XCTestCase {
     func test_estimatedSpending_firstDaySpendingShouldNotBeZero() {
         fakeCalendar.nowToReturn = Date()
         fakeCalendar.daysInMonthRangeToReturn = 1...10
-        let budgetValue = Double(1000)
+        let budgetValue = Decimal(1000)
         let firstDaySpending = sut.estimatedSpendings(budgetValue: budgetValue).first!.y
         XCTAssertTrue(firstDaySpending != 0)
         XCTAssertEqual(firstDaySpending, 100)
