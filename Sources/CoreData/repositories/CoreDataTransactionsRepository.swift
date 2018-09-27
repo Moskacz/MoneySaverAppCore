@@ -42,26 +42,26 @@ internal class CoreDataTransactionsRepository: TransactionsRepository {
         return TransactionResultsController(frc: frc)
     }
     
-    internal func addTransaction(data: TransactionData, category: TransactionCategoryManagedObject) {
-        context.performAndWait {
-            let transaction = TransactionManagedObject.createEntity(inContext: self.context)
-            transaction.cd_title = data.title
-            transaction.cd_value = data.value as NSDecimalNumber
-            let date = CalendarDateManagedObject.createEntity(inContext: self.context)
-            date.update(with: calendar.calendarDate(from: data.creationDate))
-            transaction.date = date
-            transaction.category = category
-            self.context.save(with: nil)
-        }
-        postNotificationWithCurrentTransactions()
+    internal func addTransaction(data: TransactionData, category: TransactionCategoryProtocol) {
+//        context.performAndWait {
+//            let transaction = TransactionManagedObject.createEntity(inContext: self.context)
+//            transaction.cd_title = data.title
+//            transaction.cd_value = data.value as NSDecimalNumber
+//            let date = CalendarDateManagedObject.createEntity(inContext: self.context)
+//            date.update(with: calendar.calendarDate(from: data.creationDate))
+//            transaction.date = date
+//            transaction.category = category
+//            self.context.save(with: nil)
+//        }
+//        postNotificationWithCurrentTransactions()
     }
     
-    internal func remove(transaction: TransactionManagedObject) {
-        context.performAndWait {
-            self.context.delete(transaction)
-            self.context.save(with: nil)
-        }
-        postNotificationWithCurrentTransactions()
+    internal func remove(transaction: TransactionCategoryProtocol) {
+//        context.performAndWait {
+//            self.context.delete(transaction)
+//            self.context.save(with: nil)
+//        }
+//        postNotificationWithCurrentTransactions()
     }
     
     private func allTransactions() throws -> [TransactionManagedObject] {
