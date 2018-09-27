@@ -16,11 +16,11 @@ class FakeTransactionsRepository: TransactionsRepository {
     
     var transactionChangedCallback: (([TransactionProtocol]) -> Void)?
     
-    func addTransaction(data: TransactionData, category: TransactionCategoryManagedObject) {
+    func addTransaction(data: TransactionData, category: TransactionCategoryProtocol) {
         fatalError()
     }
     
-    func remove(transaction: TransactionManagedObject) {
+    func remove(transaction: TransactionProtocol) {
         fatalError()
     }
     

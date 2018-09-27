@@ -23,6 +23,6 @@ public struct TransactionData {
 internal protocol TransactionsRepository {
     var allTransactionsResultController: ResultsController<TransactionProtocol> { get }
     func addTransaction(data: TransactionData, category: TransactionCategoryProtocol)
-    func remove(transaction: TransactionCategoryProtocol)
+    func remove(transaction: TransactionProtocol)
     func observeTransactionsChanged(callback: @escaping ([TransactionProtocol]) -> Void) -> ObservationToken
 }

@@ -43,25 +43,29 @@ internal class CoreDataTransactionsRepository: TransactionsRepository {
     }
     
     internal func addTransaction(data: TransactionData, category: TransactionCategoryProtocol) {
-//        context.performAndWait {
-//            let transaction = TransactionManagedObject.createEntity(inContext: self.context)
-//            transaction.cd_title = data.title
-//            transaction.cd_value = data.value as NSDecimalNumber
-//            let date = CalendarDateManagedObject.createEntity(inContext: self.context)
-//            date.update(with: calendar.calendarDate(from: data.creationDate))
-//            transaction.date = date
-//            transaction.category = category
-//            self.context.save(with: nil)
-//        }
-//        postNotificationWithCurrentTransactions()
+        guard let coreDataCategory = category as? TransactionCategoryManagedObject else { return }
+        
+        context.performAndWait {
+            let transaction = TransactionManagedObject.createEntity(inContext: self.context)
+            transaction.cd_title = data.title
+            transaction.cd_value = data.value as NSDecimalNumber
+            transaction.cd_identifier = UUID()
+            let date = CalendarDateManagedObject.createEntity(inContext: self.context)
+            date.update(with: self.calendar.calendarDate(from: data.creationDate))
+            transaction.date = date
+            transaction.category = coreDataCategory
+            self.context.save(with: nil)
+            self.postNotificationWithCurrentTransactions()
+        }
     }
     
-    internal func remove(transaction: TransactionCategoryProtocol) {
-//        context.performAndWait {
-//            self.context.delete(transaction)
-//            self.context.save(with: nil)
-//        }
-//        postNotificationWithCurrentTransactions()
+    internal func remove(transaction: TransactionProtocol) {
+        guard let coreDataTransaction = transaction as? TransactionManagedObject else { return }
+        context.perform {
+            self.context.delete(coreDataTransaction)
+            self.context.save(with: nil)
+            self.postNotificationWithCurrentTransactions()
+        }
     }
     
     private func allTransactions() throws -> [TransactionManagedObject] {
@@ -115,3 +119,5 @@ private class TransactionResultsController: ResultsController<TransactionProtoco
         return controller.sectionsCount
     }
 }
+
+
