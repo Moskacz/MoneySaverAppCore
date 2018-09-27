@@ -16,10 +16,12 @@ internal class TransactionDataViewCoordinatorImpl: TransactionDataViewCoordinato
     
     private let formatter: DateFormatter
     private let flow: TransactionDataFlow
+    private let calendar: CalendarProtocol
     
-    internal init(formatter: DateFormatter, flow: TransactionDataFlow) {
+    internal init(formatter: DateFormatter, flow: TransactionDataFlow, calendar: CalendarProtocol) {
         self.formatter = formatter
         self.flow = flow
+        self.calendar = calendar
     }
     
     var display: TransactionDataDisplaying? {
@@ -37,7 +39,7 @@ internal class TransactionDataViewCoordinatorImpl: TransactionDataViewCoordinato
         case (.value(let title), .value(let amount), .value(let date)):
             let transactionData = TransactionData(title: title,
                                                   value: amount,
-                                                  creationDate: date)
+                                                  date: calendar.calendarDate(from: date))
             flow.transactionData = transactionData
         case (let title, let amount, let date):
             let errors = [title.error, amount.error, date.error].compactMap { $0 }

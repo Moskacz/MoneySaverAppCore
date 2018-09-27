@@ -14,11 +14,13 @@ class TransactionDataViewCoordinatorImplTests: XCTestCase {
     private var displayFake: FakeDisplay!
     private var flowFake: FakeFlow!
     private let formatter = DateFormatters.formatter(forType: .dateWithTime)
+    private var calendarFake: FakeCalendar!
     
     override func setUp() {
         super.setUp()
         flowFake = FakeFlow()
-        sut = TransactionDataViewCoordinatorImpl(formatter: formatter, flow: flowFake)
+        calendarFake = FakeCalendar()
+        sut = TransactionDataViewCoordinatorImpl(formatter: formatter, flow: flowFake, calendar: calendarFake)
         displayFake = FakeDisplay()
         sut.display = displayFake
     }
@@ -26,6 +28,7 @@ class TransactionDataViewCoordinatorImplTests: XCTestCase {
     override func tearDown() {
         sut = nil
         displayFake = nil
+        calendarFake = nil
         super.tearDown()
     }
     
@@ -65,12 +68,11 @@ class TransactionDataViewCoordinatorImplTests: XCTestCase {
     }
     
     func test_whenValidDataIsSet_thenTransactionDataShouldBeSetOnFlow() {
-        let creationDate = Date()
-        sut.set(title: "some_title", value: "1234", date: creationDate)
+        sut.set(title: "some_title", value: "1234", date: Date())
         XCTAssertNotNil(flowFake.transactionData)
         XCTAssertEqual(flowFake.transactionData!.title, "some_title")
         XCTAssertEqual(flowFake.transactionData!.value, Decimal(1234))
-        XCTAssertEqual(flowFake.transactionData!.creationDate, creationDate)
+        XCTAssertNotNil(flowFake.transactionData?.date)
     }
 }
 

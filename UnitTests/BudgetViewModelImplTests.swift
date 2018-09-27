@@ -97,7 +97,6 @@ class BudgetViewModelImplTests: XCTestCase {
         
         let transactions = [transaction1, transaction2, transaction3]
         
-        sut.delegate = FakeBudgetViewModelDelegate()
         transactionsRepository.transactionChangedCallback?(transactions)
         budgetRepository.passedBudgetChangedBlock?(FakeBudget(budgetValue: 300))
         

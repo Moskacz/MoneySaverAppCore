@@ -11,12 +11,12 @@ import MMFoundation
 public struct TransactionData {
     public let title: String
     public let value: Decimal
-    public let creationDate: Date
+    public let date: CalendarDateProtocol
     
-    public init(title: String, value: Decimal, creationDate: Date) {
+    public init(title: String, value: Decimal, date: CalendarDateProtocol) {
         self.title = title
         self.value = value
-        self.creationDate = creationDate
+        self.date = date
     }
 }
 

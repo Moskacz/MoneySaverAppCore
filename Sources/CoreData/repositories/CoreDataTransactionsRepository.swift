@@ -13,17 +13,14 @@ import MMFoundation
 internal class CoreDataTransactionsRepository: TransactionsRepository {
     
     private let context: NSManagedObjectContext
-    private let calendar: CalendarProtocol
     private let logger: Logger
     private let notificationCenter: TransactionNotificationCenter
     
     internal init(context: NSManagedObjectContext,
                 logger: Logger,
-                calendar: CalendarProtocol,
                 notificationCenter: TransactionNotificationCenter) {
         self.context = context
         self.logger = logger
-        self.calendar = calendar
         self.notificationCenter = notificationCenter
     }
     
@@ -51,7 +48,7 @@ internal class CoreDataTransactionsRepository: TransactionsRepository {
             transaction.cd_value = data.value as NSDecimalNumber
             transaction.cd_identifier = UUID()
             let date = CalendarDateManagedObject.createEntity(inContext: self.context)
-            date.update(with: self.calendar.calendarDate(from: data.creationDate))
+            date.update(with: data.date)
             transaction.date = date
             transaction.category = coreDataCategory
             self.context.save(with: nil)
@@ -61,7 +58,7 @@ internal class CoreDataTransactionsRepository: TransactionsRepository {
     
     internal func remove(transaction: TransactionProtocol) {
         guard let coreDataTransaction = transaction as? TransactionManagedObject else { return }
-        context.perform {
+        context.performAndWait {
             self.context.delete(coreDataTransaction)
             self.context.save(with: nil)
             self.postNotificationWithCurrentTransactions()

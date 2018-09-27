@@ -11,7 +11,6 @@ import XCTest
 class TransactionsRepositoryTests: XCTestCase {
     
     var coreDataStack: InMemoryCoreDataStack!
-    var fakeCaledar: FakeCalendar!
     var sut: CoreDataTransactionsRepository!
     var notificationCenter: FakeTransactionNotificationCenter!
     
@@ -19,17 +18,14 @@ class TransactionsRepositoryTests: XCTestCase {
         super.setUp()
         
         coreDataStack = InMemoryCoreDataStack()
-        fakeCaledar = FakeCalendar()
         notificationCenter = FakeTransactionNotificationCenter()
         sut = CoreDataTransactionsRepository(context: coreDataStack.getViewContext(),
                                              logger: NullLogger(),
-                                             calendar: fakeCaledar,
                                              notificationCenter: notificationCenter)
     }
     
     override func tearDown() {
         sut = nil
-        fakeCaledar = nil
         coreDataStack = nil
         super.tearDown()
     }
@@ -37,22 +33,27 @@ class TransactionsRepositoryTests: XCTestCase {
     func test_addTransaction_shouldCreateNewEntityInContextWithGivenData() {
         let context = coreDataStack.getViewContext()
         // 28/05/2018 @ 3:30pm (UTC)
-        let transactionData = Date(timeIntervalSince1970: 1527521400)
-        let data = TransactionData(title: "test", value: Decimal(-20), creationDate: transactionData)
+        
+        
+        let date = FakeCalendarDate()
+        date.timeInterval = Date(timeIntervalSince1970: 1234).timeIntervalSince1970
+        
+        let data = TransactionData(title: "test", value: Decimal(-20), date: date)
         let category = TransactionCategoryManagedObject.createEntity(inContext: context)
         category.cd_name = "category_name"
         sut.addTransaction(data: data, category: category)
+
         
         let transaction = context.registeredObjects.compactMap { $0 as? TransactionManagedObject }[0]
         XCTAssertEqual(transaction.title, "test")
         XCTAssertEqual(transaction.value, Decimal(-20))
-        XCTAssertEqual(transaction.date!.timeInterval, transactionData.timeIntervalSince1970, accuracy: 0.1)
+        XCTAssertEqual(transaction.date!.timeInterval, 1234, accuracy: 0.1)
         XCTAssertEqual(transaction.category!.name, "category_name")
     }
     
     func test_addTransaction_shouldPostNotification() {
         let category = TransactionCategoryManagedObject(context: coreDataStack.getViewContext())
-        let data = TransactionData(title: "test", value: Decimal(-10), creationDate: Date())
+        let data = TransactionData(title: "test", value: Decimal(-10), date: FakeCalendarDate())
         sut.addTransaction(data: data, category: category)
         XCTAssertNotNil(notificationCenter.postedNotification)
         XCTAssertEqual(notificationCenter.postedNotification?.transactions.count, 1)
@@ -61,7 +62,7 @@ class TransactionsRepositoryTests: XCTestCase {
     func test_deleteTransaction_shouldRemoveItFromContext() throws {
         let context = coreDataStack.getViewContext()
         let category = TransactionCategoryManagedObject(context: coreDataStack.getViewContext())
-        let data = TransactionData(title: "test", value: Decimal(-10), creationDate: Date())
+        let data = TransactionData(title: "test", value: Decimal(-10), date: FakeCalendarDate())
         sut.addTransaction(data: data, category: category)
         XCTAssertEqual(context.registeredObjects.filter { $0 is TransactionManagedObject }.count, 1)
         let createdTransaction = context.registeredObjects.compactMap { $0 as? TransactionManagedObject }.first!

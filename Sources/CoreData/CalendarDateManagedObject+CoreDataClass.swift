@@ -12,7 +12,7 @@ import CoreData
 
 public class CalendarDateManagedObject: NSManagedObject {
 
-    public func update(with date: CalendarDate) {
+    public func update(with date: CalendarDateProtocol) {
         cd_calendarIdentifier = date.calendarIdentifier
         cd_dayOfEra = date.dayOfEra
         cd_dayOfMonth = date.dayOfMonth
