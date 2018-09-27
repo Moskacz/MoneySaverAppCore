@@ -32,7 +32,7 @@ class FakeCalendar: CalendarProtocol {
         return nowCalendarDateToReturn
     }
     
-    func calendarDate(from date: Date) -> CalendarDate {
+    func calendarDate(from date: Date) -> CalendarDateProtocol {
         return calendar.calendarDate(from: date)
     }
     
