@@ -10,7 +10,7 @@ import XCTest
 
 class TransactionsSummaryCoordinatorImplTests: XCTestCase {
 
-    private var sut: TransactionsSummaryCoordinator!
+    private var sut: TransactionsSummaryPresenter!
     private var repository: FakeTransactionsRepository!
     private var calendar: FakeCalendar!
     
@@ -18,7 +18,7 @@ class TransactionsSummaryCoordinatorImplTests: XCTestCase {
         super.setUp()
         repository = FakeTransactionsRepository()
         calendar = FakeCalendar()
-        sut = TransactionsSummaryCoordinatorImpl(repository: repository,
+        sut = TransactionsSummaryPresenter(repository: repository,
                                                  calendar: calendar,
                                                  dateRange: .allTime)
     }

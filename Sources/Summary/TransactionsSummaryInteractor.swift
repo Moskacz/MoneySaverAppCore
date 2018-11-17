@@ -1,32 +1,36 @@
 //
-//  TransactionsSummaryCoordinatorImpl.swift
+//  TransactionsSummaryInteractor.swift
 //  MoneySaverAppCore
 //
-//  Created by Michal Moskala on 06.09.2018.
+//  Created by Michal Moskala on 17/11/2018.
 //
 
 import Foundation
 
-internal class TransactionsSummaryCoordinatorImpl: TransactionsSummaryCoordinator {
+internal protocol TransactionsSummaryInteractorProtocol: class {
+    
+    var presenter: TransactionsSummaryPresenterProtocol? { get set }
+    var dateRange: DateRange { get set }
+    func computeSummary()
+}
+
+internal class TransactionsSummaryInteractor: TransactionsSummaryInteractorProtocol {
+    
+    internal weak var presenter: TransactionsSummaryPresenterProtocol?
     
     private let repository: TransactionsRepository
     private let calendar: CalendarProtocol
     private var token: ObservationToken?
+    
+    internal var dateRange: DateRange {
+        didSet {
+            computeUIState()
+        }
+    }
+    
     private var sum: TransactionsCompoundSum? {
         didSet {
-            updateDisplay()
-        }
-    }
-    
-    var display: TransactionsSummaryUI? {
-        didSet {
-            updateDisplay()
-        }
-    }
-    
-    var dateRange: DateRange {
-        didSet {
-            updateDisplay()
+            computeUIState()
         }
     }
     
@@ -36,40 +40,26 @@ internal class TransactionsSummaryCoordinatorImpl: TransactionsSummaryCoordinato
         self.repository = repository
         self.calendar = calendar
         self.dateRange = dateRange
-        
-        registerForNotifications()
     }
     
-    private func registerForNotifications() {
+    internal func computeSummary() {
         token = repository.observeTransactionsChanged { [unowned self] transactions in
             self.sum = transactions.compoundSum(date: self.calendar.nowCalendarDate)
+            self.computeUIState()
         }
     }
     
-    private func updateDisplay() {
-        display?.updateWith(viewModel: makeViewModel())
+    private func computeUIState() {
+        guard let sum = sum else { return }
+        computeUIState(sum: sum.sum(for: dateRange))
     }
     
-    private func makeViewModel() -> TransactionsSummaryViewModel {
-        let currentSum = sum?.sum(for: dateRange)
-        
-        let incomes = currentSum.map { $0.incomes.description } ?? ""
-        let expenses = currentSum.map { $0.expenses.description } ?? ""
-        let total = currentSum.map { ($0.expenses + $0.incomes).description } ?? ""
-        
-        return TransactionsSummaryViewModel(totalAmountText: total,
-                                            expensesAmountText: expenses,
-                                            incomesAmountText: incomes,
-                                            dateRangeButtonText: dateRange.description)
-    }
-}
-
-private extension TransactionsSummaryUI {
-    func updateWith(viewModel: TransactionsSummaryViewModel) {
-        set(incomesText: viewModel.incomesAmountText)
-        set(expenseText: viewModel.expensesAmountText)
-        set(totalAmountString: viewModel.totalAmountText)
-        set(dateRangeTitle: viewModel.dateRangeButtonText)
+    private func computeUIState(sum: TransactionsSum) {
+        let state = TransactionsSummaryUIState(totalAmountText: (sum.expenses + sum.incomes).description,
+                                               expensesAmountText: sum.expenses.description,
+                                               incomesAmountText: sum.incomes.description,
+                                               dateRangeButtonText: dateRange.description)
+        presenter?.stateComputed(state)
     }
 }
 
@@ -106,19 +96,6 @@ extension Sequence where Element == TransactionProtocol {
     internal var transactionsSum: TransactionsSum {
         return TransactionsSum(incomes: incomes.sum, expenses: expenses.sum)
     }
-
-}
-
-private struct TransactionsSummaryViewModel {
-    let totalAmountText: String
-    let expensesAmountText: String
-    let incomesAmountText: String
-    let dateRangeButtonText: String
-}
-
-internal struct TransactionsSum {
-    internal let incomes: Decimal
-    internal let expenses: Decimal
 }
 
 internal struct TransactionsCompoundSum {
@@ -138,3 +115,10 @@ internal struct TransactionsCompoundSum {
         }
     }
 }
+
+internal struct TransactionsSum {
+    internal let incomes: Decimal
+    internal let expenses: Decimal
+}
+
+

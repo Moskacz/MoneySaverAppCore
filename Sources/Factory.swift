@@ -9,7 +9,7 @@ import Foundation
 
 public protocol Factory {
     func makeTransactionsListCoordinator() -> TransactionsListCoordinator
-    func makeTransactionsSummaryCoordinator() -> TransactionsSummaryCoordinator
+    func makeTransactionsSummaryCoordinator() -> TransactionsSummaryPresenterProtocol
     func makeTransactionDataCoordinator() -> TransactionDataViewCoordinator
     func makeBudgetViewModel() -> BudgetViewModel
     func makeStatsViewModel() -> StatsViewModel
