@@ -117,6 +117,8 @@
 		35423E1B20F004FE004E006B /* TransactionNotificationCenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35423E1920F004FE004E006B /* TransactionNotificationCenterTests.swift */; };
 		354820A721A03F9A007C932B /* TransactionsSummaryInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354820A621A03F9A007C932B /* TransactionsSummaryInteractor.swift */; };
 		354820A821A03F9A007C932B /* TransactionsSummaryInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354820A621A03F9A007C932B /* TransactionsSummaryInteractor.swift */; };
+		354820AA21A0A938007C932B /* TransactionsSummaryPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354820A921A0A938007C932B /* TransactionsSummaryPresenterTests.swift */; };
+		354820AB21A0A938007C932B /* TransactionsSummaryPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354820A921A0A938007C932B /* TransactionsSummaryPresenterTests.swift */; };
 		354C12472104A4AF0001AB19 /* TransactionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354C12462104A4AF0001AB19 /* TransactionCell.swift */; };
 		354C124C2104A5680001AB19 /* TransactionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354C12462104A4AF0001AB19 /* TransactionCell.swift */; };
 		354E4B8820A2301C009A8311 /* CalendarDateManagedObjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354E4B8720A2301C009A8311 /* CalendarDateManagedObjectTests.swift */; };
@@ -375,6 +377,7 @@
 		35423E1620EEA364004E006B /* FakeBudget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeBudget.swift; sourceTree = "<group>"; };
 		35423E1920F004FE004E006B /* TransactionNotificationCenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionNotificationCenterTests.swift; sourceTree = "<group>"; };
 		354820A621A03F9A007C932B /* TransactionsSummaryInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsSummaryInteractor.swift; sourceTree = "<group>"; };
+		354820A921A0A938007C932B /* TransactionsSummaryPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsSummaryPresenterTests.swift; sourceTree = "<group>"; };
 		354C12462104A4AF0001AB19 /* TransactionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCell.swift; sourceTree = "<group>"; };
 		354E4B8720A2301C009A8311 /* CalendarDateManagedObjectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDateManagedObjectTests.swift; sourceTree = "<group>"; };
 		354E4B8A20A23115009A8311 /* TransactionManagedObjectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionManagedObjectTests.swift; sourceTree = "<group>"; };
@@ -788,6 +791,7 @@
 				3508A8AE21482B3100810D42 /* TransactionDataViewCoordinatorImplTests.swift */,
 				35224EFD2151815D00C2C813 /* TransactionCategoryCollectionCoordinatorImplTests.swift */,
 				35224F1321541DD600C2C813 /* SettingsViewCoordinatorImplTests.swift */,
+				354820A921A0A938007C932B /* TransactionsSummaryPresenterTests.swift */,
 			);
 			path = UnitTests;
 			sourceTree = "<group>";
@@ -1128,6 +1132,7 @@
 			files = (
 				35593BF220922E8200DEEDB5 /* ChartsDataProcessorTests.swift in Sources */,
 				354E4B8820A2301C009A8311 /* CalendarDateManagedObjectTests.swift in Sources */,
+				354820AA21A0A938007C932B /* TransactionsSummaryPresenterTests.swift in Sources */,
 				35593C002092302600DEEDB5 /* SequenceTests.swift in Sources */,
 				359E40BE20DF89A400801E20 /* FakeTransactionNotificationCenter.swift in Sources */,
 				352D625F20F3D30400CBE0BD /* FakeBudgetViewModelDelegate.swift in Sources */,
@@ -1246,6 +1251,7 @@
 			files = (
 				35593BF320922E8300DEEDB5 /* ChartsDataProcessorTests.swift in Sources */,
 				354E4B8920A2301C009A8311 /* CalendarDateManagedObjectTests.swift in Sources */,
+				354820AB21A0A938007C932B /* TransactionsSummaryPresenterTests.swift in Sources */,
 				35593C012092302600DEEDB5 /* SequenceTests.swift in Sources */,
 				359E40BF20DF89A400801E20 /* FakeTransactionNotificationCenter.swift in Sources */,
 				352D626020F3D30400CBE0BD /* FakeBudgetViewModelDelegate.swift in Sources */,
