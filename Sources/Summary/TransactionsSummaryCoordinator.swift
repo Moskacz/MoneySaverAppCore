@@ -8,7 +8,7 @@
 import Foundation
 
 public protocol TransactionsSummaryCoordinator {
-    var display: TransactionsSummaryDisplaying? { get set }
+    var display: TransactionsSummaryUI? { get set }
     var dateRange: DateRange { get set }
 }
 

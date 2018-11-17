@@ -66,7 +66,7 @@ class TransactionsSummaryCoordinatorImplTests: XCTestCase {
     }
 }
 
-private class FakeDisplay: TransactionsSummaryDisplaying {
+private class FakeDisplay: TransactionsSummaryUI {
     
     var dateRangeTitle: String?
     var incomesText: String?

@@ -7,7 +7,7 @@
 
 import Foundation
 
-public protocol TransactionsSummaryDisplaying {
+public protocol TransactionsSummaryUI {
     func set(incomesText: String?)
     func set(expenseText: String?)
     func set(totalAmountString: String?)

@@ -18,7 +18,7 @@ internal class TransactionsSummaryCoordinatorImpl: TransactionsSummaryCoordinato
         }
     }
     
-    var display: TransactionsSummaryDisplaying? {
+    var display: TransactionsSummaryUI? {
         didSet {
             updateDisplay()
         }
@@ -64,7 +64,7 @@ internal class TransactionsSummaryCoordinatorImpl: TransactionsSummaryCoordinato
     }
 }
 
-private extension TransactionsSummaryDisplaying {
+private extension TransactionsSummaryUI {
     func updateWith(viewModel: TransactionsSummaryViewModel) {
         set(incomesText: viewModel.incomesAmountText)
         set(expenseText: viewModel.expensesAmountText)

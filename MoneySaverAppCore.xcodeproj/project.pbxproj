@@ -157,8 +157,8 @@
 		355A564220FB390C003561FE /* TransactionsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355A564020FB390B003561FE /* TransactionsRepository.swift */; };
 		355B6FCC2141A9F300E39AF5 /* DateFormatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355B6FCB2141A9F300E39AF5 /* DateFormatters.swift */; };
 		355B6FCD2141A9F300E39AF5 /* DateFormatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355B6FCB2141A9F300E39AF5 /* DateFormatters.swift */; };
-		355B6FCF2141AE5600E39AF5 /* TransactionsSummaryDisplaying.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355B6FCE2141AE5600E39AF5 /* TransactionsSummaryDisplaying.swift */; };
-		355B6FD02141AE5600E39AF5 /* TransactionsSummaryDisplaying.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355B6FCE2141AE5600E39AF5 /* TransactionsSummaryDisplaying.swift */; };
+		355B6FCF2141AE5600E39AF5 /* TransactionsSummaryUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355B6FCE2141AE5600E39AF5 /* TransactionsSummaryUI.swift */; };
+		355B6FD02141AE5600E39AF5 /* TransactionsSummaryUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355B6FCE2141AE5600E39AF5 /* TransactionsSummaryUI.swift */; };
 		355B6FD22141AF7100E39AF5 /* TransactionsSummaryCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355B6FD12141AF7100E39AF5 /* TransactionsSummaryCoordinator.swift */; };
 		355B6FD32141AF7100E39AF5 /* TransactionsSummaryCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355B6FD12141AF7100E39AF5 /* TransactionsSummaryCoordinator.swift */; };
 		355B6FD52141AFE000E39AF5 /* TransactionsSummaryCoordinatorImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355B6FD42141AFE000E39AF5 /* TransactionsSummaryCoordinatorImpl.swift */; };
@@ -396,7 +396,7 @@
 		355A563920FA7D1D003561FE /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		355A564020FB390B003561FE /* TransactionsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsRepository.swift; sourceTree = "<group>"; };
 		355B6FCB2141A9F300E39AF5 /* DateFormatters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatters.swift; sourceTree = "<group>"; };
-		355B6FCE2141AE5600E39AF5 /* TransactionsSummaryDisplaying.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsSummaryDisplaying.swift; sourceTree = "<group>"; };
+		355B6FCE2141AE5600E39AF5 /* TransactionsSummaryUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsSummaryUI.swift; sourceTree = "<group>"; };
 		355B6FD12141AF7100E39AF5 /* TransactionsSummaryCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsSummaryCoordinator.swift; sourceTree = "<group>"; };
 		355B6FD42141AFE000E39AF5 /* TransactionsSummaryCoordinatorImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsSummaryCoordinatorImpl.swift; sourceTree = "<group>"; };
 		35666897208CE5CB0052E724 /* MoneySaverAppCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MoneySaverAppCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -583,7 +583,7 @@
 		352D626320F5296100CBE0BD /* Summary */ = {
 			isa = PBXGroup;
 			children = (
-				355B6FCE2141AE5600E39AF5 /* TransactionsSummaryDisplaying.swift */,
+				355B6FCE2141AE5600E39AF5 /* TransactionsSummaryUI.swift */,
 				355B6FD12141AF7100E39AF5 /* TransactionsSummaryCoordinator.swift */,
 				355B6FD42141AFE000E39AF5 /* TransactionsSummaryCoordinatorImpl.swift */,
 			);
@@ -1083,7 +1083,7 @@
 				359E40B420DC3C0400801E20 /* NotificationCenter+TransactionNotificationCenter.swift in Sources */,
 				35224F0E21541AA600C2C813 /* SettingsFlow.swift in Sources */,
 				35224F08215419BD00C2C813 /* SettingsViewCoordinator.swift in Sources */,
-				355B6FCF2141AE5600E39AF5 /* TransactionsSummaryDisplaying.swift in Sources */,
+				355B6FCF2141AE5600E39AF5 /* TransactionsSummaryUI.swift in Sources */,
 				358BEC0020C9AD25003A3800 /* GroupedData.swift in Sources */,
 				353817D5208E647600EA967F /* CoreDataStack.swift in Sources */,
 				353A944620A0D89100B94A72 /* Bundle+Extension.swift in Sources */,
@@ -1201,7 +1201,7 @@
 				359E40B520DC3C0400801E20 /* NotificationCenter+TransactionNotificationCenter.swift in Sources */,
 				35224F0F21541AA600C2C813 /* SettingsFlow.swift in Sources */,
 				35224F09215419BD00C2C813 /* SettingsViewCoordinator.swift in Sources */,
-				355B6FD02141AE5600E39AF5 /* TransactionsSummaryDisplaying.swift in Sources */,
+				355B6FD02141AE5600E39AF5 /* TransactionsSummaryUI.swift in Sources */,
 				358BEC0120C9AD25003A3800 /* GroupedData.swift in Sources */,
 				353817D6208E647600EA967F /* CoreDataStack.swift in Sources */,
 				35162C9B208FC14900547126 /* TransactionProtocol.swift in Sources */,
