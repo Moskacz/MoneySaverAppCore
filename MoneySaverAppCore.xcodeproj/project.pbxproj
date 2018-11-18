@@ -119,6 +119,12 @@
 		354820A821A03F9A007C932B /* TransactionsSummaryInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354820A621A03F9A007C932B /* TransactionsSummaryInteractor.swift */; };
 		354820AA21A0A938007C932B /* TransactionsSummaryPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354820A921A0A938007C932B /* TransactionsSummaryPresenterTests.swift */; };
 		354820AB21A0A938007C932B /* TransactionsSummaryPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354820A921A0A938007C932B /* TransactionsSummaryPresenterTests.swift */; };
+		354820B121A1DF88007C932B /* TransactionsListUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354820B021A1DF88007C932B /* TransactionsListUI.swift */; };
+		354820B221A1DF88007C932B /* TransactionsListUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354820B021A1DF88007C932B /* TransactionsListUI.swift */; };
+		354820B421A1E080007C932B /* TransactionsListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354820B321A1E080007C932B /* TransactionsListPresenter.swift */; };
+		354820B521A1E080007C932B /* TransactionsListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354820B321A1E080007C932B /* TransactionsListPresenter.swift */; };
+		354820B721A1E145007C932B /* TransactionsListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354820B621A1E145007C932B /* TransactionsListInteractor.swift */; };
+		354820B821A1E145007C932B /* TransactionsListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354820B621A1E145007C932B /* TransactionsListInteractor.swift */; };
 		354C12472104A4AF0001AB19 /* TransactionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354C12462104A4AF0001AB19 /* TransactionCell.swift */; };
 		354C124C2104A5680001AB19 /* TransactionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354C12462104A4AF0001AB19 /* TransactionCell.swift */; };
 		354E4B8820A2301C009A8311 /* CalendarDateManagedObjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354E4B8720A2301C009A8311 /* CalendarDateManagedObjectTests.swift */; };
@@ -378,6 +384,9 @@
 		35423E1920F004FE004E006B /* TransactionNotificationCenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionNotificationCenterTests.swift; sourceTree = "<group>"; };
 		354820A621A03F9A007C932B /* TransactionsSummaryInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsSummaryInteractor.swift; sourceTree = "<group>"; };
 		354820A921A0A938007C932B /* TransactionsSummaryPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsSummaryPresenterTests.swift; sourceTree = "<group>"; };
+		354820B021A1DF88007C932B /* TransactionsListUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsListUI.swift; sourceTree = "<group>"; };
+		354820B321A1E080007C932B /* TransactionsListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsListPresenter.swift; sourceTree = "<group>"; };
+		354820B621A1E145007C932B /* TransactionsListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsListInteractor.swift; sourceTree = "<group>"; };
 		354C12462104A4AF0001AB19 /* TransactionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCell.swift; sourceTree = "<group>"; };
 		354E4B8720A2301C009A8311 /* CalendarDateManagedObjectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDateManagedObjectTests.swift; sourceTree = "<group>"; };
 		354E4B8A20A23115009A8311 /* TransactionManagedObjectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionManagedObjectTests.swift; sourceTree = "<group>"; };
@@ -677,6 +686,9 @@
 				355A562E20FA3975003561FE /* Cell */,
 				355A562920FA38D2003561FE /* TransactionsListCoordinator.swift */,
 				355A563520FA7BA7003561FE /* TransactionsListCoordinatorImpl.swift */,
+				354820B021A1DF88007C932B /* TransactionsListUI.swift */,
+				354820B321A1E080007C932B /* TransactionsListPresenter.swift */,
+				354820B621A1E145007C932B /* TransactionsListInteractor.swift */,
 			);
 			path = TransactionsList;
 			sourceTree = "<group>";
@@ -1056,6 +1068,7 @@
 				35593BEE20922DFD00DEEDB5 /* BudgetChartsDataProcessor.swift in Sources */,
 				35593C072092305800DEEDB5 /* Sequence+Extension.swift in Sources */,
 				359E40BB20DD854000801E20 /* ObservationToken.swift in Sources */,
+				354820B421A1E080007C932B /* TransactionsListPresenter.swift in Sources */,
 				35162CA9208FC32500547126 /* Calendar+Extensions.swift in Sources */,
 				35F272B0214E9A77002264B4 /* TransactionCategoryCollectionDisplaying.swift in Sources */,
 				35162C90208FC10A00547126 /* DateRange.swift in Sources */,
@@ -1116,12 +1129,14 @@
 				35162CA3208FC2D200547126 /* NSManagedObject+Extensions.swift in Sources */,
 				355A563020FA3991003561FE /* TransactionCellViewModel.swift in Sources */,
 				355A563A20FA7D1D003561FE /* Theme.swift in Sources */,
+				354820B721A1E145007C932B /* TransactionsListInteractor.swift in Sources */,
 				35423E0F20EE9E44004E006B /* StatsViewModelImpl.swift in Sources */,
 				35FF6E3F2107C068004FBC87 /* SetupBudgetViewModel.swift in Sources */,
 				35423E0820EE9DB2004E006B /* BudgetViewModelImpl.swift in Sources */,
 				3536466920E3F72A00B055B6 /* BudgetViewModel.swift in Sources */,
 				90D1171320E4E7AC008F21D8 /* BudgetProtocol.swift in Sources */,
 				35AEB11B2093A79F00DCE038 /* CoreDataCollectionUpdateHandler.swift in Sources */,
+				354820B121A1DF88007C932B /* TransactionsListUI.swift in Sources */,
 				35162C98208FC14900547126 /* CalendarDateProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1175,6 +1190,7 @@
 				35593BEF20922E1D00DEEDB5 /* BudgetChartsDataProcessor.swift in Sources */,
 				35593C082092305800DEEDB5 /* Sequence+Extension.swift in Sources */,
 				359E40BC20DD854000801E20 /* ObservationToken.swift in Sources */,
+				354820B521A1E080007C932B /* TransactionsListPresenter.swift in Sources */,
 				35162CAA208FC32500547126 /* Calendar+Extensions.swift in Sources */,
 				35F272B1214E9A77002264B4 /* TransactionCategoryCollectionDisplaying.swift in Sources */,
 				35162C91208FC10A00547126 /* DateRange.swift in Sources */,
@@ -1235,12 +1251,14 @@
 				35AEB11C2093A79F00DCE038 /* CoreDataCollectionUpdateHandler.swift in Sources */,
 				355A563120FA3991003561FE /* TransactionCellViewModel.swift in Sources */,
 				355A563B20FA7D1D003561FE /* Theme.swift in Sources */,
+				354820B821A1E145007C932B /* TransactionsListInteractor.swift in Sources */,
 				35423E1020EE9E44004E006B /* StatsViewModelImpl.swift in Sources */,
 				35FF6E402107C068004FBC87 /* SetupBudgetViewModel.swift in Sources */,
 				35423E0920EE9DB2004E006B /* BudgetViewModelImpl.swift in Sources */,
 				3536466A20E3F72A00B055B6 /* BudgetViewModel.swift in Sources */,
 				90D1171420E4E7AC008F21D8 /* BudgetProtocol.swift in Sources */,
 				353A944920A0D9E100B94A72 /* ManagedObjectModel+Extensions.swift in Sources */,
+				354820B221A1DF88007C932B /* TransactionsListUI.swift in Sources */,
 				35162C99208FC14900547126 /* CalendarDateProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
