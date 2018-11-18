@@ -10,5 +10,5 @@ import MMFoundation
 
 public protocol TransactionsListUI: class {
     var presenter: TransactionsListPresenterProtocol { get set }
-    func set(listAdapter: ListAdapter<TransactionCellViewModel>)
+    func set(listAdapter: ListAdapter<TransactionCellItemProtocol>)
 }

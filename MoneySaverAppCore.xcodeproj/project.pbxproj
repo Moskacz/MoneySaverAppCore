@@ -155,10 +155,10 @@
 		35593C0D2092312200DEEDB5 /* FakeTransction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35593C0B2092312100DEEDB5 /* FakeTransction.swift */; };
 		355A562A20FA38D2003561FE /* TransactionsListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355A562920FA38D2003561FE /* TransactionsListCoordinator.swift */; };
 		355A562B20FA38D2003561FE /* TransactionsListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355A562920FA38D2003561FE /* TransactionsListCoordinator.swift */; };
-		355A563020FA3991003561FE /* TransactionCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355A562F20FA3991003561FE /* TransactionCellViewModel.swift */; };
-		355A563120FA3991003561FE /* TransactionCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355A562F20FA3991003561FE /* TransactionCellViewModel.swift */; };
-		355A563320FA3AEC003561FE /* TransactionCellViewModelImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355A563220FA3AEC003561FE /* TransactionCellViewModelImpl.swift */; };
-		355A563420FA3AEC003561FE /* TransactionCellViewModelImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355A563220FA3AEC003561FE /* TransactionCellViewModelImpl.swift */; };
+		355A563020FA3991003561FE /* TransactionCellItemProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355A562F20FA3991003561FE /* TransactionCellItemProtocol.swift */; };
+		355A563120FA3991003561FE /* TransactionCellItemProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355A562F20FA3991003561FE /* TransactionCellItemProtocol.swift */; };
+		355A563320FA3AEC003561FE /* TransactionCellItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355A563220FA3AEC003561FE /* TransactionCellItem.swift */; };
+		355A563420FA3AEC003561FE /* TransactionCellItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355A563220FA3AEC003561FE /* TransactionCellItem.swift */; };
 		355A563620FA7BA7003561FE /* TransactionsListCoordinatorImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355A563520FA7BA7003561FE /* TransactionsListCoordinatorImpl.swift */; };
 		355A563720FA7BA7003561FE /* TransactionsListCoordinatorImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355A563520FA7BA7003561FE /* TransactionsListCoordinatorImpl.swift */; };
 		355A563A20FA7D1D003561FE /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355A563920FA7D1D003561FE /* Theme.swift */; };
@@ -403,8 +403,8 @@
 		35593C042092304D00DEEDB5 /* Sequence+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Sequence+Extension.swift"; sourceTree = "<group>"; };
 		35593C0B2092312100DEEDB5 /* FakeTransction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FakeTransction.swift; sourceTree = "<group>"; };
 		355A562920FA38D2003561FE /* TransactionsListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsListCoordinator.swift; sourceTree = "<group>"; };
-		355A562F20FA3991003561FE /* TransactionCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCellViewModel.swift; sourceTree = "<group>"; };
-		355A563220FA3AEC003561FE /* TransactionCellViewModelImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCellViewModelImpl.swift; sourceTree = "<group>"; };
+		355A562F20FA3991003561FE /* TransactionCellItemProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCellItemProtocol.swift; sourceTree = "<group>"; };
+		355A563220FA3AEC003561FE /* TransactionCellItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCellItem.swift; sourceTree = "<group>"; };
 		355A563520FA7BA7003561FE /* TransactionsListCoordinatorImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsListCoordinatorImpl.swift; sourceTree = "<group>"; };
 		355A563920FA7D1D003561FE /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		355A564020FB390B003561FE /* TransactionsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsRepository.swift; sourceTree = "<group>"; };
@@ -696,8 +696,8 @@
 		355A562E20FA3975003561FE /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				355A562F20FA3991003561FE /* TransactionCellViewModel.swift */,
-				355A563220FA3AEC003561FE /* TransactionCellViewModelImpl.swift */,
+				355A562F20FA3991003561FE /* TransactionCellItemProtocol.swift */,
+				355A563220FA3AEC003561FE /* TransactionCellItem.swift */,
 				354C12462104A4AF0001AB19 /* TransactionCell.swift */,
 			);
 			path = Cell;
@@ -1090,7 +1090,7 @@
 				35162C89208FC0A100547126 /* CoreDataTransactionsRepository.swift in Sources */,
 				35A77EA0214AE9C100483426 /* Error+Utils.swift in Sources */,
 				3508A8AC2145A0E300810D42 /* TransactionDataViewCoordinatorImpl.swift in Sources */,
-				355A563320FA3AEC003561FE /* TransactionCellViewModelImpl.swift in Sources */,
+				355A563320FA3AEC003561FE /* TransactionCellItem.swift in Sources */,
 				35224F0B215419D800C2C813 /* SettingsDisplaying.swift in Sources */,
 				358BEC0620C9B15D003A3800 /* StatsChartsDataProcessor.swift in Sources */,
 				35F272AD214E99DD002264B4 /* TransactionCategoryCollectionCoordinator.swift in Sources */,
@@ -1127,7 +1127,7 @@
 				353817E9208E65DC00EA967F /* TransactionManagedObject+CoreDataProperties.swift in Sources */,
 				355A563620FA7BA7003561FE /* TransactionsListCoordinatorImpl.swift in Sources */,
 				35162CA3208FC2D200547126 /* NSManagedObject+Extensions.swift in Sources */,
-				355A563020FA3991003561FE /* TransactionCellViewModel.swift in Sources */,
+				355A563020FA3991003561FE /* TransactionCellItemProtocol.swift in Sources */,
 				355A563A20FA7D1D003561FE /* Theme.swift in Sources */,
 				354820B721A1E145007C932B /* TransactionsListInteractor.swift in Sources */,
 				35423E0F20EE9E44004E006B /* StatsViewModelImpl.swift in Sources */,
@@ -1212,7 +1212,7 @@
 				35162C8A208FC0A100547126 /* CoreDataTransactionsRepository.swift in Sources */,
 				35A77EA1214AE9C100483426 /* Error+Utils.swift in Sources */,
 				3508A8AD2145A0E300810D42 /* TransactionDataViewCoordinatorImpl.swift in Sources */,
-				355A563420FA3AEC003561FE /* TransactionCellViewModelImpl.swift in Sources */,
+				355A563420FA3AEC003561FE /* TransactionCellItem.swift in Sources */,
 				35224F0C215419D800C2C813 /* SettingsDisplaying.swift in Sources */,
 				358BEC0720C9B15D003A3800 /* StatsChartsDataProcessor.swift in Sources */,
 				35F272AE214E99DD002264B4 /* TransactionCategoryCollectionCoordinator.swift in Sources */,
@@ -1249,7 +1249,7 @@
 				35162CA4208FC2D200547126 /* NSManagedObject+Extensions.swift in Sources */,
 				355A563720FA7BA7003561FE /* TransactionsListCoordinatorImpl.swift in Sources */,
 				35AEB11C2093A79F00DCE038 /* CoreDataCollectionUpdateHandler.swift in Sources */,
-				355A563120FA3991003561FE /* TransactionCellViewModel.swift in Sources */,
+				355A563120FA3991003561FE /* TransactionCellItemProtocol.swift in Sources */,
 				355A563B20FA7D1D003561FE /* Theme.swift in Sources */,
 				354820B821A1E145007C932B /* TransactionsListInteractor.swift in Sources */,
 				35423E1020EE9E44004E006B /* StatsViewModelImpl.swift in Sources */,

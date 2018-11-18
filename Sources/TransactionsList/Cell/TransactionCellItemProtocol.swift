@@ -8,7 +8,7 @@
 import Foundation
 import MMFoundation
 
-public protocol TransactionCellViewModel {
+public protocol TransactionCellItemProtocol {
     var titleText: String? { get }
     var descriptionText: String? { get }
     var categoryIcon: Image? { get }

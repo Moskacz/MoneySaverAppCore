@@ -22,7 +22,7 @@ public protocol TransactionsListCoordinator {
     func set(delegate: ResultsControllerDelegate)
     var numberOfSections: Int { get }
     func numberOfRowsIn(section: Int) -> Int
-    func cellViewModelAt(index: ListItemIndex) -> TransactionCellViewModel
+    func cellViewModelAt(index: ListItemIndex) -> TransactionCellItemProtocol
     func titleFor(section: Int) -> String?
     func markTransactionForDeletion(indexPath: IndexPath)
 }

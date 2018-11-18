@@ -18,7 +18,7 @@ public protocol TransactionCell {
 
 extension TransactionCell {
     
-    func updateWith(viewModel: TransactionCellViewModel) {
+    func updateWith(viewModel: TransactionCellItemProtocol) {
         set(icon: viewModel.categoryIcon)
         set(amount: viewModel.titleText)
         set(title: viewModel.descriptionText)

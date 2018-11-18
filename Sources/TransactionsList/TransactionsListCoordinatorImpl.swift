@@ -30,9 +30,9 @@ internal class TransactionsListCoordinatorImpl: TransactionsListCoordinator {
         return resultsController.objectsIn(section: section)?.count ?? 0
     }
     
-    func cellViewModelAt(index: ListItemIndex) -> TransactionCellViewModel {
+    func cellViewModelAt(index: ListItemIndex) -> TransactionCellItemProtocol {
         let transaction = resultsController.object(at: index.indexPath)
-        return TransactionCellViewModelImpl(transaction: transaction, formatter: dateAndTimeFormatter)
+        return TransactionCellItem(transaction: transaction, formatter: dateAndTimeFormatter)
     }
     
     func titleFor(section: Int) -> String? {

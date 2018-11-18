@@ -8,7 +8,7 @@
 import Foundation
 import MMFoundation
 
-internal class TransactionCellViewModelImpl: TransactionCellViewModel {
+internal class TransactionCellItem: TransactionCellItemProtocol {
     
     private let transaction: TransactionProtocol
     private let formatter: DateFormatter
