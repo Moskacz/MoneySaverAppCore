@@ -7,8 +7,9 @@
 
 import Foundation
 
-public protocol BudgetPresenter {
+public protocol BudgetPresenter: class {
     func requestBudgetAmountEdit()
     func saveBudget(amount: Decimal)
     func loadData()
+    func dataUpdated(budget: BudgetProtocol, expenses: [TransactionProtocol])
 }
