@@ -22,7 +22,7 @@ internal class BudgetInteractor {
     private var budget: BudgetProtocol?
     private var expenses: [TransactionProtocol]?
     
-    weak var presenter: BudgetPresenter?
+    weak var presenter: BudgetPresenterProtocol?
     
     internal init(budgetRepository: BudgetRepository,
                   transactionsRepository: TransactionsRepository,

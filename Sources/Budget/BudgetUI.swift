@@ -8,8 +8,8 @@
 import Foundation
 import Charts
 
-public protocol BudgetUI {
+public protocol BudgetUIProtocol: class {
     func showBudgetNotSetup()
     func showBudgetPieChart(with data: PieChartData)
-    func showSpendingsChart(with data: BarChartData)
+    func showSpendingsChart(with data: CombinedChartData)
 }

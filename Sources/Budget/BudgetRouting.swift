@@ -7,6 +7,6 @@
 
 import Foundation
 
-public protocol BudgetRouting {
-    func presentBudgetAmountEditor(presenter: BudgetPresenter)
+public protocol BudgetRoutingProtocol {
+    func presentBudgetAmountEditor(presenter: BudgetPresenterProtocol)
 }
