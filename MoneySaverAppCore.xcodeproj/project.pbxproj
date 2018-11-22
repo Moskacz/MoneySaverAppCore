@@ -67,12 +67,8 @@
 		35224F1521541DD600C2C813 /* SettingsViewCoordinatorImplTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35224F1321541DD600C2C813 /* SettingsViewCoordinatorImplTests.swift */; };
 		35227EFC2105082100B72F3D /* Factory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35227EFB2105082100B72F3D /* Factory.swift */; };
 		35227EFD2105082100B72F3D /* Factory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35227EFB2105082100B72F3D /* Factory.swift */; };
-		352D625F20F3D30400CBE0BD /* FakeBudgetViewModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352D625E20F3D30400CBE0BD /* FakeBudgetViewModelDelegate.swift */; };
-		352D626020F3D30400CBE0BD /* FakeBudgetViewModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352D625E20F3D30400CBE0BD /* FakeBudgetViewModelDelegate.swift */; };
 		352D626B20F5371B00CBE0BD /* TransactionsSummaryInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352D626A20F5371B00CBE0BD /* TransactionsSummaryInteractorTests.swift */; };
 		352D626C20F5371B00CBE0BD /* TransactionsSummaryInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352D626A20F5371B00CBE0BD /* TransactionsSummaryInteractorTests.swift */; };
-		3536466920E3F72A00B055B6 /* BudgetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3536466820E3F72A00B055B6 /* BudgetViewModel.swift */; };
-		3536466A20E3F72A00B055B6 /* BudgetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3536466820E3F72A00B055B6 /* BudgetViewModel.swift */; };
 		353817D1208E642C00EA967F /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 353817CF208E642C00EA967F /* DataModel.xcdatamodeld */; };
 		353817D2208E643600EA967F /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 353817CF208E642C00EA967F /* DataModel.xcdatamodeld */; };
 		353817D5208E647600EA967F /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353817D4208E647600EA967F /* CoreDataStack.swift */; };
@@ -99,8 +95,6 @@
 		353A944A20A0D9E600B94A72 /* Bundle+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353A944520A0D89100B94A72 /* Bundle+Extension.swift */; };
 		35423E0520EE9AEF004E006B /* FakeBudgetRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DD654520B09F9000909AA4 /* FakeBudgetRepository.swift */; };
 		35423E0620EE9AF0004E006B /* FakeBudgetRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DD654520B09F9000909AA4 /* FakeBudgetRepository.swift */; };
-		35423E0820EE9DB2004E006B /* BudgetViewModelImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35423E0720EE9DB2004E006B /* BudgetViewModelImpl.swift */; };
-		35423E0920EE9DB2004E006B /* BudgetViewModelImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35423E0720EE9DB2004E006B /* BudgetViewModelImpl.swift */; };
 		35423E0C20EE9E33004E006B /* StatsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35423E0B20EE9E33004E006B /* StatsViewModel.swift */; };
 		35423E0D20EE9E33004E006B /* StatsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35423E0B20EE9E33004E006B /* StatsViewModel.swift */; };
 		35423E0F20EE9E44004E006B /* StatsViewModelImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35423E0E20EE9E44004E006B /* StatsViewModelImpl.swift */; };
@@ -366,9 +360,7 @@
 		35224F1021541CC500C2C813 /* SettingsViewCoordinatorImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewCoordinatorImpl.swift; sourceTree = "<group>"; };
 		35224F1321541DD600C2C813 /* SettingsViewCoordinatorImplTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewCoordinatorImplTests.swift; sourceTree = "<group>"; };
 		35227EFB2105082100B72F3D /* Factory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Factory.swift; sourceTree = "<group>"; };
-		352D625E20F3D30400CBE0BD /* FakeBudgetViewModelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeBudgetViewModelDelegate.swift; sourceTree = "<group>"; };
 		352D626A20F5371B00CBE0BD /* TransactionsSummaryInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsSummaryInteractorTests.swift; sourceTree = "<group>"; };
-		3536466820E3F72A00B055B6 /* BudgetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetViewModel.swift; sourceTree = "<group>"; };
 		353817D0208E642C00EA967F /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		353817D4208E647600EA967F /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		353817D7208E65DC00EA967F /* CalendarDateManagedObject+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CalendarDateManagedObject+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -381,7 +373,6 @@
 		353817DE208E65DC00EA967F /* TransactionCategoryManagedObject+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TransactionCategoryManagedObject+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		353A944520A0D89100B94A72 /* Bundle+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Extension.swift"; sourceTree = "<group>"; };
 		353A944720A0D9E100B94A72 /* ManagedObjectModel+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ManagedObjectModel+Extensions.swift"; sourceTree = "<group>"; };
-		35423E0720EE9DB2004E006B /* BudgetViewModelImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetViewModelImpl.swift; sourceTree = "<group>"; };
 		35423E0B20EE9E33004E006B /* StatsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewModel.swift; sourceTree = "<group>"; };
 		35423E0E20EE9E44004E006B /* StatsViewModelImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewModelImpl.swift; sourceTree = "<group>"; };
 		35423E1320EEA293004E006B /* BudgetNotificationCenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetNotificationCenterTests.swift; sourceTree = "<group>"; };
@@ -615,10 +606,8 @@
 			isa = PBXGroup;
 			children = (
 				35FF6E392107C051004FBC87 /* SetupBudget */,
-				3536466820E3F72A00B055B6 /* BudgetViewModel.swift */,
 				35CB167B20ED56D90037EF94 /* BudgetRepository.swift */,
 				35CB167E20ED572D0037EF94 /* BudgetRepositoryImpl.swift */,
-				35423E0720EE9DB2004E006B /* BudgetViewModelImpl.swift */,
 				354820B921A3398D007C932B /* BudgetUI.swift */,
 				354820BC21A33AA4007C932B /* BudgetPresenter.swift */,
 				354820BF21A33AFA007C932B /* BudgetInteractor.swift */,
@@ -687,7 +676,6 @@
 				359E40B020DADF4F00801E20 /* FakeUserPreferences.swift */,
 				359E40BD20DF89A400801E20 /* FakeTransactionNotificationCenter.swift */,
 				35423E1620EEA364004E006B /* FakeBudget.swift */,
-				352D625E20F3D30400CBE0BD /* FakeBudgetViewModelDelegate.swift */,
 				35224EF8215180E300C2C813 /* FakeTransactionCategoryRepository.swift */,
 			);
 			path = Fakes;
@@ -1146,8 +1134,6 @@
 				354820B721A1E145007C932B /* TransactionsListInteractor.swift in Sources */,
 				35423E0F20EE9E44004E006B /* StatsViewModelImpl.swift in Sources */,
 				35FF6E3F2107C068004FBC87 /* SetupBudgetViewModel.swift in Sources */,
-				35423E0820EE9DB2004E006B /* BudgetViewModelImpl.swift in Sources */,
-				3536466920E3F72A00B055B6 /* BudgetViewModel.swift in Sources */,
 				90D1171320E4E7AC008F21D8 /* BudgetProtocol.swift in Sources */,
 				35AEB11B2093A79F00DCE038 /* CoreDataCollectionUpdateHandler.swift in Sources */,
 				354820B121A1DF88007C932B /* TransactionsListUI.swift in Sources */,
@@ -1164,7 +1150,6 @@
 				354820AA21A0A938007C932B /* TransactionsSummaryPresenterTests.swift in Sources */,
 				35593C002092302600DEEDB5 /* SequenceTests.swift in Sources */,
 				359E40BE20DF89A400801E20 /* FakeTransactionNotificationCenter.swift in Sources */,
-				352D625F20F3D30400CBE0BD /* FakeBudgetViewModelDelegate.swift in Sources */,
 				35B914A820D0508B008BD7A2 /* FakeTransactionCategory.swift in Sources */,
 				3508A8AF21482B3100810D42 /* TransactionDataViewCoordinatorImplTests.swift in Sources */,
 				35593C022092302600DEEDB5 /* CalendarTests.swift in Sources */,
@@ -1271,8 +1256,6 @@
 				354820B821A1E145007C932B /* TransactionsListInteractor.swift in Sources */,
 				35423E1020EE9E44004E006B /* StatsViewModelImpl.swift in Sources */,
 				35FF6E402107C068004FBC87 /* SetupBudgetViewModel.swift in Sources */,
-				35423E0920EE9DB2004E006B /* BudgetViewModelImpl.swift in Sources */,
-				3536466A20E3F72A00B055B6 /* BudgetViewModel.swift in Sources */,
 				90D1171420E4E7AC008F21D8 /* BudgetProtocol.swift in Sources */,
 				353A944920A0D9E100B94A72 /* ManagedObjectModel+Extensions.swift in Sources */,
 				354820B221A1DF88007C932B /* TransactionsListUI.swift in Sources */,
@@ -1289,7 +1272,6 @@
 				354820AB21A0A938007C932B /* TransactionsSummaryPresenterTests.swift in Sources */,
 				35593C012092302600DEEDB5 /* SequenceTests.swift in Sources */,
 				359E40BF20DF89A400801E20 /* FakeTransactionNotificationCenter.swift in Sources */,
-				352D626020F3D30400CBE0BD /* FakeBudgetViewModelDelegate.swift in Sources */,
 				35B914A920D0508B008BD7A2 /* FakeTransactionCategory.swift in Sources */,
 				3508A8B021482B3100810D42 /* TransactionDataViewCoordinatorImplTests.swift in Sources */,
 				35593C032092302600DEEDB5 /* CalendarTests.swift in Sources */,

@@ -10,6 +10,5 @@ import Foundation
 public protocol Factory {
     func makeTransactionsSummaryCoordinator() -> TransactionsSummaryPresenterProtocol
     func makeTransactionDataCoordinator() -> TransactionDataViewCoordinator
-    func makeBudgetViewModel() -> BudgetViewModel
     func makeStatsViewModel() -> StatsViewModel
 }
