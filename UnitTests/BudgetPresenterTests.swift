@@ -6,27 +6,65 @@
 //
 
 import XCTest
+import Charts
+@testable import MoneySaverAppCore
 
 class BudgetPresenterTests: XCTestCase {
 
+    private var sut: BudgetPresenter!
+    
     override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        sut = BudgetPresenter(interactor: FakeInteractor(),
+                              routing: FakeRouting(),
+                              chartsDataProcessor: FakeChartsDataProcessor())
     }
 
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        sut = nil
     }
 
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func test_whenDataUpdated_thenUIShouldBeUpdated() {
+        let view = FakeUI()
+        sut.view = view
+        sut.dataUpdated(budget: FakeBudget(budgetValue: 100),
+                        expenses: [])
+        XCTAssertNotNil(view.combinedData)
+        XCTAssertNotNil(view.pieChartData)
     }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    
+    func test_pieChartCalculation() {
+        let view = FakeUI()
+        sut.view = view
+        sut.dataUpdated(budget: FakeBudget(budgetValue: 100),
+                        expenses: [FakeTransactionBuilder().set(value: -10).build(),
+                                   FakeTransactionBuilder().set(value: -22).build()])
+        
+        XCTAssertEqual(view.pieChartData?.dataSets[0].entryForIndex(0)?.y, 32) // expenses 10 + 22
+        XCTAssertEqual(view.pieChartData?.dataSets[0].entryForIndex(1)?.y, 68) // left 100 - 32
     }
 
 }
+
+private class FakeUI: BudgetUIProtocol {
+    func showBudgetNotSetup() {}
+    
+    var pieChartData: PieChartData?
+    func showBudgetPieChart(with data: PieChartData) {
+        pieChartData = data
+    }
+    
+    var combinedData: CombinedChartData?
+    func showSpendingsChart(with data: CombinedChartData) {
+        combinedData = data
+    }
+}
+
+private class FakeInteractor: BudgetInteractorProtocol {
+    func loadData() {}
+    func saveBudget(amount: Decimal) {}
+}
+
+private class FakeRouting: BudgetRoutingProtocol {
+    func presentBudgetAmountEditor(presenter: BudgetPresenterProtocol) {}
+}
+

@@ -25,7 +25,7 @@ internal class BudgetPresenter: BudgetPresenterProtocol {
     
     init(interactor: BudgetInteractorProtocol,
          routing: BudgetRoutingProtocol,
-         chartsDataProcessor: ChartsDataProcessor) {
+         chartsDataProcessor: BudgetChartsDataProcessor) {
         self.interactor = interactor
         self.routing = routing
         self.chartsDataProcessor = chartsDataProcessor
@@ -58,7 +58,6 @@ internal class BudgetPresenter: BudgetPresenterProtocol {
         let toSpentMoneyEntry = PieChartDataEntry(value: toSpent.doubleValue, label: "Left")
         let dataSet = PieChartDataSet(values: [spentMoneyEntry, toSpentMoneyEntry], label: nil)
         dataSet.colors = [AppColor.red.value, AppColor.green.value]
-        dataSet.colors = [NSUIColor.red, NSUIColor.green]
         return PieChartData(dataSet: dataSet)
     }
     
