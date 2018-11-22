@@ -1,20 +1,20 @@
 //
-//  BudgetViewModelImplTests.swift
+//  BudgetInteractorTests.swift
 //  MoneySaverAppCore
 //
-//  Created by Michal Moskala on 09.07.2018.
+//  Created by Michal Moskala on 22/11/2018.
 //
 
 import XCTest
 @testable import MoneySaverAppCore
 
-class BudgetViewModelImplTests: XCTestCase {
+class BudgetInteractorTests: XCTestCase {
 
     private var budgetRepository: FakeBudgetRepository!
     private var transactionsRepository: FakeTransactionsRepository!
     private var chartsDataProcessor: FakeChartsDataProcessor!
     private var calendar: FakeCalendar!
-    private var sut: BudgetViewModelImpl!
+    private var sut: BudgetInteractor!
     
     override func setUp() {
         super.setUp()
@@ -22,10 +22,10 @@ class BudgetViewModelImplTests: XCTestCase {
         transactionsRepository = FakeTransactionsRepository()
         chartsDataProcessor = FakeChartsDataProcessor()
         calendar = FakeCalendar()
-        sut = BudgetViewModelImpl(budgetRepository: budgetRepository,
-                                  transactionsRepository: transactionsRepository,
-                                  chartsDataProcessor: chartsDataProcessor,
-                                  calendar: calendar)
+        sut = BudgetInteractor(budgetRepository: budgetRepository,
+                               transactionsRepository: transactionsRepository,
+                               chartsDataProcessor: chartsDataProcessor,
+                               calendar: calendar)
     }
     
     override func tearDown() {
@@ -36,54 +36,57 @@ class BudgetViewModelImplTests: XCTestCase {
         budgetRepository = nil
         super.tearDown()
     }
-
-    func test_whenTransactionsAndBudgetProvided_thenShouldUpdateDelegate() {
+    
+    func test_whenTransactionsAndBudgetProvided_thenPresenterShouldBeUpdated() {
         let transaction = FakeTransactionBuilder().set(value: 10).build()
         let budget = FakeBudget(budgetValue: 100)
         calendar.nowCalendarDateToReturn = FakeCalendarDate()
         
-        let delegate = FakeBudgetViewModelDelegate()
-        sut.delegate = delegate
+        let presenter = FakePresenter()
+        sut.presenter = presenter
         
+        sut.loadData()
         transactionsRepository.transactionChangedCallback?([transaction])
         budgetRepository.passedBudgetChangedBlock?(budget)
         
-        XCTAssertNotNil(delegate.budgetData)
-        XCTAssertNotNil(delegate.spendingsData)
+        XCTAssertNotNil(presenter.passedBudget)
+        XCTAssertNotNil(presenter.passedExpenses)
     }
     
-    func test_whenTransactionsAndBudgetProvided_andNewBudgetNotified_thenShouldCallDelegate() {
+    func test_whenTransactionsAndBudgetProvided_andNewBudgetNotified_thenPresenterShouldBeUpdated() {
         calendar.nowCalendarDateToReturn = FakeCalendarDate()
         
-        let delegate = FakeBudgetViewModelDelegate()
-        sut.delegate = delegate
+        let presenter = FakePresenter()
+        sut.presenter = presenter
         
+        sut.loadData()
         transactionsRepository.transactionChangedCallback?([FakeTransactionBuilder().set(value: 10).build()])
         budgetRepository.passedBudgetChangedBlock?(FakeBudget(budgetValue: 100))
         
-        delegate.spendingsData = nil
-        delegate.budgetData = nil
+        presenter.passedBudget = nil
+        presenter.passedExpenses = nil
         
         budgetRepository.passedBudgetChangedBlock?(FakeBudget(budgetValue: 200))
-        XCTAssertNotNil(delegate.budgetData)
-        XCTAssertNotNil(delegate.spendingsData)
+        XCTAssertNotNil(presenter.passedBudget)
+        XCTAssertNotNil(presenter.passedExpenses)
     }
     
-    func test_whenTransactionAndBudgetProvided_andNewTransactionsNotified_thenShouldCallDelegate() {
+    func test_whenTransactionAndBudgetProvided_andNewTransactionsNotified_thenPresenterShouldBeUpdated() {
         calendar.nowCalendarDateToReturn = FakeCalendarDate()
         
-        let delegate = FakeBudgetViewModelDelegate()
-        sut.delegate = delegate
+        let presenter = FakePresenter()
+        sut.presenter = presenter
         
+        sut.loadData()
         transactionsRepository.transactionChangedCallback?([FakeTransactionBuilder().set(value: 10).build()])
         budgetRepository.passedBudgetChangedBlock?(FakeBudget(budgetValue: 100))
         
-        delegate.spendingsData = nil
-        delegate.budgetData = nil
+        presenter.passedBudget = nil
+        presenter.passedExpenses = nil
         
         transactionsRepository.transactionChangedCallback?([])
-        XCTAssertNotNil(delegate.budgetData)
-        XCTAssertNotNil(delegate.spendingsData)
+        XCTAssertNotNil(presenter.passedBudget)
+        XCTAssertNotNil(presenter.passedExpenses)
     }
     
     func test_whenComputingCharts_thenCorrectDataShouldBePassedToProcessor() {
@@ -97,14 +100,32 @@ class BudgetViewModelImplTests: XCTestCase {
         
         let transactions = [transaction1, transaction2, transaction3]
         
+        let presenter = FakePresenter()
+        sut.presenter = presenter
+        
+        sut.loadData()
         transactionsRepository.transactionChangedCallback?(transactions)
         budgetRepository.passedBudgetChangedBlock?(FakeBudget(budgetValue: 300))
         
-        let passedTransaction = chartsDataProcessor.passedTransactions!
         // there should be only one transactionPassed - with correct month (6), and value < 0
-        XCTAssertEqual(passedTransaction.count, 1)
-        XCTAssertEqual(passedTransaction.first?.value.doubleValue, -10)
-        
-        XCTAssertEqual(chartsDataProcessor.passedBudget, 300)
+        XCTAssertEqual(presenter.passedExpenses?.count, 1)
+        XCTAssertEqual(presenter.passedExpenses?.first?.value.doubleValue, -10)
+        XCTAssertEqual(presenter.passedBudget?.budgetValue, 300)
     }
+
+}
+
+private class FakePresenter: BudgetPresenterProtocol {
+    
+    var passedBudget: BudgetProtocol?
+    var passedExpenses: [TransactionProtocol]?
+    
+    func dataUpdated(budget: BudgetProtocol, expenses: [TransactionProtocol]) {
+        self.passedBudget = budget
+        self.passedExpenses = expenses
+    }
+    
+    func requestBudgetAmountEdit() { fatalError() }
+    func saveBudget(amount: Decimal) { fatalError() }
+    func loadData() { fatalError() }
 }
