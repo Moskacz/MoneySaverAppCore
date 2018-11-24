@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		3508A8A92145A01300810D42 /* TransactionDataUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3508A8A82145A01300810D42 /* TransactionDataUI.swift */; };
 		3508A8AA2145A01300810D42 /* TransactionDataUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3508A8A82145A01300810D42 /* TransactionDataUI.swift */; };
-		3508A8AF21482B3100810D42 /* TransactionDataViewCoordinatorImplTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3508A8AE21482B3100810D42 /* TransactionDataViewCoordinatorImplTests.swift */; };
-		3508A8B021482B3100810D42 /* TransactionDataViewCoordinatorImplTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3508A8AE21482B3100810D42 /* TransactionDataViewCoordinatorImplTests.swift */; };
 		3515F58520D8256D00C8B549 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3515F58420D8256D00C8B549 /* Charts.framework */; };
 		3515F58720D8258700C8B549 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3515F58620D8258700C8B549 /* Charts.framework */; };
 		3515F58B20D8266400C8B549 /* Charts.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3515F58420D8256D00C8B549 /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -219,6 +217,8 @@
 		35CE45F121A9EDB500967A4B /* TransactionDataInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CE45EF21A9EDB500967A4B /* TransactionDataInteractor.swift */; };
 		35CE45F321A9F04E00967A4B /* TransactionDataPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CE45F221A9F04E00967A4B /* TransactionDataPresenterTests.swift */; };
 		35CE45F421A9F04E00967A4B /* TransactionDataPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CE45F221A9F04E00967A4B /* TransactionDataPresenterTests.swift */; };
+		35CE45F621A9F40400967A4B /* TransactionDataInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CE45F521A9F40400967A4B /* TransactionDataInteractorTests.swift */; };
+		35CE45F721A9F40400967A4B /* TransactionDataInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CE45F521A9F40400967A4B /* TransactionDataInteractorTests.swift */; };
 		35F272A7214E979C002264B4 /* TransactionCategoryCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F272A6214E979C002264B4 /* TransactionCategoryCellViewModel.swift */; };
 		35F272A8214E979C002264B4 /* TransactionCategoryCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F272A6214E979C002264B4 /* TransactionCategoryCellViewModel.swift */; };
 		35F272AA214E98C3002264B4 /* TransactionCategoryCellViewModelImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F272A9214E98C3002264B4 /* TransactionCategoryCellViewModelImpl.swift */; };
@@ -335,7 +335,6 @@
 
 /* Begin PBXFileReference section */
 		3508A8A82145A01300810D42 /* TransactionDataUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDataUI.swift; sourceTree = "<group>"; };
-		3508A8AE21482B3100810D42 /* TransactionDataViewCoordinatorImplTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDataViewCoordinatorImplTests.swift; sourceTree = "<group>"; };
 		3515F58420D8256D00C8B549 /* Charts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Charts.framework; path = Carthage/Build/Mac/Charts.framework; sourceTree = "<group>"; };
 		3515F58620D8258700C8B549 /* Charts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Charts.framework; path = Carthage/Build/iOS/Charts.framework; sourceTree = "<group>"; };
 		35162C88208FC0A100547126 /* CoreDataTransactionsRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataTransactionsRepository.swift; sourceTree = "<group>"; };
@@ -446,6 +445,7 @@
 		35CE45EC21A9ED7200967A4B /* TransactionDataRouting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDataRouting.swift; sourceTree = "<group>"; };
 		35CE45EF21A9EDB500967A4B /* TransactionDataInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDataInteractor.swift; sourceTree = "<group>"; };
 		35CE45F221A9F04E00967A4B /* TransactionDataPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDataPresenterTests.swift; sourceTree = "<group>"; };
+		35CE45F521A9F40400967A4B /* TransactionDataInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDataInteractorTests.swift; sourceTree = "<group>"; };
 		35DD654520B09F9000909AA4 /* FakeBudgetRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeBudgetRepository.swift; sourceTree = "<group>"; };
 		35F272A6214E979C002264B4 /* TransactionCategoryCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCategoryCellViewModel.swift; sourceTree = "<group>"; };
 		35F272A9214E98C3002264B4 /* TransactionCategoryCellViewModelImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCategoryCellViewModelImpl.swift; sourceTree = "<group>"; };
@@ -805,13 +805,13 @@
 				35423E1320EEA293004E006B /* BudgetNotificationCenterTests.swift */,
 				35423E1920F004FE004E006B /* TransactionNotificationCenterTests.swift */,
 				352D626A20F5371B00CBE0BD /* TransactionsSummaryInteractorTests.swift */,
-				3508A8AE21482B3100810D42 /* TransactionDataViewCoordinatorImplTests.swift */,
 				35224EFD2151815D00C2C813 /* TransactionCategoryCollectionCoordinatorImplTests.swift */,
 				35224F1321541DD600C2C813 /* SettingsViewCoordinatorImplTests.swift */,
 				354820A921A0A938007C932B /* TransactionsSummaryPresenterTests.swift */,
 				35CE45DF21A73DD500967A4B /* BudgetPresenterTests.swift */,
 				35CE45E621A73E0C00967A4B /* BudgetInteractorTests.swift */,
 				35CE45F221A9F04E00967A4B /* TransactionDataPresenterTests.swift */,
+				35CE45F521A9F40400967A4B /* TransactionDataInteractorTests.swift */,
 			);
 			path = UnitTests;
 			sourceTree = "<group>";
@@ -1160,11 +1160,11 @@
 				35593C002092302600DEEDB5 /* SequenceTests.swift in Sources */,
 				359E40BE20DF89A400801E20 /* FakeTransactionNotificationCenter.swift in Sources */,
 				35B914A820D0508B008BD7A2 /* FakeTransactionCategory.swift in Sources */,
-				3508A8AF21482B3100810D42 /* TransactionDataViewCoordinatorImplTests.swift in Sources */,
 				35593C022092302600DEEDB5 /* CalendarTests.swift in Sources */,
 				35423E1420EEA293004E006B /* BudgetNotificationCenterTests.swift in Sources */,
 				359E40AE20DADE8400801E20 /* FakeTransactionsRepository.swift in Sources */,
 				354E4B8E20A23153009A8311 /* StringTests.swift in Sources */,
+				35CE45F621A9F40400967A4B /* TransactionDataInteractorTests.swift in Sources */,
 				35224F002151818A00C2C813 /* TransactionCategoryCollectionCoordinatorImplTests.swift in Sources */,
 				35224F1421541DD600C2C813 /* SettingsViewCoordinatorImplTests.swift in Sources */,
 				35593BF820922F0700DEEDB5 /* FakeCalendar.swift in Sources */,
@@ -1284,11 +1284,11 @@
 				35593C012092302600DEEDB5 /* SequenceTests.swift in Sources */,
 				359E40BF20DF89A400801E20 /* FakeTransactionNotificationCenter.swift in Sources */,
 				35B914A920D0508B008BD7A2 /* FakeTransactionCategory.swift in Sources */,
-				3508A8B021482B3100810D42 /* TransactionDataViewCoordinatorImplTests.swift in Sources */,
 				35593C032092302600DEEDB5 /* CalendarTests.swift in Sources */,
 				35423E1520EEA293004E006B /* BudgetNotificationCenterTests.swift in Sources */,
 				359E40AF20DADE8400801E20 /* FakeTransactionsRepository.swift in Sources */,
 				354E4B8F20A23153009A8311 /* StringTests.swift in Sources */,
+				35CE45F721A9F40400967A4B /* TransactionDataInteractorTests.swift in Sources */,
 				35224F012151818B00C2C813 /* TransactionCategoryCollectionCoordinatorImplTests.swift in Sources */,
 				35224F1521541DD600C2C813 /* SettingsViewCoordinatorImplTests.swift in Sources */,
 				35593BF920922F0700DEEDB5 /* FakeCalendar.swift in Sources */,
