@@ -8,7 +8,7 @@
 import Foundation
 
 public protocol TransactionDataViewCoordinator {
-    var display: TransactionDataDisplaying? { get set }
+    var display: TransactionDataUI? { get set }
     func set(title: String?, value: String?, date: Date?)
 }
 

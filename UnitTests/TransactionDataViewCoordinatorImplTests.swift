@@ -76,7 +76,7 @@ class TransactionDataViewCoordinatorImplTests: XCTestCase {
     }
 }
 
-private class FakeDisplay: TransactionDataDisplaying {
+private class FakeDisplay: TransactionDataUI {
     
     var amount: String?
     var title: String?

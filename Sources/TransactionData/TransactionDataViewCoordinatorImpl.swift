@@ -24,7 +24,7 @@ internal class TransactionDataViewCoordinatorImpl: TransactionDataViewCoordinato
         self.calendar = calendar
     }
     
-    var display: TransactionDataDisplaying? {
+    var display: TransactionDataUI? {
         didSet {
            updateDisplay()
         }
@@ -85,7 +85,7 @@ private struct ViewState {
     }
 }
 
-private extension TransactionDataDisplaying {
+private extension TransactionDataUI {
     func update(with viewState: ViewState) {
         set(title: viewState.title)
         set(amount: viewState.amount)
