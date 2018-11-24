@@ -15,6 +15,19 @@ public protocol TransactionDataPresenterProtocol {
     func nextTapped()
 }
 
+public struct TransactionDataViewError: Error, OptionSet {
+    public let rawValue: Int
+    
+    public init(rawValue: Int) {
+        self.rawValue = rawValue
+    }
+    
+    static let invalidValue = TransactionDataViewError(rawValue: 1)
+    static let missingValue = TransactionDataViewError(rawValue: 1 << 1)
+    static let missingTitle = TransactionDataViewError(rawValue: 1 << 2)
+    static let missingDate = TransactionDataViewError(rawValue: 1 << 3)
+}
+
 internal final class TransactionDataPresenter {
     
     var transactionTitle: String?
