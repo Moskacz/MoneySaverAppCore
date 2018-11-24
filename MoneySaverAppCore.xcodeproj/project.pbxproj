@@ -217,6 +217,8 @@
 		35CE45E821A73E0C00967A4B /* BudgetInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CE45E621A73E0C00967A4B /* BudgetInteractorTests.swift */; };
 		35CE45EA21A9EC9F00967A4B /* TransactionDataPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CE45E921A9EC9F00967A4B /* TransactionDataPresenter.swift */; };
 		35CE45EB21A9EC9F00967A4B /* TransactionDataPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CE45E921A9EC9F00967A4B /* TransactionDataPresenter.swift */; };
+		35CE45ED21A9ED7200967A4B /* TransactionDataRouting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CE45EC21A9ED7200967A4B /* TransactionDataRouting.swift */; };
+		35CE45EE21A9ED7200967A4B /* TransactionDataRouting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CE45EC21A9ED7200967A4B /* TransactionDataRouting.swift */; };
 		35F272A7214E979C002264B4 /* TransactionCategoryCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F272A6214E979C002264B4 /* TransactionCategoryCellViewModel.swift */; };
 		35F272A8214E979C002264B4 /* TransactionCategoryCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F272A6214E979C002264B4 /* TransactionCategoryCellViewModel.swift */; };
 		35F272AA214E98C3002264B4 /* TransactionCategoryCellViewModelImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F272A9214E98C3002264B4 /* TransactionCategoryCellViewModelImpl.swift */; };
@@ -443,6 +445,7 @@
 		35CE45DF21A73DD500967A4B /* BudgetPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetPresenterTests.swift; sourceTree = "<group>"; };
 		35CE45E621A73E0C00967A4B /* BudgetInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetInteractorTests.swift; sourceTree = "<group>"; };
 		35CE45E921A9EC9F00967A4B /* TransactionDataPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDataPresenter.swift; sourceTree = "<group>"; };
+		35CE45EC21A9ED7200967A4B /* TransactionDataRouting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDataRouting.swift; sourceTree = "<group>"; };
 		35DD654520B09F9000909AA4 /* FakeBudgetRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeBudgetRepository.swift; sourceTree = "<group>"; };
 		35F272A6214E979C002264B4 /* TransactionCategoryCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCategoryCellViewModel.swift; sourceTree = "<group>"; };
 		35F272A9214E98C3002264B4 /* TransactionCategoryCellViewModelImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCategoryCellViewModelImpl.swift; sourceTree = "<group>"; };
@@ -500,6 +503,7 @@
 				3508A8A82145A01300810D42 /* TransactionDataUI.swift */,
 				3508A8AB2145A0E300810D42 /* TransactionDataViewCoordinatorImpl.swift */,
 				35CE45E921A9EC9F00967A4B /* TransactionDataPresenter.swift */,
+				35CE45EC21A9ED7200967A4B /* TransactionDataRouting.swift */,
 			);
 			path = TransactionData;
 			sourceTree = "<group>";
@@ -1135,6 +1139,7 @@
 				35162CA3208FC2D200547126 /* NSManagedObject+Extensions.swift in Sources */,
 				355A563020FA3991003561FE /* TransactionCellItemProtocol.swift in Sources */,
 				354820C321A33B33007C932B /* BudgetRouting.swift in Sources */,
+				35CE45ED21A9ED7200967A4B /* TransactionDataRouting.swift in Sources */,
 				355A563A20FA7D1D003561FE /* Theme.swift in Sources */,
 				354820B721A1E145007C932B /* TransactionsListInteractor.swift in Sources */,
 				35423E0F20EE9E44004E006B /* StatsViewModelImpl.swift in Sources */,
@@ -1258,6 +1263,7 @@
 				35AEB11C2093A79F00DCE038 /* CoreDataCollectionUpdateHandler.swift in Sources */,
 				355A563120FA3991003561FE /* TransactionCellItemProtocol.swift in Sources */,
 				354820C421A33B33007C932B /* BudgetRouting.swift in Sources */,
+				35CE45EE21A9ED7200967A4B /* TransactionDataRouting.swift in Sources */,
 				355A563B20FA7D1D003561FE /* Theme.swift in Sources */,
 				354820B821A1E145007C932B /* TransactionsListInteractor.swift in Sources */,
 				35423E1020EE9E44004E006B /* StatsViewModelImpl.swift in Sources */,
