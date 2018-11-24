@@ -7,7 +7,7 @@
 
 import Foundation
 
-public protocol TransactionDataUI {
+public protocol TransactionDataUI: class {
     func display(error: TransactionDataViewError)
     func set(title: String?)
     func set(amount: String?)

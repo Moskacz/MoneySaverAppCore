@@ -8,5 +8,5 @@
 import Foundation
 
 protocol TransactionDataInteractorProtocol {
-    
+    func transactionData(with title: String, amount: Decimal, date: Date) -> TransactionData
 }

@@ -7,6 +7,7 @@
 
 import Foundation
 
-public protocol TransactionDataRouting {
+public protocol TransactionDataRouting: class {
+    var transactionData: TransactionData? { get set }
     func showTransactionCategoriesPicker()
 }
