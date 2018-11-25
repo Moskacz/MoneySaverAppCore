@@ -11,14 +11,14 @@ import Foundation
 class FakeUserPreferences: UserPreferences {
     
     private var dateRangeStub: DateRange!
-    private var statsGroupingStub: TransactionsGrouping!
+    private var statsGroupingStub: TransactionsGrouping?
     
     var dateRange: DateRange {
         get { return dateRangeStub }
         set { dateRangeStub = newValue }
     }
     
-    var statsGrouping: TransactionsGrouping {
+    var statsGrouping: TransactionsGrouping? {
         get { return statsGroupingStub }
         set { statsGroupingStub = newValue }
     }
