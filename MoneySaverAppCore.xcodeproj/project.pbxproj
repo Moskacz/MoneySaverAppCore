@@ -219,6 +219,12 @@
 		35CE45F421A9F04E00967A4B /* TransactionDataPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CE45F221A9F04E00967A4B /* TransactionDataPresenterTests.swift */; };
 		35CE45F621A9F40400967A4B /* TransactionDataInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CE45F521A9F40400967A4B /* TransactionDataInteractorTests.swift */; };
 		35CE45F721A9F40400967A4B /* TransactionDataInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CE45F521A9F40400967A4B /* TransactionDataInteractorTests.swift */; };
+		35CE45F921AAC62100967A4B /* StatsUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CE45F821AAC62100967A4B /* StatsUI.swift */; };
+		35CE45FA21AAC62100967A4B /* StatsUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CE45F821AAC62100967A4B /* StatsUI.swift */; };
+		35CE45FF21AACC5500967A4B /* StatsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CE45FE21AACC5500967A4B /* StatsPresenter.swift */; };
+		35CE460021AACC5500967A4B /* StatsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CE45FE21AACC5500967A4B /* StatsPresenter.swift */; };
+		35CE460221AACCCC00967A4B /* StatsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CE460121AACCCC00967A4B /* StatsInteractor.swift */; };
+		35CE460321AACCCC00967A4B /* StatsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CE460121AACCCC00967A4B /* StatsInteractor.swift */; };
 		35F272A7214E979C002264B4 /* TransactionCategoryCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F272A6214E979C002264B4 /* TransactionCategoryCellViewModel.swift */; };
 		35F272A8214E979C002264B4 /* TransactionCategoryCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F272A6214E979C002264B4 /* TransactionCategoryCellViewModel.swift */; };
 		35F272AA214E98C3002264B4 /* TransactionCategoryCellViewModelImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F272A9214E98C3002264B4 /* TransactionCategoryCellViewModelImpl.swift */; };
@@ -446,6 +452,9 @@
 		35CE45EF21A9EDB500967A4B /* TransactionDataInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDataInteractor.swift; sourceTree = "<group>"; };
 		35CE45F221A9F04E00967A4B /* TransactionDataPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDataPresenterTests.swift; sourceTree = "<group>"; };
 		35CE45F521A9F40400967A4B /* TransactionDataInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDataInteractorTests.swift; sourceTree = "<group>"; };
+		35CE45F821AAC62100967A4B /* StatsUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsUI.swift; sourceTree = "<group>"; };
+		35CE45FE21AACC5500967A4B /* StatsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsPresenter.swift; sourceTree = "<group>"; };
+		35CE460121AACCCC00967A4B /* StatsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsInteractor.swift; sourceTree = "<group>"; };
 		35DD654520B09F9000909AA4 /* FakeBudgetRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeBudgetRepository.swift; sourceTree = "<group>"; };
 		35F272A6214E979C002264B4 /* TransactionCategoryCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCategoryCellViewModel.swift; sourceTree = "<group>"; };
 		35F272A9214E98C3002264B4 /* TransactionCategoryCellViewModelImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCategoryCellViewModelImpl.swift; sourceTree = "<group>"; };
@@ -647,6 +656,9 @@
 			children = (
 				35423E0B20EE9E33004E006B /* StatsViewModel.swift */,
 				35423E0E20EE9E44004E006B /* StatsViewModelImpl.swift */,
+				35CE45F821AAC62100967A4B /* StatsUI.swift */,
+				35CE45FE21AACC5500967A4B /* StatsPresenter.swift */,
+				35CE460121AACCCC00967A4B /* StatsInteractor.swift */,
 			);
 			path = Stats;
 			sourceTree = "<group>";
@@ -1073,6 +1085,7 @@
 				35423E0C20EE9E33004E006B /* StatsViewModel.swift in Sources */,
 				35162CA6208FC30600547126 /* String+Extensions.swift in Sources */,
 				353817E1208E65DC00EA967F /* CalendarDateManagedObject+CoreDataProperties.swift in Sources */,
+				35CE460221AACCCC00967A4B /* StatsInteractor.swift in Sources */,
 				35593BEE20922DFD00DEEDB5 /* BudgetChartsDataProcessor.swift in Sources */,
 				35CE45EA21A9EC9F00967A4B /* TransactionDataPresenter.swift in Sources */,
 				35593C072092305800DEEDB5 /* Sequence+Extension.swift in Sources */,
@@ -1085,6 +1098,7 @@
 				355A564120FB390C003561FE /* TransactionsRepository.swift in Sources */,
 				35227EFC2105082100B72F3D /* Factory.swift in Sources */,
 				35CB167F20ED572D0037EF94 /* BudgetRepositoryImpl.swift in Sources */,
+				35CE45FF21AACC5500967A4B /* StatsPresenter.swift in Sources */,
 				354820A721A03F9A007C932B /* TransactionsSummaryInteractor.swift in Sources */,
 				353817E3208E65DC00EA967F /* BudgetManagedObject+CoreDataClass.swift in Sources */,
 				35224EE021502BDC00C2C813 /* CoreDataTransactionCategoryRepository.swift in Sources */,
@@ -1133,6 +1147,7 @@
 				35CB167C20ED56D90037EF94 /* BudgetRepository.swift in Sources */,
 				353A944820A0D9E100B94A72 /* ManagedObjectModel+Extensions.swift in Sources */,
 				35224F1121541CC500C2C813 /* SettingsViewCoordinatorImpl.swift in Sources */,
+				35CE45F921AAC62100967A4B /* StatsUI.swift in Sources */,
 				353817D1208E642C00EA967F /* DataModel.xcdatamodeld in Sources */,
 				353817E9208E65DC00EA967F /* TransactionManagedObject+CoreDataProperties.swift in Sources */,
 				35162CA3208FC2D200547126 /* NSManagedObject+Extensions.swift in Sources */,
@@ -1197,6 +1212,7 @@
 				35423E0D20EE9E33004E006B /* StatsViewModel.swift in Sources */,
 				35162CA7208FC30600547126 /* String+Extensions.swift in Sources */,
 				353817E2208E65DC00EA967F /* CalendarDateManagedObject+CoreDataProperties.swift in Sources */,
+				35CE460321AACCCC00967A4B /* StatsInteractor.swift in Sources */,
 				35593BEF20922E1D00DEEDB5 /* BudgetChartsDataProcessor.swift in Sources */,
 				35CE45EB21A9EC9F00967A4B /* TransactionDataPresenter.swift in Sources */,
 				35593C082092305800DEEDB5 /* Sequence+Extension.swift in Sources */,
@@ -1209,6 +1225,7 @@
 				355A564220FB390C003561FE /* TransactionsRepository.swift in Sources */,
 				35227EFD2105082100B72F3D /* Factory.swift in Sources */,
 				35CB168020ED572D0037EF94 /* BudgetRepositoryImpl.swift in Sources */,
+				35CE460021AACC5500967A4B /* StatsPresenter.swift in Sources */,
 				354820A821A03F9A007C932B /* TransactionsSummaryInteractor.swift in Sources */,
 				353817E4208E65DC00EA967F /* BudgetManagedObject+CoreDataClass.swift in Sources */,
 				35224EE121502BDC00C2C813 /* CoreDataTransactionCategoryRepository.swift in Sources */,
@@ -1257,6 +1274,7 @@
 				35CB167D20ED56D90037EF94 /* BudgetRepository.swift in Sources */,
 				353817D2208E643600EA967F /* DataModel.xcdatamodeld in Sources */,
 				35224F1221541CC500C2C813 /* SettingsViewCoordinatorImpl.swift in Sources */,
+				35CE45FA21AAC62100967A4B /* StatsUI.swift in Sources */,
 				353817EA208E65DC00EA967F /* TransactionManagedObject+CoreDataProperties.swift in Sources */,
 				35162CA4208FC2D200547126 /* NSManagedObject+Extensions.swift in Sources */,
 				35AEB11C2093A79F00DCE038 /* CoreDataCollectionUpdateHandler.swift in Sources */,
