@@ -1,5 +1,5 @@
 //
-//  TransactionCategoryCellViewModelImpl.swift
+//  TransactionCategoryCellViewModel.swift
 //  MoneySaverAppCore
 //
 //  Created by Michal Moskala on 16.09.2018.
@@ -8,7 +8,12 @@
 import Foundation
 import MMFoundation
 
-internal class TransactionCategoryCellViewModelImpl: TransactionCategoryCellViewModel {
+public protocol TransactionCategoryItemProtocol {
+    var name: String? { get }
+    var icon: Image? { get }
+}
+
+internal class TransactionCategoryItem: TransactionCategoryItemProtocol {
     
     private let category: TransactionCategoryProtocol
     
