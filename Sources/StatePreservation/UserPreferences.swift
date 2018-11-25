@@ -10,7 +10,7 @@ import Foundation
 
 public protocol UserPreferences: class {
     var dateRange: DateRange { get set }
-    var statsGrouping: TransactionsGrouping { get set }
+    var statsGrouping: TransactionsGrouping? { get set }
 }
 
 extension UserDefaults: UserPreferences {
@@ -34,16 +34,15 @@ extension UserDefaults: UserPreferences {
         }
     }
     
-    public var statsGrouping: TransactionsGrouping {
+    public var statsGrouping: TransactionsGrouping? {
         get {
-            let defaultValue = TransactionsGrouping.monthOfEra
             guard let rawValue = string(forKey: PreferenceKey.statsGrouping.rawValue) else {
-                return defaultValue
+                return nil
             }
-            return TransactionsGrouping(rawValue: rawValue) ?? defaultValue
+            return TransactionsGrouping(rawValue: rawValue)
         }
         set {
-            set(newValue.rawValue, forKey: PreferenceKey.statsGrouping.rawValue)
+            set(newValue?.rawValue, forKey: PreferenceKey.statsGrouping.rawValue)
             synchronize()
         }
     }

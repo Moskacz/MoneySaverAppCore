@@ -26,7 +26,7 @@ internal final class StatsViewModelImpl: StatsViewModel {
         self.repository = repository
         self.chartsDataProcessor = chartsDataProcessor
         self.userPreferences = userPreferences
-        self.selectedGroupingIntex = availableGroupings.index(of: userPreferences.statsGrouping) ?? 0
+        self.selectedGroupingIntex = availableGroupings.index(of: userPreferences.statsGrouping!) ?? 0
         registerForNotifications()
     }
     
