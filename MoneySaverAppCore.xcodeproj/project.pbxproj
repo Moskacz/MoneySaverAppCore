@@ -225,6 +225,8 @@
 		35CE460021AACC5500967A4B /* StatsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CE45FE21AACC5500967A4B /* StatsPresenter.swift */; };
 		35CE460221AACCCC00967A4B /* StatsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CE460121AACCCC00967A4B /* StatsInteractor.swift */; };
 		35CE460321AACCCC00967A4B /* StatsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CE460121AACCCC00967A4B /* StatsInteractor.swift */; };
+		35CE460521AADC5500967A4B /* StatsPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CE460421AADC5500967A4B /* StatsPresenterTests.swift */; };
+		35CE460621AADC5500967A4B /* StatsPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CE460421AADC5500967A4B /* StatsPresenterTests.swift */; };
 		35F272A7214E979C002264B4 /* TransactionCategoryCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F272A6214E979C002264B4 /* TransactionCategoryCellViewModel.swift */; };
 		35F272A8214E979C002264B4 /* TransactionCategoryCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F272A6214E979C002264B4 /* TransactionCategoryCellViewModel.swift */; };
 		35F272AA214E98C3002264B4 /* TransactionCategoryCellViewModelImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F272A9214E98C3002264B4 /* TransactionCategoryCellViewModelImpl.swift */; };
@@ -455,6 +457,7 @@
 		35CE45F821AAC62100967A4B /* StatsUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsUI.swift; sourceTree = "<group>"; };
 		35CE45FE21AACC5500967A4B /* StatsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsPresenter.swift; sourceTree = "<group>"; };
 		35CE460121AACCCC00967A4B /* StatsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsInteractor.swift; sourceTree = "<group>"; };
+		35CE460421AADC5500967A4B /* StatsPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsPresenterTests.swift; sourceTree = "<group>"; };
 		35DD654520B09F9000909AA4 /* FakeBudgetRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeBudgetRepository.swift; sourceTree = "<group>"; };
 		35F272A6214E979C002264B4 /* TransactionCategoryCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCategoryCellViewModel.swift; sourceTree = "<group>"; };
 		35F272A9214E98C3002264B4 /* TransactionCategoryCellViewModelImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCategoryCellViewModelImpl.swift; sourceTree = "<group>"; };
@@ -824,6 +827,7 @@
 				35CE45E621A73E0C00967A4B /* BudgetInteractorTests.swift */,
 				35CE45F221A9F04E00967A4B /* TransactionDataPresenterTests.swift */,
 				35CE45F521A9F40400967A4B /* TransactionDataInteractorTests.swift */,
+				35CE460421AADC5500967A4B /* StatsPresenterTests.swift */,
 			);
 			path = UnitTests;
 			sourceTree = "<group>";
@@ -1201,6 +1205,7 @@
 				35423E1120EE9EE0004E006B /* FakeChartsDataProcessor.swift in Sources */,
 				35423E1A20F004FE004E006B /* TransactionNotificationCenterTests.swift in Sources */,
 				35423E0520EE9AEF004E006B /* FakeBudgetRepository.swift in Sources */,
+				35CE460521AADC5500967A4B /* StatsPresenterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1328,6 +1333,7 @@
 				35423E1220EE9EE2004E006B /* FakeChartsDataProcessor.swift in Sources */,
 				35423E1B20F004FE004E006B /* TransactionNotificationCenterTests.swift in Sources */,
 				35423E0620EE9AF0004E006B /* FakeBudgetRepository.swift in Sources */,
+				35CE460621AADC5500967A4B /* StatsPresenterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
