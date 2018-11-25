@@ -9,7 +9,7 @@ import Foundation
 import Charts
 import MMFoundation
 
-public protocol StatsUIProtocol {
+public protocol StatsUIProtocol: class {
     func setGrouping(items: [SegmentedControlItem])
     func selectGrouping(index: Int)
     func showExpenses(data: BarChartData)
