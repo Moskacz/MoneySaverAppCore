@@ -7,8 +7,9 @@
 
 import Foundation
 
-public protocol StatsPresenter {
+public protocol StatsPresenterProtocol {
     var selectedGroupingIndex: Int { get set }
     func loadData()
     func dataLoaded(transactions: [TransactionProtocol])
 }
+

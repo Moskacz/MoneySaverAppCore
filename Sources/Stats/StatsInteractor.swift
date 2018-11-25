@@ -7,7 +7,7 @@
 
 import Foundation
 
-internal protocol StatsInteractor {
+internal protocol StatsInteractorProtocol {
     var preferredGrouping: TransactionsGrouping { get set }
     func loadData()
 }
