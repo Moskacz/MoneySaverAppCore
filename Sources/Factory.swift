@@ -9,5 +9,5 @@ import Foundation
 
 public protocol Factory {
     func makeTransactionsSummaryCoordinator() -> TransactionsSummaryPresenterProtocol
-    func makeStatsViewModel() -> StatsViewModel
+    
 }
