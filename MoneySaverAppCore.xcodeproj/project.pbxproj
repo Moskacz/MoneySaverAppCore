@@ -45,16 +45,6 @@
 		35224EE821502C2300C2C813 /* TransactionCategoryRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35224EE621502C2300C2C813 /* TransactionCategoryRepository.swift */; };
 		35224EFB215180EB00C2C813 /* FakeTransactionCategoryRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35224EF8215180E300C2C813 /* FakeTransactionCategoryRepository.swift */; };
 		35224EFC215180EC00C2C813 /* FakeTransactionCategoryRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35224EF8215180E300C2C813 /* FakeTransactionCategoryRepository.swift */; };
-		35224F08215419BD00C2C813 /* SettingsViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35224F07215419BD00C2C813 /* SettingsViewCoordinator.swift */; };
-		35224F09215419BD00C2C813 /* SettingsViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35224F07215419BD00C2C813 /* SettingsViewCoordinator.swift */; };
-		35224F0B215419D800C2C813 /* SettingsDisplaying.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35224F0A215419D800C2C813 /* SettingsDisplaying.swift */; };
-		35224F0C215419D800C2C813 /* SettingsDisplaying.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35224F0A215419D800C2C813 /* SettingsDisplaying.swift */; };
-		35224F0E21541AA600C2C813 /* SettingsFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35224F0D21541AA600C2C813 /* SettingsFlow.swift */; };
-		35224F0F21541AA600C2C813 /* SettingsFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35224F0D21541AA600C2C813 /* SettingsFlow.swift */; };
-		35224F1121541CC500C2C813 /* SettingsViewCoordinatorImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35224F1021541CC500C2C813 /* SettingsViewCoordinatorImpl.swift */; };
-		35224F1221541CC500C2C813 /* SettingsViewCoordinatorImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35224F1021541CC500C2C813 /* SettingsViewCoordinatorImpl.swift */; };
-		35224F1421541DD600C2C813 /* SettingsViewCoordinatorImplTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35224F1321541DD600C2C813 /* SettingsViewCoordinatorImplTests.swift */; };
-		35224F1521541DD600C2C813 /* SettingsViewCoordinatorImplTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35224F1321541DD600C2C813 /* SettingsViewCoordinatorImplTests.swift */; };
 		35227EFC2105082100B72F3D /* Factory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35227EFB2105082100B72F3D /* Factory.swift */; };
 		35227EFD2105082100B72F3D /* Factory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35227EFB2105082100B72F3D /* Factory.swift */; };
 		352D626B20F5371B00CBE0BD /* TransactionsSummaryInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352D626A20F5371B00CBE0BD /* TransactionsSummaryInteractorTests.swift */; };
@@ -229,6 +219,10 @@
 		35CE461821AC6EF900967A4B /* TransactionCategoriesCollectionUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CE461621AC6EF900967A4B /* TransactionCategoriesCollectionUI.swift */; };
 		35CE461A21AC724300967A4B /* TransactionCategoriesCollectionInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CE461921AC724300967A4B /* TransactionCategoriesCollectionInteractorTests.swift */; };
 		35CE461B21AC724300967A4B /* TransactionCategoriesCollectionInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CE461921AC724300967A4B /* TransactionCategoriesCollectionInteractorTests.swift */; };
+		35CE461D21AC76B700967A4B /* SettingRouting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CE461C21AC76B700967A4B /* SettingRouting.swift */; };
+		35CE461E21AC76B700967A4B /* SettingRouting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CE461C21AC76B700967A4B /* SettingRouting.swift */; };
+		35CE462021AC772E00967A4B /* SettingsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CE461F21AC772E00967A4B /* SettingsPresenter.swift */; };
+		35CE462121AC772E00967A4B /* SettingsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CE461F21AC772E00967A4B /* SettingsPresenter.swift */; };
 		35F272A7214E979C002264B4 /* TransactionCategoryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F272A6214E979C002264B4 /* TransactionCategoryItem.swift */; };
 		35F272A8214E979C002264B4 /* TransactionCategoryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F272A6214E979C002264B4 /* TransactionCategoryItem.swift */; };
 		35F4C7A320FA308A0095C21D /* MMFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35F4C7A020FA2FF90095C21D /* MMFoundation.framework */; };
@@ -357,11 +351,6 @@
 		35224EDF21502BDC00C2C813 /* CoreDataTransactionCategoryRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataTransactionCategoryRepository.swift; sourceTree = "<group>"; };
 		35224EE621502C2300C2C813 /* TransactionCategoryRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCategoryRepository.swift; sourceTree = "<group>"; };
 		35224EF8215180E300C2C813 /* FakeTransactionCategoryRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeTransactionCategoryRepository.swift; sourceTree = "<group>"; };
-		35224F07215419BD00C2C813 /* SettingsViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewCoordinator.swift; sourceTree = "<group>"; };
-		35224F0A215419D800C2C813 /* SettingsDisplaying.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsDisplaying.swift; sourceTree = "<group>"; };
-		35224F0D21541AA600C2C813 /* SettingsFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsFlow.swift; sourceTree = "<group>"; };
-		35224F1021541CC500C2C813 /* SettingsViewCoordinatorImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewCoordinatorImpl.swift; sourceTree = "<group>"; };
-		35224F1321541DD600C2C813 /* SettingsViewCoordinatorImplTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewCoordinatorImplTests.swift; sourceTree = "<group>"; };
 		35227EFB2105082100B72F3D /* Factory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Factory.swift; sourceTree = "<group>"; };
 		352D626A20F5371B00CBE0BD /* TransactionsSummaryInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsSummaryInteractorTests.swift; sourceTree = "<group>"; };
 		353817D0208E642C00EA967F /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
@@ -455,6 +444,8 @@
 		35CE461321AB0C1C00967A4B /* TransactionCategoriesCollectionInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCategoriesCollectionInteractor.swift; sourceTree = "<group>"; };
 		35CE461621AC6EF900967A4B /* TransactionCategoriesCollectionUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCategoriesCollectionUI.swift; sourceTree = "<group>"; };
 		35CE461921AC724300967A4B /* TransactionCategoriesCollectionInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCategoriesCollectionInteractorTests.swift; sourceTree = "<group>"; };
+		35CE461C21AC76B700967A4B /* SettingRouting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingRouting.swift; sourceTree = "<group>"; };
+		35CE461F21AC772E00967A4B /* SettingsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPresenter.swift; sourceTree = "<group>"; };
 		35DD654520B09F9000909AA4 /* FakeBudgetRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeBudgetRepository.swift; sourceTree = "<group>"; };
 		35F272A6214E979C002264B4 /* TransactionCategoryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCategoryItem.swift; sourceTree = "<group>"; };
 		35F4C79420FA2FF90095C21D /* MMFoundation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MMFoundation.xcodeproj; path = Submodules/MMFoundation/MMFoundation.xcodeproj; sourceTree = "<group>"; };
@@ -597,10 +588,8 @@
 		35224F06215419AD00C2C813 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				35224F07215419BD00C2C813 /* SettingsViewCoordinator.swift */,
-				35224F0A215419D800C2C813 /* SettingsDisplaying.swift */,
-				35224F0D21541AA600C2C813 /* SettingsFlow.swift */,
-				35224F1021541CC500C2C813 /* SettingsViewCoordinatorImpl.swift */,
+				35CE461C21AC76B700967A4B /* SettingRouting.swift */,
+				35CE461F21AC772E00967A4B /* SettingsPresenter.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -811,7 +800,6 @@
 				35423E1320EEA293004E006B /* BudgetNotificationCenterTests.swift */,
 				35423E1920F004FE004E006B /* TransactionNotificationCenterTests.swift */,
 				352D626A20F5371B00CBE0BD /* TransactionsSummaryInteractorTests.swift */,
-				35224F1321541DD600C2C813 /* SettingsViewCoordinatorImplTests.swift */,
 				354820A921A0A938007C932B /* TransactionsSummaryPresenterTests.swift */,
 				35CE45DF21A73DD500967A4B /* BudgetPresenterTests.swift */,
 				35CE45E621A73E0C00967A4B /* BudgetInteractorTests.swift */,
@@ -1096,6 +1084,7 @@
 				354820A721A03F9A007C932B /* TransactionsSummaryInteractor.swift in Sources */,
 				35CE461721AC6EF900967A4B /* TransactionCategoriesCollectionUI.swift in Sources */,
 				353817E3208E65DC00EA967F /* BudgetManagedObject+CoreDataClass.swift in Sources */,
+				35CE461D21AC76B700967A4B /* SettingRouting.swift in Sources */,
 				35224EE021502BDC00C2C813 /* CoreDataTransactionCategoryRepository.swift in Sources */,
 				35F272A7214E979C002264B4 /* TransactionCategoryItem.swift in Sources */,
 				355B6FD22141AF7100E39AF5 /* TransactionsSummaryPresenter.swift in Sources */,
@@ -1106,7 +1095,6 @@
 				35162C89208FC0A100547126 /* CoreDataTransactionsRepository.swift in Sources */,
 				35A77EA0214AE9C100483426 /* Error+Utils.swift in Sources */,
 				355A563320FA3AEC003561FE /* TransactionCellItem.swift in Sources */,
-				35224F0B215419D800C2C813 /* SettingsDisplaying.swift in Sources */,
 				358BEC0620C9B15D003A3800 /* StatsChartsDataProcessor.swift in Sources */,
 				35162CAD208FC39E00547126 /* TransactionsGrouping.swift in Sources */,
 				354820BD21A33AA4007C932B /* BudgetPresenter.swift in Sources */,
@@ -1117,8 +1105,6 @@
 				354C12472104A4AF0001AB19 /* TransactionCell.swift in Sources */,
 				354820C021A33AFA007C932B /* BudgetInteractor.swift in Sources */,
 				359E40B420DC3C0400801E20 /* NotificationCenter+TransactionNotificationCenter.swift in Sources */,
-				35224F0E21541AA600C2C813 /* SettingsFlow.swift in Sources */,
-				35224F08215419BD00C2C813 /* SettingsViewCoordinator.swift in Sources */,
 				355B6FCF2141AE5600E39AF5 /* TransactionsSummaryUI.swift in Sources */,
 				358BEC0020C9AD25003A3800 /* GroupedData.swift in Sources */,
 				353817D5208E647600EA967F /* CoreDataStack.swift in Sources */,
@@ -1138,9 +1124,9 @@
 				353817EB208E65DC00EA967F /* TransactionCategoryManagedObject+CoreDataClass.swift in Sources */,
 				9025D66D2159661C005E5B4B /* Decimal+Extensions.swift in Sources */,
 				35CB167C20ED56D90037EF94 /* BudgetRepository.swift in Sources */,
+				35CE462021AC772E00967A4B /* SettingsPresenter.swift in Sources */,
 				35CE460E21AB072300967A4B /* TransactionCategoriesListRouting.swift in Sources */,
 				353A944820A0D9E100B94A72 /* ManagedObjectModel+Extensions.swift in Sources */,
-				35224F1121541CC500C2C813 /* SettingsViewCoordinatorImpl.swift in Sources */,
 				35CE45F921AAC62100967A4B /* StatsUI.swift in Sources */,
 				353817D1208E642C00EA967F /* DataModel.xcdatamodeld in Sources */,
 				353817E9208E65DC00EA967F /* TransactionManagedObject+CoreDataProperties.swift in Sources */,
@@ -1175,7 +1161,6 @@
 				359E40AE20DADE8400801E20 /* FakeTransactionsRepository.swift in Sources */,
 				354E4B8E20A23153009A8311 /* StringTests.swift in Sources */,
 				35CE45F621A9F40400967A4B /* TransactionDataInteractorTests.swift in Sources */,
-				35224F1421541DD600C2C813 /* SettingsViewCoordinatorImplTests.swift in Sources */,
 				35593BF820922F0700DEEDB5 /* FakeCalendar.swift in Sources */,
 				35593C0C2092312200DEEDB5 /* FakeTransction.swift in Sources */,
 				35423E1720EEA364004E006B /* FakeBudget.swift in Sources */,
@@ -1222,6 +1207,7 @@
 				354820A821A03F9A007C932B /* TransactionsSummaryInteractor.swift in Sources */,
 				35CE461821AC6EF900967A4B /* TransactionCategoriesCollectionUI.swift in Sources */,
 				353817E4208E65DC00EA967F /* BudgetManagedObject+CoreDataClass.swift in Sources */,
+				35CE461E21AC76B700967A4B /* SettingRouting.swift in Sources */,
 				35224EE121502BDC00C2C813 /* CoreDataTransactionCategoryRepository.swift in Sources */,
 				35F272A8214E979C002264B4 /* TransactionCategoryItem.swift in Sources */,
 				355B6FD32141AF7100E39AF5 /* TransactionsSummaryPresenter.swift in Sources */,
@@ -1232,7 +1218,6 @@
 				35162C8A208FC0A100547126 /* CoreDataTransactionsRepository.swift in Sources */,
 				35A77EA1214AE9C100483426 /* Error+Utils.swift in Sources */,
 				355A563420FA3AEC003561FE /* TransactionCellItem.swift in Sources */,
-				35224F0C215419D800C2C813 /* SettingsDisplaying.swift in Sources */,
 				358BEC0720C9B15D003A3800 /* StatsChartsDataProcessor.swift in Sources */,
 				35162CAE208FC39E00547126 /* TransactionsGrouping.swift in Sources */,
 				354820BE21A33AA4007C932B /* BudgetPresenter.swift in Sources */,
@@ -1243,8 +1228,6 @@
 				354C124C2104A5680001AB19 /* TransactionCell.swift in Sources */,
 				354820C121A33AFA007C932B /* BudgetInteractor.swift in Sources */,
 				359E40B520DC3C0400801E20 /* NotificationCenter+TransactionNotificationCenter.swift in Sources */,
-				35224F0F21541AA600C2C813 /* SettingsFlow.swift in Sources */,
-				35224F09215419BD00C2C813 /* SettingsViewCoordinator.swift in Sources */,
 				355B6FD02141AE5600E39AF5 /* TransactionsSummaryUI.swift in Sources */,
 				358BEC0120C9AD25003A3800 /* GroupedData.swift in Sources */,
 				353817D6208E647600EA967F /* CoreDataStack.swift in Sources */,
@@ -1264,9 +1247,9 @@
 				353817EC208E65DC00EA967F /* TransactionCategoryManagedObject+CoreDataClass.swift in Sources */,
 				9025D66E2159661C005E5B4B /* Decimal+Extensions.swift in Sources */,
 				35CB167D20ED56D90037EF94 /* BudgetRepository.swift in Sources */,
+				35CE462121AC772E00967A4B /* SettingsPresenter.swift in Sources */,
 				35CE460F21AB072300967A4B /* TransactionCategoriesListRouting.swift in Sources */,
 				353817D2208E643600EA967F /* DataModel.xcdatamodeld in Sources */,
-				35224F1221541CC500C2C813 /* SettingsViewCoordinatorImpl.swift in Sources */,
 				35CE45FA21AAC62100967A4B /* StatsUI.swift in Sources */,
 				353817EA208E65DC00EA967F /* TransactionManagedObject+CoreDataProperties.swift in Sources */,
 				35162CA4208FC2D200547126 /* NSManagedObject+Extensions.swift in Sources */,
@@ -1301,7 +1284,6 @@
 				359E40AF20DADE8400801E20 /* FakeTransactionsRepository.swift in Sources */,
 				354E4B8F20A23153009A8311 /* StringTests.swift in Sources */,
 				35CE45F721A9F40400967A4B /* TransactionDataInteractorTests.swift in Sources */,
-				35224F1521541DD600C2C813 /* SettingsViewCoordinatorImplTests.swift in Sources */,
 				35593BF920922F0700DEEDB5 /* FakeCalendar.swift in Sources */,
 				35593C0D2092312200DEEDB5 /* FakeTransction.swift in Sources */,
 				35423E1820EEA364004E006B /* FakeBudget.swift in Sources */,
