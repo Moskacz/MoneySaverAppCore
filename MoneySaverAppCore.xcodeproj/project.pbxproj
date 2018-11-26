@@ -45,8 +45,6 @@
 		35224EE821502C2300C2C813 /* TransactionCategoryRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35224EE621502C2300C2C813 /* TransactionCategoryRepository.swift */; };
 		35224EFB215180EB00C2C813 /* FakeTransactionCategoryRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35224EF8215180E300C2C813 /* FakeTransactionCategoryRepository.swift */; };
 		35224EFC215180EC00C2C813 /* FakeTransactionCategoryRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35224EF8215180E300C2C813 /* FakeTransactionCategoryRepository.swift */; };
-		35224F002151818A00C2C813 /* TransactionCategoryCollectionCoordinatorImplTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35224EFD2151815D00C2C813 /* TransactionCategoryCollectionCoordinatorImplTests.swift */; };
-		35224F012151818B00C2C813 /* TransactionCategoryCollectionCoordinatorImplTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35224EFD2151815D00C2C813 /* TransactionCategoryCollectionCoordinatorImplTests.swift */; };
 		35224F08215419BD00C2C813 /* SettingsViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35224F07215419BD00C2C813 /* SettingsViewCoordinator.swift */; };
 		35224F09215419BD00C2C813 /* SettingsViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35224F07215419BD00C2C813 /* SettingsViewCoordinator.swift */; };
 		35224F0B215419D800C2C813 /* SettingsDisplaying.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35224F0A215419D800C2C813 /* SettingsDisplaying.swift */; };
@@ -227,6 +225,10 @@
 		35CE461221AB075600967A4B /* TransactionCategoriesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CE461021AB075600967A4B /* TransactionCategoriesPresenter.swift */; };
 		35CE461421AB0C1C00967A4B /* TransactionCategoriesCollectionInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CE461321AB0C1C00967A4B /* TransactionCategoriesCollectionInteractor.swift */; };
 		35CE461521AB0C1C00967A4B /* TransactionCategoriesCollectionInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CE461321AB0C1C00967A4B /* TransactionCategoriesCollectionInteractor.swift */; };
+		35CE461721AC6EF900967A4B /* TransactionCategoriesCollectionUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CE461621AC6EF900967A4B /* TransactionCategoriesCollectionUI.swift */; };
+		35CE461821AC6EF900967A4B /* TransactionCategoriesCollectionUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CE461621AC6EF900967A4B /* TransactionCategoriesCollectionUI.swift */; };
+		35CE461A21AC724300967A4B /* TransactionCategoriesCollectionInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CE461921AC724300967A4B /* TransactionCategoriesCollectionInteractorTests.swift */; };
+		35CE461B21AC724300967A4B /* TransactionCategoriesCollectionInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CE461921AC724300967A4B /* TransactionCategoriesCollectionInteractorTests.swift */; };
 		35F272A7214E979C002264B4 /* TransactionCategoryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F272A6214E979C002264B4 /* TransactionCategoryItem.swift */; };
 		35F272A8214E979C002264B4 /* TransactionCategoryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F272A6214E979C002264B4 /* TransactionCategoryItem.swift */; };
 		35F4C7A320FA308A0095C21D /* MMFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35F4C7A020FA2FF90095C21D /* MMFoundation.framework */; };
@@ -355,7 +357,6 @@
 		35224EDF21502BDC00C2C813 /* CoreDataTransactionCategoryRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataTransactionCategoryRepository.swift; sourceTree = "<group>"; };
 		35224EE621502C2300C2C813 /* TransactionCategoryRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCategoryRepository.swift; sourceTree = "<group>"; };
 		35224EF8215180E300C2C813 /* FakeTransactionCategoryRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeTransactionCategoryRepository.swift; sourceTree = "<group>"; };
-		35224EFD2151815D00C2C813 /* TransactionCategoryCollectionCoordinatorImplTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCategoryCollectionCoordinatorImplTests.swift; sourceTree = "<group>"; };
 		35224F07215419BD00C2C813 /* SettingsViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewCoordinator.swift; sourceTree = "<group>"; };
 		35224F0A215419D800C2C813 /* SettingsDisplaying.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsDisplaying.swift; sourceTree = "<group>"; };
 		35224F0D21541AA600C2C813 /* SettingsFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsFlow.swift; sourceTree = "<group>"; };
@@ -452,6 +453,8 @@
 		35CE460D21AB072300967A4B /* TransactionCategoriesListRouting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCategoriesListRouting.swift; sourceTree = "<group>"; };
 		35CE461021AB075600967A4B /* TransactionCategoriesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCategoriesPresenter.swift; sourceTree = "<group>"; };
 		35CE461321AB0C1C00967A4B /* TransactionCategoriesCollectionInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCategoriesCollectionInteractor.swift; sourceTree = "<group>"; };
+		35CE461621AC6EF900967A4B /* TransactionCategoriesCollectionUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCategoriesCollectionUI.swift; sourceTree = "<group>"; };
+		35CE461921AC724300967A4B /* TransactionCategoriesCollectionInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCategoriesCollectionInteractorTests.swift; sourceTree = "<group>"; };
 		35DD654520B09F9000909AA4 /* FakeBudgetRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeBudgetRepository.swift; sourceTree = "<group>"; };
 		35F272A6214E979C002264B4 /* TransactionCategoryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCategoryItem.swift; sourceTree = "<group>"; };
 		35F4C79420FA2FF90095C21D /* MMFoundation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MMFoundation.xcodeproj; path = Submodules/MMFoundation/MMFoundation.xcodeproj; sourceTree = "<group>"; };
@@ -808,7 +811,6 @@
 				35423E1320EEA293004E006B /* BudgetNotificationCenterTests.swift */,
 				35423E1920F004FE004E006B /* TransactionNotificationCenterTests.swift */,
 				352D626A20F5371B00CBE0BD /* TransactionsSummaryInteractorTests.swift */,
-				35224EFD2151815D00C2C813 /* TransactionCategoryCollectionCoordinatorImplTests.swift */,
 				35224F1321541DD600C2C813 /* SettingsViewCoordinatorImplTests.swift */,
 				354820A921A0A938007C932B /* TransactionsSummaryPresenterTests.swift */,
 				35CE45DF21A73DD500967A4B /* BudgetPresenterTests.swift */,
@@ -817,6 +819,7 @@
 				35CE45F521A9F40400967A4B /* TransactionDataInteractorTests.swift */,
 				35CE460421AADC5500967A4B /* StatsPresenterTests.swift */,
 				35CE460721AAE1EA00967A4B /* StatsInteractorTests.swift */,
+				35CE461921AC724300967A4B /* TransactionCategoriesCollectionInteractorTests.swift */,
 			);
 			path = UnitTests;
 			sourceTree = "<group>";
@@ -848,6 +851,7 @@
 				35CE460D21AB072300967A4B /* TransactionCategoriesListRouting.swift */,
 				35CE461021AB075600967A4B /* TransactionCategoriesPresenter.swift */,
 				35CE461321AB0C1C00967A4B /* TransactionCategoriesCollectionInteractor.swift */,
+				35CE461621AC6EF900967A4B /* TransactionCategoriesCollectionUI.swift */,
 			);
 			path = TransactionCategories;
 			sourceTree = "<group>";
@@ -1090,6 +1094,7 @@
 				35CB167F20ED572D0037EF94 /* BudgetRepositoryImpl.swift in Sources */,
 				35CE45FF21AACC5500967A4B /* StatsPresenter.swift in Sources */,
 				354820A721A03F9A007C932B /* TransactionsSummaryInteractor.swift in Sources */,
+				35CE461721AC6EF900967A4B /* TransactionCategoriesCollectionUI.swift in Sources */,
 				353817E3208E65DC00EA967F /* BudgetManagedObject+CoreDataClass.swift in Sources */,
 				35224EE021502BDC00C2C813 /* CoreDataTransactionCategoryRepository.swift in Sources */,
 				35F272A7214E979C002264B4 /* TransactionCategoryItem.swift in Sources */,
@@ -1170,7 +1175,6 @@
 				359E40AE20DADE8400801E20 /* FakeTransactionsRepository.swift in Sources */,
 				354E4B8E20A23153009A8311 /* StringTests.swift in Sources */,
 				35CE45F621A9F40400967A4B /* TransactionDataInteractorTests.swift in Sources */,
-				35224F002151818A00C2C813 /* TransactionCategoryCollectionCoordinatorImplTests.swift in Sources */,
 				35224F1421541DD600C2C813 /* SettingsViewCoordinatorImplTests.swift in Sources */,
 				35593BF820922F0700DEEDB5 /* FakeCalendar.swift in Sources */,
 				35593C0C2092312200DEEDB5 /* FakeTransction.swift in Sources */,
@@ -1181,6 +1185,7 @@
 				35CE45E721A73E0C00967A4B /* BudgetInteractorTests.swift in Sources */,
 				35224EFB215180EB00C2C813 /* FakeTransactionCategoryRepository.swift in Sources */,
 				352D626B20F5371B00CBE0BD /* TransactionsSummaryInteractorTests.swift in Sources */,
+				35CE461A21AC724300967A4B /* TransactionCategoriesCollectionInteractorTests.swift in Sources */,
 				359E40B120DADF4F00801E20 /* FakeUserPreferences.swift in Sources */,
 				354E4B8B20A23115009A8311 /* TransactionManagedObjectTests.swift in Sources */,
 				35B914AB20D050C0008BD7A2 /* FakeTransactionBuilder.swift in Sources */,
@@ -1215,6 +1220,7 @@
 				35CB168020ED572D0037EF94 /* BudgetRepositoryImpl.swift in Sources */,
 				35CE460021AACC5500967A4B /* StatsPresenter.swift in Sources */,
 				354820A821A03F9A007C932B /* TransactionsSummaryInteractor.swift in Sources */,
+				35CE461821AC6EF900967A4B /* TransactionCategoriesCollectionUI.swift in Sources */,
 				353817E4208E65DC00EA967F /* BudgetManagedObject+CoreDataClass.swift in Sources */,
 				35224EE121502BDC00C2C813 /* CoreDataTransactionCategoryRepository.swift in Sources */,
 				35F272A8214E979C002264B4 /* TransactionCategoryItem.swift in Sources */,
@@ -1295,7 +1301,6 @@
 				359E40AF20DADE8400801E20 /* FakeTransactionsRepository.swift in Sources */,
 				354E4B8F20A23153009A8311 /* StringTests.swift in Sources */,
 				35CE45F721A9F40400967A4B /* TransactionDataInteractorTests.swift in Sources */,
-				35224F012151818B00C2C813 /* TransactionCategoryCollectionCoordinatorImplTests.swift in Sources */,
 				35224F1521541DD600C2C813 /* SettingsViewCoordinatorImplTests.swift in Sources */,
 				35593BF920922F0700DEEDB5 /* FakeCalendar.swift in Sources */,
 				35593C0D2092312200DEEDB5 /* FakeTransction.swift in Sources */,
@@ -1306,6 +1311,7 @@
 				35CE45E821A73E0C00967A4B /* BudgetInteractorTests.swift in Sources */,
 				35224EFC215180EC00C2C813 /* FakeTransactionCategoryRepository.swift in Sources */,
 				352D626C20F5371B00CBE0BD /* TransactionsSummaryInteractorTests.swift in Sources */,
+				35CE461B21AC724300967A4B /* TransactionCategoriesCollectionInteractorTests.swift in Sources */,
 				359E40B220DADF4F00801E20 /* FakeUserPreferences.swift in Sources */,
 				354E4B8C20A23115009A8311 /* TransactionManagedObjectTests.swift in Sources */,
 				35B914AC20D050C0008BD7A2 /* FakeTransactionBuilder.swift in Sources */,
