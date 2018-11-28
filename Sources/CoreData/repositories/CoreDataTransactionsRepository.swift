@@ -24,6 +24,17 @@ internal class CoreDataTransactionsRepository: TransactionsRepository {
         self.notificationCenter = notificationCenter
     }
     
+    func transactionsResultsController(transactionsMonthOfEra: Int) -> ResultsController<TransactionProtocol> {
+        let request: NSFetchRequest<TransactionManagedObject> = TransactionManagedObject.fetchRequest()
+        request.returnsObjectsAsFaults = false
+        request.sortDescriptors = [NSSortDescriptor(key: TransactionManagedObject.KeyPath.timeInterval.rawValue, ascending: false)]
+        let frc = NSFetchedResultsController(fetchRequest: request,
+                                             managedObjectContext: context,
+                                             sectionNameKeyPath: nil,
+                                             cacheName: nil)
+        return TransactionResultsController(frc: frc)
+    }
+    
     internal var allTransactionsResultController: ResultsController<TransactionProtocol> {
         let request: NSFetchRequest<TransactionManagedObject> = TransactionManagedObject.fetchRequest()
         request.returnsObjectsAsFaults = false

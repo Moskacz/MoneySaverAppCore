@@ -12,6 +12,10 @@ import MMFoundation
 
 class FakeTransactionsRepository: TransactionsRepository {
     
+    func transactionsResultsController(transactionsMonthOfEra: Int) -> ResultsController<TransactionProtocol> {
+        fatalError()
+    }
+    
     var allTransactionsResultController: ResultsController<TransactionProtocol> { fatalError() }
     
     var transactionChangedCallback: (([TransactionProtocol]) -> Void)?
