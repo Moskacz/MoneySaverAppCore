@@ -10,65 +10,32 @@ import MMFoundation
 
 public protocol TransactionsListInteractorProtocol {
     func loadData()
-    func deleteItem(at path: IndexPath)
+    func delete(transaction: TransactionProtocol)
 }
 
 internal class TransactionsListInteractor: TransactionsListInteractorProtocol {
     
     private unowned let presenter: TransactionsListPresenterProtocol
     private let repository: TransactionsRepository
-    private var resultsController: ResultsController<TransactionProtocol>?
+    private let logger: Logger
     
-    internal init(presenter: TransactionsListPresenterProtocol, repository: TransactionsRepository) {
+    internal init(presenter: TransactionsListPresenterProtocol, repository: TransactionsRepository, logger: Logger) {
         self.presenter = presenter
         self.repository = repository
+        self.logger = logger
     }
     
     func loadData() {
-        let resultsController = self.repository.allTransactionsResultController
-        let adapter = TransactionsListAdapter(resultsController: resultsController)
-        presenter.dataLoaded(adapter: adapter)
-        self.resultsController = resultsController
+        do {
+            let resultsController = repository.allTransactionsResultController
+            try resultsController.loadData()
+            presenter.transactionsLoaded(resultsController: resultsController)
+        } catch {
+            logger.log(withLevel: .error, message: error.localizedDescription)
+        }
     }
     
-    func deleteItem(at path: IndexPath) {
-        let transaction = resultsController!.object(at: path)
+    func delete(transaction: TransactionProtocol) {
         repository.remove(transaction: transaction)
-    }
-    
-    private class TransactionsListAdapter: ListAdapter<TransactionCellItemProtocol> {
-        
-        private let resultsController: ResultsController<TransactionProtocol>
-        
-        override weak var delegate: ResultsControllerDelegate? {
-            set { resultsController.delegate = newValue }
-            get { return resultsController.delegate }
-        }
-        
-        internal init(resultsController: ResultsController<TransactionProtocol>) {
-            self.resultsController = resultsController
-            super.init()
-        }
-        
-        override var numberOfSections: Int {
-            return resultsController.sectionsCount
-        }
-        
-        override func numberOfRows(in section: Int) -> Int {
-            return resultsController.objectsIn(section: section)?.count ?? 0
-        }
-        
-        override func item(at indexPath: IndexPath) -> TransactionCellItemProtocol {
-            let item = resultsController.object(at: indexPath)
-            return TransactionCellItem(transaction: item, formatter: DateFormatters.formatter(forType: .dateWithTime))
-        }
-        
-        override func title(for section: Int) -> String? {
-            guard let transactionTimestamp = resultsController.objectsIn(section: section)?.first?.transactionDate?.timeInterval else {
-                return nil
-            }
-            let date = Date(timeIntervalSince1970: transactionTimestamp)
-            return DateFormatters.formatter(forType: .dateOnly).string(from: date)
-        }
     }
 }
