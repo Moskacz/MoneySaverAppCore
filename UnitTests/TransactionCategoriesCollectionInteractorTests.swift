@@ -36,20 +36,26 @@ class TransactionCategoriesCollectionInteractorTests: XCTestCase {
         repository.resultsController = ResultsControllerFake(items: categories)
         sut.loadData()
         
-        XCTAssertNotNil(presenter.adapter)
-        XCTAssertEqual(presenter.adapter?.numberOfSections, 1)
-        XCTAssertEqual(presenter.adapter?.numberOfRows(in: 0), 2)
-        XCTAssertEqual(presenter.adapter?.item(at: IndexPath(item: 0, section: 0)).name, "a")
-        XCTAssertEqual(presenter.adapter?.item(at: IndexPath(item: 1, section: 0)).name, "b")
+        XCTAssertNotNil(presenter.resultsController)
+        XCTAssertEqual(presenter.resultsController?.sectionsCount, 1)
+        XCTAssertEqual(presenter.resultsController?.objectsIn(section: 0)?.count, 2)
+        XCTAssertEqual(presenter.resultsController?.object(at: IndexPath(item: 0, section: 0)).name, "a")
+        XCTAssertEqual(presenter.resultsController?.object(at: IndexPath(item: 1, section: 0)).name, "b")
     }
 
 }
 
 private class FakePresenter: TransactionCategoriesPresenterProtocol {
     
-    var adapter: ListAdapter<TransactionCategoryItemProtocol>?
-    func itemsLoaded(adapter: ListAdapter<TransactionCategoryItemProtocol>) {
-        self.adapter = adapter
+    var numberOfCategories: Int = 0
+    
+    func categoryItem(at indexPath: IndexPath) -> TransactionCategoryItemProtocol {
+        fatalError()
+    }
+    
+    var resultsController: ResultsController<TransactionCategoryProtocol>?
+    func categoriesLoaded(resultsController: ResultsController<TransactionCategoryProtocol>) {
+        self.resultsController = resultsController
     }
     
     func selectItem(at path: IndexPath) {}

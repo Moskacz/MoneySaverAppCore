@@ -9,5 +9,5 @@ import Foundation
 import MMFoundation
 
 public protocol TransactionCategoriesCollectionUIProtocol: class {
-    func displayList(with adataper: ListAdapter<TransactionCategoryItemProtocol>)
+    func reloadList()
 }
