@@ -26,7 +26,7 @@ internal class CoreDataTransactionsRepository: TransactionsRepository {
     
     internal var allTransactionsResultController: ResultsController<TransactionProtocol> {
         let request: NSFetchRequest<TransactionManagedObject> = TransactionManagedObject.fetchRequest()
-        request.includesPropertyValues = true
+        request.returnsObjectsAsFaults = false
         request.fetchBatchSize = 20
 
         request.sortDescriptors = [NSSortDescriptor(key: TransactionManagedObject.KeyPath.dayOfEra.rawValue, ascending: false),
