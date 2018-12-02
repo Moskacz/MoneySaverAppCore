@@ -12,10 +12,9 @@ public protocol BudgetInteractorProtocol {
     func saveBudget(amount: Decimal)
 }
 
-internal class BudgetInteractor {
+internal class BudgetInteractor: BudgetInteractorProtocol {
     private let budgetRepository: BudgetRepository
     private let transactionsRepository: TransactionsRepository
-    private let chartsDataProcessor: BudgetChartsDataProcessor
     private let calendar: CalendarProtocol
     
     private var observationTokens = [ObservationToken]()
@@ -26,11 +25,9 @@ internal class BudgetInteractor {
     
     internal init(budgetRepository: BudgetRepository,
                   transactionsRepository: TransactionsRepository,
-                  chartsDataProcessor: BudgetChartsDataProcessor,
                   calendar: CalendarProtocol) {
         self.budgetRepository = budgetRepository
         self.transactionsRepository = transactionsRepository
-        self.chartsDataProcessor = chartsDataProcessor
         self.calendar = calendar
     }
     
@@ -47,6 +44,10 @@ internal class BudgetInteractor {
         }
         
         observationTokens = [transactionsToken, budgetToken]
+    }
+    
+    func saveBudget(amount: Decimal) {
+        budgetRepository.saveBudget(withValue: amount)
     }
     
     private func notifyPresenter() {

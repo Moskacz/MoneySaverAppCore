@@ -35,8 +35,20 @@ public class Factory {
                                           logger: logger)
     }
     
-    func budgetPresenter() -> BudgetPresenterProtocol {
-        fatalError()
+    public func budgetPresenter(routing: BudgetRoutingProtocol, userInterface: BudgetUIProtocol) -> BudgetPresenterProtocol {
+        let interactor = budgetInteractor()
+        let presenter = BudgetPresenter(interactor: interactor,
+                                        routing: routing,
+                                        chartsDataProcessor: chartsDataProcessor)
+        interactor.presenter = presenter
+        presenter.view = userInterface
+        return presenter
+    }
+    
+    private func budgetInteractor() -> BudgetInteractor {
+        return BudgetInteractor(budgetRepository: budgetRepository,
+                                transactionsRepository: transactionsRepository,
+                                calendar: calendar)
     }
     
     func statsPresenter() -> StatsPresenterProtocol {
@@ -56,6 +68,15 @@ public class Factory {
         return CoreDataTransactionsRepository(context: self.coreDataStack.getViewContext(),
                                               logger: self.logger,
                                               notificationCenter: self.notificationCenter)
+    }()
+    
+    private lazy var budgetRepository: BudgetRepository = {
+       return BudgetRepositoryImpl(context: self.coreDataStack.getViewContext(),
+                                   logger: self.logger)
+    }()
+    
+    private lazy var chartsDataProcessor: BudgetChartsDataProcessor & StatsChartsDataProcessor = {
+        return ChartsDataProcessor(calendar: self.calendar)
     }()
 }
 
