@@ -11,7 +11,10 @@ import MMFoundation
 public class Factory {
     
     public func transactionsSummaryPresenter() -> TransactionsSummaryPresenterProtocol {
-        return TransactionsSummaryPresenter(interactor: transactionsSummaryInteractor())
+        let interactor = transactionsSummaryInteractor()
+        let presenter = TransactionsSummaryPresenter(interactor: interactor)
+        interactor.presenter = presenter
+        return presenter
     }
     
     private func transactionsSummaryInteractor() -> TransactionsSummaryInteractorProtocol {
