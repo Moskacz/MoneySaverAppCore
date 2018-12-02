@@ -15,12 +15,12 @@ public protocol TransactionsListInteractorProtocol {
 
 internal class TransactionsListInteractor: TransactionsListInteractorProtocol {
     
-    private unowned let presenter: TransactionsListPresenterProtocol
     private let repository: TransactionsRepository
     private let logger: Logger
     
-    internal init(presenter: TransactionsListPresenterProtocol, repository: TransactionsRepository, logger: Logger) {
-        self.presenter = presenter
+    internal weak var presenter: TransactionsListPresenterProtocol?
+    
+    internal init(repository: TransactionsRepository, logger: Logger) {
         self.repository = repository
         self.logger = logger
     }
@@ -29,7 +29,7 @@ internal class TransactionsListInteractor: TransactionsListInteractorProtocol {
         do {
             let resultsController = repository.allTransactionsResultController
             try resultsController.loadData()
-            presenter.transactionsLoaded(resultsController: resultsController)
+            presenter?.transactionsLoaded(resultsController: resultsController)
         } catch {
             logger.log(withLevel: .error, message: error.localizedDescription)
         }

@@ -6,10 +6,11 @@
 //
 
 import Foundation
+import MMFoundation
 
 public class Factory {
     
-    func transactionsSummaryPresenter() -> TransactionsSummaryPresenterProtocol {
+    public func transactionsSummaryPresenter() -> TransactionsSummaryPresenterProtocol {
         return TransactionsSummaryPresenter(interactor: transactionsSummaryInteractor())
     }
     
@@ -19,8 +20,16 @@ public class Factory {
                                              dateRange: DateRange.allTime)
     }
     
-    func transactionsListPresenter() -> TransactionsListPresenterProtocol {
-        fatalError()
+    public func transactionsListPresenter(display: TransactionsListUI & ResultsControllerDelegate) -> TransactionsListPresenterProtocol {
+        let interactor = transactionsListInteractor()
+        let presenter = TransactionsListPresenter(display: display, interactor: interactor)
+        interactor.presenter = presenter
+        return presenter
+    }
+    
+    private func transactionsListInteractor() -> TransactionsListInteractor {
+        return TransactionsListInteractor(repository: transactionsRepository,
+                                          logger: logger)
     }
     
     func budgetPresenter() -> BudgetPresenterProtocol {
