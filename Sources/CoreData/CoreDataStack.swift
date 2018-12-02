@@ -18,9 +18,10 @@ public class CoreDataStackImplementation: CoreDataStack {
     
     private let persistentContainer: NSPersistentContainer
     
-    public init(storeURL url: URL) {
+    public init() {
         self.persistentContainer = NSPersistentContainer(name: NSManagedObjectModel.defaultName,
                                                          managedObjectModel: NSManagedObjectModel.makeDefault())
+        let url = NSPersistentContainer.defaultDirectoryURL()
         self.persistentContainer.persistentStoreDescriptions = [NSPersistentStoreDescription(url: url)]
         self.persistentContainer.loadPersistentStores { (_,_) in }
     }
