@@ -20,7 +20,7 @@ public class Factory {
     private func transactionsSummaryInteractor() -> TransactionsSummaryInteractorProtocol {
         return TransactionsSummaryInteractor(repository: transactionsRepository,
                                              calendar: calendar,
-                                             dateRange: DateRange.allTime)
+                                             userPrefs: userPrefs)
     }
     
     public func transactionsListPresenter(display: TransactionsListUI & ResultsControllerDelegate) -> TransactionsListPresenterProtocol {

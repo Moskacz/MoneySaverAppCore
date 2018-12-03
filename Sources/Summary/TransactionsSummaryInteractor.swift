@@ -20,12 +20,15 @@ internal class TransactionsSummaryInteractor: TransactionsSummaryInteractorProto
     
     private let repository: TransactionsRepository
     private let calendar: CalendarProtocol
+    private let userPrefs: UserPreferences
     private var token: ObservationToken?
     
     internal var dateRange: DateRange {
-        didSet {
+        set {
+            userPrefs.dateRange = newValue
             computeUIState()
         }
+        get { return userPrefs.dateRange }
     }
     
     private var sum: TransactionsCompoundSum? {
@@ -36,10 +39,10 @@ internal class TransactionsSummaryInteractor: TransactionsSummaryInteractorProto
     
     internal init(repository: TransactionsRepository,
                   calendar: CalendarProtocol,
-                  dateRange: DateRange) {
+                  userPrefs: UserPreferences) {
         self.repository = repository
         self.calendar = calendar
-        self.dateRange = dateRange
+        self.userPrefs = userPrefs
     }
     
     internal func computeSummary() {
