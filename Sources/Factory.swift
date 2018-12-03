@@ -63,8 +63,8 @@ public class Factory {
         return StatsInteractor(repository: transactionsRepository, userPreferences: userPrefs)
     }
     
-    func settingsPresenter() -> SettingsPresenterProtocol {
-        fatalError()
+    func settingsPresenter(router: SettingsRoutingProtocol) -> SettingsPresenterProtocol {
+        return SettingsPresenter(router: router)
     }
     
     private let coreDataStack: CoreDataStack = CoreDataStackImplementation()
