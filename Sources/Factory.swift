@@ -59,6 +59,18 @@ public class Factory {
         return presenter
     }
     
+    public func categoriesListPresenter(userInterface: TransactionCategoriesCollectionUIProtocol,
+                                        router: TransactionCategoriesListRouting) -> TransactionCategoriesPresenterProtocol {
+        let interactor = TransactionCategoriesCollectionInteractor(repository: categoriesRepository,
+                                                                   logger: logger)
+        let presenter = TransactionCategoriesPresenter(interactor: interactor)
+        presenter.view = userInterface
+        presenter.router = router
+        
+        interactor.presenter = presenter
+        return presenter
+    }
+    
     func statsPresenter(userInterface: StatsUIProtocol) -> StatsPresenterProtocol {
         let interactor = statsInteractor()
         let presenter = StatsPresenter(interactor: interactor, chartsDataProcessor: chartsDataProcessor)
@@ -85,6 +97,10 @@ public class Factory {
         return CoreDataTransactionsRepository(context: self.coreDataStack.getViewContext(),
                                               logger: self.logger,
                                               notificationCenter: self.notificationCenter)
+    }()
+    
+    private lazy var categoriesRepository: TransactionCategoryRepository = {
+        return CoreDataTransactionCategoryRepository(context: self.coreDataStack.getViewContext())
     }()
     
     private lazy var budgetRepository: BudgetRepository = {
