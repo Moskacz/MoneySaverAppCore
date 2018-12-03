@@ -51,6 +51,14 @@ public class Factory {
                                 calendar: calendar)
     }
     
+    
+    public func transactionDataPresenter(userInterface: TransactionDataUI, router: TransactionDataRouting) -> TransactionDataPresenterProtocol {
+        let interactor = TransactionDataInteractor(calendar: calendar)
+        let presenter = TransactionDataPresenter(interactor: interactor, routing: router)
+        presenter.view = userInterface
+        return presenter
+    }
+    
     func statsPresenter(userInterface: StatsUIProtocol) -> StatsPresenterProtocol {
         let interactor = statsInteractor()
         let presenter = StatsPresenter(interactor: interactor, chartsDataProcessor: chartsDataProcessor)
