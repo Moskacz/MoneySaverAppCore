@@ -51,8 +51,16 @@ public class Factory {
                                 calendar: calendar)
     }
     
-    func statsPresenter() -> StatsPresenterProtocol {
-        fatalError()
+    func statsPresenter(userInterface: StatsUIProtocol) -> StatsPresenterProtocol {
+        let interactor = statsInteractor()
+        let presenter = StatsPresenter(interactor: interactor, chartsDataProcessor: chartsDataProcessor)
+        presenter.view = userInterface
+        interactor.presenter = presenter
+        return presenter
+    }
+    
+    private func statsInteractor() -> StatsInteractor {
+        return StatsInteractor(repository: transactionsRepository, userPreferences: userPrefs)
     }
     
     func settingsPresenter() -> SettingsPresenterProtocol {
@@ -63,6 +71,7 @@ public class Factory {
     private let logger: Logger = NullLogger()
     private let calendar: CalendarProtocol = Calendar.current
     private let notificationCenter: TransactionNotificationCenter = NotificationCenter.default
+    private let userPrefs: UserPreferences = UserDefaults.standard
     
     private lazy var transactionsRepository: TransactionsRepository = {
         return CoreDataTransactionsRepository(context: self.coreDataStack.getViewContext(),
