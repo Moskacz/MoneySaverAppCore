@@ -13,24 +13,28 @@ class TransactionsSummaryInteractorTests: XCTestCase {
     private var sut: TransactionsSummaryInteractor!
     private var repository: FakeTransactionsRepository!
     private var calendar: FakeCalendar!
+    private var userPrefs: FakeUserPreferences!
     
     override func setUp() {
         super.setUp()
         repository = FakeTransactionsRepository()
         calendar = FakeCalendar()
+        userPrefs = FakeUserPreferences()
         sut = TransactionsSummaryInteractor(repository: repository,
                                             calendar: calendar,
-                                            dateRange: .allTime)
+                                            userPrefs: userPrefs)
     }
     
     override func tearDown() {
         sut = nil
         repository = nil
         calendar = nil
+        userPrefs = nil
         super.tearDown()
     }
 
     func test_afterReceivingValues_shouldUpdateValues() {
+        userPrefs.dateRange = .allTime
         calendar.nowCalendarDateToReturn = FakeCalendarDate()
         
         let transaction1 = FakeTransactionBuilder().set(value: Decimal(100)).build()
@@ -48,6 +52,7 @@ class TransactionsSummaryInteractorTests: XCTestCase {
     }
     
     func test_afterSetDateRange_shouldUpdateValues() {
+        userPrefs.dateRange = .allTime
         let date = FakeCalendarDate()
         date.dayOfEra = 3
         calendar.nowCalendarDateToReturn = date

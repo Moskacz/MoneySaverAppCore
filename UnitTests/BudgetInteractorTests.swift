@@ -24,7 +24,6 @@ class BudgetInteractorTests: XCTestCase {
         calendar = FakeCalendar()
         sut = BudgetInteractor(budgetRepository: budgetRepository,
                                transactionsRepository: transactionsRepository,
-                               chartsDataProcessor: chartsDataProcessor,
                                calendar: calendar)
     }
     
