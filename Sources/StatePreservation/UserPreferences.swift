@@ -9,7 +9,7 @@
 import Foundation
 
 public protocol UserPreferences: class {
-    var dateRange: DateRange { get set }
+    var dateRange: DateRange? { get set }
     var statsGrouping: TransactionsGrouping? { get set }
 }
 
@@ -20,16 +20,15 @@ extension UserDefaults: UserPreferences {
         case statsGrouping = "userPreferences_statsGrouping"
     }
     
-    public var dateRange: DateRange {
+    public var dateRange: DateRange? {
         get {
-            let defaultValue = DateRange.allTime
             guard let rawValue = string(forKey: PreferenceKey.dateRange.rawValue) else {
-                return defaultValue
+                return nil
             }
-            return DateRange(rawValue: rawValue) ?? defaultValue
+            return DateRange(rawValue: rawValue)
         }
         set {
-            set(newValue.rawValue, forKey: PreferenceKey.dateRange.rawValue)
+            set(newValue?.rawValue, forKey: PreferenceKey.dateRange.rawValue)
             synchronize()
         }
     }

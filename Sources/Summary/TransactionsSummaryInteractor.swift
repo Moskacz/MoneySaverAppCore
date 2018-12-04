@@ -28,7 +28,9 @@ internal class TransactionsSummaryInteractor: TransactionsSummaryInteractorProto
             userPrefs.dateRange = newValue
             computeUIState()
         }
-        get { return userPrefs.dateRange }
+        get {
+            return userPrefs.dateRange ?? .thisMonth
+        }
     }
     
     private var sum: TransactionsCompoundSum? {
