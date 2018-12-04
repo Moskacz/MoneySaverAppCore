@@ -231,8 +231,6 @@
 		35F4C7A820FA32750095C21D /* MMFoundation.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 35F4C79C20FA2FF90095C21D /* MMFoundation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		35F5BABC20DFEB2A002C2819 /* Charts.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3515F58420D8256D00C8B549 /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		35F5BABE20DFED1A002C2819 /* Charts.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3515F58620D8258700C8B549 /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		35FF6E3F2107C068004FBC87 /* SetupBudgetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35FF6E3E2107C068004FBC87 /* SetupBudgetViewModel.swift */; };
-		35FF6E402107C068004FBC87 /* SetupBudgetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35FF6E3E2107C068004FBC87 /* SetupBudgetViewModel.swift */; };
 		9025D66D2159661C005E5B4B /* Decimal+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9025D66C2159661C005E5B4B /* Decimal+Extensions.swift */; };
 		9025D66E2159661C005E5B4B /* Decimal+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9025D66C2159661C005E5B4B /* Decimal+Extensions.swift */; };
 		90ABD82C215500E20049B4EE /* UniqueIdentifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90ABD82B215500E20049B4EE /* UniqueIdentifiable.swift */; };
@@ -449,7 +447,6 @@
 		35DD654520B09F9000909AA4 /* FakeBudgetRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeBudgetRepository.swift; sourceTree = "<group>"; };
 		35F272A6214E979C002264B4 /* TransactionCategoryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCategoryItem.swift; sourceTree = "<group>"; };
 		35F4C79420FA2FF90095C21D /* MMFoundation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MMFoundation.xcodeproj; path = Submodules/MMFoundation/MMFoundation.xcodeproj; sourceTree = "<group>"; };
-		35FF6E3E2107C068004FBC87 /* SetupBudgetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupBudgetViewModel.swift; sourceTree = "<group>"; };
 		9025D66C2159661C005E5B4B /* Decimal+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Decimal+Extensions.swift"; sourceTree = "<group>"; };
 		90ABD82B215500E20049B4EE /* UniqueIdentifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniqueIdentifiable.swift; sourceTree = "<group>"; };
 		90D1171220E4E7AC008F21D8 /* BudgetProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetProtocol.swift; sourceTree = "<group>"; };
@@ -858,7 +855,6 @@
 		35FF6E392107C051004FBC87 /* SetupBudget */ = {
 			isa = PBXGroup;
 			children = (
-				35FF6E3E2107C068004FBC87 /* SetupBudgetViewModel.swift */,
 			);
 			path = SetupBudget;
 			sourceTree = "<group>";
@@ -1136,7 +1132,6 @@
 				35CE45ED21A9ED7200967A4B /* TransactionDataRouting.swift in Sources */,
 				355A563A20FA7D1D003561FE /* Theme.swift in Sources */,
 				354820B721A1E145007C932B /* TransactionsListInteractor.swift in Sources */,
-				35FF6E3F2107C068004FBC87 /* SetupBudgetViewModel.swift in Sources */,
 				35CE461421AB0C1C00967A4B /* TransactionCategoriesCollectionInteractor.swift in Sources */,
 				90D1171320E4E7AC008F21D8 /* BudgetProtocol.swift in Sources */,
 				35AEB11B2093A79F00DCE038 /* CoreDataCollectionUpdateHandler.swift in Sources */,
@@ -1259,7 +1254,6 @@
 				35CE45EE21A9ED7200967A4B /* TransactionDataRouting.swift in Sources */,
 				355A563B20FA7D1D003561FE /* Theme.swift in Sources */,
 				354820B821A1E145007C932B /* TransactionsListInteractor.swift in Sources */,
-				35FF6E402107C068004FBC87 /* SetupBudgetViewModel.swift in Sources */,
 				35CE461521AB0C1C00967A4B /* TransactionCategoriesCollectionInteractor.swift in Sources */,
 				90D1171420E4E7AC008F21D8 /* BudgetProtocol.swift in Sources */,
 				353A944920A0D9E100B94A72 /* ManagedObjectModel+Extensions.swift in Sources */,
