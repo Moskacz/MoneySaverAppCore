@@ -10,33 +10,27 @@ import MMFoundation
 
 public class Factory {
     
-    public func transactionsSummaryPresenter() -> TransactionsSummaryPresenterProtocol {
-        let interactor = transactionsSummaryInteractor()
+    public static func transactionsSummaryPresenter() -> TransactionsSummaryPresenterProtocol {
+        let interactor = TransactionsSummaryInteractor(repository: transactionsRepository,
+                                                       calendar: calendar,
+                                                       userPrefs: userPrefs)
         let presenter = TransactionsSummaryPresenter(interactor: interactor)
         interactor.presenter = presenter
         return presenter
     }
     
-    private func transactionsSummaryInteractor() -> TransactionsSummaryInteractorProtocol {
-        return TransactionsSummaryInteractor(repository: transactionsRepository,
-                                             calendar: calendar,
-                                             userPrefs: userPrefs)
-    }
-    
-    public func transactionsListPresenter(display: TransactionsListUI & ResultsControllerDelegate) -> TransactionsListPresenterProtocol {
-        let interactor = transactionsListInteractor()
+    public static func transactionsListPresenter(display: TransactionsListUI & ResultsControllerDelegate) -> TransactionsListPresenterProtocol {
+        let interactor = TransactionsListInteractor(repository: transactionsRepository,
+                                                    logger: logger)
         let presenter = TransactionsListPresenter(display: display, interactor: interactor)
         interactor.presenter = presenter
         return presenter
     }
     
-    private func transactionsListInteractor() -> TransactionsListInteractor {
-        return TransactionsListInteractor(repository: transactionsRepository,
-                                          logger: logger)
-    }
-    
-    public func budgetPresenter(routing: BudgetRoutingProtocol, userInterface: BudgetUIProtocol) -> BudgetPresenterProtocol {
-        let interactor = budgetInteractor()
+    public static func budgetPresenter(routing: BudgetRoutingProtocol, userInterface: BudgetUIProtocol) -> BudgetPresenterProtocol {
+        let interactor = BudgetInteractor(budgetRepository: budgetRepository,
+                                          transactionsRepository: transactionsRepository,
+                                          calendar: calendar)
         let presenter = BudgetPresenter(interactor: interactor,
                                         routing: routing,
                                         chartsDataProcessor: chartsDataProcessor)
@@ -45,21 +39,14 @@ public class Factory {
         return presenter
     }
     
-    private func budgetInteractor() -> BudgetInteractor {
-        return BudgetInteractor(budgetRepository: budgetRepository,
-                                transactionsRepository: transactionsRepository,
-                                calendar: calendar)
-    }
-    
-    
-    public func transactionDataPresenter(userInterface: TransactionDataUI, router: TransactionDataRouting) -> TransactionDataPresenterProtocol {
+    public static func transactionDataPresenter(userInterface: TransactionDataUI, router: TransactionDataRouting) -> TransactionDataPresenterProtocol {
         let interactor = TransactionDataInteractor(calendar: calendar)
         let presenter = TransactionDataPresenter(interactor: interactor, routing: router)
         presenter.view = userInterface
         return presenter
     }
     
-    public func categoriesListPresenter(userInterface: TransactionCategoriesCollectionUIProtocol,
+    public static func categoriesListPresenter(userInterface: TransactionCategoriesCollectionUIProtocol,
                                         router: TransactionCategoriesListRouting) -> TransactionCategoriesPresenterProtocol {
         let interactor = TransactionCategoriesCollectionInteractor(repository: categoriesRepository,
                                                                    logger: logger)
@@ -71,45 +58,41 @@ public class Factory {
         return presenter
     }
     
-    func statsPresenter(userInterface: StatsUIProtocol) -> StatsPresenterProtocol {
-        let interactor = statsInteractor()
+    public static func statsPresenter(userInterface: StatsUIProtocol) -> StatsPresenterProtocol {
+        let interactor = StatsInteractor(repository: transactionsRepository, userPreferences: userPrefs)
         let presenter = StatsPresenter(interactor: interactor, chartsDataProcessor: chartsDataProcessor)
         presenter.view = userInterface
         interactor.presenter = presenter
         return presenter
     }
     
-    private func statsInteractor() -> StatsInteractor {
-        return StatsInteractor(repository: transactionsRepository, userPreferences: userPrefs)
-    }
-    
-    func settingsPresenter(router: SettingsRoutingProtocol) -> SettingsPresenterProtocol {
+    public func settingsPresenter(router: SettingsRoutingProtocol) -> SettingsPresenterProtocol {
         return SettingsPresenter(router: router)
     }
     
-    private let coreDataStack: CoreDataStack = CoreDataStackImplementation()
-    private let logger: Logger = NullLogger()
-    private let calendar: CalendarProtocol = Calendar.current
-    private let notificationCenter: TransactionNotificationCenter = NotificationCenter.default
-    private let userPrefs: UserPreferences = UserDefaults.standard
+    private static let coreDataStack: CoreDataStack = CoreDataStackImplementation()
+    private static let logger: Logger = NullLogger()
+    private static let calendar: CalendarProtocol = Calendar.current
+    private static let notificationCenter: TransactionNotificationCenter = NotificationCenter.default
+    private static let userPrefs: UserPreferences = UserDefaults.standard
     
-    private lazy var transactionsRepository: TransactionsRepository = {
-        return CoreDataTransactionsRepository(context: self.coreDataStack.getViewContext(),
-                                              logger: self.logger,
-                                              notificationCenter: self.notificationCenter)
+    private static var transactionsRepository: TransactionsRepository = {
+        return CoreDataTransactionsRepository(context: Factory.coreDataStack.getViewContext(),
+                                              logger: Factory.logger,
+                                              notificationCenter: Factory.notificationCenter)
     }()
     
-    private lazy var categoriesRepository: TransactionCategoryRepository = {
-        return CoreDataTransactionCategoryRepository(context: self.coreDataStack.getViewContext())
+    private static var categoriesRepository: TransactionCategoryRepository = {
+        return CoreDataTransactionCategoryRepository(context: Factory.coreDataStack.getViewContext())
     }()
     
-    private lazy var budgetRepository: BudgetRepository = {
-       return BudgetRepositoryImpl(context: self.coreDataStack.getViewContext(),
-                                   logger: self.logger)
+    private static var budgetRepository: BudgetRepository = {
+       return BudgetRepositoryImpl(context: Factory.coreDataStack.getViewContext(),
+                                   logger: Factory.logger)
     }()
     
-    private lazy var chartsDataProcessor: BudgetChartsDataProcessor & StatsChartsDataProcessor = {
-        return ChartsDataProcessor(calendar: self.calendar)
+    private static var chartsDataProcessor: BudgetChartsDataProcessor & StatsChartsDataProcessor = {
+        return ChartsDataProcessor(calendar: Factory.calendar)
     }()
 }
 
