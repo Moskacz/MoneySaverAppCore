@@ -65,6 +65,7 @@ private class FakeInteractor: BudgetInteractorProtocol {
 }
 
 private class FakeRouting: BudgetRoutingProtocol {
-    func presentBudgetAmountEditor(presenter: BudgetPresenterProtocol) {}
+    func presentBudgetAmountEditor() {}
+    func dismissBudgetAmountEditor() {}
 }
 
