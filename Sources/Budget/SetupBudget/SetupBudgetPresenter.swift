@@ -38,11 +38,12 @@ extension SetupBudgetPresenter: SetupBudgetPresenterProtocol {
     }
     
     func save(budget: String?) {
-        guard let text = budget, !text.isEmpty, let value = Decimal(string: text), !value.isNaN else {
+        guard let text = budget, !text.isEmpty, let value = Decimal(string: text), value > 0, !value.isNaN else {
             userInterface.display(error: .invalidAmount)
             return
         }
         
         interactor.save(budget: value)
+        router.dismissBudgetAmountEditor()
     }
 }
