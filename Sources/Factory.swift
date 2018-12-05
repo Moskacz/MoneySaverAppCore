@@ -39,6 +39,12 @@ public class Factory {
         return presenter
     }
     
+    public static func setupBudgetPresenter(routing: BudgetRoutingProtocol, userInterface: SetupBudgetUI) -> SetupBudgetPresenterProtocol {
+        let interactor = SetupBudgetInteractor(repository: budgetRepository)
+        let presenter = SetupBudgetPresenter(interactor: interactor, userInterface: userInterface, router: routing)
+        return presenter
+    }
+    
     public static func transactionDataPresenter(userInterface: TransactionDataUI, router: TransactionDataRouting) -> TransactionDataPresenterProtocol {
         let interactor = TransactionDataInteractor(calendar: calendar)
         let presenter = TransactionDataPresenter(interactor: interactor, routing: router)
