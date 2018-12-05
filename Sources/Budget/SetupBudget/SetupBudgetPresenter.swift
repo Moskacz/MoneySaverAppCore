@@ -15,3 +15,8 @@ public protocol SetupBudgetPresenterProtocol: class {
 public enum SetupBudgetError {
     case invalidAmount
 }
+
+internal class SetupBudgetPresenter {
+    
+    
+}

@@ -10,3 +10,19 @@ import Foundation
 public protocol SetupBudgetInteractorProtocol {
     func save(budget: Decimal)
 }
+
+internal class SetupBudgetInteractor {
+    
+    private let repository: BudgetRepository
+    
+    internal init(repository: BudgetRepository) {
+        self.repository = repository
+    }
+}
+
+extension SetupBudgetInteractor: SetupBudgetInteractorProtocol {
+    
+    func save(budget: Decimal) {
+        repository.saveBudget(withValue: budget)
+    }
+}
