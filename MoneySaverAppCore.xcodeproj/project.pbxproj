@@ -167,6 +167,12 @@
 		359E40BF20DF89A400801E20 /* FakeTransactionNotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359E40BD20DF89A400801E20 /* FakeTransactionNotificationCenter.swift */; };
 		359E40C120DF8D7700801E20 /* NSManagedObjectContext+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359E40C020DF8D7700801E20 /* NSManagedObjectContext+Extensions.swift */; };
 		359E40C220DF8D7700801E20 /* NSManagedObjectContext+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359E40C020DF8D7700801E20 /* NSManagedObjectContext+Extensions.swift */; };
+		35A6833321B86A8000BE8FC3 /* SetupBudgetUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A6833221B86A8000BE8FC3 /* SetupBudgetUI.swift */; };
+		35A6833421B86A8000BE8FC3 /* SetupBudgetUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A6833221B86A8000BE8FC3 /* SetupBudgetUI.swift */; };
+		35A6833621B86AC600BE8FC3 /* SetupBudgetPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A6833521B86AC600BE8FC3 /* SetupBudgetPresenter.swift */; };
+		35A6833721B86AC600BE8FC3 /* SetupBudgetPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A6833521B86AC600BE8FC3 /* SetupBudgetPresenter.swift */; };
+		35A6833921B86B4200BE8FC3 /* SetupBudgetInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A6833821B86B4200BE8FC3 /* SetupBudgetInteractor.swift */; };
+		35A6833A21B86B4200BE8FC3 /* SetupBudgetInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A6833821B86B4200BE8FC3 /* SetupBudgetInteractor.swift */; };
 		35A77EA0214AE9C100483426 /* Error+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A77E9F214AE9C100483426 /* Error+Utils.swift */; };
 		35A77EA1214AE9C100483426 /* Error+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A77E9F214AE9C100483426 /* Error+Utils.swift */; };
 		35AEB1192093A79F00DCE038 /* CollectionUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35AEB1172093A79F00DCE038 /* CollectionUpdater.swift */; };
@@ -414,6 +420,9 @@
 		359E40BA20DD854000801E20 /* ObservationToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservationToken.swift; sourceTree = "<group>"; };
 		359E40BD20DF89A400801E20 /* FakeTransactionNotificationCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeTransactionNotificationCenter.swift; sourceTree = "<group>"; };
 		359E40C020DF8D7700801E20 /* NSManagedObjectContext+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSManagedObjectContext+Extensions.swift"; sourceTree = "<group>"; };
+		35A6833221B86A8000BE8FC3 /* SetupBudgetUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupBudgetUI.swift; sourceTree = "<group>"; };
+		35A6833521B86AC600BE8FC3 /* SetupBudgetPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupBudgetPresenter.swift; sourceTree = "<group>"; };
+		35A6833821B86B4200BE8FC3 /* SetupBudgetInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupBudgetInteractor.swift; sourceTree = "<group>"; };
 		35A77E9F214AE9C100483426 /* Error+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Error+Utils.swift"; sourceTree = "<group>"; };
 		35AEB1172093A79F00DCE038 /* CollectionUpdater.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionUpdater.swift; sourceTree = "<group>"; };
 		35AEB1182093A79F00DCE038 /* CoreDataCollectionUpdateHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataCollectionUpdateHandler.swift; sourceTree = "<group>"; };
@@ -600,6 +609,7 @@
 		3536466720E3F6FD00B055B6 /* Budget */ = {
 			isa = PBXGroup;
 			children = (
+				35A6832D21B86A6B00BE8FC3 /* SetupBudget */,
 				35CB167B20ED56D90037EF94 /* BudgetRepository.swift */,
 				35CB167E20ED572D0037EF94 /* BudgetRepositoryImpl.swift */,
 				354820B921A3398D007C932B /* BudgetUI.swift */,
@@ -813,6 +823,16 @@
 				9025D66C2159661C005E5B4B /* Decimal+Extensions.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		35A6832D21B86A6B00BE8FC3 /* SetupBudget */ = {
+			isa = PBXGroup;
+			children = (
+				35A6833221B86A8000BE8FC3 /* SetupBudgetUI.swift */,
+				35A6833521B86AC600BE8FC3 /* SetupBudgetPresenter.swift */,
+				35A6833821B86B4200BE8FC3 /* SetupBudgetInteractor.swift */,
+			);
+			path = SetupBudget;
 			sourceTree = "<group>";
 		};
 		35AEB1162093A77400DCE038 /* CollectionViews */ = {
@@ -1050,6 +1070,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				355B6FCC2141A9F300E39AF5 /* DateFormatters.swift in Sources */,
+				35A6833921B86B4200BE8FC3 /* SetupBudgetInteractor.swift in Sources */,
 				35162CA6208FC30600547126 /* String+Extensions.swift in Sources */,
 				353817E1208E65DC00EA967F /* CalendarDateManagedObject+CoreDataProperties.swift in Sources */,
 				35CE460221AACCCC00967A4B /* StatsInteractor.swift in Sources */,
@@ -1118,12 +1139,14 @@
 				354820C321A33B33007C932B /* BudgetRouting.swift in Sources */,
 				35CE45ED21A9ED7200967A4B /* TransactionDataRouting.swift in Sources */,
 				355A563A20FA7D1D003561FE /* Theme.swift in Sources */,
+				35A6833321B86A8000BE8FC3 /* SetupBudgetUI.swift in Sources */,
 				354820B721A1E145007C932B /* TransactionsListInteractor.swift in Sources */,
 				35CE461421AB0C1C00967A4B /* TransactionCategoriesCollectionInteractor.swift in Sources */,
 				90D1171320E4E7AC008F21D8 /* BudgetProtocol.swift in Sources */,
 				35AEB11B2093A79F00DCE038 /* CoreDataCollectionUpdateHandler.swift in Sources */,
 				354820B121A1DF88007C932B /* TransactionsListUI.swift in Sources */,
 				35162C98208FC14900547126 /* CalendarDateProtocol.swift in Sources */,
+				35A6833621B86AC600BE8FC3 /* SetupBudgetPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1171,6 +1194,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				355B6FCD2141A9F300E39AF5 /* DateFormatters.swift in Sources */,
+				35A6833A21B86B4200BE8FC3 /* SetupBudgetInteractor.swift in Sources */,
 				35162CA7208FC30600547126 /* String+Extensions.swift in Sources */,
 				353817E2208E65DC00EA967F /* CalendarDateManagedObject+CoreDataProperties.swift in Sources */,
 				35CE460321AACCCC00967A4B /* StatsInteractor.swift in Sources */,
@@ -1239,12 +1263,14 @@
 				354820C421A33B33007C932B /* BudgetRouting.swift in Sources */,
 				35CE45EE21A9ED7200967A4B /* TransactionDataRouting.swift in Sources */,
 				355A563B20FA7D1D003561FE /* Theme.swift in Sources */,
+				35A6833421B86A8000BE8FC3 /* SetupBudgetUI.swift in Sources */,
 				354820B821A1E145007C932B /* TransactionsListInteractor.swift in Sources */,
 				35CE461521AB0C1C00967A4B /* TransactionCategoriesCollectionInteractor.swift in Sources */,
 				90D1171420E4E7AC008F21D8 /* BudgetProtocol.swift in Sources */,
 				353A944920A0D9E100B94A72 /* ManagedObjectModel+Extensions.swift in Sources */,
 				354820B221A1DF88007C932B /* TransactionsListUI.swift in Sources */,
 				35162C99208FC14900547126 /* CalendarDateProtocol.swift in Sources */,
+				35A6833721B86AC600BE8FC3 /* SetupBudgetPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

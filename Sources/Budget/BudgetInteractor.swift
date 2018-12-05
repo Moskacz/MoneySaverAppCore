@@ -9,7 +9,6 @@ import Foundation
 
 public protocol BudgetInteractorProtocol {
     func loadData()
-    func saveBudget(amount: Decimal)
 }
 
 internal class BudgetInteractor: BudgetInteractorProtocol {
@@ -44,10 +43,6 @@ internal class BudgetInteractor: BudgetInteractorProtocol {
         }
         
         observationTokens = [transactionsToken, budgetToken]
-    }
-    
-    func saveBudget(amount: Decimal) {
-        budgetRepository.saveBudget(withValue: amount)
     }
     
     private func notifyPresenter() {

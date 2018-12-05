@@ -8,5 +8,5 @@
 import Foundation
 
 public protocol BudgetRoutingProtocol {
-    func presentBudgetAmountEditor(presenter: BudgetPresenterProtocol)
+    func presentBudgetAmountEditor()
 }

@@ -10,7 +10,6 @@ import Charts
 
 public protocol BudgetPresenterProtocol: class {
     func requestBudgetAmountEdit()
-    func saveBudget(amount: Decimal)
     func loadData()
     func dataUpdated(budget: BudgetProtocol, expenses: [TransactionProtocol])
 }
@@ -32,11 +31,7 @@ internal class BudgetPresenter: BudgetPresenterProtocol {
     }
     
     func requestBudgetAmountEdit() {
-        routing.presentBudgetAmountEditor(presenter: self)
-    }
-    
-    func saveBudget(amount: Decimal) {
-        interactor.saveBudget(amount: amount)
+        routing.presentBudgetAmountEditor()
     }
     
     func loadData() {
