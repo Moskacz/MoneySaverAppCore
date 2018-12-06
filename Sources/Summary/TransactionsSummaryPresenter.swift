@@ -8,7 +8,7 @@
 import Foundation
 
 public protocol TransactionsSummaryPresenterProtocol: class {
-    var display: TransactionsSummaryUI? { get set }
+    func start()
     var dateRange: DateRange { get set }
     func stateComputed(_ state: TransactionsSummaryUIState)
 }
@@ -28,6 +28,10 @@ internal class TransactionsSummaryPresenter: TransactionsSummaryPresenterProtoco
     
     internal init(interactor: TransactionsSummaryInteractorProtocol) {
         self.interactor = interactor
+    }
+    
+    func start() {
+        interactor.computeSummary()
     }
     
     var dateRange: DateRange {
