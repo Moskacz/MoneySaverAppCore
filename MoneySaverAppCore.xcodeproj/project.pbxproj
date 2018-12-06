@@ -151,6 +151,8 @@
 		357B860C20D1AF54001E5D25 /* Sequence+Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = 357B860A20D1AF54001E5D25 /* Sequence+Int.swift */; };
 		357B860E20D1AFD7001E5D25 /* SequenceIntExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 357B860D20D1AFD7001E5D25 /* SequenceIntExtensions.swift */; };
 		357B860F20D1AFD7001E5D25 /* SequenceIntExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 357B860D20D1AFD7001E5D25 /* SequenceIntExtensions.swift */; };
+		3582CBEA21B9C94D00282D58 /* TransactionsSummaryRouting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3582CBE921B9C94D00282D58 /* TransactionsSummaryRouting.swift */; };
+		3582CBEB21B9C94D00282D58 /* TransactionsSummaryRouting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3582CBE921B9C94D00282D58 /* TransactionsSummaryRouting.swift */; };
 		358BEC0320C9B0E6003A3800 /* ChartsDataProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358BEC0220C9B0E6003A3800 /* ChartsDataProcessor.swift */; };
 		358BEC0420C9B0E6003A3800 /* ChartsDataProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358BEC0220C9B0E6003A3800 /* ChartsDataProcessor.swift */; };
 		358BEC0620C9B15D003A3800 /* StatsChartsDataProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358BEC0520C9B15D003A3800 /* StatsChartsDataProcessor.swift */; };
@@ -414,6 +416,7 @@
 		356668D6208CEB040052E724 /* Info-iOS-unittests.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-iOS-unittests.plist"; sourceTree = "<group>"; };
 		357B860A20D1AF54001E5D25 /* Sequence+Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sequence+Int.swift"; sourceTree = "<group>"; };
 		357B860D20D1AFD7001E5D25 /* SequenceIntExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SequenceIntExtensions.swift; sourceTree = "<group>"; };
+		3582CBE921B9C94D00282D58 /* TransactionsSummaryRouting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsSummaryRouting.swift; sourceTree = "<group>"; };
 		358BEC0220C9B0E6003A3800 /* ChartsDataProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsDataProcessor.swift; sourceTree = "<group>"; };
 		358BEC0520C9B15D003A3800 /* StatsChartsDataProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsChartsDataProcessor.swift; sourceTree = "<group>"; };
 		359E40AD20DADE8400801E20 /* FakeTransactionsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeTransactionsRepository.swift; sourceTree = "<group>"; };
@@ -605,6 +608,7 @@
 				355B6FCE2141AE5600E39AF5 /* TransactionsSummaryUI.swift */,
 				355B6FD12141AF7100E39AF5 /* TransactionsSummaryPresenter.swift */,
 				354820A621A03F9A007C932B /* TransactionsSummaryInteractor.swift */,
+				3582CBE921B9C94D00282D58 /* TransactionsSummaryRouting.swift */,
 			);
 			path = Summary;
 			sourceTree = "<group>";
@@ -1077,6 +1081,7 @@
 				35A6833921B86B4200BE8FC3 /* SetupBudgetInteractor.swift in Sources */,
 				35162CA6208FC30600547126 /* String+Extensions.swift in Sources */,
 				353817E1208E65DC00EA967F /* CalendarDateManagedObject+CoreDataProperties.swift in Sources */,
+				3582CBEA21B9C94D00282D58 /* TransactionsSummaryRouting.swift in Sources */,
 				35CE460221AACCCC00967A4B /* StatsInteractor.swift in Sources */,
 				35593BEE20922DFD00DEEDB5 /* BudgetChartsDataProcessor.swift in Sources */,
 				35CE45EA21A9EC9F00967A4B /* TransactionDataPresenter.swift in Sources */,
@@ -1202,6 +1207,7 @@
 				35A6833A21B86B4200BE8FC3 /* SetupBudgetInteractor.swift in Sources */,
 				35162CA7208FC30600547126 /* String+Extensions.swift in Sources */,
 				353817E2208E65DC00EA967F /* CalendarDateManagedObject+CoreDataProperties.swift in Sources */,
+				3582CBEB21B9C94D00282D58 /* TransactionsSummaryRouting.swift in Sources */,
 				35CE460321AACCCC00967A4B /* StatsInteractor.swift in Sources */,
 				35593BEF20922E1D00DEEDB5 /* BudgetChartsDataProcessor.swift in Sources */,
 				35CE45EB21A9EC9F00967A4B /* TransactionDataPresenter.swift in Sources */,

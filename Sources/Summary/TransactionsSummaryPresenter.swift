@@ -11,6 +11,7 @@ public protocol TransactionsSummaryPresenterProtocol: class {
     func start()
     var dateRange: DateRange { get set }
     func stateComputed(_ state: TransactionsSummaryUIState)
+    func dateRangeButtonTapped()
 }
 
 public struct TransactionsSummaryUIState {
@@ -25,9 +26,12 @@ internal class TransactionsSummaryPresenter: TransactionsSummaryPresenterProtoco
     weak var display: TransactionsSummaryUI?
     
     private let interactor: TransactionsSummaryInteractorProtocol
+    private let router: TransactionsSummaryRoutingProtocol
     
-    internal init(interactor: TransactionsSummaryInteractorProtocol) {
+    internal init(interactor: TransactionsSummaryInteractorProtocol,
+                  router: TransactionsSummaryRoutingProtocol) {
         self.interactor = interactor
+        self.router = router
     }
     
     func start() {
@@ -37,6 +41,10 @@ internal class TransactionsSummaryPresenter: TransactionsSummaryPresenterProtoco
     var dateRange: DateRange {
         get { return interactor.dateRange }
         set { interactor.dateRange = newValue }
+    }
+    
+    func dateRangeButtonTapped() {
+        router.presentDateRangePicker()
     }
     
     func stateComputed(_ state: TransactionsSummaryUIState) {
