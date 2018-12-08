@@ -13,6 +13,7 @@ public protocol TransactionDataPresenterProtocol {
     var transactionAmount: String? { get set }
     var transactionDate: Date? { get set }
     func nextTapped()
+    func cancelTapped()
 }
 
 public struct TransactionDataViewError: Error, OptionSet {
@@ -22,10 +23,10 @@ public struct TransactionDataViewError: Error, OptionSet {
         self.rawValue = rawValue
     }
     
-    static let invalidValue = TransactionDataViewError(rawValue: 1)
-    static let missingValue = TransactionDataViewError(rawValue: 1 << 1)
-    static let missingTitle = TransactionDataViewError(rawValue: 1 << 2)
-    static let missingDate = TransactionDataViewError(rawValue: 1 << 3)
+    public static let invalidValue = TransactionDataViewError(rawValue: 1)
+    public static let missingValue = TransactionDataViewError(rawValue: 1 << 1)
+    public static let missingTitle = TransactionDataViewError(rawValue: 1 << 2)
+    public static let missingDate = TransactionDataViewError(rawValue: 1 << 3)
 }
 
 internal final class TransactionDataPresenter {
@@ -54,12 +55,15 @@ extension TransactionDataPresenter: TransactionDataPresenterProtocol {
         switch (title, amount, date) {
         case (.value(let title), .value(let amount), .value(let date)):
             let data = interactor.transactionData(with: title, amount: amount, date: date)
-            routing.transactionData = data
-            routing.showTransactionCategoriesPicker()
+            routing.showTransactionCategoriesPicker(transactionData: data)
         case (let title, let amount, let date):
             let errors = [title.error, amount.error, date.error].compactMap { $0 }
             view?.display(error: TransactionDataViewError(array: errors))
         }
+    }
+    
+    func cancelTapped() {
+        
     }
     
     // MARK: Validation

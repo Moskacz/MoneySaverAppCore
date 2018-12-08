@@ -12,4 +12,5 @@ public protocol TransactionDataUI: class {
     func set(title: String?)
     func set(amount: String?)
     func set(date: String?)
+    func pick(date: Date)
 }

@@ -8,6 +8,5 @@
 import Foundation
 
 public protocol TransactionDataRouting: class {
-    var transactionData: TransactionData? { get set }
-    func showTransactionCategoriesPicker()
+    func showTransactionCategoriesPicker(transactionData: TransactionData)
 }
