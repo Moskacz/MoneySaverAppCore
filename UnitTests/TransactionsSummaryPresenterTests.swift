@@ -33,6 +33,13 @@ class TransactionsSummaryPresenterTests: XCTestCase {
         XCTAssertEqual(ui.totalAmountString, "1")
         XCTAssertEqual(ui.dateRangeTitle, "test")
     }
+    
+    func test_whenDataRangeButtonIsTapped_thenPickerShouldBePresented() {
+        let router = FakeRouter()
+        let sut = TransactionsSummaryPresenter(interactor: FakeInteractor(), router: router)
+        sut.dateRangeButtonTapped()
+        XCTAssertTrue(router.presentDatePickerCalled)
+    }
 }
 
 private class FakeInteractor: TransactionsSummaryInteractorProtocol {
@@ -67,5 +74,8 @@ private class FakeUI: TransactionsSummaryUI {
 }
 
 private class FakeRouter: TransactionsSummaryRoutingProtocol {
-    func presentDateRangePicker() {}
+    var presentDatePickerCalled = false
+    func presentDateRangePicker() {
+        presentDatePickerCalled = true
+    }
 }
