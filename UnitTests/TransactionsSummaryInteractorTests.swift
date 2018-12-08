@@ -77,8 +77,11 @@ class TransactionsSummaryInteractorTests: XCTestCase {
 // MARK: Fakes
 
 private class FakePresenter: FakeTransactionsSummaryPresenterProtocol {
-    var computedState: TransactionsSummaryUIState!
     
+    func start() {}
+    func dateRangeButtonTapped() {}
+    
+    var computedState: TransactionsSummaryUIState!
     func stateComputed(_ state: TransactionsSummaryUIState) {
         computedState = state
     }

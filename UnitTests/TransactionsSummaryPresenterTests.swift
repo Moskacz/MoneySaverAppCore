@@ -12,7 +12,7 @@ class TransactionsSummaryPresenterTests: XCTestCase {
 
     func test_dateRange_shouldCallInteractor() {
         let interactor = FakeInteractor()
-        let sut = TransactionsSummaryPresenter(interactor: interactor)
+        let sut = TransactionsSummaryPresenter(interactor: interactor, router: FakeRouter())
         XCTAssertEqual(sut.dateRange, .today)
         sut.dateRange = .thisWeek
         XCTAssertEqual(interactor.dateRange, .thisWeek)
@@ -20,7 +20,7 @@ class TransactionsSummaryPresenterTests: XCTestCase {
 
     func test_stateComputed_shouldCallUI() {
         let interactor = FakeInteractor()
-        let sut = TransactionsSummaryPresenter(interactor: interactor)
+        let sut = TransactionsSummaryPresenter(interactor: interactor, router: FakeRouter())
         let ui = FakeUI()
         sut.display = ui
         sut.stateComputed(TransactionsSummaryUIState(totalAmountText: "1",
@@ -64,4 +64,8 @@ private class FakeUI: TransactionsSummaryUI {
     func set(dateRangeTitle: String?) {
         self.dateRangeTitle = dateRangeTitle
     }
+}
+
+private class FakeRouter: TransactionsSummaryRoutingProtocol {
+    func presentDateRangePicker() {}
 }

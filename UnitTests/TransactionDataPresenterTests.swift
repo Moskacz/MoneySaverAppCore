@@ -82,16 +82,14 @@ class TransactionDataPresenterTests: XCTestCase {
         sut.transactionAmount = "1"
         sut.transactionDate = Date()
         sut.nextTapped()
-        XCTAssertTrue(routing.showTransactionCategoriesPickerCalled)
+        XCTAssertNotNil(routing.transactionData)
     }
 }
 
 private class FakeRouting: TransactionDataRouting {
     var transactionData: TransactionData?
-    
-    var showTransactionCategoriesPickerCalled = false
-    func showTransactionCategoriesPicker() {
-        showTransactionCategoriesPickerCalled = true
+    func showTransactionCategoriesPicker(transactionData: TransactionData) {
+        self.transactionData = transactionData
     }
 }
 
@@ -109,4 +107,5 @@ private class FakeUI: TransactionDataUI {
     func set(title: String?) { fatalError() }
     func set(amount: String?) { fatalError() }
     func set(date: String?) { fatalError() }
+    func pick(date: Date) { fatalError() }
 }
