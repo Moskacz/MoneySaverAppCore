@@ -8,7 +8,7 @@
 import XCTest
 @testable import MoneySaverAppCore
 
-class DateRangePickerPresenterTests: XCTestCase {
+class DateRangePickerInteractorTests: XCTestCase {
     
     func test_items() {
         let calendar = FakeCalendar()
@@ -17,7 +17,7 @@ class DateRangePickerPresenterTests: XCTestCase {
         calendar.monthNameToReturn = "January"
         calendar.yearNameToReturn = "1970"
         calendar.beginEndDaysOfWeekToReturn = (date, date)
-        let sut = DateRangePickerPresenter(calendar: calendar)
+        let sut = DateRangePickerInteractor(calendar: calendar)
         XCTAssertEqual(sut.items[0].title, "Today")
         XCTAssertEqual(sut.items[1].title, "Week 01.01.1970 - 01.01.1970")
         XCTAssertEqual(sut.items[2].title, "January")

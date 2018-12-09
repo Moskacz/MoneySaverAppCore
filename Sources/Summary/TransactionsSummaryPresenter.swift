@@ -44,7 +44,7 @@ internal class TransactionsSummaryPresenter: TransactionsSummaryPresenterProtoco
     }
     
     func dateRangeButtonTapped() {
-        router.presentDateRangePicker()
+        router.presentDateRangePicker(presenter: self)
     }
     
     func stateComputed(_ state: TransactionsSummaryUIState) {
@@ -55,6 +55,16 @@ internal class TransactionsSummaryPresenter: TransactionsSummaryPresenterProtoco
     }
 }
 
+extension TransactionsSummaryPresenter: DateRangePickerPresenterProtocol {
+    
+    var items: [DateRangeItem] {
+        return []
+    }
+    
+    func select(item: DateRangeItem) {
+        dateRange = item.range
+    }
+}
 
 
 

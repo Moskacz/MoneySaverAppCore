@@ -8,5 +8,5 @@
 import Foundation
 
 public protocol TransactionsSummaryRoutingProtocol: class {
-    func presentDateRangePicker()
+    func presentDateRangePicker(presenter: DateRangePickerPresenterProtocol)
 }

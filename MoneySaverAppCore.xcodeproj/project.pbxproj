@@ -153,8 +153,10 @@
 		357B860F20D1AFD7001E5D25 /* SequenceIntExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 357B860D20D1AFD7001E5D25 /* SequenceIntExtensions.swift */; };
 		358129E621BD84E100CB6B0D /* DateRangePickerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358129E521BD84E100CB6B0D /* DateRangePickerPresenter.swift */; };
 		358129E721BD84E100CB6B0D /* DateRangePickerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358129E521BD84E100CB6B0D /* DateRangePickerPresenter.swift */; };
-		358129ED21BD86C600CB6B0D /* DateRangePickerPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358129EC21BD86C600CB6B0D /* DateRangePickerPresenterTests.swift */; };
-		358129EE21BD86C600CB6B0D /* DateRangePickerPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358129EC21BD86C600CB6B0D /* DateRangePickerPresenterTests.swift */; };
+		358129ED21BD86C600CB6B0D /* DateRangePickerInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358129EC21BD86C600CB6B0D /* DateRangePickerInteractorTests.swift */; };
+		358129EE21BD86C600CB6B0D /* DateRangePickerInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358129EC21BD86C600CB6B0D /* DateRangePickerInteractorTests.swift */; };
+		358129F021BD8A4F00CB6B0D /* DateRangePickerInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358129EF21BD8A4F00CB6B0D /* DateRangePickerInteractor.swift */; };
+		358129F121BD8A4F00CB6B0D /* DateRangePickerInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358129EF21BD8A4F00CB6B0D /* DateRangePickerInteractor.swift */; };
 		3582CBEA21B9C94D00282D58 /* TransactionsSummaryRouting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3582CBE921B9C94D00282D58 /* TransactionsSummaryRouting.swift */; };
 		3582CBEB21B9C94D00282D58 /* TransactionsSummaryRouting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3582CBE921B9C94D00282D58 /* TransactionsSummaryRouting.swift */; };
 		358BEC0320C9B0E6003A3800 /* ChartsDataProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358BEC0220C9B0E6003A3800 /* ChartsDataProcessor.swift */; };
@@ -421,7 +423,8 @@
 		357B860A20D1AF54001E5D25 /* Sequence+Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sequence+Int.swift"; sourceTree = "<group>"; };
 		357B860D20D1AFD7001E5D25 /* SequenceIntExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SequenceIntExtensions.swift; sourceTree = "<group>"; };
 		358129E521BD84E100CB6B0D /* DateRangePickerPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateRangePickerPresenter.swift; sourceTree = "<group>"; };
-		358129EC21BD86C600CB6B0D /* DateRangePickerPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateRangePickerPresenterTests.swift; sourceTree = "<group>"; };
+		358129EC21BD86C600CB6B0D /* DateRangePickerInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateRangePickerInteractorTests.swift; sourceTree = "<group>"; };
+		358129EF21BD8A4F00CB6B0D /* DateRangePickerInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateRangePickerInteractor.swift; sourceTree = "<group>"; };
 		3582CBE921B9C94D00282D58 /* TransactionsSummaryRouting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsSummaryRouting.swift; sourceTree = "<group>"; };
 		358BEC0220C9B0E6003A3800 /* ChartsDataProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsDataProcessor.swift; sourceTree = "<group>"; };
 		358BEC0520C9B15D003A3800 /* StatsChartsDataProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsChartsDataProcessor.swift; sourceTree = "<group>"; };
@@ -616,6 +619,7 @@
 				354820A621A03F9A007C932B /* TransactionsSummaryInteractor.swift */,
 				3582CBE921B9C94D00282D58 /* TransactionsSummaryRouting.swift */,
 				358129E521BD84E100CB6B0D /* DateRangePickerPresenter.swift */,
+				358129EF21BD8A4F00CB6B0D /* DateRangePickerInteractor.swift */,
 			);
 			path = Summary;
 			sourceTree = "<group>";
@@ -825,7 +829,7 @@
 				35CE460721AAE1EA00967A4B /* StatsInteractorTests.swift */,
 				35CE461921AC724300967A4B /* TransactionCategoriesCollectionInteractorTests.swift */,
 				35A6833B21B8705700BE8FC3 /* SetupBudgetPresenterTests.swift */,
-				358129EC21BD86C600CB6B0D /* DateRangePickerPresenterTests.swift */,
+				358129EC21BD86C600CB6B0D /* DateRangePickerInteractorTests.swift */,
 			);
 			path = UnitTests;
 			sourceTree = "<group>";
@@ -1137,6 +1141,7 @@
 				35CB168220ED5A470037EF94 /* NotificationCenter+BudgetNotificationCenter.swift in Sources */,
 				358BEC0320C9B0E6003A3800 /* ChartsDataProcessor.swift in Sources */,
 				35162C8E208FC10A00547126 /* CalendarProtocol.swift in Sources */,
+				358129F021BD8A4F00CB6B0D /* DateRangePickerInteractor.swift in Sources */,
 				354E4B9520A231F6009A8311 /* InMemoryCoreDataStack.swift in Sources */,
 				359E40C120DF8D7700801E20 /* NSManagedObjectContext+Extensions.swift in Sources */,
 				354820BA21A3398D007C932B /* BudgetUI.swift in Sources */,
@@ -1182,7 +1187,7 @@
 				35CE460821AAE1EA00967A4B /* StatsInteractorTests.swift in Sources */,
 				35593C022092302600DEEDB5 /* CalendarTests.swift in Sources */,
 				35423E1420EEA293004E006B /* BudgetNotificationCenterTests.swift in Sources */,
-				358129ED21BD86C600CB6B0D /* DateRangePickerPresenterTests.swift in Sources */,
+				358129ED21BD86C600CB6B0D /* DateRangePickerInteractorTests.swift in Sources */,
 				359E40AE20DADE8400801E20 /* FakeTransactionsRepository.swift in Sources */,
 				354E4B8E20A23153009A8311 /* StringTests.swift in Sources */,
 				35CE45F621A9F40400967A4B /* TransactionDataInteractorTests.swift in Sources */,
@@ -1265,6 +1270,7 @@
 				35162C8F208FC10A00547126 /* CalendarProtocol.swift in Sources */,
 				358BEC0420C9B0E6003A3800 /* ChartsDataProcessor.swift in Sources */,
 				35162C9F208FC1D000547126 /* Logger.swift in Sources */,
+				358129F121BD8A4F00CB6B0D /* DateRangePickerInteractor.swift in Sources */,
 				354E4B9620A231F6009A8311 /* InMemoryCoreDataStack.swift in Sources */,
 				359E40C220DF8D7700801E20 /* NSManagedObjectContext+Extensions.swift in Sources */,
 				354820BB21A3398D007C932B /* BudgetUI.swift in Sources */,
@@ -1310,7 +1316,7 @@
 				35CE460921AAE1EA00967A4B /* StatsInteractorTests.swift in Sources */,
 				35593C032092302600DEEDB5 /* CalendarTests.swift in Sources */,
 				35423E1520EEA293004E006B /* BudgetNotificationCenterTests.swift in Sources */,
-				358129EE21BD86C600CB6B0D /* DateRangePickerPresenterTests.swift in Sources */,
+				358129EE21BD86C600CB6B0D /* DateRangePickerInteractorTests.swift in Sources */,
 				359E40AF20DADE8400801E20 /* FakeTransactionsRepository.swift in Sources */,
 				354E4B8F20A23153009A8311 /* StringTests.swift in Sources */,
 				35CE45F721A9F40400967A4B /* TransactionDataInteractorTests.swift in Sources */,

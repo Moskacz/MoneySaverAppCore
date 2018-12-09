@@ -38,7 +38,7 @@ class TransactionsSummaryPresenterTests: XCTestCase {
         let router = FakeRouter()
         let sut = TransactionsSummaryPresenter(interactor: FakeInteractor(), router: router)
         sut.dateRangeButtonTapped()
-        XCTAssertTrue(router.presentDatePickerCalled)
+        XCTAssertNotNil(router.dateRangePresenter)
     }
 }
 
@@ -74,8 +74,9 @@ private class FakeUI: TransactionsSummaryUI {
 }
 
 private class FakeRouter: TransactionsSummaryRoutingProtocol {
-    var presentDatePickerCalled = false
-    func presentDateRangePicker() {
-        presentDatePickerCalled = true
+
+    var dateRangePresenter: DateRangePickerPresenterProtocol?
+    func presentDateRangePicker(presenter: DateRangePickerPresenterProtocol) {
+        dateRangePresenter = presenter
     }
 }
