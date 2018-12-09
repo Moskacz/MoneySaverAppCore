@@ -39,7 +39,7 @@ extension DateRangePickerPresenter: DateRangePickerPresenterProtocol {
     private var thisWeekRange: DateRangeItem {
         let formatter = DateFormatters.formatter(forType: .shortDate)
         let dates = calendar.beginEndDaysOfWeek(forDate: calendar.now)
-        let title = "Week " + formatter.string(from: dates.start) + " - " + formatter.string(from: dates.end
+        let title = "Week " + formatter.string(from: dates.start) + " - " + formatter.string(from: dates.end)
         return DateRangeItem(title: title, range: .thisWeek)
     }
 }
