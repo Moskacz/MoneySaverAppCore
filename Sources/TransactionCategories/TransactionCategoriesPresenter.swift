@@ -37,6 +37,7 @@ extension TransactionCategoriesPresenter: TransactionCategoriesPresenterProtocol
     
     func categoriesLoaded(resultsController: ResultsController<TransactionCategoryProtocol>) {
         self.resultsController = resultsController
+        #warning("handle updates from frc")
         view?.reloadList()
     }
     
