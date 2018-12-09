@@ -8,5 +8,5 @@
 import Foundation
 
 public protocol TransactionCategoriesListRouting: class {
-    func categorySelected(_ transactionCategory: TransactionCategoryProtocol)
+    func flowEnded()
 }

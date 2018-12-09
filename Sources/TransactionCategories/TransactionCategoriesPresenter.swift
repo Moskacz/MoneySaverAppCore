@@ -43,7 +43,8 @@ extension TransactionCategoriesPresenter: TransactionCategoriesPresenterProtocol
     
     func selectItem(at path: IndexPath) {
         let category = resultsController!.object(at: path)
-        router?.categorySelected(category)
+        #warning("save transaction here")
+        router?.flowEnded()
     }
     
     var numberOfCategories: Int {
