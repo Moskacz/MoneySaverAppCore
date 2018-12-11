@@ -10,6 +10,8 @@ import MMFoundation
 
 public class Factory {
     
+    public static var databaseURL: URL!
+    
     public static func transactionsSummaryPresenter(display: TransactionsSummaryUI,
                                                     router: TransactionsSummaryRoutingProtocol) -> TransactionsSummaryPresenterProtocol {
         let interactor = TransactionsSummaryInteractor(repository: transactionsRepository,
@@ -54,11 +56,13 @@ public class Factory {
         return presenter
     }
     
-    public static func categoriesListPresenter(userInterface: TransactionCategoriesCollectionUIProtocol,
-                                        router: TransactionCategoriesListRouting) -> TransactionCategoriesPresenterProtocol {
-        let interactor = TransactionCategoriesCollectionInteractor(repository: categoriesRepository,
+    public static func categoriesListPresenter(transactionData: TransactionData,
+                                               userInterface: TransactionCategoriesCollectionUIProtocol,
+                                               router: TransactionCategoriesListRouting) -> TransactionCategoriesPresenterProtocol {
+        let interactor = TransactionCategoriesCollectionInteractor(categoriesRepository: categoriesRepository,
+                                                                   transactionsRepository: transactionsRepository,
                                                                    logger: logger)
-        let presenter = TransactionCategoriesPresenter(interactor: interactor)
+        let presenter = TransactionCategoriesPresenter(interactor: interactor, transactionData: transactionData)
         presenter.view = userInterface
         presenter.router = router
         
@@ -78,7 +82,7 @@ public class Factory {
         return SettingsPresenter(router: router)
     }
     
-    private static let coreDataStack: CoreDataStack = CoreDataStackImplementation()
+    private static let coreDataStack: CoreDataStack = CoreDataStackImplementation(databaseURL: databaseURL)
     private static let logger: Logger = NullLogger()
     private static let calendar: CalendarProtocol = Calendar.current
     private static let notificationCenter: TransactionNotificationCenter = NotificationCenter.default

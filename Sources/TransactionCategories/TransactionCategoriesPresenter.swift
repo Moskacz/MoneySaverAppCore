@@ -19,13 +19,16 @@ public protocol TransactionCategoriesPresenterProtocol: class {
 internal class TransactionCategoriesPresenter {
     
     private let interactor: TransactionCategoriesCollectionInteractorProtocol
+    private let transactionData: TransactionData
     private var resultsController: ResultsController<TransactionCategoryProtocol>?
     
     weak var router: TransactionCategoriesListRouting?
     weak var view: TransactionCategoriesCollectionUIProtocol?
     
-    internal init(interactor: TransactionCategoriesCollectionInteractorProtocol) {
+    internal init(interactor: TransactionCategoriesCollectionInteractorProtocol,
+                  transactionData: TransactionData) {
         self.interactor = interactor
+        self.transactionData = transactionData
     }
 }
 
@@ -43,7 +46,7 @@ extension TransactionCategoriesPresenter: TransactionCategoriesPresenterProtocol
     
     func selectItem(at path: IndexPath) {
         let category = resultsController!.object(at: path)
-        #warning("save transaction here")
+        interactor.saveTransaction(data: transactionData, category: category)
         router?.flowEnded()
     }
     

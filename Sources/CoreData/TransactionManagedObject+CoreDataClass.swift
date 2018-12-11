@@ -11,16 +11,20 @@ import CoreData
 
 public class TransactionManagedObject: NSManagedObject {
     
-    public enum KeyPath: String {
-        case value = "value"
-        case title = "title"
-        case date = "date"
-        case dayOfEra = "date.dayOfEra"
-        case weekOfEra = "date.weekOfEra"
-        case monthOfEra = "date.monthOfEra"
-        case year = "date.year"
-        case timeInterval = "date.timeInterval"
-        case category = "category"
+    public enum KeyPath {
+        case dayOfEra
+        case weekOfEra
+        case monthOfEra
+        case timeInterval
+        
+        var string: String {
+            switch self {
+            case .dayOfEra: return #keyPath(date.cd_dayOfEra)
+            case .weekOfEra: return #keyPath(date.cd_weekOfEra)
+            case .monthOfEra: return #keyPath(date.cd_monthOfEra)
+            case .timeInterval: return #keyPath(date.cd_timeInterval)
+            }
+        }
     }
     
     static func groupByKeypathFor(grouping: TransactionsGrouping) -> KeyPath {

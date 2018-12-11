@@ -27,7 +27,7 @@ internal class CoreDataTransactionsRepository: TransactionsRepository {
     func transactionsResultsController(transactionsMonthOfEra: Int) -> ResultsController<TransactionProtocol> {
         let request: NSFetchRequest<TransactionManagedObject> = TransactionManagedObject.fetchRequest()
         request.returnsObjectsAsFaults = false
-        request.sortDescriptors = [NSSortDescriptor(key: TransactionManagedObject.KeyPath.timeInterval.rawValue, ascending: false)]
+        request.sortDescriptors = [NSSortDescriptor(key: TransactionManagedObject.KeyPath.timeInterval.string, ascending: false)]
         let frc = NSFetchedResultsController(fetchRequest: request,
                                              managedObjectContext: context,
                                              sectionNameKeyPath: nil,
@@ -40,12 +40,12 @@ internal class CoreDataTransactionsRepository: TransactionsRepository {
         request.returnsObjectsAsFaults = false
         request.fetchBatchSize = 20
 
-        request.sortDescriptors = [NSSortDescriptor(key: TransactionManagedObject.KeyPath.dayOfEra.rawValue, ascending: false),
-                                   NSSortDescriptor(key: TransactionManagedObject.KeyPath.timeInterval.rawValue, ascending: false)]
+        request.sortDescriptors = [NSSortDescriptor(key: TransactionManagedObject.KeyPath.dayOfEra.string, ascending: false),
+                                   NSSortDescriptor(key: TransactionManagedObject.KeyPath.timeInterval.string, ascending: false)]
 
         let frc = NSFetchedResultsController(fetchRequest: request,
                                           managedObjectContext: context,
-                                          sectionNameKeyPath: TransactionManagedObject.KeyPath.dayOfEra.rawValue,
+                                          sectionNameKeyPath: TransactionManagedObject.KeyPath.dayOfEra.string,
                                           cacheName: nil)
         return TransactionResultsController(frc: frc)
     }

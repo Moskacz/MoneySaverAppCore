@@ -9,7 +9,5 @@ import Foundation
 import MMFoundation
 
 public protocol TransactionsListUI: class {
-    var presenter: TransactionsListPresenterProtocol { get set }
-    func displayList(with adapter: ListAdapter<TransactionCellItemProtocol>)
     func displayNoData()
 }

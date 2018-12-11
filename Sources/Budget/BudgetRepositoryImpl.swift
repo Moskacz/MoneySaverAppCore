@@ -19,7 +19,7 @@ internal class BudgetRepositoryImpl: BudgetRepository {
     }
     
     func observeBudgetChanged(completion: @escaping ((BudgetProtocol) -> Void)) -> ObservationToken {
-        fatalError()
+        #warning("implement me")
     }
     
     private func makeEntitiesFRC() -> NSFetchedResultsController<BudgetManagedObject> {
