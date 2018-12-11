@@ -106,8 +106,8 @@ private class FakeUI: TransactionDataUI {
     var error: TransactionDataViewError?
     
     func display(error: TransactionDataViewError) { self.error = error }
-    func set(title: String?) { fatalError() }
-    func set(amount: String?) { fatalError() }
-    func set(date: String?) { fatalError() }
-    func pick(date: Date) { fatalError() }
+    func set(title: String?) { }
+    func set(amount: String?) { }
+    func set(date: String?) { }
+    func pick(date: Date) { }
 }

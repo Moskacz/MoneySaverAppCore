@@ -12,6 +12,7 @@ public protocol TransactionDataPresenterProtocol {
     var transactionTitle: String? { get set }
     var transactionAmount: String? { get set }
     var transactionDate: Date? { get set }
+    func start()
     func nextTapped()
     func cancelTapped()
 }
@@ -33,7 +34,13 @@ internal final class TransactionDataPresenter {
     
     var transactionTitle: String?
     var transactionAmount: String?
-    var transactionDate: Date?
+    
+    var transactionDate: Date? {
+        didSet {
+            updateView(date: transactionDate)
+        }
+    }
+    
     weak var view: TransactionDataUI?
     
     private let interactor: TransactionDataInteractorProtocol
@@ -46,6 +53,18 @@ internal final class TransactionDataPresenter {
 }
 
 extension TransactionDataPresenter: TransactionDataPresenterProtocol {
+    
+    func start() {
+        let startDate = Date()
+        updateView(date: startDate)
+        transactionDate = startDate
+    }
+    
+    private func updateView(date: Date?) {
+        view?.pick(date: date ?? Date())
+        let formattedDate = date.map { DateFormatters.formatter(forType: .dateWithTime).string(from: $0) }
+        view?.set(date: formattedDate)
+    }
     
     func nextTapped() {
         let title = validate(title: transactionTitle)
