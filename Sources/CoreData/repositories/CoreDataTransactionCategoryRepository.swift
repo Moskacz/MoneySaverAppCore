@@ -20,7 +20,7 @@ internal class CoreDataTransactionCategoryRepository: TransactionCategoryReposit
     var allCategoriesResultController: ResultsController<TransactionCategoryProtocol> {
         let request: NSFetchRequest<TransactionCategoryManagedObject> = TransactionCategoryManagedObject.fetchRequest()
         request.fetchBatchSize = 20
-        request.sortDescriptors = [NSSortDescriptor(key: TransactionCategoryManagedObject.KeyPaths.name.rawValue,
+        request.sortDescriptors = [NSSortDescriptor(key: TransactionCategoryManagedObject.KeyPaths.name.string,
                                                     ascending: true)]
         let frc = NSFetchedResultsController(fetchRequest: request,
                                              managedObjectContext: context,

@@ -18,8 +18,12 @@ import UIKit
 
 public class TransactionCategoryManagedObject: NSManagedObject {
 
-    public enum KeyPaths: String {
+    public enum KeyPaths {
         case name
+        
+        var string: String {
+            return #keyPath(cd_name)
+        }
     }
     
     public lazy var image: Image? = {
