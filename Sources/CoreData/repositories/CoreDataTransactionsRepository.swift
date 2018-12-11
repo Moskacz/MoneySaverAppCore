@@ -83,6 +83,12 @@ internal class CoreDataTransactionsRepository: TransactionsRepository {
     }
     
     internal func observeTransactionsChanged(callback: @escaping ([TransactionProtocol]) -> Void) -> ObservationToken {
+        
+        #warning("temporary hack")
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            self.postNotificationWithCurrentTransactions()
+        }
+        
         return notificationCenter.observeTransactionsDidChange(callback: { (notification) in
             callback(notification.transactions)
         })
