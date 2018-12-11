@@ -12,13 +12,13 @@ class TransactionManagedObjectTests: XCTestCase {
     
     func test_groupByKeypath() {
         let dayKeypath = TransactionManagedObject.groupByKeypathFor(grouping: .dayOfEra)
-        XCTAssertEqual(dayKeypath.rawValue, "date.dayOfEra")
+        XCTAssertEqual(dayKeypath.string, "date.cd_dayOfEra")
         
         let weekKeypath = TransactionManagedObject.groupByKeypathFor(grouping: .weekOfEra)
-        XCTAssertEqual(weekKeypath.rawValue, "date.weekOfEra")
+        XCTAssertEqual(weekKeypath.string, "date.cd_weekOfEra")
         
         let monthKeypath = TransactionManagedObject.groupByKeypathFor(grouping: .monthOfEra)
-        XCTAssertEqual(monthKeypath.rawValue, "date.monthOfEra")
+        XCTAssertEqual(monthKeypath.string, "date.cd_monthOfEra")
     }
     
 }

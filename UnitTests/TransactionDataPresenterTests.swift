@@ -91,6 +91,8 @@ private class FakeRouting: TransactionDataRouting {
     func showTransactionCategoriesPicker(transactionData: TransactionData) {
         self.transactionData = transactionData
     }
+    
+    func closeView() {}
 }
 
 private class FakeInteractor: TransactionDataInteractorProtocol {

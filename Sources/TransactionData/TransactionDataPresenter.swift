@@ -63,7 +63,7 @@ extension TransactionDataPresenter: TransactionDataPresenterProtocol {
     }
     
     func cancelTapped() {
-        
+        routing.closeView()
     }
     
     // MARK: Validation

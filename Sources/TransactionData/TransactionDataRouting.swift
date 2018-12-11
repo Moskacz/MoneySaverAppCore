@@ -9,4 +9,5 @@ import Foundation
 
 public protocol TransactionDataRouting: class {
     func showTransactionCategoriesPicker(transactionData: TransactionData)
+    func closeView()
 }

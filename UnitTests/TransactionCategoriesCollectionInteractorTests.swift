@@ -11,21 +11,25 @@ import MMFoundation
 
 class TransactionCategoriesCollectionInteractorTests: XCTestCase {
 
-    private var repository: FakeTransactionCategoryRepository!
+    private var categoriesRepository: FakeTransactionCategoryRepository!
+    private var transactionsRepository: FakeTransactionsRepository!
     private var presenter: FakePresenter!
     private var sut: TransactionCategoriesCollectionInteractor!
     
     override func setUp() {
-        repository = FakeTransactionCategoryRepository()
+        categoriesRepository = FakeTransactionCategoryRepository()
+        transactionsRepository = FakeTransactionsRepository()
         presenter = FakePresenter()
-        sut = TransactionCategoriesCollectionInteractor(repository: repository,
+        sut = TransactionCategoriesCollectionInteractor(categoriesRepository: categoriesRepository,
+                                                        transactionsRepository: transactionsRepository,
                                                         logger: NullLogger())
         sut.presenter = presenter
     }
 
     override func tearDown() {
         sut = nil
-        repository = nil
+        categoriesRepository = nil
+        transactionsRepository = nil
         presenter = nil
     }
 
@@ -33,7 +37,7 @@ class TransactionCategoriesCollectionInteractorTests: XCTestCase {
         let categories = [FakeTransactionCategory(name: "a", image: nil),
                           FakeTransactionCategory(name: "b", image: nil)]
         
-        repository.resultsController = ResultsControllerFake(items: categories)
+        categoriesRepository.resultsController = ResultsControllerFake(items: categories)
         sut.loadData()
         
         XCTAssertNotNil(presenter.resultsController)
