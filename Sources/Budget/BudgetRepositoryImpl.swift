@@ -10,6 +10,10 @@ import CoreData
 
 internal class BudgetRepositoryImpl: BudgetRepository {
     
+    private struct X: BudgetProtocol {
+        var budgetValue: Decimal { return Decimal(3000) }
+    }
+    
     private let context: NSManagedObjectContext
     private let logger: Logger
     
@@ -20,6 +24,10 @@ internal class BudgetRepositoryImpl: BudgetRepository {
     
     func observeBudgetChanged(completion: @escaping ((BudgetProtocol) -> Void)) -> ObservationToken {
         #warning("implement me")
+        completion(X())
+        return ObservationToken(notificationCenter: .default,
+                                token: NSObject(),
+                                notificationName: .budgetDidChange)
     }
     
     private func makeEntitiesFRC() -> NSFetchedResultsController<BudgetManagedObject> {
