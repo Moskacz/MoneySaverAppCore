@@ -95,7 +95,8 @@ public class Factory {
     }()
     
     private static var categoriesRepository: TransactionCategoryRepository = {
-        return CoreDataTransactionCategoryRepository(context: Factory.coreDataStack.getViewContext())
+        return CoreDataTransactionCategoryRepository(context: Factory.coreDataStack.getViewContext(),
+                                                     userPrefs: userPrefs)
     }()
     
     private static var budgetRepository: BudgetRepository = {

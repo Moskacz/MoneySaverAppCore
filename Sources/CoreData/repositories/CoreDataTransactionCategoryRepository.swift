@@ -13,8 +13,35 @@ internal class CoreDataTransactionCategoryRepository: TransactionCategoryReposit
     
     private let context: NSManagedObjectContext
     
-    internal init(context: NSManagedObjectContext) {
+    internal init(context: NSManagedObjectContext, userPrefs: UserPreferences) {
         self.context = context
+        
+        if !userPrefs.initialDataInsertDone {
+            performInitialInsert()
+            userPrefs.initialDataInsertDone = true
+        }
+    }
+    
+    private func performInitialInsert() {
+        let categoriesData = [(Image(named: "bill")!, "Bills"),
+                              (Image(named: "car")!, "Clothes"),
+                              (Image(named: "cosmetics")!, "Cosmetics"),
+                              (Image(named: "education")!, "Education"),
+                              (Image(named: "gift")!, "Gift"),
+                              (Image(named: "groceries")!, "Groceries"),
+                              (Image(named: "bill")!, "Bills"),
+                              (Image(named: "health")!, "Health"),
+                              (Image(named: "homeware")!, "Homeware"),
+                              (Image(named: "party")!, "Party"),
+                              (Image(named: "publictransport")!, "Public transport"),
+                              (Image(named: "travel")!, "Travel")]
+        for data in categoriesData {
+            let category = TransactionCategoryManagedObject.createEntity(inContext: context)
+            category.cd_identifier = UUID()
+            category.cd_icon = data.0.pngRepresentation as NSData?
+            category.cd_name = data.1
+        }
+        try! context.save()
     }
     
     var allCategoriesResultController: ResultsController<TransactionCategoryProtocol> {
