@@ -44,7 +44,7 @@ internal class TransactionsListPresenter: TransactionsListPresenterProtocol {
     }
     
     func itemsCount(in section: Int) -> Int {
-        return resultsController?.objectsIn(section: sectionsCount)?.count ?? 0
+        return resultsController?.objectsIn(section: section)?.count ?? 0
     }
     
     func title(for section: Int) -> String {
