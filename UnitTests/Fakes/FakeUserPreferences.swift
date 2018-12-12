@@ -10,6 +10,7 @@ import Foundation
 
 class FakeUserPreferences: UserPreferences {
     
+    var initialDataInsertDone: Bool = false
     var dateRange: DateRange?
     var statsGrouping: TransactionsGrouping?
     

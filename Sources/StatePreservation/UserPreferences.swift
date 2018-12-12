@@ -9,6 +9,7 @@
 import Foundation
 
 public protocol UserPreferences: class {
+    var initialDataInsertDone: Bool { get set }
     var dateRange: DateRange? { get set }
     var statsGrouping: TransactionsGrouping? { get set }
 }
@@ -16,9 +17,21 @@ public protocol UserPreferences: class {
 extension UserDefaults: UserPreferences {
     
     private enum PreferenceKey: String {
+        case initialDataInsert = "userPreferences_initialDataInsert"
         case dateRange = "userPreferences_dateRange"
         case statsGrouping = "userPreferences_statsGrouping"
     }
+    
+    public var initialDataInsertDone: Bool {
+        get {
+            return bool(forKey: PreferenceKey.initialDataInsert.rawValue)
+        }
+        set {
+            set(newValue, forKey: PreferenceKey.initialDataInsert.rawValue)
+            synchronize()
+        }
+    }
+
     
     public var dateRange: DateRange? {
         get {
