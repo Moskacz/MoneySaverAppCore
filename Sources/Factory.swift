@@ -85,7 +85,7 @@ public class Factory {
     private static let coreDataStack: CoreDataStack = CoreDataStackImplementation(databaseURL: databaseURL)
     private static let logger: Logger = NullLogger()
     private static let calendar: CalendarProtocol = Calendar.current
-    private static let notificationCenter: TransactionNotificationCenter = NotificationCenter.default
+    private static let notificationCenter: TransactionNotificationCenter & AppEventsNotificationCenter = NotificationCenter.default
     private static let userPrefs: UserPreferences = UserDefaults.standard
     
     private static var transactionsRepository: TransactionsRepository = {
