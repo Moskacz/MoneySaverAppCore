@@ -12,23 +12,37 @@ import UIKit
 #endif
 
 internal protocol AppEventsNotificationCenter {
-    func observeAppWillEnterBackgroundEvent(callback: @escaping () -> ())
+    func observeAppWillEnterBackgroundEvent(callback: @escaping () -> ()) -> ObservationToken
     func observeAppWillTerminateEvent(callback: @escaping () -> ()) -> ObservationToken
 }
 
 extension NotificationCenter: AppEventsNotificationCenter {
     
-    func observeAppWillEnterBackgroundEvent(callback: @escaping () -> ()) {
+    func observeAppWillEnterBackgroundEvent(callback: @escaping () -> ()) -> ObservationToken {
+        let notificationName: NSNotification.Name
         
+        #if os(OSX)
+            notificationName = NSApplication.willResignActiveNotification
+        #elseif os(iOS)
+            notificationName = UIApplication.didEnterBackgroundNotification
+        #endif
+        
+        let token = self.addObserver(forName: notificationName, object: nil, queue: .main) { _ in
+            callback()
+        }
+        
+        return ObservationToken(notificationCenter: self, token: token, notificationName: notificationName)
     }
     
     func observeAppWillTerminateEvent(callback: @escaping () -> ()) -> ObservationToken {
         let notificationName: NSNotification.Name
+        
         #if os(OSX)
         notificationName = NSApplication.willTerminateNotification
         #elseif os(iOS)
         notificationName = UIApplication.willTerminateNotification
         #endif
+        
         let token = self.addObserver(forName: notificationName, object: nil, queue: .main) { _ in
             callback()
         }
