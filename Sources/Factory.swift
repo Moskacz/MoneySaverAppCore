@@ -17,7 +17,9 @@ public class Factory {
         let interactor = TransactionsSummaryInteractor(repository: transactionsRepository,
                                                        calendar: calendar,
                                                        userPrefs: userPrefs)
-        let presenter = TransactionsSummaryPresenter(interactor: interactor, router: router)
+        let presenter = TransactionsSummaryPresenter(interactor: interactor,
+                                                     dateRangesInteractor: DateRangePickerInteractor(calendar: calendar),
+                                                     router: router)
         presenter.display = display
         interactor.presenter = presenter
         return presenter

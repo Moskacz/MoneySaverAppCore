@@ -26,11 +26,14 @@ internal class TransactionsSummaryPresenter: TransactionsSummaryPresenterProtoco
     weak var display: TransactionsSummaryUI?
     
     private let interactor: TransactionsSummaryInteractorProtocol
+    private let dateRangesInteractor: DateRangePickerInteractorProtocol
     private let router: TransactionsSummaryRoutingProtocol
     
     internal init(interactor: TransactionsSummaryInteractorProtocol,
+                  dateRangesInteractor: DateRangePickerInteractorProtocol,
                   router: TransactionsSummaryRoutingProtocol) {
         self.interactor = interactor
+        self.dateRangesInteractor = dateRangesInteractor
         self.router = router
     }
     
@@ -58,7 +61,7 @@ internal class TransactionsSummaryPresenter: TransactionsSummaryPresenterProtoco
 extension TransactionsSummaryPresenter: DateRangePickerPresenterProtocol {
     
     var items: [DateRangeItem] {
-        return []
+        return dateRangesInteractor.items
     }
     
     func select(item: DateRangeItem) {
