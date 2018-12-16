@@ -15,13 +15,16 @@ internal class CoreDataTransactionsRepository: TransactionsRepository {
     private let context: NSManagedObjectContext
     private let logger: Logger
     private let notificationCenter: TransactionNotificationCenter
+    private let calendar: CalendarProtocol
     
     internal init(context: NSManagedObjectContext,
-                logger: Logger,
-                notificationCenter: TransactionNotificationCenter) {
+                  logger: Logger,
+                  notificationCenter: TransactionNotificationCenter,
+                  calendar: CalendarProtocol) {
         self.context = context
         self.logger = logger
         self.notificationCenter = notificationCenter
+        self.calendar = calendar
     }
     
     func transactionsResultsController(transactionsMonthOfEra: Int) -> ResultsController<TransactionProtocol> {
@@ -36,18 +39,49 @@ internal class CoreDataTransactionsRepository: TransactionsRepository {
     }
     
     internal var allTransactionsResultController: ResultsController<TransactionProtocol> {
+        let frc = NSFetchedResultsController(fetchRequest: resultsControllerFetchRequest,
+                                             managedObjectContext: context,
+                                             sectionNameKeyPath: TransactionManagedObject.KeyPath.dayOfEra.string,
+                                             cacheName: nil)
+        return TransactionResultsController(frc: frc)
+    }
+    
+    internal func transactionsResultsController(dateRange: DateRange) -> ResultsController<TransactionProtocol> {
+        let fetchRequest = resultsControllerFetchRequest
+        fetchRequest.predicate = predicate(for: dateRange)
+        let frc = NSFetchedResultsController(fetchRequest: fetchRequest,
+                                             managedObjectContext: context,
+                                             sectionNameKeyPath: TransactionManagedObject.KeyPath.dayOfEra.string,
+                                             cacheName: nil)
+        return TransactionResultsController(frc: frc)
+    }
+    
+    private var resultsControllerFetchRequest: NSFetchRequest<TransactionManagedObject> {
         let request: NSFetchRequest<TransactionManagedObject> = TransactionManagedObject.fetchRequest()
         request.returnsObjectsAsFaults = false
         request.fetchBatchSize = 20
-
+        
         request.sortDescriptors = [NSSortDescriptor(key: TransactionManagedObject.KeyPath.dayOfEra.string, ascending: false),
                                    NSSortDescriptor(key: TransactionManagedObject.KeyPath.timeInterval.string, ascending: false)]
-
-        let frc = NSFetchedResultsController(fetchRequest: request,
-                                          managedObjectContext: context,
-                                          sectionNameKeyPath: TransactionManagedObject.KeyPath.dayOfEra.string,
-                                          cacheName: nil)
-        return TransactionResultsController(frc: frc)
+        return request
+    }
+    
+    private func predicate(for dateRange: DateRange) -> NSPredicate {
+        switch dateRange {
+        case .allTime: return NSPredicate(value: true)
+        case .thisMonth:
+            let monthOfEra = calendar.nowCalendarDate.monthOfEra
+            return NSPredicate(format: "\(TransactionManagedObject.KeyPath.monthOfEra.string) == \(monthOfEra)")
+        case .thisWeek:
+            let weekOfEra = calendar.nowCalendarDate.weekOfEra
+            return NSPredicate(format: "\(TransactionManagedObject.KeyPath.weekOfEra.string) == \(weekOfEra)")
+        case .thisYear:
+            let year = calendar.nowCalendarDate.year
+            return NSPredicate(format: "\(TransactionManagedObject.KeyPath.year.string) == \(year)")
+        case .today:
+            let dayOfEra = calendar.nowCalendarDate.dayOfEra
+            return NSPredicate(format: "\(TransactionManagedObject.KeyPath.dayOfEra.string) == \(dayOfEra)")
+        }
     }
     
     internal func addTransaction(data: TransactionData, category: TransactionCategoryProtocol) {

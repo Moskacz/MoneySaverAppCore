@@ -15,6 +15,7 @@ public class TransactionManagedObject: NSManagedObject {
         case dayOfEra
         case weekOfEra
         case monthOfEra
+        case year
         case timeInterval
         
         var string: String {
@@ -22,6 +23,7 @@ public class TransactionManagedObject: NSManagedObject {
             case .dayOfEra: return #keyPath(date.cd_dayOfEra)
             case .weekOfEra: return #keyPath(date.cd_weekOfEra)
             case .monthOfEra: return #keyPath(date.cd_monthOfEra)
+            case .year: return #keyPath(date.cd_year)
             case .timeInterval: return #keyPath(date.cd_timeInterval)
             }
         }

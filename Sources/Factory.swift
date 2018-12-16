@@ -93,7 +93,8 @@ public class Factory {
     private static var transactionsRepository: TransactionsRepository = {
         return CoreDataTransactionsRepository(context: Factory.coreDataStack.getViewContext(),
                                               logger: Factory.logger,
-                                              notificationCenter: Factory.notificationCenter)
+                                              notificationCenter: Factory.notificationCenter,
+                                              calendar: Factory.calendar)
     }()
     
     private static var categoriesRepository: TransactionCategoryRepository = {
