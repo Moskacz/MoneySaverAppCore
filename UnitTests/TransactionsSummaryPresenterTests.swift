@@ -10,17 +10,33 @@ import XCTest
 
 class TransactionsSummaryPresenterTests: XCTestCase {
 
+    private var interactor: FakeInteractor!
+    private var router: FakeRouter!
+    private var sut: TransactionsSummaryPresenter!
+    
+    override func setUp() {
+        super.setUp()
+        interactor = FakeInteractor()
+        router = FakeRouter()
+        sut = TransactionsSummaryPresenter(interactor: interactor,
+                                           dateRangesInteractor: FakeDateRangeInteractor(),
+                                           router: router)
+    }
+    
+    override func tearDown() {
+        sut = nil
+        interactor = nil
+        router = nil
+        super.tearDown()
+    }
+    
     func test_dateRange_shouldCallInteractor() {
-        let interactor = FakeInteractor()
-        let sut = TransactionsSummaryPresenter(interactor: interactor, router: FakeRouter())
         XCTAssertEqual(sut.dateRange, .today)
         sut.dateRange = .thisWeek
         XCTAssertEqual(interactor.dateRange, .thisWeek)
     }
 
     func test_stateComputed_shouldCallUI() {
-        let interactor = FakeInteractor()
-        let sut = TransactionsSummaryPresenter(interactor: interactor, router: FakeRouter())
         let ui = FakeUI()
         sut.display = ui
         sut.stateComputed(TransactionsSummaryUIState(totalAmountText: "1",
@@ -35,8 +51,6 @@ class TransactionsSummaryPresenterTests: XCTestCase {
     }
     
     func test_whenDataRangeButtonIsTapped_thenPickerShouldBePresented() {
-        let router = FakeRouter()
-        let sut = TransactionsSummaryPresenter(interactor: FakeInteractor(), router: router)
         sut.dateRangeButtonTapped()
         XCTAssertNotNil(router.dateRangePresenter)
     }
@@ -79,4 +93,8 @@ private class FakeRouter: TransactionsSummaryRoutingProtocol {
     func presentDateRangePicker(presenter: DateRangePickerPresenterProtocol) {
         dateRangePresenter = presenter
     }
+}
+
+private class FakeDateRangeInteractor: DateRangePickerInteractorProtocol {
+    var items: [DateRangeItem] { return [] }
 }

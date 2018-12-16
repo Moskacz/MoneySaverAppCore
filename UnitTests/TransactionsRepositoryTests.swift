@@ -13,20 +13,24 @@ class TransactionsRepositoryTests: XCTestCase {
     var coreDataStack: InMemoryCoreDataStack!
     var sut: CoreDataTransactionsRepository!
     var notificationCenter: FakeTransactionNotificationCenter!
+    var calendar: FakeCalendar!
     
     override func setUp() {
         super.setUp()
         
         coreDataStack = InMemoryCoreDataStack()
         notificationCenter = FakeTransactionNotificationCenter()
+        calendar = FakeCalendar()
         sut = CoreDataTransactionsRepository(context: coreDataStack.getViewContext(),
                                              logger: NullLogger(),
-                                             notificationCenter: notificationCenter)
+                                             notificationCenter: notificationCenter,
+                                             calendar: calendar)
     }
     
     override func tearDown() {
         sut = nil
         coreDataStack = nil
+        calendar = nil
         super.tearDown()
     }
     

@@ -18,6 +18,10 @@ class FakeTransactionsRepository: TransactionsRepository {
     
     var allTransactionsResultController: ResultsController<TransactionProtocol> { fatalError() }
     
+    func transactionsResultsController(dateRange: DateRange) -> ResultsController<TransactionProtocol> {
+        fatalError()
+    }
+    
     var transactionChangedCallback: (([TransactionProtocol]) -> Void)?
     
     func addTransaction(data: TransactionData, category: TransactionCategoryProtocol) {
