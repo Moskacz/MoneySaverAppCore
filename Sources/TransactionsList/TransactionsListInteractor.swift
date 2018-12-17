@@ -17,17 +17,31 @@ internal class TransactionsListInteractor: TransactionsListInteractorProtocol {
     
     private let repository: TransactionsRepository
     private let logger: Logger
+    private let userPrefs: UserPreferences
     
     internal weak var presenter: TransactionsListPresenterProtocol?
     
-    internal init(repository: TransactionsRepository, logger: Logger) {
+    internal init(repository: TransactionsRepository, logger: Logger, userPrefs: UserPreferences) {
         self.repository = repository
         self.logger = logger
+        self.userPrefs = userPrefs
+        registerForNotifications()
+    }
+    
+    private func registerForNotifications() {
+        userPrefs.observeDateRangeChange { range in
+            guard let dateRange = range else { return }
+            self.loadData(dataRange: dateRange)
+        }
     }
     
     func loadData() {
+        loadData(dataRange: userPrefs.dateRange ?? .thisMonth)
+    }
+    
+    private func loadData(dataRange: DateRange) {
         do {
-            let resultsController = repository.allTransactionsResultController
+            let resultsController = repository.transactionsResultsController(dateRange: dataRange)
             try resultsController.loadData()
             presenter?.transactionsLoaded(resultsController: resultsController)
         } catch {

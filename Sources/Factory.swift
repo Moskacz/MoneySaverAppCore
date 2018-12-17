@@ -27,7 +27,8 @@ public class Factory {
     
     public static func transactionsListPresenter(display: TransactionsListUI & ResultsControllerDelegate) -> TransactionsListPresenterProtocol {
         let interactor = TransactionsListInteractor(repository: transactionsRepository,
-                                                    logger: logger)
+                                                    logger: logger,
+                                                    userPrefs: userPrefs)
         let presenter = TransactionsListPresenter(display: display, interactor: interactor)
         interactor.presenter = presenter
         return presenter

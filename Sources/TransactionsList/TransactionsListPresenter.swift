@@ -37,6 +37,7 @@ internal class TransactionsListPresenter: TransactionsListPresenterProtocol {
     func transactionsLoaded(resultsController: ResultsController<TransactionProtocol>) {
         self.resultsController = resultsController
         resultsController.delegate = display
+        display.reloadList()
     }
 
     var sectionsCount: Int {

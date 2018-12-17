@@ -10,4 +10,5 @@ import MMFoundation
 
 public protocol TransactionsListUI: class {
     func displayNoData()
+    func reloadList()
 }
