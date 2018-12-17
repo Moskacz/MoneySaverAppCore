@@ -12,6 +12,8 @@ public protocol UserPreferences: class {
     var initialDataInsertDone: Bool { get set }
     var dateRange: DateRange? { get set }
     var statsGrouping: TransactionsGrouping? { get set }
+    
+    func observeDateRangeChange(handler: @escaping (DateRange?) -> Void)
 }
 
 extension UserDefaults: UserPreferences {
@@ -59,4 +61,9 @@ extension UserDefaults: UserPreferences {
         }
     }
     
+    public func observeDateRangeChange(handler: @escaping (DateRange?) -> Void) {
+        NotificationCenter.default.addObserver(forName: UserDefaults.didChangeNotification, object: nil, queue: .main) { note in
+            handler(self.dateRange)
+        }
+    }
 }
