@@ -75,7 +75,7 @@ extension StatsPresenter: StatsPresenterProtocol {
     private func incomesData(transactions: [TransactionProtocol]) -> BarChartData {
         let plotValues = chartsDataProcessor.incomesGroupedBy(grouping: selectedGrouping,
                                                               transactions: transactions)
-        let entries = plotValues.map { BarChartDataEntry(x: $0.y.doubleValue, y: $0.y.doubleValue) }
+        let entries = plotValues.map { BarChartDataEntry(x: Double($0.x), y: $0.y.doubleValue) }
         return BarChartData(dataSet: BarChartDataSet(values: entries, label: nil))
     }
 }
