@@ -10,6 +10,10 @@ import Foundation
 
 class FakeUserPreferences: UserPreferences {
     
+    func observeDateRangeChange(handler: @escaping (DateRange?) -> Void) {
+        
+    }
+    
     var initialDataInsertDone: Bool = false
     var dateRange: DateRange?
     var statsGrouping: TransactionsGrouping?

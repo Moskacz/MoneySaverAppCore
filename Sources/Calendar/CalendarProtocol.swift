@@ -101,7 +101,7 @@ extension Calendar: CalendarProtocol {
     }
     
     public func yearOf(date: Date) -> Int {
-        return component(.year, from: now)
+        return component(.year, from: date)
     }
     
     public func monthName(forDate date: Date) -> String {
