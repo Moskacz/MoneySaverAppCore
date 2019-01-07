@@ -11,6 +11,7 @@ import Charts
 
 public protocol StatsPresenterProtocol: class {
     var selectedGroupingIndex: Int { get set }
+    var chartsDateFormatter: IAxisValueFormatter { get }
     func start()
     func dataLoaded(transactions: [TransactionProtocol])
 }
@@ -21,14 +22,17 @@ internal class StatsPresenter {
     private let chartsDataProcessor: StatsChartsDataProcessor
     private let availableGroupings: [TransactionsGrouping] = [.dayOfEra, .weekOfEra, .monthOfEra]
     private var selectedGrouping: TransactionsGrouping
+    private let xAxisDateFormatter: StatsChartsDateFormatter
     
     weak var view: StatsUIProtocol?
+    
     
     internal init(interactor: StatsInteractorProtocol,
                   chartsDataProcessor: StatsChartsDataProcessor) {
         self.interactor = interactor
         self.chartsDataProcessor = chartsDataProcessor
         self.selectedGrouping = interactor.preferredGrouping ?? .monthOfEra
+        self.xAxisDateFormatter = StatsChartsDateFormatter(grouping: selectedGrouping)
     }
 }
 
@@ -40,10 +44,13 @@ extension StatsPresenter: StatsPresenterProtocol {
         }
         set {
             selectedGrouping = availableGroupings[newValue]
+            xAxisDateFormatter.grouping = selectedGrouping
             interactor.preferredGrouping = selectedGrouping
             interactor.loadTransactions()
         }
     }
+    
+    var chartsDateFormatter: IAxisValueFormatter { return xAxisDateFormatter }
     
     func start() {
         view?.setGrouping(items: availableGroupings.map { SegmentedControlItem.text($0.description) })

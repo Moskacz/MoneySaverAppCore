@@ -163,6 +163,8 @@
 		358BEC0420C9B0E6003A3800 /* ChartsDataProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358BEC0220C9B0E6003A3800 /* ChartsDataProcessor.swift */; };
 		358BEC0620C9B15D003A3800 /* StatsChartsDataProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358BEC0520C9B15D003A3800 /* StatsChartsDataProcessor.swift */; };
 		358BEC0720C9B15D003A3800 /* StatsChartsDataProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358BEC0520C9B15D003A3800 /* StatsChartsDataProcessor.swift */; };
+		358CFC1121E3F688006BFC60 /* StatsChartsDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358CFC1021E3F688006BFC60 /* StatsChartsDateFormatter.swift */; };
+		358CFC1221E3F689006BFC60 /* StatsChartsDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358CFC1021E3F688006BFC60 /* StatsChartsDateFormatter.swift */; };
 		3595741B21C2FF4F00C3DD2B /* NotificationCenter+AppEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3595741A21C2FF4F00C3DD2B /* NotificationCenter+AppEvents.swift */; };
 		3595741C21C2FF4F00C3DD2B /* NotificationCenter+AppEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3595741A21C2FF4F00C3DD2B /* NotificationCenter+AppEvents.swift */; };
 		359E40AE20DADE8400801E20 /* FakeTransactionsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359E40AD20DADE8400801E20 /* FakeTransactionsRepository.swift */; };
@@ -434,6 +436,7 @@
 		3582CBE921B9C94D00282D58 /* TransactionsSummaryRouting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsSummaryRouting.swift; sourceTree = "<group>"; };
 		358BEC0220C9B0E6003A3800 /* ChartsDataProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsDataProcessor.swift; sourceTree = "<group>"; };
 		358BEC0520C9B15D003A3800 /* StatsChartsDataProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsChartsDataProcessor.swift; sourceTree = "<group>"; };
+		358CFC1021E3F688006BFC60 /* StatsChartsDateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsChartsDateFormatter.swift; sourceTree = "<group>"; };
 		3595741A21C2FF4F00C3DD2B /* NotificationCenter+AppEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NotificationCenter+AppEvents.swift"; sourceTree = "<group>"; };
 		359E40AD20DADE8400801E20 /* FakeTransactionsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeTransactionsRepository.swift; sourceTree = "<group>"; };
 		359E40B020DADF4F00801E20 /* FakeUserPreferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeUserPreferences.swift; sourceTree = "<group>"; };
@@ -692,6 +695,7 @@
 				358BEC0220C9B0E6003A3800 /* ChartsDataProcessor.swift */,
 				35593BED20922DFD00DEEDB5 /* BudgetChartsDataProcessor.swift */,
 				358BEC0520C9B15D003A3800 /* StatsChartsDataProcessor.swift */,
+				358CFC1021E3F688006BFC60 /* StatsChartsDateFormatter.swift */,
 			);
 			path = Charts;
 			sourceTree = "<group>";
@@ -1134,6 +1138,7 @@
 				35CE461D21AC76B700967A4B /* SettingRouting.swift in Sources */,
 				35224EE021502BDC00C2C813 /* CoreDataTransactionCategoryRepository.swift in Sources */,
 				35F272A7214E979C002264B4 /* TransactionCategoryItem.swift in Sources */,
+				358CFC1121E3F688006BFC60 /* StatsChartsDateFormatter.swift in Sources */,
 				355B6FD22141AF7100E39AF5 /* TransactionsSummaryPresenter.swift in Sources */,
 				353817E5208E65DC00EA967F /* BudgetManagedObject+CoreDataProperties.swift in Sources */,
 				35162CBB2090DE6D00547126 /* UserPreferences.swift in Sources */,
@@ -1266,6 +1271,7 @@
 				35CE461E21AC76B700967A4B /* SettingRouting.swift in Sources */,
 				35224EE121502BDC00C2C813 /* CoreDataTransactionCategoryRepository.swift in Sources */,
 				35F272A8214E979C002264B4 /* TransactionCategoryItem.swift in Sources */,
+				358CFC1221E3F689006BFC60 /* StatsChartsDateFormatter.swift in Sources */,
 				355B6FD32141AF7100E39AF5 /* TransactionsSummaryPresenter.swift in Sources */,
 				353817E6208E65DC00EA967F /* BudgetManagedObject+CoreDataProperties.swift in Sources */,
 				35162CBC2090DE6D00547126 /* UserPreferences.swift in Sources */,
