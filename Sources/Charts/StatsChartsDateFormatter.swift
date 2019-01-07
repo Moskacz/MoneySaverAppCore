@@ -10,10 +10,12 @@ import Charts
 
 internal final class StatsChartsDateFormatter {
     
+    private let calendar: CalendarProtocol
     var grouping: TransactionsGrouping
     
-    init(grouping: TransactionsGrouping) {
+    init(grouping: TransactionsGrouping, calendar: CalendarProtocol) {
         self.grouping = grouping
+        self.calendar = calendar
     }
 }
 

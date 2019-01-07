@@ -75,7 +75,7 @@ public class Factory {
     
     public static func statsPresenter(userInterface: StatsUIProtocol) -> StatsPresenterProtocol {
         let interactor = StatsInteractor(repository: transactionsRepository, userPreferences: userPrefs)
-        let presenter = StatsPresenter(interactor: interactor, chartsDataProcessor: chartsDataProcessor)
+        let presenter = StatsPresenter(interactor: interactor, chartsDataProcessor: chartsDataProcessor, calendar: calendar)
         presenter.view = userInterface
         interactor.presenter = presenter
         return presenter

@@ -28,11 +28,13 @@ internal class StatsPresenter {
     
     
     internal init(interactor: StatsInteractorProtocol,
-                  chartsDataProcessor: StatsChartsDataProcessor) {
+                  chartsDataProcessor: StatsChartsDataProcessor,
+                  calendar: CalendarProtocol) {
         self.interactor = interactor
         self.chartsDataProcessor = chartsDataProcessor
         self.selectedGrouping = interactor.preferredGrouping ?? .monthOfEra
-        self.xAxisDateFormatter = StatsChartsDateFormatter(grouping: selectedGrouping)
+        self.xAxisDateFormatter = StatsChartsDateFormatter(grouping: selectedGrouping,
+                                                           calendar: calendar)
     }
 }
 
