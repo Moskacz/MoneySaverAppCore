@@ -32,6 +32,10 @@ class FakeCalendar: CalendarProtocol {
         return nowCalendarDateToReturn
     }
     
+    func date(from components: DateComponents) -> Date? {
+        fatalError()
+    }
+    
     func calendarDate(from date: Date) -> CalendarDateProtocol {
         return calendar.calendarDate(from: date)
     }

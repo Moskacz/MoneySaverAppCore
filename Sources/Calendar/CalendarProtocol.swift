@@ -11,6 +11,8 @@ import Foundation
 public protocol CalendarProtocol {
     var now: Date { get }
     var nowCalendarDate: CalendarDateProtocol { get }
+    
+    func date(from components: DateComponents) -> Date?
     func calendarDate(from date: Date) -> CalendarDateProtocol
     func dayOfEraOf(date: Date) -> Int
     func weekOfEraOf(date: Date) -> Int

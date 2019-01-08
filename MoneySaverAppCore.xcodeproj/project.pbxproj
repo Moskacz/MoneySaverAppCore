@@ -165,6 +165,8 @@
 		358BEC0720C9B15D003A3800 /* StatsChartsDataProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358BEC0520C9B15D003A3800 /* StatsChartsDataProcessor.swift */; };
 		358CFC1121E3F688006BFC60 /* StatsChartsDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358CFC1021E3F688006BFC60 /* StatsChartsDateFormatter.swift */; };
 		358CFC1221E3F689006BFC60 /* StatsChartsDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358CFC1021E3F688006BFC60 /* StatsChartsDateFormatter.swift */; };
+		358CFC1821E5436D006BFC60 /* StatsChartsDateFormatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358CFC1721E5436D006BFC60 /* StatsChartsDateFormatterTests.swift */; };
+		358CFC1921E5436D006BFC60 /* StatsChartsDateFormatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358CFC1721E5436D006BFC60 /* StatsChartsDateFormatterTests.swift */; };
 		3595741B21C2FF4F00C3DD2B /* NotificationCenter+AppEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3595741A21C2FF4F00C3DD2B /* NotificationCenter+AppEvents.swift */; };
 		3595741C21C2FF4F00C3DD2B /* NotificationCenter+AppEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3595741A21C2FF4F00C3DD2B /* NotificationCenter+AppEvents.swift */; };
 		359E40AE20DADE8400801E20 /* FakeTransactionsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359E40AD20DADE8400801E20 /* FakeTransactionsRepository.swift */; };
@@ -437,6 +439,7 @@
 		358BEC0220C9B0E6003A3800 /* ChartsDataProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsDataProcessor.swift; sourceTree = "<group>"; };
 		358BEC0520C9B15D003A3800 /* StatsChartsDataProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsChartsDataProcessor.swift; sourceTree = "<group>"; };
 		358CFC1021E3F688006BFC60 /* StatsChartsDateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsChartsDateFormatter.swift; sourceTree = "<group>"; };
+		358CFC1721E5436D006BFC60 /* StatsChartsDateFormatterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsChartsDateFormatterTests.swift; sourceTree = "<group>"; };
 		3595741A21C2FF4F00C3DD2B /* NotificationCenter+AppEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NotificationCenter+AppEvents.swift"; sourceTree = "<group>"; };
 		359E40AD20DADE8400801E20 /* FakeTransactionsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeTransactionsRepository.swift; sourceTree = "<group>"; };
 		359E40B020DADF4F00801E20 /* FakeUserPreferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeUserPreferences.swift; sourceTree = "<group>"; };
@@ -845,6 +848,7 @@
 				35CE461921AC724300967A4B /* TransactionCategoriesCollectionInteractorTests.swift */,
 				35A6833B21B8705700BE8FC3 /* SetupBudgetPresenterTests.swift */,
 				358129EC21BD86C600CB6B0D /* DateRangePickerInteractorTests.swift */,
+				358CFC1721E5436D006BFC60 /* StatsChartsDateFormatterTests.swift */,
 			);
 			path = UnitTests;
 			sourceTree = "<group>";
@@ -1208,6 +1212,7 @@
 				35593BF220922E8200DEEDB5 /* ChartsDataProcessorTests.swift in Sources */,
 				35A6833C21B8705700BE8FC3 /* SetupBudgetPresenterTests.swift in Sources */,
 				354E4B8820A2301C009A8311 /* CalendarDateManagedObjectTests.swift in Sources */,
+				358CFC1821E5436D006BFC60 /* StatsChartsDateFormatterTests.swift in Sources */,
 				354820AA21A0A938007C932B /* TransactionsSummaryPresenterTests.swift in Sources */,
 				35593C002092302600DEEDB5 /* SequenceTests.swift in Sources */,
 				359E40BE20DF89A400801E20 /* FakeTransactionNotificationCenter.swift in Sources */,
@@ -1341,6 +1346,7 @@
 				35593BF320922E8300DEEDB5 /* ChartsDataProcessorTests.swift in Sources */,
 				35A6833D21B8705700BE8FC3 /* SetupBudgetPresenterTests.swift in Sources */,
 				354E4B8920A2301C009A8311 /* CalendarDateManagedObjectTests.swift in Sources */,
+				358CFC1921E5436D006BFC60 /* StatsChartsDateFormatterTests.swift in Sources */,
 				354820AB21A0A938007C932B /* TransactionsSummaryPresenterTests.swift in Sources */,
 				35593C012092302600DEEDB5 /* SequenceTests.swift in Sources */,
 				359E40BF20DF89A400801E20 /* FakeTransactionNotificationCenter.swift in Sources */,

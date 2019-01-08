@@ -6,6 +6,7 @@
 //
 
 import XCTest
+import Charts
 @testable import MoneySaverAppCore
 
 class StatsInteractorTests: XCTestCase {
@@ -56,6 +57,11 @@ class StatsInteractorTests: XCTestCase {
 }
 
 private class FakePresenter: StatsPresenterProtocol {
+    
+    var chartsDateFormatter: IAxisValueFormatter {
+        fatalError()
+    }
+    
     var selectedGroupingIndex: Int = 0
     
     func start() {}

@@ -21,7 +21,9 @@ class StatsPresenterTests: XCTestCase {
         view = FakeView()
         interactor = FakeInteractor()
         chartsDataProcessor = FakeChartsDataProcessor()
-        sut = StatsPresenter(interactor: interactor, chartsDataProcessor: chartsDataProcessor)
+        sut = StatsPresenter(interactor: interactor,
+                             chartsDataProcessor: chartsDataProcessor,
+                             calendar: FakeCalendar())
         sut.view = view
     }
 
@@ -47,7 +49,9 @@ class StatsPresenterTests: XCTestCase {
     
     func test_selectedIndex_whenThereIsPrefferedGrouping_thenMatchingIndexShouldBeSelected() {
         interactor.preferredGrouping = .weekOfEra
-        sut = StatsPresenter(interactor: interactor, chartsDataProcessor: chartsDataProcessor)
+        sut = StatsPresenter(interactor: interactor,
+                             chartsDataProcessor: chartsDataProcessor,
+                             calendar: FakeCalendar())
         sut.view = view
         sut.start()
         XCTAssertEqual(view.selectedGrouping, 1)
